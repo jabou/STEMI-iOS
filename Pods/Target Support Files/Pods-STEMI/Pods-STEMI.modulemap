@@ -1,0 +1,6 @@
+framework module Pods_STEMI {
+  umbrella header "Pods-STEMI-umbrella.h"
+
+  export *
+  module * { export * }
+}
