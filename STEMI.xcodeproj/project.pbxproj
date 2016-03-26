@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060503061CA6217C00642FC0 /* LeftJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060503051CA6217C00642FC0 /* LeftJoystickView.xib */; };
+		060503081CA6229900642FC0 /* LeftJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060503071CA6229900642FC0 /* LeftJoystickView.swift */; };
+		0605030F1CA6D5CB00642FC0 /* RightJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */; };
+		060503131CA6D85100642FC0 /* RightJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060503121CA6D85100642FC0 /* RightJoystickView.swift */; };
 		065A5F4F1CA2F9E900BED250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */; };
-		065A5F511CA2F9E900BED250 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F501CA2F9E900BED250 /* ViewController.swift */; };
 		065A5F541CA2F9E900BED250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F521CA2F9E900BED250 /* Main.storyboard */; };
 		065A5F561CA2F9E900BED250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F551CA2F9E900BED250 /* Assets.xcassets */; };
 		065A5F591CA2F9E900BED250 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F571CA2F9E900BED250 /* LaunchScreen.storyboard */; };
 		065A5F641CA2F9E900BED250 /* STEMITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F631CA2F9E900BED250 /* STEMITests.swift */; };
 		065A5F6F1CA2F9EA00BED250 /* STEMIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F6E1CA2F9EA00BED250 /* STEMIUITests.swift */; };
+		065A5F7F1CA30D2D00BED250 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */; };
+		065A5F821CA315D900BED250 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F811CA315D900BED250 /* JoystickViewController.swift */; };
 		2178A7A2B5547E87735F52BD /* Pods_STEMI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A04191FECD54589E6E1435F /* Pods_STEMI.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,9 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		060503051CA6217C00642FC0 /* LeftJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftJoystickView.xib; sourceTree = "<group>"; };
+		060503071CA6229900642FC0 /* LeftJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftJoystickView.swift; sourceTree = "<group>"; };
+		0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightJoystickView.xib; sourceTree = "<group>"; };
+		060503121CA6D85100642FC0 /* RightJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightJoystickView.swift; sourceTree = "<group>"; };
 		065A5F4B1CA2F9E900BED250 /* STEMI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STEMI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		065A5F501CA2F9E900BED250 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		065A5F531CA2F9E900BED250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		065A5F551CA2F9E900BED250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		065A5F581CA2F9E900BED250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +56,8 @@
 		065A5F6A1CA2F9E900BED250 /* STEMIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STEMIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		065A5F6E1CA2F9EA00BED250 /* STEMIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STEMIUITests.swift; sourceTree = "<group>"; };
 		065A5F701CA2F9EA00BED250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		065A5F811CA315D900BED250 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
 		1C4FC57DCA5D2B8086354181 /* Pods-STEMI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.debug.xcconfig"; sourceTree = "<group>"; };
 		5A04191FECD54589E6E1435F /* Pods_STEMI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B1E07142DF3F83DC126AE2 /* Pods-STEMI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,12 +114,17 @@
 		065A5F4D1CA2F9E900BED250 /* STEMI */ = {
 			isa = PBXGroup;
 			children = (
+				065A5F7D1CA3075000BED250 /* CustomFont */,
 				065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */,
-				065A5F501CA2F9E900BED250 /* ViewController.swift */,
 				065A5F521CA2F9E900BED250 /* Main.storyboard */,
+				065A5F811CA315D900BED250 /* JoystickViewController.swift */,
 				065A5F551CA2F9E900BED250 /* Assets.xcassets */,
 				065A5F571CA2F9E900BED250 /* LaunchScreen.storyboard */,
 				065A5F5A1CA2F9E900BED250 /* Info.plist */,
+				060503051CA6217C00642FC0 /* LeftJoystickView.xib */,
+				060503071CA6229900642FC0 /* LeftJoystickView.swift */,
+				0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */,
+				060503121CA6D85100642FC0 /* RightJoystickView.swift */,
 			);
 			path = STEMI;
 			sourceTree = "<group>";
@@ -130,6 +145,14 @@
 				065A5F701CA2F9EA00BED250 /* Info.plist */,
 			);
 			path = STEMIUITests;
+			sourceTree = "<group>";
+		};
+		065A5F7D1CA3075000BED250 /* CustomFont */ = {
+			isa = PBXGroup;
+			children = (
+				065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */,
+			);
+			name = CustomFont;
 			sourceTree = "<group>";
 		};
 		608F0A54A32C39406D5EC5A0 /* Frameworks */ = {
@@ -259,8 +282,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				065A5F591CA2F9E900BED250 /* LaunchScreen.storyboard in Resources */,
+				065A5F7F1CA30D2D00BED250 /* ProximaNova-Regular.otf in Resources */,
+				0605030F1CA6D5CB00642FC0 /* RightJoystickView.xib in Resources */,
 				065A5F561CA2F9E900BED250 /* Assets.xcassets in Resources */,
 				065A5F541CA2F9E900BED250 /* Main.storyboard in Resources */,
+				060503061CA6217C00642FC0 /* LeftJoystickView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,8 +372,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				065A5F511CA2F9E900BED250 /* ViewController.swift in Sources */,
+				065A5F821CA315D900BED250 /* JoystickViewController.swift in Sources */,
+				060503081CA6229900642FC0 /* LeftJoystickView.swift in Sources */,
 				065A5F4F1CA2F9E900BED250 /* AppDelegate.swift in Sources */,
+				060503131CA6D85100642FC0 /* RightJoystickView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RightJoystickView" customModule="STEMI" customModuleProvider="target">
+            <connections>
+                <outlet property="joystickMovingArea" destination="x7C-ah-mpS" id="U0p-PR-1js"/>
+                <outlet property="leftMark" destination="PgG-lb-QV4" id="luF-sE-9MN"/>
+                <outlet property="rightMark" destination="XmL-LS-cZR" id="iCr-mY-ysT"/>
+                <outlet property="view" destination="iN0-l3-epB" id="od0-hA-HNg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="249" height="56"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightJoystickBackground" translatesAutoresizingMaskIntoConstraints="NO" id="9hv-T1-dKC">
+                    <rect key="frame" x="0.0" y="0.0" width="249" height="56"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightEdgeLeft" translatesAutoresizingMaskIntoConstraints="NO" id="PgG-lb-QV4">
+                    <rect key="frame" x="0.0" y="0.0" width="249" height="56"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightEdgeRight" translatesAutoresizingMaskIntoConstraints="NO" id="XmL-LS-cZR">
+                    <rect key="frame" x="0.0" y="0.0" width="249" height="56"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joystickPlus" translatesAutoresizingMaskIntoConstraints="NO" id="LKs-pn-c9D">
+                    <rect key="frame" x="104" y="8" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="bZF-2R-k8L"/>
+                        <constraint firstAttribute="height" constant="40" id="ye2-2T-ghy"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7C-ah-mpS">
+                    <rect key="frame" x="32" y="0.0" width="185" height="56"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="PgG-lb-QV4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2pz-3P-idi"/>
+                <constraint firstAttribute="bottom" secondItem="9hv-T1-dKC" secondAttribute="bottom" id="C7v-7e-tyo"/>
+                <constraint firstItem="XmL-LS-cZR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FJU-0K-ASs"/>
+                <constraint firstItem="XmL-LS-cZR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Goe-Jf-8Xl"/>
+                <constraint firstItem="9hv-T1-dKC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JRc-eN-efv"/>
+                <constraint firstItem="PgG-lb-QV4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="MRy-c5-2Z2"/>
+                <constraint firstItem="LKs-pn-c9D" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Y18-QF-4lU"/>
+                <constraint firstAttribute="bottom" secondItem="x7C-ah-mpS" secondAttribute="bottom" id="ak7-K3-aGe"/>
+                <constraint firstItem="9hv-T1-dKC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="akj-iY-I8G"/>
+                <constraint firstAttribute="bottom" secondItem="PgG-lb-QV4" secondAttribute="bottom" id="bdA-0W-V2M"/>
+                <constraint firstItem="x7C-ah-mpS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="jLa-si-40P"/>
+                <constraint firstAttribute="trailing" secondItem="x7C-ah-mpS" secondAttribute="trailing" constant="32" id="sQh-cC-2qD"/>
+                <constraint firstItem="LKs-pn-c9D" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="t0t-lq-ppT"/>
+                <constraint firstItem="x7C-ah-mpS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uWn-wA-kSs"/>
+                <constraint firstAttribute="trailing" secondItem="PgG-lb-QV4" secondAttribute="trailing" id="yOj-TB-toF"/>
+                <constraint firstAttribute="trailing" secondItem="9hv-T1-dKC" secondAttribute="trailing" id="ynW-mQ-v0l"/>
+                <constraint firstAttribute="trailing" secondItem="XmL-LS-cZR" secondAttribute="trailing" id="z44-HN-jIK"/>
+                <constraint firstAttribute="bottom" secondItem="XmL-LS-cZR" secondAttribute="bottom" id="zMr-Nd-RzJ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="476.5" y="129"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="joystickPlus" width="42" height="42"/>
+        <image name="rightEdgeLeft" width="280" height="58"/>
+        <image name="rightEdgeRight" width="280" height="58"/>
+        <image name="rightJoystickBackground" width="280" height="58"/>
+    </resources>
+</document>
