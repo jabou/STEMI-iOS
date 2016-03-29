@@ -35,7 +35,7 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7C-ah-mpS">
-                    <rect key="frame" x="32" y="0.0" width="185" height="56"/>
+                    <rect key="frame" x="33" y="0.0" width="183" height="56"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
@@ -51,8 +51,8 @@
                 <constraint firstAttribute="bottom" secondItem="x7C-ah-mpS" secondAttribute="bottom" id="ak7-K3-aGe"/>
                 <constraint firstItem="9hv-T1-dKC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="akj-iY-I8G"/>
                 <constraint firstAttribute="bottom" secondItem="PgG-lb-QV4" secondAttribute="bottom" id="bdA-0W-V2M"/>
-                <constraint firstItem="x7C-ah-mpS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="jLa-si-40P"/>
-                <constraint firstAttribute="trailing" secondItem="x7C-ah-mpS" secondAttribute="trailing" constant="32" id="sQh-cC-2qD"/>
+                <constraint firstItem="x7C-ah-mpS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="33" id="jLa-si-40P"/>
+                <constraint firstAttribute="trailing" secondItem="x7C-ah-mpS" secondAttribute="trailing" constant="33" id="sQh-cC-2qD"/>
                 <constraint firstItem="LKs-pn-c9D" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="t0t-lq-ppT"/>
                 <constraint firstItem="x7C-ah-mpS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uWn-wA-kSs"/>
                 <constraint firstAttribute="trailing" secondItem="PgG-lb-QV4" secondAttribute="trailing" id="yOj-TB-toF"/>
@@ -62,7 +62,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="476.5" y="129"/>
+            <point key="canvasLocation" x="547.5" y="-63"/>
         </view>
     </objects>
     <resources>

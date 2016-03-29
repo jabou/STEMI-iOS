@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import GLKit
 
 class RightJoystickView: UIView {
     
     let JOYSTICK_SIZE: CGFloat = 60.0
+    let RAD: CGFloat = 57.2957795
     
     @IBOutlet weak var view: UIView!
     
@@ -20,11 +22,17 @@ class RightJoystickView: UIView {
     
     
     var joystickView: UIImageView!
-    var joystickCenterX: CGFloat!
-    var joystickCenterY: CGFloat!
     var leftAlpha: CGFloat = 0
     var rightAlpha: CGFloat = 0
+    var xPosition: CGFloat!
+    var yPosition: CGFloat!
+    var centerX: CGFloat!
+    var centerY: CGFloat!
+    var lastAngle: CGFloat!
+    var joystickRadius: CGFloat!
 
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -35,10 +43,10 @@ class RightJoystickView: UIView {
         self.addSubview(self.view)
         
         joystickView = UIImageView(image: UIImage(named:"joystick"))
-        joystickCenterX = self.view.frame.width/2
-        joystickCenterY = self.view.frame.height/2
-        joystickView.frame = CGRectMake(joystickCenterX, joystickCenterY, JOYSTICK_SIZE, JOYSTICK_SIZE)
-        joystickView.center = CGPointMake(joystickCenterX, joystickCenterY)
+        centerX = self.view.frame.width/2
+        centerY = self.view.frame.height/2
+        joystickView.frame = CGRectMake(centerX, centerY, JOYSTICK_SIZE, JOYSTICK_SIZE)
+        joystickView.center = CGPointMake(centerX, centerY)
         self.view.addSubview(joystickView)
     }
     
@@ -51,78 +59,62 @@ class RightJoystickView: UIView {
         let touch: UITouch = touches.first!
         let position: CGPoint = touch.locationInView(self.view)
         
-        let leftMargin = self.joystickMovingArea.frame.origin.x
-        let rightMargin = self.joystickMovingArea.frame.size.width + self.joystickMovingArea.frame.origin.x
+        xPosition = position.x
+        yPosition = position.y
         
-        if position.x > leftMargin && position.x < rightMargin{
-            UIView.animateWithDuration(0.20) {
-                self.joystickView.center = CGPointMake(position.x, self.view.frame.height/2)
-                let percentage = (self.joystickCenterX - self.joystickView.center.x)/100
-                if percentage > 0 {
-                    self.rightAlpha = 0.0
-                    self.leftAlpha = percentage
-                } else {
-                    self.leftAlpha = 0.0
-                    self.rightAlpha = fabs(percentage)
-                }
-            }
-        }
-        else if position.x > rightMargin{
-            UIView.animateWithDuration(0.20) {
-                self.joystickView.center = CGPointMake(rightMargin, self.view.frame.height/2)
-                self.rightAlpha = 1.0
-                self.leftAlpha = 0.0
-            }
-        }
-        else if position.x < leftMargin{
-            UIView.animateWithDuration(0.20) {
-                self.joystickView.center = CGPointMake(leftMargin, self.view.frame.height/2)
-                self.rightAlpha = 0.0
-                self.leftAlpha = 1.0
+        let maxBound = sqrt(pow(xPosition - centerX, 2))
+        joystickRadius = self.joystickMovingArea.bounds.width/2
+        
+        UIView.animateWithDuration(0.20) {
+            if (maxBound > self.joystickRadius){
+                self.xPosition = (self.xPosition - self.centerX) * self.joystickRadius / maxBound + self.centerX
+                self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
+            } else {
+                self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
             }
         }
         
+        if getAngle() < 0{
+            leftAlpha = getPower()/100
+            rightAlpha = 0
+        } else {
+            leftAlpha = 0
+            rightAlpha = getPower()/100
+        }
         self.leftMark.alpha = self.leftAlpha
         self.rightMark.alpha = self.rightAlpha
 
         
     }
     
+    
+    
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         let touch: UITouch = touches.first!
         let position :CGPoint = touch.locationInView(self.view)
+        
+        xPosition = position.x
+        yPosition = position.y
+        
+        let maxBound = sqrt(pow(xPosition - self.centerX, 2))
+        joystickRadius = self.joystickMovingArea.bounds.width/2
 
-        let leftMargin = self.joystickMovingArea.frame.origin.x
-        let rightMargin = self.joystickMovingArea.frame.size.width + self.joystickMovingArea.frame.origin.x
-        
-        
-        if position.x > leftMargin && position.x < rightMargin{
-            UIView.animateWithDuration(0.20) {
-                self.joystickView.center = CGPointMake(position.x, self.view.frame.height/2)
-                let percentage = (self.joystickCenterX - self.joystickView.center.x)/100
-                if percentage > 0 {
-                    self.rightAlpha = 0.0
-                    self.leftAlpha = percentage
-                } else {
-                    self.leftAlpha = 0.0
-                    self.rightAlpha = fabs(percentage)
-                }
+        UIView.animateWithDuration(0.20) {
+            if (maxBound > self.joystickRadius){
+                self.xPosition = (self.xPosition - self.centerX) * self.joystickRadius / maxBound + self.centerX
+                self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
+            } else {
+                self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
             }
         }
-        else if position.x > rightMargin{
-            UIView.animateWithDuration(0.20) {
-                self.joystickView.center = CGPointMake(rightMargin, self.view.frame.height/2)
-                self.rightAlpha = 1.0
-                self.leftAlpha = 0.0
-            }
-        }
-        else if position.x < leftMargin{
-            UIView.animateWithDuration(0.20) {
-                self.joystickView.center = CGPointMake(leftMargin, self.view.frame.height/2)
-                self.leftAlpha = 1.0
-                self.rightAlpha = 0.0
-            }
+        
+        if getAngle() < 0{
+            leftAlpha = getPower()/100
+            rightAlpha = 0
+        } else {
+            leftAlpha = 0
+            rightAlpha = getPower()/100
         }
         
         leftMark.alpha = leftAlpha
@@ -132,12 +124,62 @@ class RightJoystickView: UIView {
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         UIView.animateWithDuration(0.20) {
-            self.joystickView.center = CGPointMake(self.joystickCenterX, self.joystickCenterY)
+            self.xPosition = self.centerX
+            self.yPosition = self.centerY
+            self.joystickView.center = CGPointMake(self.xPosition, self.yPosition)
             self.leftMark.alpha = 0.0
             self.rightMark.alpha = 0.0
         }
     }
     
+    func getAngle() -> CGFloat{
+        if xPosition > centerX {
+            if yPosition < centerY {
+                lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * RAD + 90)
+                return lastAngle
+            }
+            else if yPosition > centerY{
+                lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * RAD) + 90
+                return lastAngle
+            }
+            else {
+                lastAngle = 90
+                return lastAngle
+            }
+        }
+        else if xPosition < centerX {
+            if yPosition < centerY {
+                lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * RAD - 90)
+                return lastAngle
+            }
+            else if yPosition > centerY {
+                lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * RAD) - 90
+                return lastAngle
+            }
+            else {
+                lastAngle = -90
+                return lastAngle
+            }
+        }
+        else {
+            if yPosition <= centerY {
+                lastAngle = 0
+                return lastAngle
+            } else {
+                if lastAngle < 0 {
+                    lastAngle = -180
+                    return lastAngle
+                } else {
+                    lastAngle = 180
+                    return lastAngle
+                }
+            }
+        }
+    }
+ 
+    func getPower() -> CGFloat {
+        return (100 * sqrt(pow(xPosition - centerX, 2)) / joystickRadius)
+    }
 
 
 }

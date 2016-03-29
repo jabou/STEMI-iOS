@@ -7,7 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeftJoystickView" customModule="STEMI" customModuleProvider="target">
             <connections>
+                <outlet property="bottomMark" destination="jva-ib-Cqs" id="dq6-Rh-dB4"/>
                 <outlet property="joystickMovingArea" destination="Hva-PS-WzQ" id="NI9-9k-HRf"/>
+                <outlet property="leftMark" destination="8Wg-8H-oWT" id="g4t-pB-rl7"/>
+                <outlet property="rightMark" destination="K1A-fc-iay" id="6kx-vz-i0B"/>
+                <outlet property="topMark" destination="FlA-0A-Gbq" id="cWT-Uu-He5"/>
                 <outlet property="view" destination="iN0-l3-epB" id="6zo-kS-Q6r"/>
             </connections>
         </placeholder>
@@ -39,30 +43,30 @@
                     <rect key="frame" x="0.0" y="0.0" width="217" height="217"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hva-PS-WzQ">
-                    <rect key="frame" x="28" y="28" width="161" height="161"/>
+                    <rect key="frame" x="33" y="33" width="151" height="151"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="cOh-dU-7Ht" secondAttribute="trailing" id="4Qr-xF-A2Y"/>
-                <constraint firstAttribute="bottom" secondItem="Hva-PS-WzQ" secondAttribute="bottom" constant="28" id="4k1-eR-91W"/>
+                <constraint firstAttribute="bottom" secondItem="Hva-PS-WzQ" secondAttribute="bottom" constant="33" id="4k1-eR-91W"/>
                 <constraint firstAttribute="bottom" secondItem="K1A-fc-iay" secondAttribute="bottom" id="579-tW-rqc"/>
                 <constraint firstItem="jva-ib-Cqs" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Hvr-Cy-pTT"/>
                 <constraint firstItem="8Wg-8H-oWT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="N1y-Er-5Kh"/>
                 <constraint firstAttribute="bottom" secondItem="jva-ib-Cqs" secondAttribute="bottom" id="Oge-Dd-0IP"/>
                 <constraint firstItem="FlA-0A-Gbq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SZ0-Ua-hNe"/>
                 <constraint firstItem="cOh-dU-7Ht" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Vq6-Uy-PEU"/>
-                <constraint firstItem="Hva-PS-WzQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="28" id="YYk-Kp-XlS"/>
+                <constraint firstItem="Hva-PS-WzQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="33" id="YYk-Kp-XlS"/>
                 <constraint firstItem="0oO-Dv-S7H" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ZCA-30-6ok"/>
                 <constraint firstItem="K1A-fc-iay" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZdC-nA-c9L"/>
                 <constraint firstItem="FlA-0A-Gbq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bbG-v4-eDC"/>
-                <constraint firstItem="Hva-PS-WzQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="28" id="eTE-Be-l8m"/>
+                <constraint firstItem="Hva-PS-WzQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="33" id="eTE-Be-l8m"/>
                 <constraint firstAttribute="trailing" secondItem="K1A-fc-iay" secondAttribute="trailing" id="eTR-6s-AWG"/>
                 <constraint firstAttribute="trailing" secondItem="8Wg-8H-oWT" secondAttribute="trailing" id="la2-NB-BD8"/>
                 <constraint firstItem="0oO-Dv-S7H" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lus-SM-f3l"/>
                 <constraint firstAttribute="bottom" secondItem="cOh-dU-7Ht" secondAttribute="bottom" id="ox4-QT-AIN"/>
-                <constraint firstAttribute="trailing" secondItem="Hva-PS-WzQ" secondAttribute="trailing" constant="28" id="pcf-cp-Tii"/>
+                <constraint firstAttribute="trailing" secondItem="Hva-PS-WzQ" secondAttribute="trailing" constant="33" id="pcf-cp-Tii"/>
                 <constraint firstAttribute="trailing" secondItem="FlA-0A-Gbq" secondAttribute="trailing" id="qRh-dK-4oS"/>
                 <constraint firstAttribute="bottom" secondItem="FlA-0A-Gbq" secondAttribute="bottom" id="rWc-82-IHj"/>
                 <constraint firstItem="K1A-fc-iay" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rld-I1-E5P"/>
@@ -74,7 +78,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="239.5" y="196.5"/>
+            <point key="canvasLocation" x="148.5" y="16.5"/>
         </view>
     </objects>
     <resources>
