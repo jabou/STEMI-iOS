@@ -21,7 +21,7 @@ class JoystickViewController: UIViewController {
     var isMovementSelected: Bool!
     let selectedPictures = ["movement_sel","rotation_sel","orientation_sel","height_sel","settings_sel"];
     let unselectedPictures = ["movement_non","rotation_non","orientation_non","height_non","settings_non"];
-    
+    var settingsIsPressed: Bool!
     
     //MARK: - Methods
     override func viewDidLoad() {
@@ -29,6 +29,7 @@ class JoystickViewController: UIViewController {
         
         setupButtons()
         self.buttonCollection[0].selected = true
+        settingsIsPressed = true
         
         
     }
@@ -42,8 +43,7 @@ class JoystickViewController: UIViewController {
         
         let rightJoystick = RightJoystickView(frame: self.rightJoystickView.bounds)
         self.rightJoystickView.addSubview(rightJoystick)
-        
-        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,6 +92,7 @@ class JoystickViewController: UIViewController {
                 }, completion: { (done) in
                     sender.selected = false
             })
+            settingsIsPressed = false
         }
         
     }

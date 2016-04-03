@@ -79,46 +79,48 @@ class LeftJoystickView: UIView {
             }
         }
         
+       
+        
         let topCenter = CGPointMake(self.view.frame.width/2, self.joystickMovingArea.frame.origin.y)
         let xDistTop = topCenter.x - xPosition
         let yDistTop = topCenter.y - yPosition
-        var distanceTop = 100 * sqrt(pow(xDistTop, 2) + pow(yDistTop, 2)) / joystickRadius
+        var distanceTop = sqrt(pow(xDistTop, 2) + pow(yDistTop, 2)) / joystickRadius
         
         let rigthCenter = CGPointMake(self.view.frame.width - self.joystickMovingArea.frame.origin.x, self.view.frame.height/2)
         let xDistRight = rigthCenter.x - xPosition
         let yDistRight = rigthCenter.y - yPosition
-        var distanceRight = 100 * sqrt(pow(xDistRight, 2) + pow(yDistRight, 2)) / joystickRadius
+        var distanceRight = sqrt(pow(xDistRight, 2) + pow(yDistRight, 2)) / joystickRadius
         
         let bottomCenter = CGPointMake(self.view.frame.width/2, self.view.frame.height - self.joystickMovingArea.frame.origin.y)
         let xDistBottom = bottomCenter.x - xPosition
         let yDistBottom = bottomCenter.y - yPosition
-        var distanceBottom = 100 * sqrt(pow(xDistBottom, 2) + pow(yDistBottom, 2)) / joystickRadius
+        var distanceBottom = sqrt(pow(xDistBottom, 2) + pow(yDistBottom, 2)) / joystickRadius
         
         let leftCenter = CGPointMake(self.joystickMovingArea.frame.origin.x, self.view.frame.height/2)
         let xDistLeft = leftCenter.x - xPosition
         let yDistLeft = leftCenter.y - yPosition
-        var distanceLeft = 100 * sqrt(pow(xDistLeft, 2) + pow(yDistLeft, 2)) / joystickRadius
+        var distanceLeft = sqrt(pow(xDistLeft, 2) + pow(yDistLeft, 2)) / joystickRadius
         
         
         
-        if distanceTop > 100 {
-            distanceTop = 100
+        if distanceTop > 1 {
+            distanceTop = 1
         }
-        else if distanceLeft > 100 {
-            distanceLeft = 100
+        else if distanceLeft > 1 {
+            distanceLeft = 1
         }
-        else if distanceRight > 100 {
-            distanceRight = 100
+        else if distanceRight > 1 {
+            distanceRight = 1
         }
-        else if distanceBottom > 100 {
-            distanceBottom = 100
+        else if distanceBottom > 1 {
+            distanceBottom = 1
         }
         
         
-        topAlpha = 1 - distanceTop / 100
-        leftAlpha = 1 - distanceLeft / 100
-        rightAlpha = 1 - distanceRight / 100
-        bottomAlpha = 1 - distanceBottom / 100
+        topAlpha = 1 - distanceTop
+        leftAlpha = 1 - distanceLeft
+        rightAlpha = 1 - distanceRight
+        bottomAlpha = 1 - distanceBottom
         
         topMark.alpha = topAlpha
         bottomMark.alpha = bottomAlpha
@@ -150,51 +152,54 @@ class LeftJoystickView: UIView {
             }
         }
         
+        
+        
         let topCenter = CGPointMake(self.view.frame.width/2, self.joystickMovingArea.frame.origin.y)
         let xDistTop = topCenter.x - xPosition
         let yDistTop = topCenter.y - yPosition
-        var distanceTop = 100 * sqrt(pow(xDistTop, 2) + pow(yDistTop, 2)) / joystickRadius
+        var distanceTop = sqrt(pow(xDistTop, 2) + pow(yDistTop, 2)) / joystickRadius
         
         let rigthCenter = CGPointMake(self.view.frame.width - self.joystickMovingArea.frame.origin.x, self.view.frame.height/2)
         let xDistRight = rigthCenter.x - xPosition
         let yDistRight = rigthCenter.y - yPosition
-        var distanceRight = 100 * sqrt(pow(xDistRight, 2) + pow(yDistRight, 2)) / joystickRadius
+        var distanceRight = sqrt(pow(xDistRight, 2) + pow(yDistRight, 2)) / joystickRadius
         
         let bottomCenter = CGPointMake(self.view.frame.width/2, self.view.frame.height - self.joystickMovingArea.frame.origin.y)
         let xDistBottom = bottomCenter.x - xPosition
         let yDistBottom = bottomCenter.y - yPosition
-        var distanceBottom = 100 * sqrt(pow(xDistBottom, 2) + pow(yDistBottom, 2)) / joystickRadius
+        var distanceBottom = sqrt(pow(xDistBottom, 2) + pow(yDistBottom, 2)) / joystickRadius
         
         let leftCenter = CGPointMake(self.joystickMovingArea.frame.origin.x, self.view.frame.height/2)
         let xDistLeft = leftCenter.x - xPosition
         let yDistLeft = leftCenter.y - yPosition
-        var distanceLeft = 100 * sqrt(pow(xDistLeft, 2) + pow(yDistLeft, 2)) / joystickRadius
+        var distanceLeft = sqrt(pow(xDistLeft, 2) + pow(yDistLeft, 2)) / joystickRadius
         
         
         
-        if distanceTop > 100 {
-            distanceTop = 100
+        if distanceTop > 1 {
+            distanceTop = 1
         }
-        else if distanceLeft > 100 {
-            distanceLeft = 100
+        else if distanceLeft > 1 {
+            distanceLeft = 1
         }
-        else if distanceRight > 100 {
-            distanceRight = 100
+        else if distanceRight > 1 {
+            distanceRight = 1
         }
-        else if distanceBottom > 100 {
-            distanceBottom = 100
+        else if distanceBottom > 1 {
+            distanceBottom = 1
         }
         
         
-        topAlpha = 1 - distanceTop / 100
-        leftAlpha = 1 - distanceLeft / 100
-        rightAlpha = 1 - distanceRight / 100
-        bottomAlpha = 1 - distanceBottom / 100
+        topAlpha = 1 - distanceTop
+        leftAlpha = 1 - distanceLeft
+        rightAlpha = 1 - distanceRight
+        bottomAlpha = 1 - distanceBottom
         
         topMark.alpha = topAlpha
         bottomMark.alpha = bottomAlpha
         leftMark.alpha = leftAlpha
         rightMark.alpha = rightAlpha
+        
 
     }
     
