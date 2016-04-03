@@ -141,16 +141,15 @@ class LeftJoystickView: UIView {
         let maxBound = sqrt(pow(xPosition - centerX, 2) + pow(yPosition - centerY, 2))
         joystickRadius = self.joystickMovingArea.bounds.width/2
         
-        UIView.animateWithDuration(0.20) {
-            if maxBound > self.joystickRadius {
-                self.xPosition = (self.xPosition - self.centerX) * self.joystickRadius / maxBound + self.centerX
-                self.yPosition = (self.yPosition - self.centerY) * self.joystickRadius / maxBound + self.centerY
+        if maxBound > self.joystickRadius {
+            self.xPosition = (self.xPosition - self.centerX) * self.joystickRadius / maxBound + self.centerX
+            self.yPosition = (self.yPosition - self.centerY) * self.joystickRadius / maxBound + self.centerY
                 
-                self.joystickView.center = CGPointMake(self.xPosition, self.yPosition)
-            } else {
-                self.joystickView.center = CGPointMake(self.xPosition, self.yPosition)
-            }
+            self.joystickView.center = CGPointMake(self.xPosition, self.yPosition)
+        } else {
+            self.joystickView.center = CGPointMake(self.xPosition, self.yPosition)
         }
+        
         
         
         

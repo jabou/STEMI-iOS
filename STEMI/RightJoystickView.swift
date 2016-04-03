@@ -100,14 +100,13 @@ class RightJoystickView: UIView {
         let maxBound = sqrt(pow(xPosition - self.centerX, 2))
         joystickRadius = self.joystickMovingArea.bounds.width/2
 
-        UIView.animateWithDuration(0.20) {
-            if (maxBound > self.joystickRadius){
-                self.xPosition = (self.xPosition - self.centerX) * self.joystickRadius / maxBound + self.centerX
-                self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
-            } else {
-                self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
-            }
+        if (maxBound > self.joystickRadius){
+            self.xPosition = (self.xPosition - self.centerX) * self.joystickRadius / maxBound + self.centerX
+            self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
+        } else {
+            self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
         }
+        
         
         if getAngle() < 0{
             leftAlpha = getPower()/100
