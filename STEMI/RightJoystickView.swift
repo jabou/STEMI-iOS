@@ -31,6 +31,8 @@ class RightJoystickView: UIView {
     var lastAngle: CGFloat!
     var joystickRadius: CGFloat!
 
+    var powerValue: CGFloat = 0
+    var angleValue: CGFloat = 0
     
     
     override init(frame: CGRect) {
@@ -74,20 +76,20 @@ class RightJoystickView: UIView {
             }
         }
         
-        if getAngle() < 0{
-            leftAlpha = getPower()/100
+        if angle() < 0{
+            leftAlpha = power()/100
             rightAlpha = 0
         } else {
             leftAlpha = 0
-            rightAlpha = getPower()/100
+            rightAlpha = power()/100
         }
         self.leftMark.alpha = self.leftAlpha
         self.rightMark.alpha = self.rightAlpha
-
         
+        powerValue = power()
+        angleValue = angle()
+
     }
-    
-    
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
@@ -107,17 +109,19 @@ class RightJoystickView: UIView {
             self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
         }
         
-        
-        if getAngle() < 0{
-            leftAlpha = getPower()/100
+        if angle() < 0{
+            leftAlpha = power()/100
             rightAlpha = 0
         } else {
             leftAlpha = 0
-            rightAlpha = getPower()/100
+            rightAlpha = power()/100
         }
         
         leftMark.alpha = leftAlpha
         rightMark.alpha = rightAlpha
+        
+        powerValue = power()
+        angleValue = angle()
         
     }
     
@@ -129,9 +133,21 @@ class RightJoystickView: UIView {
             self.leftMark.alpha = 0.0
             self.rightMark.alpha = 0.0
         }
+        
+        powerValue = power()
+        angleValue = angle()
     }
     
-    func getAngle() -> CGFloat{
+    func getRotation() -> UInt8{
+        
+        if angleValue >= 0 {
+            return UInt8(powerValue)
+        } else {
+            return UInt8(min(256 - powerValue,255))
+        }
+    }
+    
+    func angle() -> CGFloat{
         if xPosition > centerX {
             if yPosition < centerY {
                 lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * RAD + 90)
@@ -176,7 +192,7 @@ class RightJoystickView: UIView {
         }
     }
  
-    func getPower() -> CGFloat {
+    func power() -> CGFloat {
         return (100 * sqrt(pow(xPosition - centerX, 2)) / joystickRadius)
     }
 

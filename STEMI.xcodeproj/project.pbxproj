@@ -19,6 +19,7 @@
 		065A5F6F1CA2F9EA00BED250 /* STEMIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F6E1CA2F9EA00BED250 /* STEMIUITests.swift */; };
 		065A5F7F1CA30D2D00BED250 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */; };
 		065A5F821CA315D900BED250 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F811CA315D900BED250 /* JoystickViewController.swift */; };
+		06B4C1521CB6646100F68BBC /* STEMICommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4C1511CB6646000F68BBC /* STEMICommunicator.swift */; };
 		2178A7A2B5547E87735F52BD /* Pods_STEMI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A04191FECD54589E6E1435F /* Pods_STEMI.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		060503071CA6229900642FC0 /* LeftJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftJoystickView.swift; sourceTree = "<group>"; };
 		0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightJoystickView.xib; sourceTree = "<group>"; };
 		060503121CA6D85100642FC0 /* RightJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightJoystickView.swift; sourceTree = "<group>"; };
+		063627CF1CB3F26C0039E096 /* STEMI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STEMI-Bridging-Header.h"; sourceTree = "<group>"; };
 		065A5F4B1CA2F9E900BED250 /* STEMI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STEMI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		065A5F531CA2F9E900BED250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		065A5F701CA2F9EA00BED250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		065A5F811CA315D900BED250 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
+		06B4C1511CB6646000F68BBC /* STEMICommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STEMICommunicator.swift; sourceTree = "<group>"; };
 		1C4FC57DCA5D2B8086354181 /* Pods-STEMI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.debug.xcconfig"; sourceTree = "<group>"; };
 		5A04191FECD54589E6E1435F /* Pods_STEMI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B1E07142DF3F83DC126AE2 /* Pods-STEMI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +121,7 @@
 				065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */,
 				065A5F521CA2F9E900BED250 /* Main.storyboard */,
 				065A5F811CA315D900BED250 /* JoystickViewController.swift */,
+				06B4C1511CB6646000F68BBC /* STEMICommunicator.swift */,
 				065A5F551CA2F9E900BED250 /* Assets.xcassets */,
 				065A5F571CA2F9E900BED250 /* LaunchScreen.storyboard */,
 				065A5F5A1CA2F9E900BED250 /* Info.plist */,
@@ -125,6 +129,7 @@
 				060503071CA6229900642FC0 /* LeftJoystickView.swift */,
 				0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */,
 				060503121CA6D85100642FC0 /* RightJoystickView.swift */,
+				063627CF1CB3F26C0039E096 /* STEMI-Bridging-Header.h */,
 			);
 			path = STEMI;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 				3D614430F599D4E8CBC3A4F8 /* Embed Pods Frameworks */,
 				E5C79DC6DF9B357185F33ABA /* Copy Pods Resources */,
 				065A5F7C1CA301B900BED250 /* ShellScript */,
+				06B4C1531CB6E73700F68BBC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -320,6 +326,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 530f4085ae719e7a9651dc41526d94e7804be9ca c1b816238fd9be85cb3340507dac66bd6d30a11f24051ee4748be0976d04e390";
 		};
+		06B4C1531CB6E73700F68BBC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"WARNING:|FIXME:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
+		};
 		3D614430F599D4E8CBC3A4F8 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,6 +394,7 @@
 				065A5F821CA315D900BED250 /* JoystickViewController.swift in Sources */,
 				060503081CA6229900642FC0 /* LeftJoystickView.swift in Sources */,
 				065A5F4F1CA2F9E900BED250 /* AppDelegate.swift in Sources */,
+				06B4C1521CB6646100F68BBC /* STEMICommunicator.swift in Sources */,
 				060503131CA6D85100642FC0 /* RightJoystickView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +493,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -513,6 +534,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -530,6 +552,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aboualdan.STEMI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -546,6 +569,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aboualdan.STEMI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
 			};
 			name = Release;
 		};

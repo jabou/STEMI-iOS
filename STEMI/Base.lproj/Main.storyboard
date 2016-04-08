@@ -73,13 +73,6 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d2m-hI-0qv"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wifi_none" translatesAutoresizingMaskIntoConstraints="NO" id="sNZ-bG-v7l">
-                                <rect key="frame" x="16" y="30" width="28" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="28" id="WKN-vf-n5n"/>
-                                    <constraint firstAttribute="height" constant="28" id="Yua-tu-VgV"/>
-                                </constraints>
-                            </imageView>
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzo-oy-OkE">
                                 <rect key="frame" x="0.0" y="83" width="284" height="237"/>
                                 <subviews>
@@ -128,7 +121,6 @@
                             <constraint firstItem="OD6-qF-6NT" firstAttribute="leading" secondItem="FW3-st-nuL" secondAttribute="trailing" constant="13" id="5XD-w8-s0v"/>
                             <constraint firstAttribute="trailing" secondItem="Rlq-c7-041" secondAttribute="trailing" id="9FO-Qy-ijp"/>
                             <constraint firstItem="Rlq-c7-041" firstAttribute="top" secondItem="OD6-qF-6NT" secondAttribute="bottom" constant="18" id="Jgw-Ni-hnz"/>
-                            <constraint firstItem="sNZ-bG-v7l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="OJt-Gc-5RC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rlq-c7-041" secondAttribute="bottom" id="QiF-4F-DNe"/>
                             <constraint firstItem="oVS-11-xDt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="R2A-GW-RBn"/>
                             <constraint firstItem="wzo-oy-OkE" firstAttribute="top" secondItem="OeG-uw-YIv" secondAttribute="bottom" constant="18" id="RLI-NY-qhL"/>
@@ -141,7 +133,6 @@
                             <constraint firstItem="oVS-11-xDt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kCB-hl-5Ms"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wzo-oy-OkE" secondAttribute="bottom" id="ntO-si-eiD"/>
                             <constraint firstItem="Rlq-c7-041" firstAttribute="leading" secondItem="wzo-oy-OkE" secondAttribute="trailing" id="pMP-ad-Iis"/>
-                            <constraint firstItem="sNZ-bG-v7l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="reQ-iE-ZMX"/>
                             <constraint firstItem="Rlq-c7-041" firstAttribute="leading" secondItem="wzo-oy-OkE" secondAttribute="trailing" id="sVT-la-Q5N"/>
                             <constraint firstItem="FW3-st-nuL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="x24-E4-k3C"/>
                             <constraint firstAttribute="trailing" secondItem="oVS-11-xDt" secondAttribute="trailing" id="xKs-fI-ey8"/>
@@ -167,6 +158,5 @@
     </scenes>
     <resources>
         <image name="joystickBackground" width="667" height="375"/>
-        <image name="wifi_none" width="40" height="40"/>
     </resources>
 </document>

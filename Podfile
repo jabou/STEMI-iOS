@@ -7,5 +7,4 @@ target 'STEMI' do
     
     pod 'Fabric'
     pod 'Crashlytics'
-
 end

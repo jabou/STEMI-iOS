@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreMotion
 
 class JoystickViewController: UIViewController {
 
@@ -16,12 +17,18 @@ class JoystickViewController: UIViewController {
     @IBOutlet weak var leftJoystickView: UIView!
     @IBOutlet weak var rightJoystickView: UIView!
     
-
     //MARK: - Public variables
-    var isMovementSelected: Bool!
     let selectedPictures = ["movement_sel","rotation_sel","orientation_sel","height_sel","settings_sel"];
     let unselectedPictures = ["movement_non","rotation_non","orientation_non","height_non","settings_non"];
-    var settingsIsPressed: Bool!
+
+    //MARK: - Private variables
+    private var accelerometer: CMMotionManager!
+    private var accelerometerX: UInt8!
+    private var accelerometerY: UInt8!
+    
+    var sendDataToSTEMI: STEMICommunicator!
+    private var leftJoystick: LeftJoystickView!
+    private var rightJoystick: RightJoystickView!
     
     //MARK: - Methods
     override func viewDidLoad() {
@@ -29,23 +36,86 @@ class JoystickViewController: UIViewController {
         
         setupButtons()
         self.buttonCollection[0].selected = true
-        settingsIsPressed = true
         
+        accelerometer = CMMotionManager()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.stopConnection), name: "StopConnection", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.startConnection), name: "StartConnection", object: nil)
+
+        
+        //WARNING: - Provjeriti da se ovo pali/gasi na rotation ili orientation (gdje se to koristi uopće)
+        accelerometer.startAccelerometerUpdates()
     }
-    
-    
     
     override func viewDidAppear(animated: Bool) {
         
-        let leftJoystick = LeftJoystickView(frame: self.leftJoystickView.bounds)
+        leftJoystick = LeftJoystickView(frame: self.leftJoystickView.bounds)
         self.leftJoystickView.addSubview(leftJoystick)
         
-        let rightJoystick = RightJoystickView(frame: self.rightJoystickView.bounds)
+        rightJoystick = RightJoystickView(frame: self.rightJoystickView.bounds)
         self.rightJoystickView.addSubview(rightJoystick)
-
+        
+        sendDataToSTEMI = STEMICommunicator(connectWithIP: "192.168.4.1", andPort: 80)
+        sendDataToSTEMI.mainJoystick = self
+        sendDataToSTEMI.leftJoystick = leftJoystick
+        sendDataToSTEMI.rightJoystick = rightJoystick
+        startConnection()
     }
-
+    
+    func startConnection(){
+        sendDataToSTEMI.openCommunication = true
+        sendDataToSTEMI.dataSend()
+    }
+    
+    func stopConnection(){
+        sendDataToSTEMI.openCommunication = false
+    }
+    
+    func getStaticTilt() -> UInt8{
+        return buttonCollection[1].selected ? 1 : 0
+    }
+    
+    func getMovingTilt() -> UInt8{
+        return buttonCollection[2].selected ? 1 : 0
+    }
+    
+    
+    func getAccelerometerX() -> UInt8{
+        let fetchedValue = accelerometer.accelerometerData?.acceleration.x
+        
+        if fetchedValue < -0.4 {
+            return 40
+        }
+        else if fetchedValue > 0.4{
+            return 216
+        }
+        else {
+            if fetchedValue > 0 {
+                return UInt8(min(256 - fetchedValue! * 100,255))
+            } else {
+                return UInt8(-1 * fetchedValue! * 100)
+            }
+        }
+    }
+    
+    func getAccelerometerY() -> UInt8{
+        let fetchedValue = accelerometer.accelerometerData?.acceleration.y
+        
+        if fetchedValue < -0.4 {
+            return 40
+        }
+        else if fetchedValue > 0.4{
+            return 216
+        }
+        else {
+            if fetchedValue > 0 {
+                return UInt8(min(256 - fetchedValue! * 100,255))
+            } else {
+                return UInt8(-1 * fetchedValue! * 100)
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -61,11 +131,6 @@ class JoystickViewController: UIViewController {
         }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-    }
-  
-    
     //MARK: Button press handler
     @IBAction func buttonPressed(sender: UIButton){
         
@@ -77,7 +142,6 @@ class JoystickViewController: UIViewController {
                 objectUIButton.selected = false
                 
             }
-            
             sender.selected = true
         }
         else if index == 3 {
@@ -92,9 +156,21 @@ class JoystickViewController: UIViewController {
                 }, completion: { (done) in
                     sender.selected = false
             })
-            settingsIsPressed = false
         }
-        
     }
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
