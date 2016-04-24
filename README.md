@@ -9,6 +9,9 @@
 And you can create one all by yourself. We’ll show you how. <br>
 <b>About STEMI App:</b> We almost never control another physical thing with our beloved device. The feeling of commanding your robot with a smartphone can hardly be described. You have to simply try it. The app takes advantage of the modern technology such as gyroscope in your smartphone. This allows for the calculation of orientation and rotation of the STEMI’s body. The result is – a dancing robot moving in the rhythm of your hand! <br>
 
+##Screenshots
+![joystick](https://cloud.githubusercontent.com/assets/11990539/14767174/cdfa090e-0a1f-11e6-8b08-04a897bf9c3b.png "Joystick view")
+
 ##Version 1.0
 First version of STEMI controller.
 - Connection screen in which connection with STEMI is handled (if not connected automatically, user can change IP or choose WiFi network od STEMI)
