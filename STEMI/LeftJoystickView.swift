@@ -8,6 +8,11 @@
 
 import UIKit
 import GLKit
+import STEMIHexapod
+
+protocol LeftJoystickViewDelegate {
+    func leftJoystickDidMove(powerValue: UInt8, angleValue: UInt8)
+}
 
 class LeftJoystickView: UIView {
     
@@ -22,6 +27,7 @@ class LeftJoystickView: UIView {
     @IBOutlet weak var topMark: UIImageView!
     @IBOutlet weak var leftMark: UIImageView!
     
+    var delegate: LeftJoystickViewDelegate?
     var joystickView: UIImageView!
     var leftAlpha: CGFloat = 0
     var rightAlpha: CGFloat = 0
@@ -37,10 +43,11 @@ class LeftJoystickView: UIView {
     var powerValue: CGFloat = 0
     var angleValue: CGFloat = 0
     
+    var angleConvert: UInt8!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
+        
         NSBundle.mainBundle().loadNibNamed("LeftJoystickView", owner: self, options: nil)
         let width = frame.size.width
         let height = frame.size.height
@@ -128,6 +135,14 @@ class LeftJoystickView: UIView {
         powerValue = power()
         angleValue = angle()
         
+        if angleValue >= 0 {
+            angleConvert = UInt8(angleValue/2)
+        } else {
+            angleConvert = UInt8(min(256 + angleValue/2,255))
+        }
+        
+        delegate?.leftJoystickDidMove(UInt8(powerValue), angleValue: angleConvert)
+        
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -195,7 +210,16 @@ class LeftJoystickView: UIView {
 
         powerValue = power()
         angleValue = angle()
-
+        
+        
+        if angleValue >= 0 {
+            angleConvert = UInt8(angleValue/2)
+        } else {
+            angleConvert = UInt8(min(256 + angleValue/2,255))
+        }
+        
+        delegate?.leftJoystickDidMove(UInt8(powerValue), angleValue: angleConvert)
+        
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -214,18 +238,13 @@ class LeftJoystickView: UIView {
         powerValue = power()
         angleValue = angle()
     
-    }
-    
-    func getPower() -> UInt8{
-        return UInt8(powerValue)
-    }
-    
-    func getAngle() -> UInt8{
         if angleValue >= 0 {
-            return UInt8(angleValue/2)
+            angleConvert = UInt8(angleValue/2)
         } else {
-            return UInt8(min(256 + angleValue/2,255))
+            angleConvert = UInt8(min(256 + angleValue/2,255))
         }
+        
+        delegate?.leftJoystickDidMove(UInt8(powerValue), angleValue: angleConvert)
     }
     
     func angle() -> CGFloat{

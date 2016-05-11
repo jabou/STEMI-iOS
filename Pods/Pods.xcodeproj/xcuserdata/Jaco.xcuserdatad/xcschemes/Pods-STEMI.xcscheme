@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CFBE6A6C9920E70551B992F0'
+               BlueprintIdentifier = '357DFF136A3D687F40199D60'
                BlueprintName = 'Pods-STEMI'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_STEMI.framework'>

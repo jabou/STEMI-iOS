@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Menu" customModule="STEMI" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundImage" destination="1wy-kH-h0T" id="Z7J-uo-Gna"/>
+                <outlet property="menuActiveIndicator" destination="oeP-It-eO8" id="KKT-g6-AMx"/>
+                <outlet property="menuButton" destination="yyN-xi-R6h" id="1nb-gf-KBD"/>
+                <outlet property="view" destination="iN0-l3-epB" id="6et-v0-T2g"/>
+                <outletCollection property="buttonCollection" destination="mA6-bH-87F" collectionClass="NSMutableArray" id="5DV-iv-GuY"/>
+                <outletCollection property="buttonCollection" destination="QFf-TT-22a" collectionClass="NSMutableArray" id="Ni2-xF-Gju"/>
+                <outletCollection property="buttonCollection" destination="7gZ-UM-dDh" collectionClass="NSMutableArray" id="iME-hy-F7l"/>
+                <outletCollection property="buttonCollection" destination="MHg-z0-FOf" collectionClass="NSMutableArray" id="ruY-MQ-vIL"/>
+                <outletCollection property="buttonCollection" destination="deD-Xp-rFm" collectionClass="NSMutableArray" id="25D-Si-w6v"/>
+                <outletCollection property="buttonCollection" destination="LQJ-u3-gae" collectionClass="NSMutableArray" id="UOp-UQ-3HC"/>
+                <outletCollection property="buttonCollection" destination="aFj-u9-ceO" collectionClass="NSMutableArray" id="rWi-iJ-6f7"/>
+                <outletCollection property="longPressCollection" destination="lYo-SM-kgX" collectionClass="NSMutableArray" id="n9z-LO-NXJ"/>
+                <outletCollection property="longPressCollection" destination="19t-zC-nhp" collectionClass="NSMutableArray" id="vib-Nh-HOL"/>
+                <outletCollection property="longPressCollection" destination="Dsf-mP-QVd" collectionClass="NSMutableArray" id="yXR-b8-0Aw"/>
+                <outletCollection property="longPressCollection" destination="Y7X-w2-BGJ" collectionClass="NSMutableArray" id="kC5-ZN-mOe"/>
+                <outletCollection property="longPressCollection" destination="4aQ-X9-K4g" collectionClass="NSMutableArray" id="n2l-SA-AGS"/>
+                <outletCollection property="longPressCollection" destination="lMm-9n-Y5B" collectionClass="NSMutableArray" id="Vnd-WK-a6K"/>
+                <outletCollection property="longPressCollection" destination="rFl-Tu-lBs" collectionClass="NSMutableArray" id="XXy-H9-ADJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="285" height="137"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBackground" id="1wy-kH-h0T">
+                    <rect key="frame" x="0.0" y="0.0" width="285" height="137"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mA6-bH-87F">
+                    <rect key="frame" x="21" y="92" width="35" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <gestureRecognizers/>
+                    <state key="normal" image="movement_non">
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="movement_sel"/>
+                    <state key="highlighted" image="movement_sel"/>
+                    <connections>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="n6M-Dv-iNi"/>
+                        <outletCollection property="gestureRecognizers" destination="lYo-SM-kgX" appends="YES" id="zJ5-q3-VGQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QFf-TT-22a">
+                    <rect key="frame" x="43" y="49" width="35" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <gestureRecognizers/>
+                    <state key="normal" image="rotation_non"/>
+                    <state key="selected" image="rotation_sel"/>
+                    <state key="highlighted" image="rotation_sel"/>
+                    <connections>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="mqd-Br-Tci"/>
+                        <outletCollection property="gestureRecognizers" destination="19t-zC-nhp" appends="YES" id="TSD-AT-KO1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7gZ-UM-dDh">
+                    <rect key="frame" x="83" y="24" width="35" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <gestureRecognizers/>
+                    <state key="normal" image="orientation_non"/>
+                    <state key="selected" image="orientation_sel"/>
+                    <state key="highlighted" image="orientation_sel"/>
+                    <connections>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="Dtm-Ig-asp"/>
+                        <outletCollection property="gestureRecognizers" destination="Dsf-mP-QVd" appends="YES" id="gGD-b0-lYL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MHg-z0-FOf">
+                    <rect key="frame" x="125" y="14" width="35" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <gestureRecognizers/>
+                    <state key="normal" image="height_non"/>
+                    <state key="selected" image="height_sel"/>
+                    <state key="highlighted" image="height_sel"/>
+                    <connections>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="ps3-0G-1Za"/>
+                        <outletCollection property="gestureRecognizers" destination="Y7X-w2-BGJ" appends="YES" id="PUr-jS-WHE"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="deD-Xp-rFm">
+                    <rect key="frame" x="170" y="25" width="35" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <gestureRecognizers/>
+                    <state key="normal" image="calibration_non"/>
+                    <state key="selected" image="calibration_sel"/>
+                    <state key="highlighted" image="calibration_sel"/>
+                    <connections>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="MWB-jX-XYd"/>
+                        <outletCollection property="gestureRecognizers" destination="4aQ-X9-K4g" appends="YES" id="SuH-59-ybG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LQJ-u3-gae">
+                    <rect key="frame" x="210" y="49" width="35" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <gestureRecognizers/>
+                    <state key="normal" image="walkstyle_non"/>
+                    <state key="selected" image="walkstyle_sel"/>
+                    <state key="highlighted" image="walkstyle_sel"/>
+                    <connections>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="cgV-IS-RVe"/>
+                        <outletCollection property="gestureRecognizers" destination="lMm-9n-Y5B" appends="YES" id="iVd-Nc-gLr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aFj-u9-ceO">
+                    <rect key="frame" x="234" y="92" width="35" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <gestureRecognizers/>
+                    <state key="normal" image="settings_non"/>
+                    <state key="selected" image="settings_non"/>
+                    <state key="highlighted" image="settings_sel"/>
+                    <connections>
+                        <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="7Dn-XT-SIU"/>
+                        <outletCollection property="gestureRecognizers" destination="rFl-Tu-lBs" appends="YES" id="w6e-bZ-WuH"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_button" id="hSJ-gO-asY">
+                    <rect key="frame" x="105" y="77" width="75" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_active" id="oeP-It-eO8">
+                    <rect key="frame" x="105" y="69" width="75" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yyN-xi-R6h">
+                    <rect key="frame" x="105" y="69" width="75" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="menuButtonTapped:" destination="-1" eventType="touchUpInside" id="OIl-VB-tSK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-478.5" y="255.5"/>
+        </view>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="lYo-SM-kgX">
+            <connections>
+                <action selector="buttonLongPressed:" destination="-1" id="hzU-HV-ct0"/>
+            </connections>
+        </pongPressGestureRecognizer>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="19t-zC-nhp">
+            <connections>
+                <action selector="buttonLongPressed:" destination="-1" id="Uid-kH-eKh"/>
+            </connections>
+        </pongPressGestureRecognizer>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Dsf-mP-QVd">
+            <connections>
+                <action selector="buttonLongPressed:" destination="-1" id="rej-5w-2pe"/>
+            </connections>
+        </pongPressGestureRecognizer>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Y7X-w2-BGJ">
+            <connections>
+                <action selector="buttonLongPressed:" destination="-1" id="6Qx-Wr-NWY"/>
+            </connections>
+        </pongPressGestureRecognizer>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="4aQ-X9-K4g">
+            <connections>
+                <action selector="buttonLongPressed:" destination="-1" id="uXr-VO-Dw8"/>
+            </connections>
+        </pongPressGestureRecognizer>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="lMm-9n-Y5B">
+            <connections>
+                <action selector="buttonLongPressed:" destination="-1" id="bIm-5v-2Pm"/>
+            </connections>
+        </pongPressGestureRecognizer>
+        <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="rFl-Tu-lBs">
+            <connections>
+                <action selector="buttonLongPressed:" destination="-1" id="wJz-Q2-j37"/>
+            </connections>
+        </pongPressGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="calibration_non" width="35" height="35"/>
+        <image name="calibration_sel" width="35" height="35"/>
+        <image name="height_non" width="35" height="35"/>
+        <image name="height_sel" width="35" height="35"/>
+        <image name="menuBackground" width="377" height="183"/>
+        <image name="menu_active" width="87" height="70"/>
+        <image name="menu_button" width="87" height="70"/>
+        <image name="movement_non" width="35" height="35"/>
+        <image name="movement_sel" width="35" height="35"/>
+        <image name="orientation_non" width="35" height="35"/>
+        <image name="orientation_sel" width="35" height="35"/>
+        <image name="rotation_non" width="35" height="35"/>
+        <image name="rotation_sel" width="35" height="35"/>
+        <image name="settings_non" width="35" height="35"/>
+        <image name="settings_sel" width="35" height="35"/>
+        <image name="walkstyle_non" width="35" height="35"/>
+        <image name="walkstyle_sel" width="35" height="35"/>
+    </resources>
+</document>

@@ -7,4 +7,5 @@ target 'STEMI' do
     
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'STEMIHexapod', :path => '/Users/Jaco/Library/Mobile Documents/com~apple~CloudDocs/Programming/Libraries/STEMIHexapod/'
 end

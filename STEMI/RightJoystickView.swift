@@ -9,6 +9,10 @@
 import UIKit
 import GLKit
 
+protocol RightJoystickViewDelegate {
+    func rightJoystickDidMove(rotationValue: UInt8)
+}
+
 class RightJoystickView: UIView {
     
     let JOYSTICK_SIZE: CGFloat = 60.0
@@ -20,7 +24,7 @@ class RightJoystickView: UIView {
     @IBOutlet weak var leftMark: UIImageView!
     @IBOutlet weak var rightMark: UIImageView!
     
-    
+    var delegate: RightJoystickViewDelegate?
     var joystickView: UIImageView!
     var leftAlpha: CGFloat = 0
     var rightAlpha: CGFloat = 0
@@ -33,6 +37,8 @@ class RightJoystickView: UIView {
 
     var powerValue: CGFloat = 0
     var angleValue: CGFloat = 0
+    
+    var rotationValue: UInt8!
     
     
     override init(frame: CGRect) {
@@ -89,6 +95,13 @@ class RightJoystickView: UIView {
         powerValue = power()
         angleValue = angle()
 
+        if angleValue >= 0 {
+            rotationValue = UInt8(powerValue)
+        } else {
+            rotationValue = UInt8(min(256 - powerValue,255))
+        }
+        
+        delegate?.rightJoystickDidMove(rotationValue)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -123,6 +136,13 @@ class RightJoystickView: UIView {
         powerValue = power()
         angleValue = angle()
         
+        if angleValue >= 0 {
+            rotationValue = UInt8(powerValue)
+        } else {
+            rotationValue = UInt8(min(256 - powerValue,255))
+        }
+        
+        delegate?.rightJoystickDidMove(rotationValue)
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -136,15 +156,14 @@ class RightJoystickView: UIView {
         
         powerValue = power()
         angleValue = angle()
-    }
-    
-    func getRotation() -> UInt8{
         
         if angleValue >= 0 {
-            return UInt8(powerValue)
+            rotationValue = UInt8(powerValue)
         } else {
-            return UInt8(min(256 - powerValue,255))
+            rotationValue = UInt8(min(256 - powerValue,255))
         }
+        
+        delegate?.rightJoystickDidMove(rotationValue)
     }
     
     func angle() -> CGFloat{

@@ -19,7 +19,12 @@
 		065A5F6F1CA2F9EA00BED250 /* STEMIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F6E1CA2F9EA00BED250 /* STEMIUITests.swift */; };
 		065A5F7F1CA30D2D00BED250 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */; };
 		065A5F821CA315D900BED250 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F811CA315D900BED250 /* JoystickViewController.swift */; };
-		06B4C1521CB6646100F68BBC /* STEMICommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B4C1511CB6646000F68BBC /* STEMICommunicator.swift */; };
+		06E668E01CE13EC500AD4A7B /* tiu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E668DE1CE13EC500AD4A7B /* tiu.wav */; };
+		06E668E61CE143F400AD4A7B /* puk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E668E51CE143F400AD4A7B /* puk.wav */; };
+		06E9980C1CE3B45800B0676F /* EnabledNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E9980B1CE3B45800B0676F /* EnabledNotification.swift */; };
+		06E9980E1CE3C28500B0676F /* HintNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E9980D1CE3C28500B0676F /* HintNotification.swift */; };
+		06F364E91CE0D43600BAB70B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F364E81CE0D43600BAB70B /* Menu.swift */; };
+		06F364EB1CE0D45D00BAB70B /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F364EA1CE0D45D00BAB70B /* Menu.xib */; };
 		2178A7A2B5547E87735F52BD /* Pods_STEMI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A04191FECD54589E6E1435F /* Pods_STEMI.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +65,14 @@
 		065A5F701CA2F9EA00BED250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		065A5F811CA315D900BED250 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
-		06B4C1511CB6646000F68BBC /* STEMICommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STEMICommunicator.swift; sourceTree = "<group>"; };
+		069F01E91CCC136D0034676D /* STEMIHexapod.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STEMIHexapod.framework; path = "../../../../Developer/Xcode/DerivedData/STEMI-gsqfddrtuvurvgazhvldvkvkblzg/Build/Products/Debug-iphonesimulator/STEMIHexapod.framework"; sourceTree = "<group>"; };
+		069F01EC1CCC1B570034676D /* STEMIHexapod.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STEMIHexapod.framework; path = "Pods/../build/Debug-iphoneos/STEMIHexapod.framework"; sourceTree = "<group>"; };
+		06E668DE1CE13EC500AD4A7B /* tiu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tiu.wav; sourceTree = "<group>"; };
+		06E668E51CE143F400AD4A7B /* puk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = puk.wav; sourceTree = "<group>"; };
+		06E9980B1CE3B45800B0676F /* EnabledNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnabledNotification.swift; sourceTree = "<group>"; };
+		06E9980D1CE3C28500B0676F /* HintNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintNotification.swift; sourceTree = "<group>"; };
+		06F364E81CE0D43600BAB70B /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		06F364EA1CE0D45D00BAB70B /* Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Menu.xib; sourceTree = "<group>"; };
 		1C4FC57DCA5D2B8086354181 /* Pods-STEMI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.debug.xcconfig"; sourceTree = "<group>"; };
 		5A04191FECD54589E6E1435F /* Pods_STEMI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B1E07142DF3F83DC126AE2 /* Pods-STEMI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,19 +129,12 @@
 		065A5F4D1CA2F9E900BED250 /* STEMI */ = {
 			isa = PBXGroup;
 			children = (
-				065A5F7D1CA3075000BED250 /* CustomFont */,
-				065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */,
 				065A5F521CA2F9E900BED250 /* Main.storyboard */,
-				065A5F811CA315D900BED250 /* JoystickViewController.swift */,
-				06B4C1511CB6646000F68BBC /* STEMICommunicator.swift */,
+				0675D1251CE34A54002687E8 /* Joystick */,
+				065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */,
 				065A5F551CA2F9E900BED250 /* Assets.xcassets */,
 				065A5F571CA2F9E900BED250 /* LaunchScreen.storyboard */,
-				065A5F5A1CA2F9E900BED250 /* Info.plist */,
-				060503051CA6217C00642FC0 /* LeftJoystickView.xib */,
-				060503071CA6229900642FC0 /* LeftJoystickView.swift */,
-				0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */,
-				060503121CA6D85100642FC0 /* RightJoystickView.swift */,
-				063627CF1CB3F26C0039E096 /* STEMI-Bridging-Header.h */,
+				0675D1241CE34A0E002687E8 /* Supporting Files */,
 			);
 			path = STEMI;
 			sourceTree = "<group>";
@@ -160,9 +165,55 @@
 			name = CustomFont;
 			sourceTree = "<group>";
 		};
+		0675D1241CE34A0E002687E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				06E668DC1CE13EB700AD4A7B /* Sounds */,
+				065A5F7D1CA3075000BED250 /* CustomFont */,
+				065A5F5A1CA2F9E900BED250 /* Info.plist */,
+				063627CF1CB3F26C0039E096 /* STEMI-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0675D1251CE34A54002687E8 /* Joystick */ = {
+			isa = PBXGroup;
+			children = (
+				065A5F811CA315D900BED250 /* JoystickViewController.swift */,
+				060503051CA6217C00642FC0 /* LeftJoystickView.xib */,
+				060503071CA6229900642FC0 /* LeftJoystickView.swift */,
+				0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */,
+				060503121CA6D85100642FC0 /* RightJoystickView.swift */,
+				06E9980A1CE3B0EC00B0676F /* Menu */,
+			);
+			name = Joystick;
+			sourceTree = "<group>";
+		};
+		06E668DC1CE13EB700AD4A7B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				06E668E51CE143F400AD4A7B /* puk.wav */,
+				06E668DE1CE13EC500AD4A7B /* tiu.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		06E9980A1CE3B0EC00B0676F /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				06F364EA1CE0D45D00BAB70B /* Menu.xib */,
+				06F364E81CE0D43600BAB70B /* Menu.swift */,
+				06E9980B1CE3B45800B0676F /* EnabledNotification.swift */,
+				06E9980D1CE3C28500B0676F /* HintNotification.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
 		608F0A54A32C39406D5EC5A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				069F01EC1CCC1B570034676D /* STEMIHexapod.framework */,
+				069F01E91CCC136D0034676D /* STEMIHexapod.framework */,
 				5A04191FECD54589E6E1435F /* Pods_STEMI.framework */,
 			);
 			name = Frameworks;
@@ -290,7 +341,10 @@
 				065A5F591CA2F9E900BED250 /* LaunchScreen.storyboard in Resources */,
 				065A5F7F1CA30D2D00BED250 /* ProximaNova-Regular.otf in Resources */,
 				0605030F1CA6D5CB00642FC0 /* RightJoystickView.xib in Resources */,
+				06E668E01CE13EC500AD4A7B /* tiu.wav in Resources */,
 				065A5F561CA2F9E900BED250 /* Assets.xcassets in Resources */,
+				06F364EB1CE0D45D00BAB70B /* Menu.xib in Resources */,
+				06E668E61CE143F400AD4A7B /* puk.wav in Resources */,
 				065A5F541CA2F9E900BED250 /* Main.storyboard in Resources */,
 				060503061CA6217C00642FC0 /* LeftJoystickView.xib in Resources */,
 			);
@@ -393,9 +447,11 @@
 			files = (
 				065A5F821CA315D900BED250 /* JoystickViewController.swift in Sources */,
 				060503081CA6229900642FC0 /* LeftJoystickView.swift in Sources */,
+				06E9980C1CE3B45800B0676F /* EnabledNotification.swift in Sources */,
+				06E9980E1CE3C28500B0676F /* HintNotification.swift in Sources */,
 				065A5F4F1CA2F9E900BED250 /* AppDelegate.swift in Sources */,
-				06B4C1521CB6646100F68BBC /* STEMICommunicator.swift in Sources */,
 				060503131CA6D85100642FC0 /* RightJoystickView.swift in Sources */,
+				06F364E91CE0D43600BAB70B /* Menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,6 +602,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = STEMI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -563,6 +623,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = STEMI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

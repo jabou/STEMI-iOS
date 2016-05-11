@@ -9,10 +9,20 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>STEMIHexapod.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4BBD28E13F896EE103B14E8DB7825F73</key>
+		<key>6D8B50C29ADCF3E4EA99C540C507AB71</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D4BCF10B1B2E40B137934D7D5D010810</key>
 		<dict>
 			<key>primary</key>
 			<true/>
