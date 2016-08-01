@@ -59,12 +59,6 @@ class Menu: UIView {
         super.init(coder: aDecoder)
     }
     
-    func longPress(guesture: UILongPressGestureRecognizer) {
-        if guesture.state == UIGestureRecognizerState.Began {
-            print("Long Press")
-        }
-    }
-    
     func openMenu(){
 
         menuButton.selected = true
@@ -72,6 +66,7 @@ class Menu: UIView {
         self.menuActiveIndicator.hidden = false
         self.backgroundImage.hidden = false
         delegate?.menuDidBecomeActive()
+        
         let path = NSBundle.mainBundle().pathForResource("puk", ofType: "wav")
         let url = NSURL(fileURLWithPath: path!)
         soundIn = AVPlayer(URL: url)
@@ -186,26 +181,34 @@ class Menu: UIView {
      
         let index = self.buttonCollection.indexOf(sender)!
         if index >= 0 && index <= 2 {
+            
+            if index == 0 {
+                if !sender.selected{
+                    delegate?.menuDidChangePlayMode("movement")
+                }
+                closeMenu()
+            }
+            else if index == 1{
+                if !sender.selected{
+                    delegate?.menuDidChangePlayMode("rotation")
+                }
+                closeMenu()
+            }
+            else if index == 2{
+                if !sender.selected{
+                    delegate?.menuDidChangePlayMode("orientation")
+                }
+                closeMenu()
+            }
+            
             for i in 0 ..< 3{
                 
                 let objectUIButton: UIButton = self.buttonCollection[i]
                 objectUIButton.selected = false
      
             }
+            
             sender.selected = true
-     
-            if index == 0 {
-                delegate?.menuDidChangePlayMode("movement")
-                closeMenu()
-            }
-            else if index == 1{
-                delegate?.menuDidChangePlayMode("rotation")
-                closeMenu()
-            }
-            else if index == 2{
-                delegate?.menuDidChangePlayMode("orientation")
-                closeMenu()
-            }
      
         }
         else {

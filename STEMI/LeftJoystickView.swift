@@ -7,27 +7,30 @@
 //
 
 import UIKit
-import GLKit
 import STEMIHexapod
 
 protocol LeftJoystickViewDelegate {
     func leftJoystickDidMove(powerValue: UInt8, angleValue: UInt8)
+    func rightJoystickDidMove(rotationValue: UInt8)
 }
 
 class LeftJoystickView: UIView {
     
+    //MARK: - constants
     let JOYSTICK_SIZE: CGFloat = 60.0
     let RAD: CGFloat = 57.2957795
     
+    //MARK: - UI connection
     @IBOutlet weak var view: UIView!
-    
     @IBOutlet weak var joystickMovingArea: UIView!
-    @IBOutlet weak var bottomMark: UIImageView!
+    @IBOutlet weak var bottomMark: UIImageView?
     @IBOutlet weak var rightMark: UIImageView!
-    @IBOutlet weak var topMark: UIImageView!
+    @IBOutlet weak var topMark: UIImageView?
     @IBOutlet weak var leftMark: UIImageView!
     
-    var delegate: LeftJoystickViewDelegate?
+    //MARK: - variables
+    var leftDelegate: LeftJoystickViewDelegate?
+    var maxBound: CGFloat = 0
     var joystickView: UIImageView!
     var leftAlpha: CGFloat = 0
     var rightAlpha: CGFloat = 0
@@ -39,20 +42,15 @@ class LeftJoystickView: UIView {
     var centerY: CGFloat!
     var lastAngle: CGFloat!
     var joystickRadius: CGFloat!
-    
     var powerValue: CGFloat = 0
     var angleValue: CGFloat = 0
-    
     var angleConvert: UInt8!
     
+    //MARK: - Class init
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        NSBundle.mainBundle().loadNibNamed("LeftJoystickView", owner: self, options: nil)
-        let width = frame.size.width
-        let height = frame.size.height
-        self.view.frame = CGRectMake(0, 0, width, height)
-        self.addSubview(self.view)
+        setup()
         
         joystickView = UIImageView(image: UIImage(named:"joystick"))
         centerX = self.view.frame.width/2
@@ -60,12 +58,22 @@ class LeftJoystickView: UIView {
         joystickView.frame = CGRectMake(centerX, centerY, JOYSTICK_SIZE, JOYSTICK_SIZE)
         joystickView.center = CGPointMake(centerX, centerY)
         self.view.addSubview(joystickView)
+    }
+    
+    func setup(){
+        NSBundle.mainBundle().loadNibNamed("LeftJoystickView", owner: self, options: nil)
+        let width = frame.size.width
+        let height = frame.size.height
+        self.view.frame = CGRectMake(0, 0, width, height)
+        self.addSubview(self.view)
         
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
@@ -75,13 +83,13 @@ class LeftJoystickView: UIView {
         xPosition = position.x
         yPosition = position.y
         
-        let maxBound = sqrt(pow(xPosition - centerX, 2) + pow(yPosition - centerY, 2))
+        maxBound = sqrt(pow(xPosition - centerX, 2) + pow(yPosition - centerY, 2))
         joystickRadius = self.joystickMovingArea.bounds.width/2
         
         UIView.animateWithDuration(0.20) {
-            if maxBound > self.joystickRadius {
-                self.xPosition = (self.xPosition - self.centerX) * self.joystickRadius / maxBound + self.centerX
-                self.yPosition = (self.yPosition - self.centerY) * self.joystickRadius / maxBound + self.centerY
+            if self.maxBound > self.joystickRadius {
+                self.xPosition = (self.xPosition - self.centerX) * self.joystickRadius / self.maxBound + self.centerX
+                self.yPosition = (self.yPosition - self.centerY) * self.joystickRadius / self.maxBound + self.centerY
                 
                 self.joystickView.center = CGPointMake(self.xPosition, self.yPosition)
             } else {
@@ -127,8 +135,8 @@ class LeftJoystickView: UIView {
         rightAlpha = 1 - distanceRight
         bottomAlpha = 1 - distanceBottom
         
-        topMark.alpha = topAlpha
-        bottomMark.alpha = bottomAlpha
+        topMark?.alpha = topAlpha
+        bottomMark?.alpha = bottomAlpha
         leftMark.alpha = leftAlpha
         rightMark.alpha = rightAlpha
         
@@ -141,22 +149,22 @@ class LeftJoystickView: UIView {
             angleConvert = UInt8(min(256 + angleValue/2,255))
         }
         
-        delegate?.leftJoystickDidMove(UInt8(powerValue), angleValue: angleConvert)
+        leftDelegate?.leftJoystickDidMove(UInt8(powerValue), angleValue: angleConvert)
         
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         let touch: UITouch = touches.first!
-        let position :CGPoint = touch.locationInView(self.view)
+        let position: CGPoint = touch.locationInView(self.view)
         
         xPosition = position.x
         yPosition = position.y
         
-        let maxBound = sqrt(pow(xPosition - centerX, 2) + pow(yPosition - centerY, 2))
+        maxBound = sqrt(pow(xPosition - centerX, 2) + pow(yPosition - centerY, 2))
         joystickRadius = self.joystickMovingArea.bounds.width/2
         
-        if maxBound > self.joystickRadius {
+        if self.maxBound > self.joystickRadius {
             self.xPosition = (self.xPosition - self.centerX) * self.joystickRadius / maxBound + self.centerX
             self.yPosition = (self.yPosition - self.centerY) * self.joystickRadius / maxBound + self.centerY
                 
@@ -203,14 +211,13 @@ class LeftJoystickView: UIView {
         rightAlpha = 1 - distanceRight
         bottomAlpha = 1 - distanceBottom
         
-        topMark.alpha = topAlpha
-        bottomMark.alpha = bottomAlpha
+        topMark?.alpha = topAlpha
+        bottomMark?.alpha = bottomAlpha
         leftMark.alpha = leftAlpha
         rightMark.alpha = rightAlpha
 
         powerValue = power()
         angleValue = angle()
-        
         
         if angleValue >= 0 {
             angleConvert = UInt8(angleValue/2)
@@ -218,7 +225,7 @@ class LeftJoystickView: UIView {
             angleConvert = UInt8(min(256 + angleValue/2,255))
         }
         
-        delegate?.leftJoystickDidMove(UInt8(powerValue), angleValue: angleConvert)
+        leftDelegate?.leftJoystickDidMove(UInt8(powerValue), angleValue: angleConvert)
         
     }
     
@@ -229,8 +236,8 @@ class LeftJoystickView: UIView {
             self.yPosition = self.centerY
             self.joystickView.center = CGPointMake(self.xPosition, self.yPosition)
             
-            self.topMark.alpha = 0
-            self.bottomMark.alpha = 0
+            self.topMark?.alpha = 0
+            self.bottomMark?.alpha = 0
             self.leftMark.alpha = 0
             self.rightMark.alpha = 0
         }
@@ -244,7 +251,7 @@ class LeftJoystickView: UIView {
             angleConvert = UInt8(min(256 + angleValue/2,255))
         }
         
-        delegate?.leftJoystickDidMove(UInt8(powerValue), angleValue: angleConvert)
+        leftDelegate?.leftJoystickDidMove(UInt8(powerValue), angleValue: angleConvert)
     }
     
     func angle() -> CGFloat{
