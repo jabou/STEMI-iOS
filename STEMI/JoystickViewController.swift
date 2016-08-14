@@ -12,7 +12,7 @@ import STEMIHexapod
 
 class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJoystickViewDelegate, MenuViewDelegate {
 
-    //MARK: - UI connection
+    //MARK: - IBOutlets
     @IBOutlet weak var backgroundView: UIImageView!
     @IBOutlet weak var standbyButton: UIButton!
     @IBOutlet weak var leftJoystickView: UIView!
@@ -20,22 +20,19 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     @IBOutlet weak var menuScreenView: UIButton!
     @IBOutlet weak var menuView: UIView!
 
-    //MARK: - variables
-    let selectedPictures = ["movement_sel", "rotation_sel", "orientation_sel", "height_sel", "settings_sel"]
-    let unselectedPictures = ["movement_non", "rotation_non", "orientation_non", "height_non", "settings_non"]
-    var accelerometer: CMMotionManager!
-    var accelerometerX: UInt8!
-    var accelerometerY: UInt8!
+    //MARK: - Private vatiables
+    private let selectedPictures = ["movement_sel", "rotation_sel", "orientation_sel", "height_sel", "settings_sel"]
+    private let unselectedPictures = ["movement_non", "rotation_non", "orientation_non", "height_non", "settings_non"]
+    private var accelerometer: CMMotionManager!
+    private var accelerometerX: UInt8!
+    private var accelerometerY: UInt8!
+    private var stemi: Hexapod!
+    private var menu: Menu!
+    private var leftJoystick: LeftJoystickView!
+    private var rightJoystick: RightJoystickView!
+    private var toastNotification: ToastNotification!
 
-    //MARK: - objects
-    var stemi: Hexapod!
-    var menu: Menu!
-    var leftJoystick: LeftJoystickView!
-    var rightJoystick: RightJoystickView!
-    var toastNotification: ToastNotification!
-
-
-    //MARK: - Methods
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,34 +52,29 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         menuDidBecomeInactive()
         self.menuView.addSubview(menu)
 
-        //Hide status bar and rotate
-        UIApplication.sharedApplication().statusBarHidden = true
-        //UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeRight.rawValue, forKey: "orientation")
-
-        //Setup standby button on screen, and put value on "selected" (active)
+        //Setup standby button on screen
         standbyButton.setImage(UIImage(named: "standby_off"), forState: .Normal)
         standbyButton.setImage(UIImage(named: "standby_on"), forState: .Selected)
         standbyButton.setImage(UIImage(named: "standby_on"), forState: .Highlighted)
         standbyButton.selected = true
 
         //Add notification observers for start and stop connection with stemi
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.stopConnection), name: "StopConnection", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.startConnection), name: "StartConnection", object: nil)
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.stopConnection), name: StopConnection, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.startConnection), name: StartConnection, object: nil)
+
     }
 
     override func viewDidAppear(animated: Bool) {
 
         //Setup stemi, and start connection
         stemi = Hexapod()
+        stemi.setIP(UserDefaults.IP())
         startConnection()
 
-        //Declare accelerometer and start takeing values from accelerometer (on main thread)
+        //Declare accelerometer and start takeing values from accelerometer
         accelerometer = CMMotionManager()
         accelerometer.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
             (data: CMAccelerometerData?, error: NSError?) in
-
-
 
             if let acceleration = data?.acceleration {
                 if acceleration.x < -0.4 {
@@ -96,7 +88,6 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
                         self.accelerometerX = UInt8(-1 * acceleration.x * 100)
                     }
                 }
-
                 if acceleration.y < -0.4 {
                     self.accelerometerY = 40
                 } else if acceleration.y > 0.4 {
@@ -109,14 +100,12 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
                     }
                 }
             }
-
             self.stemi.setAccX(self.accelerometerX)
             self.stemi.setAccY(self.accelerometerY)
-
         }
-
     }
 
+    // MARK: - Handle orientation
     override func shouldAutorotate() -> Bool {
         return false
     }
@@ -125,7 +114,7 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         return UIInterfaceOrientationMask.LandscapeRight
     }
 
-    //MARK: Menu methods
+    //MARK: - MenuViewDelegate
     func menuDidBecomeActive() {
         self.menuScreenView.hidden = false
         self.view.bringSubviewToFront(self.menuView)
@@ -158,7 +147,6 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     }
 
     func menuButtonLongPressOnIndex(index: Int, withState state: UIGestureRecognizerState) {
-
         if state == .Began {
             switch index {
             case 0:
@@ -202,17 +190,17 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         }
     }
 
-    //MARK: Joystick methods
+    //MARK: - LeftJoystickViewDelegate
     func leftJoystickDidMove(powerValue: UInt8, angleValue: UInt8) {
         stemi.setJoystickParams(powerValue, angle: angleValue)
     }
 
+    //MARK: - RightJoystickViewDelegate
     func rightJoystickDidMove(rotationValue: UInt8) {
         stemi.setJoystickParams(rotationValue)
     }
 
-
-    //MARK: Connection methods
+    //MARK: - Connection methods
     func startConnection() {
         stemi.connect()
     }
@@ -221,19 +209,11 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         stemi.disconnect()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-    //MARK: - Button press handler
-    //MARK: Menu mask (when menu is open, mask appears. On click, mask close menu and disapper)
+    //MARK: - Action Handlers
     @IBAction func menuScreenViewPressed(sender: AnyObject) {
         menu.closeMenu()
     }
 
-    //MARK: Standby button
     @IBAction func standbyButtonPressed(sender: AnyObject) {
         if standbyButton.selected {
             standbyButton.selected = false

@@ -11,12 +11,10 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
 
     // MARK: - IBOutlets
-
     @IBOutlet weak var switchButton: UISwitch!
     @IBOutlet weak var IPAddress: UILabel!
 
     // MARK: - View Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +30,6 @@ class SettingsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 0.9)
@@ -53,7 +50,6 @@ class SettingsTableViewController: UITableViewController {
     }
 
     // MARK: - Action Handlers
-
     @IBAction func switchButtonActionHandler(sender: AnyObject) {
         if switchButton.on {
             switchButton.thumbTintColor = UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0)

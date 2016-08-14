@@ -19,6 +19,7 @@ protocol MenuViewDelegate {
 
 class Menu: UIView {
 
+    //MARK: - IBOutlets
     @IBOutlet var buttonCollection: [UIButton]!
     @IBOutlet var longPressCollection: [UILongPressGestureRecognizer]!
     @IBOutlet weak var view: UIView!
@@ -26,13 +27,16 @@ class Menu: UIView {
     @IBOutlet weak var menuActiveIndicator: UIImageView!
     @IBOutlet weak var menuButton: UIButton!
 
+    //MARK: - Public variables
     var delegate: MenuViewDelegate?
-    var width: CGFloat!
-    var height: CGFloat!
 
-    var soundIn: AVPlayer!
-    var soundOut: AVPlayer!
+    //MARK: - Private variables
+    private var width: CGFloat!
+    private var height: CGFloat!
+    private var soundIn: AVAudioPlayer = AVAudioPlayer()
+    private var soundOut: AVAudioPlayer = AVAudioPlayer()
 
+    //MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
 
@@ -60,6 +64,7 @@ class Menu: UIView {
         super.init(coder: aDecoder)
     }
 
+    //MARK: - Public methods
     func openMenu() {
 
         menuButton.selected = true
@@ -70,8 +75,14 @@ class Menu: UIView {
 
         let path = NSBundle.mainBundle().pathForResource("puk", ofType: "wav")
         let url = NSURL(fileURLWithPath: path!)
-        soundIn = AVPlayer(URL: url)
-        soundIn.play()
+        do {
+            soundIn = try AVAudioPlayer(contentsOfURL: url)
+            soundIn.volume = 0.07
+            soundIn.prepareToPlay()
+            soundIn.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
 
         UIView.animateWithDuration(0.15, animations: {
             self.menuActiveIndicator.alpha = 1
@@ -112,7 +123,14 @@ class Menu: UIView {
         delegate?.menuDidBecomeInactive()
         let path = NSBundle.mainBundle().pathForResource("tiu", ofType: "wav")
         let url = NSURL(fileURLWithPath: path!)
-        soundOut = AVPlayer(URL: url)
+        do {
+            soundOut = try AVAudioPlayer(contentsOfURL: url)
+            soundOut.volume = 0.07
+            soundOut.prepareToPlay()
+            soundOut.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
 
         UIView.animateWithDuration(0.01, animations: {
             self.menuActiveIndicator.frame = CGRectMake(self.width/2 - self.menuActiveIndicator.bounds.size.width/2 - 4, self.height - 68, 75, 60)
@@ -163,26 +181,22 @@ class Menu: UIView {
         }
     }
 
-
+    //MARK: - Action handlers
     @IBAction func menuButtonTapped(sender: AnyObject) {
-
         if menuButton.selected {
             closeMenu()
         } else {
             openMenu()
         }
-
     }
 
     @IBAction func buttonLongPressed(sender: UILongPressGestureRecognizer) {
         delegate?.menuButtonLongPressOnIndex(self.longPressCollection.indexOf(sender)!, withState: sender.state)
     }
 
-     @IBAction func buttonPressed(sender: UIButton) {
-
+    @IBAction func buttonPressed(sender: UIButton) {
         let index = self.buttonCollection.indexOf(sender)!
         if index >= 0 && index <= 2 {
-
             if index == 0 {
                 if !sender.selected {
                     delegate?.menuDidChangePlayMode("movement")
@@ -201,14 +215,11 @@ class Menu: UIView {
             }
 
             for i in 0 ..< 3 {
-
                 let objectUIButton: UIButton = self.buttonCollection[i]
                 objectUIButton.selected = false
-
             }
 
             sender.selected = true
-
         } else {
             delegate?.menuButtonDidSelectOnIndex(index)
             closeMenu()

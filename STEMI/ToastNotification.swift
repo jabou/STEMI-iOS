@@ -9,34 +9,37 @@
 import UIKit
 
 class ToastNotification {
-    var mainView: UIView!
-    var backgroundView: UIImageView!
-    var line: UIImageView!
-    var header: UILabel!
-    var description: UITextView!
-    
-    init(onView: UIView, isHint: Bool, headline: String, text: String?, height: CGFloat?){
-        
+
+    //MARK: - Private methods
+    private var mainView: UIView!
+    private var backgroundView: UIImageView!
+    private var line: UIImageView!
+    private var header: UILabel!
+    private var description: UITextView!
+
+    //MARK: - init
+    init(onView: UIView, isHint: Bool, headline: String, text: String?, height: CGFloat?) {
+
         mainView = onView
-   
+
         if isHint {
             backgroundView = UIImageView(image: UIImage(named: "modeHintBckg"))
             backgroundView.frame = CGRectMake(mainView.frame.size.width/2 - 100, 20, 200, height!)
             backgroundView.alpha = 0
             mainView.addSubview(backgroundView)
-            
-            header = UILabel(frame: CGRectMake(0, 0, 200, 40))
+
+            header = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
             header.textAlignment = NSTextAlignment.Center
             header.textColor = UIColor(red: 49/255, green: 48/255, blue: 84/255, alpha: 1.0)
             header.font = UIFont(name: "ProximaNova-Regular", size: 14)
             header.text = headline.uppercaseString
             backgroundView.addSubview(header)
-            
+
             line = UIImageView(image: UIImage(named: "modeHintLine"))
             line.frame = CGRectMake(backgroundView.bounds.size.width/2 - 20, 35, 40, 1)
             backgroundView.addSubview(line)
-            
-            description = UITextView(frame: CGRectMake(10, 40, 180, 80))
+
+            description = UITextView(frame: CGRect(x: 10, y: 40, width: 180, height: 80))
             description.textAlignment = NSTextAlignment.Center
             description.textColor = UIColor(red: 49/255, green: 48/255, blue: 84/255, alpha: 1.0)
             description.backgroundColor = UIColor.clearColor()
@@ -48,8 +51,8 @@ class ToastNotification {
             backgroundView.frame = CGRectMake(mainView.frame.size.width/2 - 100, 20, 200, 40)
             backgroundView.alpha = 0
             mainView.addSubview(backgroundView)
-            
-            header = UILabel(frame: CGRectMake(0, 0, 200, 40))
+
+            header = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
             header.textAlignment = NSTextAlignment.Center
             header.textColor = UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0)
             header.font = UIFont(name: "ProximaNova-Regular", size: 14)
@@ -57,8 +60,9 @@ class ToastNotification {
             backgroundView.addSubview(header)
         }
     }
-    
-    func showNotificationWithAutohide(){
+
+    //MARK: - Public methods
+    func showNotificationWithAutohide() {
         UIView.animateWithDuration(0.2, animations: {
             self.backgroundView.alpha = 1
         }) { (Bool) in
@@ -69,21 +73,20 @@ class ToastNotification {
             })
         }
     }
-    
-    
-    func showNotification(){
+
+    func showNotification() {
         UIView.animateWithDuration(0.2) {
             self.backgroundView.alpha = 1
         }
     }
-    
-    func hideNotification(){
+
+    func hideNotification() {
         UIView.animateWithDuration(0.2, animations: {
             self.backgroundView.alpha = 0
         }) { (Bool) in
             self.backgroundView.removeFromSuperview()
         }
     }
-    
-    
+
+
 }

@@ -17,14 +17,12 @@ class IPTextField: UITextField {
     var ipDelegate: IPTextFieldDelegate?
 
     // MARK: - UITextField methods
-
     override func deleteBackward() {
         super.deleteBackward()
         ipDelegate?.deleteButtonPressed()
     }
 
     // MARK: - Public methods
-
     func textInRange() -> Bool {
         var isInRange = false
         if let text = self.text {

@@ -7,4 +7,9 @@
 //  Copyright © 2016 Jasmin Abou Aldan. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+let StopConnection = "StopConnection"
+let StartConnection = "StartConnection"
+let JoystickSize: CGFloat = 60.0
+let Rad: CGFloat = 57.2957795

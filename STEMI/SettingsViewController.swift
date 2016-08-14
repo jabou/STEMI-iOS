@@ -11,7 +11,6 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     // MARK: - View Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,13 +18,11 @@ class SettingsViewController: UIViewController {
     }
 
     // MARK: - Orientation Handling
-
     override func shouldAutorotate() -> Bool {
         return false
     }
 
     // MARK: - Action Handlers
-
     @IBAction func backButtonActionHandler(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }

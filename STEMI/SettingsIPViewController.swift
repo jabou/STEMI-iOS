@@ -11,12 +11,10 @@ import UIKit
 class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFieldDelegate {
 
     // MARK: - IBOutlets
-
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet var ipTextFields: [IPTextField]!
 
     // MARK: - View lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,13 +38,11 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
     }
 
     // MARK: - Orientation Handling
-
     override func shouldAutorotate() -> Bool {
         return false
     }
 
     // MARK: - UITextFieldDelegate
-
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         let nextTag: NSInteger = textField.tag + 1
         if let nextResponder: UIResponder! = textField.superview?.viewWithTag(nextTag) {
@@ -97,7 +93,6 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
     }
 
     // MARK: IPTextFieldDelegate
-
     func deleteButtonPressed() {
         if ipTextFields[1].text?.characters.count == 0 {
             ipTextFields[0].becomeFirstResponder()
@@ -109,7 +104,6 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
     }
 
     // MARK: - Private methods
-
     private func resignFirstResponders() {
         for ipTextField in ipTextFields {
             ipTextField.resignFirstResponder()
@@ -117,7 +111,6 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
     }
 
     // MARK: Action Handlers
-
     @IBAction func cancelButtonActionHandler(sender: AnyObject) {
         resignFirstResponders()
         self.dismissViewControllerAnimated(true, completion: nil)

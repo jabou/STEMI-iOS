@@ -22,6 +22,8 @@
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -658,9 +660,31 @@
                                 <color key="textColor" red="0.0" green="0.62745098040000002" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default STEMI IP address is:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KK8-ol-sWo">
+                                <rect key="frame" x="57" y="225" width="208" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="208" id="TsX-pW-ytJ"/>
+                                    <constraint firstAttribute="height" constant="21" id="d34-OE-U8A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                                <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="0.60013469829999999" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="192.168.4.1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgQ-lT-kLS">
+                                <rect key="frame" x="123" y="247" width="76" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="EaO-e8-Ur2"/>
+                                    <constraint firstAttribute="width" constant="76" id="SWe-uQ-3db"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                                <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="0.60013469829999999" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="RgQ-lT-kLS" firstAttribute="top" secondItem="KK8-ol-sWo" secondAttribute="bottom" constant="1" id="2em-Fz-vwi"/>
+                            <constraint firstItem="KK8-ol-sWo" firstAttribute="top" secondItem="dEJ-zy-KgT" secondAttribute="bottom" constant="17" id="3Jt-IA-DTS"/>
                             <constraint firstItem="d57-d5-qu3" firstAttribute="top" secondItem="dEJ-zy-KgT" secondAttribute="top" constant="3" id="4ht-gR-znU"/>
                             <constraint firstItem="d57-d5-qu3" firstAttribute="leading" secondItem="rmU-QZ-mez" secondAttribute="trailing" constant="10" id="6Qe-BQ-NRj"/>
                             <constraint firstItem="dEJ-zy-KgT" firstAttribute="top" secondItem="xxq-k7-7Oq" secondAttribute="bottom" constant="43" id="9UY-DQ-MGz"/>
@@ -674,6 +698,7 @@
                             <constraint firstItem="VwQ-et-ayz" firstAttribute="leading" secondItem="iAv-LY-fXb" secondAttribute="leading" id="XuU-77-yI9"/>
                             <constraint firstAttribute="trailing" secondItem="Vfk-ET-Xcg" secondAttribute="trailing" id="aWu-RY-wec"/>
                             <constraint firstItem="xxq-k7-7Oq" firstAttribute="top" secondItem="Vfk-ET-Xcg" secondAttribute="bottom" constant="72" id="cKY-V4-fJJ"/>
+                            <constraint firstItem="RgQ-lT-kLS" firstAttribute="centerX" secondItem="iAv-LY-fXb" secondAttribute="centerX" constant="1" id="dUd-Sg-G37"/>
                             <constraint firstItem="Bx4-hh-QIX" firstAttribute="leading" secondItem="d57-d5-qu3" secondAttribute="trailing" constant="7" id="e2R-UD-ClE"/>
                             <constraint firstItem="rmU-QZ-mez" firstAttribute="leading" secondItem="Ugd-74-Gqn" secondAttribute="trailing" constant="9" id="gBf-Or-XRg"/>
                             <constraint firstItem="Vfk-ET-Xcg" firstAttribute="leading" secondItem="iAv-LY-fXb" secondAttribute="leading" id="iWe-qm-rIC"/>
@@ -683,6 +708,7 @@
                             <constraint firstAttribute="trailing" secondItem="0gb-hi-a1W" secondAttribute="trailing" id="tqA-Eg-vAL"/>
                             <constraint firstItem="Vfk-ET-Xcg" firstAttribute="top" secondItem="41T-46-FIt" secondAttribute="bottom" id="v50-hb-k0m"/>
                             <constraint firstItem="0gb-hi-a1W" firstAttribute="leading" secondItem="iAv-LY-fXb" secondAttribute="leading" id="wvC-cJ-SBd"/>
+                            <constraint firstItem="KK8-ol-sWo" firstAttribute="centerX" secondItem="iAv-LY-fXb" secondAttribute="centerX" constant="1" id="yP6-6x-9tm"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
