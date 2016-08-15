@@ -1,10 +1,12 @@
 PODS:
+  - Alamofire (3.4.1)
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
   - STEMIHexapod (0.2.1)
 
 DEPENDENCIES:
+  - Alamofire
   - Crashlytics
   - Fabric
   - STEMIHexapod (from `/Users/Jaco/Library/Mobile Documents/com~apple~CloudDocs/Programming/Libraries/STEMIHexapod/`)
@@ -14,8 +16,11 @@ EXTERNAL SOURCES:
     :path: /Users/Jaco/Library/Mobile Documents/com~apple~CloudDocs/Programming/Libraries/STEMIHexapod/
 
 SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   STEMIHexapod: 86709c4a054755ea82f3f8ae4fac9314cc91e221
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: b7a47ee23bad7539ca5b60be2ba55e5bec3023a8
+
+COCOAPODS: 1.0.1
