@@ -90,6 +90,10 @@
                                                     <constraint firstAttribute="width" constant="240" id="ybs-9Y-aL7"/>
                                                 </constraints>
                                             </view>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="bw7-m3-1ND">
+                                                <rect key="frame" x="151" y="87" width="20" height="20"/>
+                                                <color key="color" red="0.0" green="0.62745098040000002" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -120,13 +124,6 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="xHr-yY-li0"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYO-8V-fcb">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="connectionButton:" destination="lf4-ud-WLH" eventType="touchUpInside" id="wwF-Ox-GJb"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="aKL-qh-2vA">
                                 <rect key="frame" x="53" y="76" width="214" height="133"/>
                                 <constraints>
@@ -134,6 +131,16 @@
                                     <constraint firstAttribute="width" constant="214" id="YUQ-1b-NaR"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYO-8V-fcb">
+                                <rect key="frame" x="47" y="68" width="226" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="8nb-q5-Vyh"/>
+                                    <constraint firstAttribute="width" constant="226" id="nUb-2g-D3t"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="connectionButton:" destination="lf4-ud-WLH" eventType="touchUpInside" id="wwF-Ox-GJb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -143,7 +150,9 @@
                             <constraint firstItem="abv-ng-OSe" firstAttribute="leading" secondItem="JDs-Sj-EfT" secondAttribute="leading" id="IVE-gE-w4a"/>
                             <constraint firstItem="abv-ng-OSe" firstAttribute="top" secondItem="aKL-qh-2vA" secondAttribute="bottom" constant="50" id="RjS-JC-y8D"/>
                             <constraint firstAttribute="trailing" secondItem="26n-yE-Far" secondAttribute="trailing" id="V6n-Nk-IMg"/>
+                            <constraint firstItem="yYO-8V-fcb" firstAttribute="centerX" secondItem="JDs-Sj-EfT" secondAttribute="centerX" id="Wmb-Cd-whh"/>
                             <constraint firstItem="abv-ng-OSe" firstAttribute="top" secondItem="0dQ-3k-dJs" secondAttribute="bottom" priority="750" constant="259" id="XPP-Bd-m2N"/>
+                            <constraint firstItem="yYO-8V-fcb" firstAttribute="top" secondItem="0dQ-3k-dJs" secondAttribute="bottom" constant="68" id="mbG-xe-kq8"/>
                             <constraint firstAttribute="trailing" secondItem="abv-ng-OSe" secondAttribute="trailing" id="qrd-I8-hSm"/>
                             <constraint firstItem="tlA-9A-ngh" firstAttribute="top" secondItem="abv-ng-OSe" secondAttribute="bottom" id="wAw-jf-nox"/>
                             <constraint firstItem="tlA-9A-ngh" firstAttribute="top" secondItem="26n-yE-Far" secondAttribute="bottom" id="ysN-GK-vuO"/>
@@ -155,8 +164,10 @@
                     <connections>
                         <outlet property="button1" destination="Bk8-8k-cdr" id="qhs-5B-FxF"/>
                         <outlet property="button2" destination="x44-C0-yFb" id="11V-VN-ENk"/>
+                        <outlet property="loadingIndicator" destination="bw7-m3-1ND" id="YdW-oH-B4l"/>
                         <outlet property="mainLabel" destination="qGB-JG-8EC" id="Jbo-3s-uQW"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="connectionSuccess" modalTransitionStyle="crossDissolve" id="kQp-pJ-RQF"/>
+                        <segue destination="Qgn-xH-vix" kind="show" identifier="enterIP" id="kS2-h9-Jah"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KlW-Jb-AbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -722,7 +733,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipr-3T-xu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69" y="907"/>
+            <point key="canvasLocation" x="89" y="297"/>
         </scene>
     </scenes>
     <resources>
@@ -735,4 +746,7 @@
         <image name="shadow" width="320" height="43"/>
         <image name="verticalBackground" width="414" height="736"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kS2-h9-Jah"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -31,7 +31,7 @@
 		06F364E91CE0D43600BAB70B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F364E81CE0D43600BAB70B /* Menu.swift */; };
 		06F364EB1CE0D45D00BAB70B /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F364EA1CE0D45D00BAB70B /* Menu.xib */; };
 		06F790F91CE5EFFF00CCC2E9 /* RightJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F790F81CE5EFFF00CCC2E9 /* RightJoystickView.swift */; };
-		2178A7A2B5547E87735F52BD /* Pods_STEMI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A04191FECD54589E6E1435F /* Pods_STEMI.framework */; };
+		E9077B90ED152FCBEB5202C6 /* Pods_STEMI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C73E9E50AA48F52B976893B /* Pods_STEMI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,9 +85,9 @@
 		06F364E81CE0D43600BAB70B /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		06F364EA1CE0D45D00BAB70B /* Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Menu.xib; sourceTree = "<group>"; };
 		06F790F81CE5EFFF00CCC2E9 /* RightJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightJoystickView.swift; sourceTree = "<group>"; };
-		1C4FC57DCA5D2B8086354181 /* Pods-STEMI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.debug.xcconfig"; sourceTree = "<group>"; };
-		5A04191FECD54589E6E1435F /* Pods_STEMI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4B1E07142DF3F83DC126AE2 /* Pods-STEMI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.release.xcconfig"; sourceTree = "<group>"; };
+		3B9A0E0426C50B878F18B941 /* Pods-STEMI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.debug.xcconfig"; sourceTree = "<group>"; };
+		4C73E9E50AA48F52B976893B /* Pods_STEMI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61A0678F21A8CADD8B523230 /* Pods-STEMI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2178A7A2B5547E87735F52BD /* Pods_STEMI.framework in Frameworks */,
+				E9077B90ED152FCBEB5202C6 /* Pods_STEMI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,8 +123,8 @@
 				065A5F621CA2F9E900BED250 /* STEMITests */,
 				065A5F6D1CA2F9E900BED250 /* STEMIUITests */,
 				065A5F4C1CA2F9E900BED250 /* Products */,
-				92F699F60A52A6CEE3A3DC63 /* Pods */,
 				608F0A54A32C39406D5EC5A0 /* Frameworks */,
+				62381AC540220B3059C323C9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -256,16 +256,16 @@
 			children = (
 				069F01EC1CCC1B570034676D /* STEMIHexapod.framework */,
 				069F01E91CCC136D0034676D /* STEMIHexapod.framework */,
-				5A04191FECD54589E6E1435F /* Pods_STEMI.framework */,
+				4C73E9E50AA48F52B976893B /* Pods_STEMI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		92F699F60A52A6CEE3A3DC63 /* Pods */ = {
+		62381AC540220B3059C323C9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1C4FC57DCA5D2B8086354181 /* Pods-STEMI.debug.xcconfig */,
-				F4B1E07142DF3F83DC126AE2 /* Pods-STEMI.release.xcconfig */,
+				3B9A0E0426C50B878F18B941 /* Pods-STEMI.debug.xcconfig */,
+				61A0678F21A8CADD8B523230 /* Pods-STEMI.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -277,14 +277,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 065A5F731CA2F9EA00BED250 /* Build configuration list for PBXNativeTarget "STEMI" */;
 			buildPhases = (
-				4F363902C3F3E66EC0FFB414 /* Check Pods Manifest.lock */,
+				2D90454FBFEB601A2FAD0D73 /* [CP] Check Pods Manifest.lock */,
 				065A5F471CA2F9E900BED250 /* Sources */,
 				065A5F481CA2F9E900BED250 /* Frameworks */,
 				065A5F491CA2F9E900BED250 /* Resources */,
-				3D614430F599D4E8CBC3A4F8 /* Embed Pods Frameworks */,
-				E5C79DC6DF9B357185F33ABA /* Copy Pods Resources */,
 				065A5F7C1CA301B900BED250 /* ShellScript */,
 				06B4C1531CB6E73700F68BBC /* ShellScript */,
+				262701F1851F81B5FFE35B92 /* [CP] Embed Pods Frameworks */,
+				BDB766FEA2F7AFE74A579D45 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -435,14 +435,14 @@
 			shellPath = /bin/sh;
 			shellScript = "TAGS=\"WARNING:|FIXME:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
 		};
-		3D614430F599D4E8CBC3A4F8 /* Embed Pods Frameworks */ = {
+		262701F1851F81B5FFE35B92 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,14 +450,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STEMI/Pods-STEMI-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4F363902C3F3E66EC0FFB414 /* Check Pods Manifest.lock */ = {
+		2D90454FBFEB601A2FAD0D73 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,14 +465,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E5C79DC6DF9B357185F33ABA /* Copy Pods Resources */ = {
+		BDB766FEA2F7AFE74A579D45 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,7 +645,7 @@
 		};
 		065A5F741CA2F9EA00BED250 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C4FC57DCA5D2B8086354181 /* Pods-STEMI.debug.xcconfig */;
+			baseConfigurationReference = 3B9A0E0426C50B878F18B941 /* Pods-STEMI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -666,7 +666,7 @@
 		};
 		065A5F751CA2F9EA00BED250 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4B1E07142DF3F83DC126AE2 /* Pods-STEMI.release.xcconfig */;
+			baseConfigurationReference = 61A0678F21A8CADD8B523230 /* Pods-STEMI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
