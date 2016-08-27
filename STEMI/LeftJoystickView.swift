@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import STEMIHexapod
 
 protocol LeftJoystickViewDelegate {
     func leftJoystickDidMove(powerValue: UInt8, angleValue: UInt8)
@@ -52,7 +51,7 @@ class LeftJoystickView: UIView {
         joystickView = UIImageView(image: UIImage(named:"joystick"))
         centerX = self.view.frame.width/2
         centerY = self.view.frame.height/2
-        joystickView.frame = CGRectMake(centerX, centerY, JoystickSize, JoystickSize)
+        joystickView.frame = CGRectMake(centerX, centerY, Constants.JoystickSize, Constants.JoystickSize)
         joystickView.center = CGPointMake(centerX, centerY)
         self.view.addSubview(joystickView)
     }
@@ -245,10 +244,10 @@ class LeftJoystickView: UIView {
     func angle() -> CGFloat {
         if xPosition > centerX {
             if yPosition < centerY {
-                lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * Rad + 90)
+                lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * Constants.Rad + 90)
                 return lastAngle
             } else if yPosition > centerY {
-                lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * Rad) + 90
+                lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * Constants.Rad) + 90
                 return lastAngle
             } else {
                 lastAngle = 90
@@ -256,10 +255,10 @@ class LeftJoystickView: UIView {
             }
         } else if xPosition < centerX {
             if yPosition < centerY {
-                lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * Rad - 90)
+                lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * Constants.Rad - 90)
                 return lastAngle
             } else if yPosition > centerY {
-                lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * Rad) - 90
+                lastAngle = (atan((yPosition - centerY) / (xPosition - centerX)) * Constants.Rad) - 90
                 return lastAngle
             } else {
                 lastAngle = -90

@@ -28,26 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "065A5F5E1CA2F9E900BED250"
-               BuildableName = "STEMITests.xctest"
-               BlueprintName = "STEMITests"
-               ReferencedContainer = "container:STEMI.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "065A5F691CA2F9E900BED250"
-               BuildableName = "STEMIUITests.xctest"
-               BlueprintName = "STEMIUITests"
-               ReferencedContainer = "container:STEMI.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

@@ -11,22 +11,25 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
 
     // MARK: - IBOutlets
-    @IBOutlet weak var switchButton: UISwitch!
     @IBOutlet weak var IPAddress: UILabel!
+    @IBOutlet weak var ipCell: UITableViewCell!
+    @IBOutlet weak var stemiName: UILabel!
+    @IBOutlet weak var hardwareVersion: UILabel!
+
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.clearsSelectionOnViewWillAppear = true
-        switchButton.tintColor = UIColor(red: 32/255, green: 33/255, blue: 59/255, alpha: 1.0)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
         IPAddress.text = UserDefaults.IP()
-        switchButton.on = UserDefaults.themeDark()
+        stemiName.text = UserDefaults.stemiName()
+        hardwareVersion.text = UserDefaults.hardwareVersion()
     }
 
     // MARK: - Table view data source
@@ -49,14 +52,10 @@ class SettingsTableViewController: UITableViewController {
         }
     }
 
-    // MARK: - Action Handlers
-    @IBAction func switchButtonActionHandler(sender: AnyObject) {
-        if switchButton.on {
-            switchButton.thumbTintColor = UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0)
-            UserDefaults.setThemeDark(true)
-        } else {
-            switchButton.thumbTintColor = UIColor(red: 40/255, green: 55/255, blue: 92/255, alpha: 1.0)
-            UserDefaults.setThemeDark(false)
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let clickedCell = tableView.cellForRowAtIndexPath(indexPath)
+        if clickedCell == ipCell {
+            self.presentViewController(ViewControllers.ChangeIPViewController, animated: true, completion: nil)
         }
     }
 

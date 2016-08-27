@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import STEMIHexapod
 import Alamofire
 
 class ConnectionScreenViewController: UIViewController {
@@ -44,15 +43,16 @@ class ConnectionScreenViewController: UIViewController {
 
     //MARK: - Connection view state handlers
     func checkConnection() {
-        //Clear cache
+        //Clear cache and reset user defaults
         NSURLCache.sharedURLCache().removeAllCachedResponses()
+        UserDefaults.setStemiName("")
+        UserDefaults.setHardwareVersion("")
 
         // Create and make API call to stemi. If file is present and vaild, start using hexapod.
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.timeoutIntervalForRequest = 3
         alamofireManager = Alamofire.Manager(configuration: configuration)
         alamofireManager.request(.GET, "http://\(UserDefaults.IP())/stemiData.json").responseJSON { response in
-            print(response)
             guard response.result.isSuccess else {
                 NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
                 return
@@ -63,12 +63,24 @@ class ConnectionScreenViewController: UIViewController {
             }
             if let valide = responseJSON["isValid"] as? Bool {
                 if valide {
+                    if let name = responseJSON["stemiID"] as? String, version = responseJSON["version"] as? String {
+                        UserDefaults.setStemiName(name)
+                        UserDefaults.setHardwareVersion(version)
+                    }
                     NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
                 }
             }
         }
+    }
 
-
+    func resetViewState() {
+        loadingIndicator.hidden = true
+        button2.hidden = true
+        mainLabel.text = "WELCOME"
+        button1.setTitle("CONNECT", forState: .Normal)
+        labelAnimation?.invalidate()
+        labelAnimation = nil
+        button1.userInteractionEnabled = true
     }
 
     func setupTryAgain() {
@@ -90,7 +102,11 @@ class ConnectionScreenViewController: UIViewController {
     }
 
     func openJoystick() {
-        performSegueWithIdentifier("connectionSuccess", sender: nil)
+        ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
+        self.presentViewController(ViewControllers.MainJoystickViewController, animated: true, completion: {
+            complete in
+            self.resetViewState()
+        })
     }
 
     //MARK: - Label animations
@@ -148,13 +164,7 @@ class ConnectionScreenViewController: UIViewController {
     }
 
     @IBAction func button2Action(sender: AnyObject) {
-        performSegueWithIdentifier("enterIP", sender: nil)
+        self.presentViewController(ViewControllers.ChangeIPViewController, animated: true, completion: nil)
     }
-
-
-    // TODO: REMOVE THIS ON FINAL VERSION. THIS IS TMP HACK TO ENTER (DISMISS VIEW) INTO APP WITHOUT CONNECTION TO STEMI
-    @IBAction func connectionButton(sender: AnyObject) {
-        performSegueWithIdentifier("connectionSuccess", sender: nil)
-    }
-
+    
 }

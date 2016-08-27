@@ -11,12 +11,17 @@ import Foundation
 private let FirstRunKey = "firstRun"
 private let StemiIPKey = "stemiIP"
 private let ThemeKey = "theme"
+private let NoStemiKey = "noStemi"
+private let StemiIDKey = "stemiId"
+private let HardwareVersionKey = "hardwareVersion"
 
 struct UserDefaults {
 
     // MARK: FirstRun UserDefaults
     static func setFirstRunTrue() {
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: FirstRunKey)
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setBool(true, forKey: FirstRunKey)
+        defaults.synchronize()
     }
 
     static func firstRun() -> Bool {
@@ -25,7 +30,9 @@ struct UserDefaults {
 
     // MARK: IP UserDefaults
     static func setIP(address: String) {
-        NSUserDefaults.standardUserDefaults().setObject(address, forKey: StemiIPKey)
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(address, forKey: StemiIPKey)
+        defaults.synchronize()
     }
 
     static func IP() -> String {
@@ -36,12 +43,34 @@ struct UserDefaults {
         }
     }
 
-    // MARK: Theme UserDefaults
-    static func setThemeDark(enabled: Bool) {
-        NSUserDefaults.standardUserDefaults().setBool(enabled, forKey: ThemeKey)
+    //MARK: StemiName UserDefaults
+    static func setStemiName(name: String) {
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(name, forKey: StemiIDKey)
+        defaults.synchronize()
     }
 
-    static func themeDark() -> Bool {
-        return NSUserDefaults.standardUserDefaults().boolForKey(ThemeKey)
+    static func stemiName() -> String {
+        if let name = NSUserDefaults.standardUserDefaults().objectForKey(StemiIDKey) as? String {
+            return name
+        } else {
+            return ""
+        }
     }
+
+    //MARK: HardwareVersion UserDefaults
+    static func setHardwareVersion(version: String) {
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(version, forKey: HardwareVersionKey)
+        defaults.synchronize()
+    }
+
+    static func hardwareVersion() ->  String {
+        if let version = NSUserDefaults.standardUserDefaults().objectForKey(HardwareVersionKey) as? String {
+            return version
+        } else {
+            return ""
+        }
+    }
+
 }

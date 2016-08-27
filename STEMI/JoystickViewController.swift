@@ -4,13 +4,13 @@
 //
 //  Created by Jasmin Abou Aldan on 23/03/16.
 //  Copyright © 2016 Jasmin Abou Aldan. All rights reserved.
-//
+//sa
 
 import UIKit
 import CoreMotion
-import STEMIHexapod
+import Alamofire
 
-class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJoystickViewDelegate, MenuViewDelegate {
+class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJoystickViewDelegate, MenuViewDelegate, HexapodDelegate {
 
     //MARK: - IBOutlets
     @IBOutlet weak var backgroundView: UIImageView!
@@ -59,8 +59,8 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         standbyButton.selected = true
 
         //Add notification observers for start and stop connection with stemi
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.stopConnection), name: StopConnection, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.startConnection), name: StartConnection, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.stopConnection), name: Constants.Connection.StopConnection, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.startConnection), name: Constants.Connection.StartConnection, object: nil)
 
     }
 
@@ -68,6 +68,7 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
 
         //Setup stemi, and start connection
         stemi = Hexapod()
+        stemi.delegate = self
         stemi.setIP(UserDefaults.IP())
         startConnection()
 
@@ -103,6 +104,11 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
             self.stemi.setAccX(self.accelerometerX)
             self.stemi.setAccY(self.accelerometerY)
         }
+    }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        stopConnection()
     }
 
     // MARK: - Handle orientation
@@ -184,7 +190,7 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         case 5:
             print("Index: \(index)")
         case 6:
-            self.performSegueWithIdentifier("settings", sender: self)
+            self.presentViewController(ViewControllers.AppSettingsViewController, animated: true, completion: nil)
         default:
             break
         }
@@ -207,6 +213,23 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
 
     func stopConnection() {
         stemi.disconnect()
+    }
+
+    func connectionLost() {
+        let warningMessage = UIAlertController(title: "Connection lost", message: "Please check connection with your STEMI and try again", preferredStyle: .Alert)
+        let okButton = UIAlertAction(title: "OK", style: .Cancel, handler: {action in
+            ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+            self.dismissViewControllerAnimated(true, completion: nil)
+        })
+        warningMessage.addAction(okButton)
+        self.presentViewController(warningMessage, animated: true, completion: nil)
+    }
+
+    //MARK: - HexapodDelegate
+    func connectionStatus(isConnected: Bool) {
+        if isConnected == false {
+            connectionLost()
+        }
     }
 
     //MARK: - Action Handlers
