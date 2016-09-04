@@ -43,34 +43,44 @@ class ConnectionScreenViewController: UIViewController {
 
     //MARK: - Connection view state handlers
     func checkConnection() {
+
         //Clear cache and reset user defaults
         NSURLCache.sharedURLCache().removeAllCachedResponses()
         UserDefaults.setStemiName("")
         UserDefaults.setHardwareVersion("")
 
-        // Create and make API call to stemi. If file is present and vaild, start using hexapod.
-        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
-        configuration.timeoutIntervalForRequest = 3
-        alamofireManager = Alamofire.Manager(configuration: configuration)
-        alamofireManager.request(.GET, "http://\(UserDefaults.IP())/stemiData.json").responseJSON { response in
-            guard response.result.isSuccess else {
-                NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
-                return
-            }
-            guard let responseJSON = response.result.value as? [String:AnyObject] else {
-                NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
-                return
-            }
-            if let valide = responseJSON["isValid"] as? Bool {
-                if valide {
-                    if let name = responseJSON["stemiID"] as? String, version = responseJSON["version"] as? String {
-                        UserDefaults.setStemiName(name)
-                        UserDefaults.setHardwareVersion(version)
+        #if DEVELOPMENT
+
+            UserDefaults.setStemiName("STEMI-no_hexapod")
+            UserDefaults.setHardwareVersion("0.0")
+            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
+            
+        #else
+            // Create and make API call to stemi. If file is present and vaild, start using hexapod.
+            let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+            configuration.timeoutIntervalForRequest = 3
+            alamofireManager = Alamofire.Manager(configuration: configuration)
+            alamofireManager.request(.GET, "http://\(UserDefaults.IP())/stemiData.json").responseJSON { response in
+                guard response.result.isSuccess else {
+                    NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
+                    return
+                }
+                guard let responseJSON = response.result.value as? [String:AnyObject] else {
+                    NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
+                    return
+                }
+                if let valide = responseJSON["isValid"] as? Bool {
+                    if valide {
+                        if let name = responseJSON["stemiID"] as? String, version = responseJSON["version"] as? String {
+                            UserDefaults.setStemiName(name)
+                            UserDefaults.setHardwareVersion(version)
+                        }
+                        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
                     }
-                    NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
                 }
             }
-        }
+        #endif
+
     }
 
     func resetViewState() {

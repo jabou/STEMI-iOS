@@ -184,11 +184,11 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     func menuButtonDidSelectOnIndex(index: Int) {
         switch index {
         case 3:
-            print("Index: \(index)")
+            self.presentViewController(ViewControllers.HeightViewController, animated: true, completion: nil)
         case 4:
             print("Index: \(index)")
         case 5:
-            print("Index: \(index)")
+            self.presentViewController(ViewControllers.WalkingStyleViewController, animated: true, completion: nil)
         case 6:
             self.presentViewController(ViewControllers.AppSettingsViewController, animated: true, completion: nil)
         default:
@@ -227,9 +227,13 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
 
     //MARK: - HexapodDelegate
     func connectionStatus(isConnected: Bool) {
-        if isConnected == false {
-            connectionLost()
-        }
+        #if DEVELOPMENT
+            print("no_hexapod mode. Connetion: \(isConnected)")
+        #else
+            if isConnected == false {
+                connectionLost()
+            }
+        #endif
     }
 
     //MARK: - Action Handlers
