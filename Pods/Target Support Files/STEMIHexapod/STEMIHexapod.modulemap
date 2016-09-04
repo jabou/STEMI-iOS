@@ -1,6 +1,0 @@
-framework module STEMIHexapod {
-  umbrella header "STEMIHexapod-umbrella.h"
-
-  export *
-  module * { export * }
-}
