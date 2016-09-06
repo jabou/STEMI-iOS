@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol IPTextFieldDelegate {
+protocol IPTextFieldDelegate: class {
     func deleteButtonPressed()
 }
 
 class IPTextField: UITextField {
 
-    var ipDelegate: IPTextFieldDelegate?
+    weak var ipDelegate: IPTextFieldDelegate?
 
     // MARK: - UITextField methods
     override func deleteBackward() {

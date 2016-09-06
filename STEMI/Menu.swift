@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-protocol MenuViewDelegate {
+protocol MenuViewDelegate: class {
     func menuDidBecomeActive()
     func menuDidBecomeInactive()
     func menuDidChangePlayMode(mode: String)
@@ -28,7 +28,7 @@ class Menu: UIView {
     @IBOutlet weak var menuButton: UIButton!
 
     //MARK: - Public variables
-    var delegate: MenuViewDelegate?
+    weak var delegate: MenuViewDelegate?
 
     //MARK: - Private variables
     private var width: CGFloat!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LeftJoystickViewDelegate {
+protocol LeftJoystickViewDelegate: class {
     func leftJoystickDidMove(powerValue: UInt8, angleValue: UInt8)
     func rightJoystickDidMove(rotationValue: UInt8)
 }
@@ -24,7 +24,7 @@ class LeftJoystickView: UIView {
     @IBOutlet weak var leftMark: UIImageView!
 
     //MARK: - Public variables
-    var leftDelegate: LeftJoystickViewDelegate?
+    weak var leftDelegate: LeftJoystickViewDelegate?
     var joystickView: UIImageView!
     var joystickRadius: CGFloat!
     var maxBound: CGFloat = 0

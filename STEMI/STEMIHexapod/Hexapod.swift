@@ -8,7 +8,7 @@
 
 import UIKit
 
-@objc protocol HexapodDelegate {
+@objc protocol HexapodDelegate: class {
     /**
      Check if app is connected to STEMI.
 
@@ -27,7 +27,7 @@ public class Hexapod: PacketSenderDelegate {
     let slidersArray: [UInt8] = [50, 25, 0, 0, 0, 50, 0, 0, 0, 0, 0]
     
     //Delegate
-    var delegate: HexapodDelegate?
+    weak var delegate: HexapodDelegate?
     
     ///Initializes defoult connection with IP Address: _192.168.4.1_, and port: _80_
     public init(){

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol PacketSenderDelegate {
+protocol PacketSenderDelegate: class {
     func connectionLost()
     func connectionActive()
 }
@@ -21,7 +21,7 @@ class PacketSender: NSObject, NSStreamDelegate {
     var openCommunication = true
     var connected = false
     var counter = 0
-    var delegate: PacketSenderDelegate?
+    weak var delegate: PacketSenderDelegate?
     
     init(hexapod: Hexapod){
         self.hexapod = hexapod

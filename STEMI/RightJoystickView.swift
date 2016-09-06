@@ -9,14 +9,14 @@
 import UIKit
 import GLKit
 
-protocol RightJoystickViewDelegate {
+protocol RightJoystickViewDelegate: class {
     func rightJoystickDidMove(rotationValue: UInt8)
 }
 
 class RightJoystickView: LeftJoystickView {
 
     //MARK: - Public methods
-    var rightDelegate: RightJoystickViewDelegate?
+    weak var rightDelegate: RightJoystickViewDelegate?
 
     //MARK: - Private methods
     private var rotationValue: UInt8!
