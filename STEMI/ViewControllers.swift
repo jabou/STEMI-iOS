@@ -16,4 +16,7 @@ struct ViewControllers {
     static let CheckConnectionViewController = Storyboard.instantiateViewControllerWithIdentifier(Constants.ViewControllers.ConnectionID)
     static let MainJoystickViewController = Storyboard.instantiateViewControllerWithIdentifier(Constants.ViewControllers.JoystickID)
     static let AppSettingsViewController = Storyboard.instantiateViewControllerWithIdentifier(Constants.ViewControllers.SettingsID)
+    static let HeightViewController = Storyboard.instantiateViewControllerWithIdentifier(Constants.ViewControllers.HeightID)
+    static let WalkingStyleViewController = Storyboard.instantiateViewControllerWithIdentifier(Constants.ViewControllers.WalkingID)
+    static let CalibrationViewController = Storyboard.instantiateViewControllerWithIdentifier(Constants.ViewControllers.Calibration)
 }

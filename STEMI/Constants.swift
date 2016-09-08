@@ -19,6 +19,9 @@ struct Constants {
         static let JoystickID = "joystick"
         static let ChangeipID = "changeip"
         static let SettingsID = "settings"
+        static let HeightID = "height"
+        static let WalkingID = "walking"
+        static let Calibration = "calibration"
     }
 
     struct Connection {

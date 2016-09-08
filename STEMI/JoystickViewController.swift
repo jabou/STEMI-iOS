@@ -186,7 +186,7 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         case 3:
             self.presentViewController(ViewControllers.HeightViewController, animated: true, completion: nil)
         case 4:
-            print("Index: \(index)")
+            self.presentViewController(ViewControllers.CalibrationViewController, animated: true, completion: nil)
         case 5:
             self.presentViewController(ViewControllers.WalkingStyleViewController, animated: true, completion: nil)
         case 6:
