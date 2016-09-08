@@ -28,6 +28,10 @@
 		0680B4D81D5FCB7300A7525C /* IPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680B4D71D5FCB7300A7525C /* IPTextField.swift */; };
 		0682DBAD1CE8883D004DDA3B /* ToastNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682DBAC1CE8883D004DDA3B /* ToastNotification.swift */; };
 		06A417991CEC847B000B7320 /* ConnectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */; };
+		06C4EFFB1D7F711A00EBE933 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFA1D7F711A00EBE933 /* CalibrationViewController.swift */; };
+		06C4EFFD1D7F713200EBE933 /* HeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFC1D7F713200EBE933 /* HeightViewController.swift */; };
+		06C4EFFF1D7F715800EBE933 /* WalkingStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFE1D7F715800EBE933 /* WalkingStyleViewController.swift */; };
+		06C4F0011D7F718900EBE933 /* WalkingStylesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4F0001D7F718900EBE933 /* WalkingStylesTableViewController.swift */; };
 		06C948AF1D57767E0015F017 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C948AE1D57767E0015F017 /* SettingsViewController.swift */; };
 		06C948B11D5785870015F017 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C948B01D5785870015F017 /* SettingsTableViewController.swift */; };
 		06C948B41D578D6C0015F017 /* SettingsIPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C948B31D578D6C0015F017 /* SettingsIPViewController.swift */; };
@@ -91,6 +95,10 @@
 		069F01E91CCC136D0034676D /* STEMIHexapod.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STEMIHexapod.framework; path = "../../../../Developer/Xcode/DerivedData/STEMI-gsqfddrtuvurvgazhvldvkvkblzg/Build/Products/Debug-iphonesimulator/STEMIHexapod.framework"; sourceTree = "<group>"; };
 		069F01EC1CCC1B570034676D /* STEMIHexapod.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STEMIHexapod.framework; path = "Pods/../build/Debug-iphoneos/STEMIHexapod.framework"; sourceTree = "<group>"; };
 		06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionScreenViewController.swift; sourceTree = "<group>"; };
+		06C4EFFA1D7F711A00EBE933 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
+		06C4EFFC1D7F713200EBE933 /* HeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeightViewController.swift; sourceTree = "<group>"; };
+		06C4EFFE1D7F715800EBE933 /* WalkingStyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingStyleViewController.swift; sourceTree = "<group>"; };
+		06C4F0001D7F718900EBE933 /* WalkingStylesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingStylesTableViewController.swift; sourceTree = "<group>"; };
 		06C948AE1D57767E0015F017 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		06C948B01D5785870015F017 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		06C948B31D578D6C0015F017 /* SettingsIPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsIPViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +186,9 @@
 				06D5AA3D1D60878300635688 /* Helpers */,
 				06A417951CEC8373000B7320 /* Connection Screen */,
 				0675D1251CE34A54002687E8 /* Joystick */,
+				06C4F0031D7F793D00EBE933 /* Calibration */,
+				06C4F0041D7F794F00EBE933 /* Height */,
+				06C4F0021D7F792400EBE933 /* Walking Styles */,
 				06C948B21D57858F0015F017 /* Settings */,
 				065A5F551CA2F9E900BED250 /* Assets.xcassets */,
 				065A5F571CA2F9E900BED250 /* LaunchScreen.storyboard */,
@@ -242,6 +253,31 @@
 				06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */,
 			);
 			name = "Connection Screen";
+			sourceTree = "<group>";
+		};
+		06C4F0021D7F792400EBE933 /* Walking Styles */ = {
+			isa = PBXGroup;
+			children = (
+				06C4EFFE1D7F715800EBE933 /* WalkingStyleViewController.swift */,
+				06C4F0001D7F718900EBE933 /* WalkingStylesTableViewController.swift */,
+			);
+			name = "Walking Styles";
+			sourceTree = "<group>";
+		};
+		06C4F0031D7F793D00EBE933 /* Calibration */ = {
+			isa = PBXGroup;
+			children = (
+				06C4EFFA1D7F711A00EBE933 /* CalibrationViewController.swift */,
+			);
+			name = Calibration;
+			sourceTree = "<group>";
+		};
+		06C4F0041D7F794F00EBE933 /* Height */ = {
+			isa = PBXGroup;
+			children = (
+				06C4EFFC1D7F713200EBE933 /* HeightViewController.swift */,
+			);
+			name = Height;
 			sourceTree = "<group>";
 		};
 		06C948B21D57858F0015F017 /* Settings */ = {
@@ -545,12 +581,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				067DD35B1D6226F60085B76A /* ViewControllers.swift in Sources */,
+				06C4EFFB1D7F711A00EBE933 /* CalibrationViewController.swift in Sources */,
 				065A5F821CA315D900BED250 /* JoystickViewController.swift in Sources */,
 				060503081CA6229900642FC0 /* LeftJoystickView.swift in Sources */,
 				06A417991CEC847B000B7320 /* ConnectionScreenViewController.swift in Sources */,
 				06F790F91CE5EFFF00CCC2E9 /* RightJoystickView.swift in Sources */,
+				06C4F0011D7F718900EBE933 /* WalkingStylesTableViewController.swift in Sources */,
 				0682DBAD1CE8883D004DDA3B /* ToastNotification.swift in Sources */,
 				06285BD81D691DFB0002E8D4 /* PacketSender.swift in Sources */,
+				06C4EFFF1D7F715800EBE933 /* WalkingStyleViewController.swift in Sources */,
 				06285BD51D691DFB0002E8D4 /* Hexapod.swift in Sources */,
 				065A5F4F1CA2F9E900BED250 /* AppDelegate.swift in Sources */,
 				06F364E91CE0D43600BAB70B /* Menu.swift in Sources */,
@@ -558,6 +597,7 @@
 				06D5AA411D6087B300635688 /* Constants.swift in Sources */,
 				06C948B41D578D6C0015F017 /* SettingsIPViewController.swift in Sources */,
 				06C948B11D5785870015F017 /* SettingsTableViewController.swift in Sources */,
+				06C4EFFD1D7F713200EBE933 /* HeightViewController.swift in Sources */,
 				0680B4D81D5FCB7300A7525C /* IPTextField.swift in Sources */,
 				06D5AA431D6087FB00635688 /* UserDefaultsHandler.swift in Sources */,
 				06285BD71D691DFB0002E8D4 /* Packet.swift in Sources */,
