@@ -8,7 +8,6 @@
 
 import UIKit
 import CoreMotion
-import Alamofire
 
 class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJoystickViewDelegate, MenuViewDelegate, HexapodDelegate {
 
@@ -36,22 +35,6 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //Put left joystick on main view
-        leftJoystick = LeftJoystickView(frame: self.leftJoystickView.bounds)
-        leftJoystick.leftDelegate = self
-        self.leftJoystickView.addSubview(leftJoystick)
-
-        //Put right joystick on main view
-        rightJoystick = RightJoystickView(frame: self.rightJoystickView.bounds)
-        rightJoystick.rightDelegate = self
-        self.rightJoystickView.addSubview(rightJoystick)
-
-        //Put menu on main view
-        menu = Menu(frame: self.menuView.bounds)
-        menu.delegate = self
-        menuDidBecomeInactive()
-        self.menuView.addSubview(menu)
-
         //Setup standby button on screen
         standbyButton.setImage(UIImage(named: "standby_off"), forState: .Normal)
         standbyButton.setImage(UIImage(named: "standby_on"), forState: .Selected)
@@ -65,6 +48,29 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     }
 
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        //Put left joystick on main view
+        if leftJoystick == nil {
+            leftJoystick = LeftJoystickView(frame: self.leftJoystickView.bounds)
+            leftJoystick.leftDelegate = self
+            self.leftJoystickView.addSubview(leftJoystick)
+        }
+
+        //Put right joystick on main view
+        if rightJoystick == nil {
+            rightJoystick = RightJoystickView(frame: self.rightJoystickView.bounds)
+            rightJoystick.rightDelegate = self
+            self.rightJoystickView.addSubview(rightJoystick)
+        }
+
+        //Put menu on main view
+        if menu == nil {
+            menu = Menu(frame: self.menuView.bounds)
+            menu.delegate = self
+            menuDidBecomeInactive()
+            self.menuView.addSubview(menu)
+        }
 
         //Setup stemi, and start connection
         stemi = Hexapod()

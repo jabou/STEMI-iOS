@@ -13,13 +13,15 @@ class SettingsViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        UIDevice.currentDevice().setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
     }
 
-    // MARK: - Orientation Handling
+    // MARK: - Handle orientation
     override func shouldAutorotate() -> Bool {
         return false
+    }
+
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
     }
 
     // MARK: - Action Handlers

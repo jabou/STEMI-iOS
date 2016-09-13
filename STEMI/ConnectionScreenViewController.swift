@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class ConnectionScreenViewController: UIViewController {
 
@@ -19,7 +18,6 @@ class ConnectionScreenViewController: UIViewController {
 
     //MARK: - Private variables
     private var labelAnimation: NSTimer?
-    private var alamofireManager = Alamofire.Manager.sharedInstance
 
     //MARK: - View lifecycle
     override func viewDidLoad() {
@@ -59,26 +57,47 @@ class ConnectionScreenViewController: UIViewController {
             // Create and make API call to stemi. If file is present and vaild, start using hexapod.
             let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
             configuration.timeoutIntervalForRequest = 3
-            alamofireManager = Alamofire.Manager(configuration: configuration)
-            alamofireManager.request(.GET, "http://\(UserDefaults.IP())/stemiData.json").responseJSON { response in
-                guard response.result.isSuccess else {
-                    NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
-                    return
-                }
-                guard let responseJSON = response.result.value as? [String:AnyObject] else {
-                    NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
-                    return
-                }
-                if let valide = responseJSON["isValid"] as? Bool {
-                    if valide {
-                        if let name = responseJSON["stemiID"] as? String, version = responseJSON["version"] as? String {
-                            UserDefaults.setStemiName(name)
-                            UserDefaults.setHardwareVersion(version)
+            let session = NSURLSession(configuration: configuration)
+            let request = NSURLRequest(URL: NSURL(string: "http://\(UserDefaults.IP())/stemiData.json")!)
+            let task: NSURLSessionTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
+
+                //If there is data, try to read it
+                if let data = data {
+                    //Try to read data from json
+                    do {
+                        let jsonData = try NSJSONSerialization.JSONObjectWithData(data, options: [])
+                        if let valide = jsonData["isValid"] as? Bool {
+                            //JSON is OK - start sending data
+                            if valide {
+                                if let name = jsonData["stemiID"] as? String, version = jsonData["version"] as? String {
+                                    UserDefaults.setStemiName(name)
+                                    UserDefaults.setHardwareVersion(version)
+                                }
+                                dispatch_async(dispatch_get_main_queue(), { 
+                                    NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
+                                })
+                            } else {
+                                dispatch_async(dispatch_get_main_queue(), { 
+                                    NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
+                                })
+                            }
                         }
-                        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
+                    }
+                        //Error with reading data
+                    catch {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
+                        })
                     }
                 }
-            }
+                    //There is no data on this network -> error
+                else {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
+                    })
+                }
+            })
+            task.resume()
         #endif
 
     }
