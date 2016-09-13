@@ -22,7 +22,6 @@
 		065A5F6F1CA2F9EA00BED250 /* STEMIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F6E1CA2F9EA00BED250 /* STEMIUITests.swift */; };
 		065A5F7F1CA30D2D00BED250 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */; };
 		065A5F821CA315D900BED250 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F811CA315D900BED250 /* JoystickViewController.swift */; };
-		066DB58C1D6F560E0089CBFB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06285BD91D6921550002E8D4 /* Alamofire.framework */; };
 		066DB58D1D6F560E0089CBFB /* Pods_STEMI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06285BDA1D6921550002E8D4 /* Pods_STEMI.framework */; };
 		067DD35B1D6226F60085B76A /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067DD35A1D6226F60085B76A /* ViewControllers.swift */; };
 		0680B4D81D5FCB7300A7525C /* IPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680B4D71D5FCB7300A7525C /* IPTextField.swift */; };
@@ -121,7 +120,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				066DB58C1D6F560E0089CBFB /* Alamofire.framework in Frameworks */,
 				066DB58D1D6F560E0089CBFB /* Pods_STEMI.framework in Frameworks */,
 				CE58DE1AC6763E78A0DE8B13 /* Pods_STEMI.framework in Frameworks */,
 			);
@@ -414,7 +412,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Jasmin Abou Aldan";
 				TargetAttributes = {
 					065A5F4A1CA2F9E900BED250 = {
@@ -669,8 +667,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -717,8 +717,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -740,6 +742,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -748,6 +751,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BAA32B01FAFADE0CAC455146 /* Pods-STEMI.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -760,6 +764,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -767,6 +772,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 155B85B79F7C1A02E0CEACAC /* Pods-STEMI.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -779,6 +785,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
