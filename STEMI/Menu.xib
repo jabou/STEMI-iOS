@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Menu" customModule="STEMI" customModuleProvider="target">
@@ -33,15 +34,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuBackground" id="1wy-kH-h0T">
-                    <rect key="frame" x="0.0" y="0.0" width="285" height="137"/>
+                    <frame key="frameInset"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mA6-bH-87F">
-                    <rect key="frame" x="21" y="92" width="35" height="35"/>
+                    <frame key="frameInset" minX="8.40%" minY="90.20%" width="35" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
                     <state key="normal" image="movement_non">
-                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <state key="selected" image="movement_sel"/>
                     <state key="highlighted" image="movement_sel"/>
@@ -51,7 +52,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="QFf-TT-22a">
-                    <rect key="frame" x="43" y="49" width="35" height="35"/>
+                    <frame key="frameInset" minX="17.20%" minY="48.04%" width="35" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
                     <state key="normal" image="rotation_non"/>
@@ -63,7 +64,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7gZ-UM-dDh">
-                    <rect key="frame" x="83" y="24" width="35" height="35"/>
+                    <frame key="frameInset" minX="33.20%" minY="23.53%" width="35" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
                     <state key="normal" image="orientation_non"/>
@@ -75,7 +76,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MHg-z0-FOf">
-                    <rect key="frame" x="125" y="14" width="35" height="35"/>
+                    <frame key="frameInset" minX="50.00%" minY="13.73%" width="35" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
                     <state key="normal" image="height_non"/>
@@ -87,7 +88,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="deD-Xp-rFm">
-                    <rect key="frame" x="170" y="25" width="35" height="35"/>
+                    <frame key="frameInset" minX="68.00%" minY="24.51%" width="35" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
                     <state key="normal" image="calibration_non"/>
@@ -99,7 +100,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LQJ-u3-gae">
-                    <rect key="frame" x="210" y="49" width="35" height="35"/>
+                    <frame key="frameInset" minX="84.00%" minY="48.04%" width="35" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
                     <state key="normal" image="walkstyle_non"/>
@@ -111,7 +112,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aFj-u9-ceO">
-                    <rect key="frame" x="234" y="92" width="35" height="35"/>
+                    <frame key="frameInset" minX="93.60%" minY="90.20%" width="35" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>
                     <state key="normal" image="settings_non"/>
@@ -123,30 +124,30 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_button" id="hSJ-gO-asY">
-                    <rect key="frame" x="105" y="77" width="75" height="60"/>
+                    <frame key="frameInset" minX="50.00%" width="75" height="60"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_active" id="oeP-It-eO8">
-                    <rect key="frame" x="105" y="69" width="75" height="60"/>
+                    <frame key="frameInset" minX="50.00%" width="75" height="60" maxY="8"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yyN-xi-R6h">
-                    <rect key="frame" x="105" y="69" width="75" height="68"/>
+                    <frame key="frameInset" minX="50.00%" width="75" height="68"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal">
-                        <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <connections>
                         <action selector="menuButtonTapped:" destination="-1" eventType="touchUpInside" id="OIl-VB-tSK"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-158.5" y="247.5"/>
+            <point key="canvasLocation" x="-169" y="243"/>
         </view>
         <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="lYo-SM-kgX">
             <connections>
@@ -203,4 +204,9 @@
         <image name="walkstyle_non" width="35" height="35"/>
         <image name="walkstyle_sel" width="35" height="35"/>
     </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
 </document>
