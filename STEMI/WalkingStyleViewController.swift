@@ -8,14 +8,38 @@
 
 import UIKit
 
+enum WalkingStyle {
+    case TripodGait
+    case TripodGaitAngled
+    case TripodGaitStar
+    case WaveGait
+}
+
 class WalkingStyleViewController: UIViewController {
+
+    //MARK: - IBOutlets
+    @IBOutlet weak var hintTextView: UITextView!
+
+    //MARK: - Public variables
+    var walkingStyle: WalkingStyle!
 
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        walkingStyle = .TripodGait
+        hintTextView.editable = true
+        hintTextView.font = UIFont(name: "ProximaNova-Regular", size: 13.0)
+        hintTextView.textColor = UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 0.6)
+        hintTextView.editable = false
+
     }
-    
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        _changeHintText(walkingStyle.hashValue)
+    }
+
     // MARK: - Orientation Handling
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Portrait
@@ -23,6 +47,28 @@ class WalkingStyleViewController: UIViewController {
 
     override func shouldAutorotate() -> Bool {
         return false
+    }
+
+    //MARK: - Public methods
+    func selectedStyleWithId(identifier: Int) {
+        print(identifier)
+        _changeHintText(identifier)
+    }
+
+    //MARK: - Private methods
+    private func _changeHintText(index: Int) {
+        switch index {
+        case 0:
+            hintTextView.text = "This should be text that describes walking style number 1. This walking style is also known as Tripod Gait"
+        case 1:
+            hintTextView.text = "This should be text that describes walking style number 2. This walking style is also known as Tripod Gait Angled"
+        case 2:
+            hintTextView.text = "This should be text that describes walking style number 3. This walking style is also known as Tripod Gait Star"
+        case 3:
+            hintTextView.text = "This should be text that describes walking style number 4. This walking style is also known as Wave Gait"
+        default:
+            break
+        }
     }
 
     //MARK: - Action handlers

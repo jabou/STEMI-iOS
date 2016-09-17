@@ -72,6 +72,7 @@
 		06F364E91CE0D43600BAB70B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F364E81CE0D43600BAB70B /* Menu.swift */; };
 		06F364EB1CE0D45D00BAB70B /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F364EA1CE0D45D00BAB70B /* Menu.xib */; };
 		06F790F91CE5EFFF00CCC2E9 /* RightJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F790F81CE5EFFF00CCC2E9 /* RightJoystickView.swift */; };
+		CDA9B375D216AAB41908F01C /* Pods_STEMI_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69EEF134704F70D6AA0799D1 /* Pods_STEMI_Demo.framework */; };
 		CE58DE1AC6763E78A0DE8B13 /* Pods_STEMI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868324E7A99FF93879D92E97 /* Pods_STEMI.framework */; };
 /* End PBXBuildFile section */
 
@@ -144,7 +145,10 @@
 		06FECB6E1D6D7F8B00E0AEF7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Developer/Xcode/DerivedData/STEMI-gsqfddrtuvurvgazhvldvkvkblzg/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		06FECB6F1D6D7F8B00E0AEF7 /* STEMIHexapod.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STEMIHexapod.framework; path = "../../../../Developer/Xcode/DerivedData/STEMI-gsqfddrtuvurvgazhvldvkvkblzg/Build/Products/Debug-iphoneos/STEMIHexapod/STEMIHexapod.framework"; sourceTree = "<group>"; };
 		3F86D8C176EAD3B749E9D095 /* Pods-STEMI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.debug.xcconfig"; sourceTree = "<group>"; };
+		4EE2DFF874FABE7A42119051 /* Pods-STEMI-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI-Demo/Pods-STEMI-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		69EEF134704F70D6AA0799D1 /* Pods_STEMI_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMI_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		704B5D3FED445828B6CEE2A9 /* Pods-STEMI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.release.xcconfig"; sourceTree = "<group>"; };
+		7DAB837B53A287E0673C0FD1 /* Pods-STEMI-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI-Demo/Pods-STEMI-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		868324E7A99FF93879D92E97 /* Pods_STEMI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -176,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDA9B375D216AAB41908F01C /* Pods_STEMI_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +377,7 @@
 				069F01EC1CCC1B570034676D /* STEMIHexapod.framework */,
 				069F01E91CCC136D0034676D /* STEMIHexapod.framework */,
 				868324E7A99FF93879D92E97 /* Pods_STEMI.framework */,
+				69EEF134704F70D6AA0799D1 /* Pods_STEMI_Demo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -381,6 +387,8 @@
 			children = (
 				3F86D8C176EAD3B749E9D095 /* Pods-STEMI.debug.xcconfig */,
 				704B5D3FED445828B6CEE2A9 /* Pods-STEMI.release.xcconfig */,
+				7DAB837B53A287E0673C0FD1 /* Pods-STEMI-Demo.debug.xcconfig */,
+				4EE2DFF874FABE7A42119051 /* Pods-STEMI-Demo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -639,7 +647,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STEMI/Pods-STEMI-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STEMI-Demo/Pods-STEMI-Demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		06A0796E1D8D50BE003F565C /* [CP] Copy Pods Resources */ = {
@@ -654,7 +662,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STEMI/Pods-STEMI-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STEMI-Demo/Pods-STEMI-Demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		06A0796F1D8D50BE003F565C /* Build number */ = {
@@ -956,6 +964,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9ZQJ38F5V6;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = STEMI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -966,6 +975,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -977,6 +987,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9ZQJ38F5V6;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = STEMI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -987,6 +998,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -1038,6 +1050,7 @@
 		};
 		06A079711D8D50BE003F565C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DAB837B53A287E0673C0FD1 /* Pods-STEMI-Demo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
@@ -1045,9 +1058,31 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9ZQJ38F5V6;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info-dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEVELOPMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aboualdan.STEMI-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1060,6 +1095,7 @@
 		};
 		06A079721D8D50BE003F565C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EE2DFF874FABE7A42119051 /* Pods-STEMI-Demo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
@@ -1067,9 +1103,31 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9ZQJ38F5V6;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
+					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info-dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Crashlytics\"",
+					"-framework",
+					"\"Fabric\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEVELOPMENT";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aboualdan.STEMI-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";

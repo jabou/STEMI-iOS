@@ -15,12 +15,12 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var ipCell: UITableViewCell!
     @IBOutlet weak var stemiName: UILabel!
     @IBOutlet weak var hardwareVersion: UILabel!
+    @IBOutlet weak var resetCell: UITableViewCell!
 
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.clearsSelectionOnViewWillAppear = true
     }
 
@@ -56,6 +56,16 @@ class SettingsTableViewController: UITableViewController {
         let clickedCell = tableView.cellForRowAtIndexPath(indexPath)
         if clickedCell == ipCell {
             self.presentViewController(ViewControllers.ChangeIPViewController, animated: true, completion: nil)
+        } else if clickedCell == resetCell {
+            resetCell.selected = false
+            let warningMessage = UIAlertController(title: "Warning", message: "Are you sure that you want to reset STEMI Hexapod legs to their initial positions?", preferredStyle: .Alert)
+            let yesButton = UIAlertAction(title: "YES", style: .Default, handler: {action in
+                //TODO: Implement reset
+            })
+            let noButton = UIAlertAction(title: "NO", style: .Cancel, handler: nil)
+            warningMessage.addAction(yesButton)
+            warningMessage.addAction(noButton)
+            self.presentViewController(warningMessage, animated: true, completion: nil)
         }
     }
 
