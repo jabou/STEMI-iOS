@@ -8,12 +8,14 @@
 
 import Foundation
 
+//MARK: - Private variables
 private let FirstRunKey = "firstRun"
 private let StemiIPKey = "stemiIP"
 private let ThemeKey = "theme"
 private let NoStemiKey = "noStemi"
 private let StemiIDKey = "stemiId"
 private let HardwareVersionKey = "hardwareVersion"
+private let WalkingStyleKey = "walkingStyle"
 
 struct UserDefaults {
 
@@ -70,6 +72,32 @@ struct UserDefaults {
             return version
         } else {
             return ""
+        }
+    }
+
+    //MARK: Walking style UserDefaults
+    static func setWalkingStyle(style: WalkingStyle) {
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(style.hashValue, forKey: WalkingStyleKey)
+        defaults.synchronize()
+    }
+
+    static func walkingStyle() -> WalkingStyle {
+        if let styleHash = NSUserDefaults.standardUserDefaults().objectForKey(WalkingStyleKey) as? Int {
+            switch styleHash {
+            case 0:
+                return .TripodGait
+            case 1:
+                return .TripodGaitAngled
+            case 2:
+                return .TripodGaitStar
+            case 3:
+                return .WaveGait
+            default:
+                return .Error
+            }
+        } else {
+            return .Error
         }
     }
 

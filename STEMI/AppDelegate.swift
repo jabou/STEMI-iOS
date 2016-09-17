@@ -32,6 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
+        #if DEVELOPMENT
+            NSNotificationCenter.defaultCenter().postNotificationName(Constants.Demo.DismissView, object: nil)
+        #endif
+
         NSNotificationCenter.defaultCenter().postNotificationName(Constants.Connection.StartConnection, object: nil)
     }
 

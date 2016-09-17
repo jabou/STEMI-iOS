@@ -9,6 +9,16 @@
 
 import UIKit
 
+//MARK: - Walking styles
+enum WalkingStyle {
+    case TripodGait
+    case TripodGaitAngled
+    case TripodGaitStar
+    case WaveGait
+    case Error
+}
+
+//MARK: - Constant values
 struct Constants {
 
     static let JoystickSize: CGFloat = 60.0
@@ -27,5 +37,16 @@ struct Constants {
     struct Connection {
         static let StopConnection = "StopConnection"
         static let StartConnection = "StartConnection"
+    }
+
+    struct Demo {
+        static let DismissView = "DismissView"
+    }
+}
+
+//MARK: - Localization helper
+class Localization {
+    static func localizedString(string: String) -> String {
+        return NSLocalizedString(string, comment: "Localized String")
     }
 }

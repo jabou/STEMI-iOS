@@ -58,6 +58,8 @@
 		06A079691D8D50BE003F565C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06285BD11D691DFB0002E8D4 /* Info.plist */; };
 		06A0796A1D8D50BE003F565C /* LeftJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060503051CA6217C00642FC0 /* LeftJoystickView.xib */; };
 		06A417991CEC847B000B7320 /* ConnectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */; };
+		06ABBF0D1D8DE92100631665 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06ABBF0C1D8DE92100631665 /* Localizable.strings */; };
+		06ABBF101D8DEB5800631665 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06ABBF0C1D8DE92100631665 /* Localizable.strings */; };
 		06C4EFFB1D7F711A00EBE933 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFA1D7F711A00EBE933 /* CalibrationViewController.swift */; };
 		06C4EFFD1D7F713200EBE933 /* HeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFC1D7F713200EBE933 /* HeightViewController.swift */; };
 		06C4EFFF1D7F715800EBE933 /* WalkingStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFE1D7F715800EBE933 /* WalkingStyleViewController.swift */; };
@@ -128,6 +130,8 @@
 		06A079731D8D50BE003F565C /* STEMI-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STEMI-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A079741D8D50BE003F565C /* Info-dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-dev.plist"; path = "/Users/Jaco/Desktop/Programming/STEMI/Info-dev.plist"; sourceTree = "<absolute>"; };
 		06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionScreenViewController.swift; sourceTree = "<group>"; };
+		06ABBF0C1D8DE92100631665 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		06ABBF0F1D8DEB1900631665 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		06C4EFFA1D7F711A00EBE933 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
 		06C4EFFC1D7F713200EBE933 /* HeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeightViewController.swift; sourceTree = "<group>"; };
 		06C4EFFE1D7F715800EBE933 /* WalkingStyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingStyleViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +279,7 @@
 				065A5F5A1CA2F9E900BED250 /* Info.plist */,
 				06A079741D8D50BE003F565C /* Info-dev.plist */,
 				063627CF1CB3F26C0039E096 /* STEMI-Bridging-Header.h */,
+				06ABBF0C1D8DE92100631665 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -502,6 +507,7 @@
 					};
 					06A079451D8D50BE003F565C = {
 						DevelopmentTeam = 9ZQJ38F5V6;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -533,6 +539,7 @@
 			files = (
 				065A5F591CA2F9E900BED250 /* LaunchScreen.storyboard in Resources */,
 				065A5F7F1CA30D2D00BED250 /* ProximaNova-Regular.otf in Resources */,
+				06ABBF0D1D8DE92100631665 /* Localizable.strings in Resources */,
 				0605030F1CA6D5CB00642FC0 /* RightJoystickView.xib in Resources */,
 				06E668E01CE13EC500AD4A7B /* tiu.wav in Resources */,
 				065A5F561CA2F9E900BED250 /* Assets.xcassets in Resources */,
@@ -564,6 +571,7 @@
 			files = (
 				06A079611D8D50BE003F565C /* LaunchScreen.storyboard in Resources */,
 				06A079621D8D50BE003F565C /* ProximaNova-Regular.otf in Resources */,
+				06ABBF101D8DEB5800631665 /* Localizable.strings in Resources */,
 				06A079631D8D50BE003F565C /* RightJoystickView.xib in Resources */,
 				06A079641D8D50BE003F565C /* tiu.wav in Resources */,
 				06A079651D8D50BE003F565C /* Assets.xcassets in Resources */,
@@ -847,6 +855,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				065A5F531CA2F9E900BED250 /* Base */,
+				06ABBF0F1D8DEB1900631665 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1099,7 +1108,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9ZQJ38F5V6;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";

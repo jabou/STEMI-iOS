@@ -199,17 +199,17 @@ class Menu: UIView {
         if index >= 0 && index <= 2 {
             if index == 0 {
                 if !sender.selected {
-                    delegate?.menuDidChangePlayMode("movement")
+                    delegate?.menuDidChangePlayMode(Localization.localizedString("MOVEMENT"))
                 }
                 closeMenu()
             } else if index == 1 {
                 if !sender.selected {
-                    delegate?.menuDidChangePlayMode("rotation")
+                    delegate?.menuDidChangePlayMode(Localization.localizedString("ROTATION"))
                 }
                 closeMenu()
             } else if index == 2 {
                 if !sender.selected {
-                    delegate?.menuDidChangePlayMode("orientation")
+                    delegate?.menuDidChangePlayMode(Localization.localizedString("ORIENTATION"))
                 }
                 closeMenu()
             }

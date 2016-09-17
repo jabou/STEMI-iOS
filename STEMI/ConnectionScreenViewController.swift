@@ -25,8 +25,8 @@ class ConnectionScreenViewController: UIViewController {
 
         loadingIndicator.hidden = true
         button2.hidden = true
-        mainLabel.text = "WELCOME"
-        button1.setTitle("CONNECT", forState: .Normal)
+        mainLabel.text = Localization.localizedString("WELCOME")
+        button1.setTitle(Localization.localizedString("CONNECT"), forState: .Normal)
         button1.tag = 1
     }
 
@@ -44,13 +44,13 @@ class ConnectionScreenViewController: UIViewController {
 
         //Clear cache and reset user defaults
         NSURLCache.sharedURLCache().removeAllCachedResponses()
-        UserDefaults.setStemiName("")
-        UserDefaults.setHardwareVersion("")
 
         #if DEVELOPMENT
 
-            UserDefaults.setStemiName("STEMI-no_hexapod")
+            UserDefaults.setStemiName(Localization.localizedString("NO_STEMI"));
             UserDefaults.setHardwareVersion("0.0")
+            UserDefaults.setWalkingStyle(.TripodGait)
+            print(UserDefaults.walkingStyle())
             NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
             
         #else
@@ -70,8 +70,11 @@ class ConnectionScreenViewController: UIViewController {
                             //JSON is OK - start sending data
                             if valide {
                                 if let name = jsonData["stemiID"] as? String, version = jsonData["version"] as? String {
-                                    UserDefaults.setStemiName(name)
-                                    UserDefaults.setHardwareVersion(version)
+                                    if (UserDefaults.stemiName() == "") || !(UserDefaults.stemiName() == name) {
+                                        UserDefaults.setStemiName(name)
+                                        UserDefaults.setHardwareVersion(version)
+                                        UserDefaults.setWalkingStyle(.TripodGait)
+                                    }
                                 }
                                 dispatch_async(dispatch_get_main_queue(), { 
                                     NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
@@ -105,8 +108,8 @@ class ConnectionScreenViewController: UIViewController {
     func resetViewState() {
         loadingIndicator.hidden = true
         button2.hidden = true
-        mainLabel.text = "WELCOME"
-        button1.setTitle("CONNECT", forState: .Normal)
+        mainLabel.text = Localization.localizedString("WELCOME")
+        button1.setTitle(Localization.localizedString("CONNECT"), forState: .Normal)
         labelAnimation?.invalidate()
         labelAnimation = nil
         button1.userInteractionEnabled = true
@@ -119,12 +122,12 @@ class ConnectionScreenViewController: UIViewController {
         labelAnimation = nil
         animateLabelShake()
 
-        mainLabel.text = "FAILED TO CONNECT"
-        button1.setTitle("TRY AGAIN", forState: .Normal)
+        mainLabel.text = Localization.localizedString("CONNECTION_FAILED")
+        button1.setTitle(Localization.localizedString("TRY_AGAIN"), forState: .Normal)
         button1.userInteractionEnabled = true
 
         button2.hidden = false
-        button2.setTitle("CHANGE IP", forState: .Normal)
+        button2.setTitle(Localization.localizedString("CHANGE_IP"), forState: .Normal)
         button2.tag = 2
 
         loadingIndicator.hidden = true
@@ -179,7 +182,7 @@ class ConnectionScreenViewController: UIViewController {
     @IBAction func button1Action(sender: AnyObject) {
 
         if button1.tag == 1 {
-            mainLabel.text = "STEMI IS NOW CONNECTING"
+            mainLabel.text = Localization.localizedString("CONNECTING")
             button1.setTitle("", forState: .Normal)
             button1.userInteractionEnabled = false
             loadingIndicator.hidden = false

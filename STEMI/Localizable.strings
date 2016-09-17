@@ -1,0 +1,42 @@
+/* 
+  Localizable.strings
+  STEMI
+
+  Created by Jasmin Abou Aldan on 17/09/2016.
+  Copyright © 2016 Jasmin Abou Aldan. All rights reserved.
+*/
+
+"OK" = "OK";
+"YES" = "YES";
+"NO" = "NO";
+"WARNING" = "Warning";
+"ERROR" = "ERROR";
+"WELCOME" = "WELCOME";
+"CONNECT" = "CONNECT";
+"NO_STEMI" = "STEMI-no_hexapod";
+"CONNECTION_FAILED" = "FAILED TO CONNECT";
+"TRY_AGAIN" = "TRY AGAIN";
+"CHANGE_IP" = "CHANGE IP";
+"CONNECTING" = "STEMI IS NOW CONNECTING";
+"MOVEMENT" = "movement";
+"ROTATION" = "rotation";
+"ORIENTATION" = "orientation";
+"HEIGHT" = "height";
+"CALIBRATION" = "calibration";
+"WALKING_STYLE" = "walk style";
+"ENABLED" = " ENABLED";
+"MOVEMENT_TEXT" = "allows linear movements (left, right, back, forward). Tap to enable.";
+"ROTATION_TEXT" = "allows rotational movements with fixed stemi. Tap to enable.";
+"ORIENTATION_TEXT" = "combination of movement and rotation. Tap to enable.";
+"HEIGHT_TEXT" = "tap to manually adjust the height of stemi's body.";
+"CALIBRATION_TEXT" = "tap to manually adjust the position of each joint on each leg.";
+"WALKING_STYLE_TEXT" = "switch between different walk styes.";
+"CONNECTION_TITLE" = "Connection lost";
+"CONNECTION_TEXT" = "Please check connection with your STEMI and try again";
+"EXIT_CALIBRATION" = "Are you sure that you want to exit calibration without saving?";
+"WALKING_1" = "This should be text that describes walking style number 1. This walking style is also known as Tripod Gait";
+"WALKING_2" = "This should be text that describes walking style number 2. This walking style is also known as Tripod Gait Angled";
+"WALKING_3" = "This should be text that describes walking style number 3. This walking style is also known as Tripod Gait Star";
+"WALKING_4" = "This should be text that describes walking style number 4. This walking style is also known as Wave Gait";
+"RESET_WARNIGN" = "Are you sure that you want to reset STEMI Hexapod legs to their initial positions?";
+"IP_ERROR" = "IP fields must be in range 1-255";

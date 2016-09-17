@@ -44,7 +44,7 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         //Add notification observers for start and stop connection with stemi
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.stopConnection), name: Constants.Connection.StopConnection, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.startConnection), name: Constants.Connection.StartConnection, object: nil)
-
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.dismissJoystickView), name: Constants.Demo.DismissView, object: nil)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -140,20 +140,22 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     func menuDidChangePlayMode(mode: String) {
         switch mode {
         case "movement":
-            toastNotification = ToastNotification(onView: self.view, isHint: false, headline: "movement", text: nil, height: nil)
+            toastNotification = ToastNotification(onView: self.view, isHint: false, headline: Localization.localizedString("MOVEMENT"), text: nil, height: nil)
             toastNotification.showNotificationWithAutohide()
             stemi.setMovementMode()
 
         case "rotation":
-            toastNotification = ToastNotification(onView: self.view, isHint: false, headline: "rotation", text: nil, height: nil)
+            toastNotification = ToastNotification(onView: self.view, isHint: false, headline: Localization.localizedString("ROTATION") , text: nil, height: nil)
             toastNotification.showNotificationWithAutohide()
             stemi.setRotationMode()
         case "orientation":
-            toastNotification = ToastNotification(onView: self.view, isHint: false, headline: "orientation", text: nil, height: nil)
+            toastNotification = ToastNotification(onView: self.view, isHint: false, headline: Localization.localizedString("ORIENTATION"), text: nil, height: nil)
             toastNotification.showNotificationWithAutohide()
             stemi.setOrientationMode()
         default:
-            print("Mode did not changed!")
+            #if DEVELOPMENT
+                print("Mode did not changed!")
+            #endif
         }
 
     }
@@ -162,22 +164,22 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         if state == .Began {
             switch index {
             case 0:
-                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: "movement", text: "allows linear movements (left, right, back, forward). Tap to enable.", height: 110)
+                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("MOVEMENT"), text: Localization.localizedString("MOVEMENT_TEXT"), height: 110)
                 toastNotification.showNotification()
             case 1:
-                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: "rotation", text: "allows rotational movements with fixed stemi. Tap to enable.", height: 105)
+                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("ROTATION"), text: Localization.localizedString("ROTATION_TEXT"), height: 105)
                 toastNotification.showNotification()
             case 2:
-                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: "orientation", text: "combination of movement and rotation. Tap to enable.", height: 100)
+                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("ORIENTATION"), text: Localization.localizedString("ORIENTATION_TEXT"), height: 100)
                 toastNotification.showNotification()
             case 3:
-                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: "height", text: "tap to manually adjust the height of stemi's body.", height: 90)
+                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("HEIGHT"), text: Localization.localizedString("HEIGHT_TEXT"), height: 90)
                 toastNotification.showNotification()
             case 4:
-                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: "calibration", text: "tap to manually adjust the position of each joint on each leg.", height: 100)
+                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("CALIBRATION"), text: Localization.localizedString("CALIBRATION_TEXT"), height: 100)
                 toastNotification.showNotification()
             case 5:
-                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: "walk style", text: "switch between different walk styes.", height: 90)
+                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("WALKING_STYLE"), text: Localization.localizedString("WALKING_STYLE_TEXT"), height: 90)
                 toastNotification.showNotification()
             default:
                 print("Long press error")
@@ -222,8 +224,8 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     }
 
     func connectionLost() {
-        let warningMessage = UIAlertController(title: "Connection lost", message: "Please check connection with your STEMI and try again", preferredStyle: .Alert)
-        let okButton = UIAlertAction(title: "OK", style: .Cancel, handler: {action in
+        let warningMessage = UIAlertController(title: Localization.localizedString("CONNECTION_TITLE"), message: Localization.localizedString("CONNECTION_TEXT"), preferredStyle: .Alert)
+        let okButton = UIAlertAction(title: Localization.localizedString("OK"), style: .Cancel, handler: {action in
             ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
             self.dismissViewControllerAnimated(true, completion: nil)
         })
@@ -240,6 +242,12 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
                 connectionLost()
             }
         #endif
+    }
+
+    //MARK: - Demo app background handling
+    func dismissJoystickView() {
+        ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     //MARK: - Action Handlers

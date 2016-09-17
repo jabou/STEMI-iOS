@@ -61,11 +61,11 @@ class CalibrationViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func cancelButtonActionHandler(sender: AnyObject) {
-        let warningMessage = UIAlertController(title: "Warning", message: "Are you sure that you want to exit calibration without saving?", preferredStyle: .Alert)
-        let yesButton = UIAlertAction(title: "YES", style: .Default, handler: {action in
+        let warningMessage = UIAlertController(title: Localization.localizedString("WARNING"), message: Localization.localizedString("EXIT_CALIBRATION"), preferredStyle: .Alert)
+        let yesButton = UIAlertAction(title: Localization.localizedString("YES"), style: .Default, handler: {action in
             self.dismissViewControllerAnimated(true, completion: nil)
         })
-        let noButton = UIAlertAction(title: "NO", style: .Cancel, handler: nil)
+        let noButton = UIAlertAction(title: Localization.localizedString("NO"), style: .Cancel, handler: nil)
         warningMessage.addAction(yesButton)
         warningMessage.addAction(noButton)
         self.presentViewController(warningMessage, animated: true, completion: nil)

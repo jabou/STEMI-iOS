@@ -124,8 +124,8 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
             resignFirstResponders()
             self.dismissViewControllerAnimated(true, completion: nil)
         } else {
-            let alert = UIAlertController(title: "Error", message: "IP fields must be in range 1-255", preferredStyle: .Alert)
-            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            let alert = UIAlertController(title: Localization.localizedString("ERROR"), message: Localization.localizedString("IP_ERROR"), preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: Localization.localizedString("OK"), style: .Default, handler: nil)
             alert.addAction(defaultAction)
             self.presentViewController(alert, animated: true, completion: nil)
         }

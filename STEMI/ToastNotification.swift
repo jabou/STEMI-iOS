@@ -56,7 +56,7 @@ class ToastNotification {
             header.textAlignment = NSTextAlignment.Center
             header.textColor = UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0)
             header.font = UIFont(name: "ProximaNova-Regular", size: 14)
-            header.text = headline.uppercaseString + " ENABLED"
+            header.text = headline.uppercaseString + Localization.localizedString("ENABLED")
             backgroundView.addSubview(header)
         }
     }

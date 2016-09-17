@@ -8,13 +8,6 @@
 
 import UIKit
 
-enum WalkingStyle {
-    case TripodGait
-    case TripodGaitAngled
-    case TripodGaitStar
-    case WaveGait
-}
-
 class WalkingStyleViewController: UIViewController {
 
     //MARK: - IBOutlets
@@ -27,12 +20,11 @@ class WalkingStyleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        walkingStyle = .TripodGait
+        walkingStyle = UserDefaults.walkingStyle()
         hintTextView.editable = true
         hintTextView.font = UIFont(name: "ProximaNova-Regular", size: 13.0)
         hintTextView.textColor = UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 0.6)
         hintTextView.editable = false
-
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -59,13 +51,17 @@ class WalkingStyleViewController: UIViewController {
     private func _changeHintText(index: Int) {
         switch index {
         case 0:
-            hintTextView.text = "This should be text that describes walking style number 1. This walking style is also known as Tripod Gait"
+            hintTextView.text = Localization.localizedString("WALKING_1")
+            UserDefaults.setWalkingStyle(.TripodGait)
         case 1:
-            hintTextView.text = "This should be text that describes walking style number 2. This walking style is also known as Tripod Gait Angled"
+            hintTextView.text = Localization.localizedString("WALKING_2")
+            UserDefaults.setWalkingStyle(.TripodGaitAngled)
         case 2:
-            hintTextView.text = "This should be text that describes walking style number 3. This walking style is also known as Tripod Gait Star"
+            hintTextView.text = Localization.localizedString("WALKING_3")
+            UserDefaults.setWalkingStyle(.TripodGaitStar)
         case 3:
-            hintTextView.text = "This should be text that describes walking style number 4. This walking style is also known as Wave Gait"
+            hintTextView.text = Localization.localizedString("WALKING_4")
+            UserDefaults.setWalkingStyle(.WaveGait)
         default:
             break
         }
