@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Pods-STEMI-Demo.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-STEMI.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>268ADF44EB1CCF4857A029906DF43445</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>30AF28B94482E607909B9FF511E68C1C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

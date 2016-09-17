@@ -4,9 +4,11 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'STEMI' do
-    
     pod 'Fabric'
     pod 'Crashlytics'
-#    pod 'Alamofire'
-#    pod 'STEMIHexapod', :path => '/Users/Jaco/Documents/Libraries/STEMIHexapod'
+end
+
+target 'STEMI-Demo' do
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
