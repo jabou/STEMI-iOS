@@ -14,10 +14,12 @@ class Packet{
     var rotation: UInt8 = 0
     var staticTilt: UInt8 = 0
     var movingTilt: UInt8 = 0
-    var onOff: UInt8 = 1;
-    var accX: UInt8 = 0;
-    var accY: UInt8 = 0;
-    let slidersArray: [UInt8] = [50, 25, 0, 0, 0, 50, 0, 0, 0]
+    var onOff: UInt8 = 1
+    var accX: UInt8 = 0
+    var accY: UInt8 = 0
+    var height: UInt8 = 50
+    var walkingStyle: UInt8 = 0
+    let slidersArray: [UInt8] = [0, 0, 0, 50, 0, 0, 0]
     
     var bufferOutput: [UInt8] = []
 
@@ -36,6 +38,8 @@ class Packet{
         self.bufferOutput.append(onOff)
         self.bufferOutput.append(accX)
         self.bufferOutput.append(accY)
+        self.bufferOutput.append(height)
+        self.bufferOutput.append(walkingStyle)
         self.bufferOutput.appendContentsOf(self.slidersArray)
         
         return bufferOutput

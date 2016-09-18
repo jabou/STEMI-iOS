@@ -16,6 +16,7 @@ private let NoStemiKey = "noStemi"
 private let StemiIDKey = "stemiId"
 private let HardwareVersionKey = "hardwareVersion"
 private let WalkingStyleKey = "walkingStyle"
+private let HeightKey = "height"
 
 struct UserDefaults {
 
@@ -101,4 +102,14 @@ struct UserDefaults {
         }
     }
 
+    //MARK: Height UserDefaults
+    static func setHeight(height: Int) {
+        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        defaults.setInteger(height, forKey: HeightKey)
+        defaults.synchronize()
+    }
+
+    static func height() -> UInt8 {
+        return UInt8(NSUserDefaults.standardUserDefaults().integerForKey(HeightKey))
+    }
 }

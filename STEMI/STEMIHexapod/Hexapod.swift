@@ -8,6 +8,15 @@
 
 import UIKit
 
+//MARK: - Walking styles
+public enum WalkingStyle {
+    case TripodGait
+    case TripodGaitAngled
+    case TripodGaitStar
+    case WaveGait
+    case Error
+}
+
 @objc protocol HexapodDelegate: class {
     /**
      Check if app is connected to STEMI.
@@ -283,6 +292,33 @@ public class Hexapod: PacketSenderDelegate {
      */
     public func turnOff(){
         currPacket.onOff = 0
+    }
+
+    /**
+     Set hexapod height. This value can be from 0 to 100.
+     */
+    public func setHeight(height: UInt8) {
+        currPacket.height = height
+    }
+
+    /**
+     Set hexapod walking style. This value can be TripodGait, TripodGaitAngled, TripodGaitStar or WaveGait
+     */
+    public func setWalkingStyle(style: WalkingStyle) {
+        var walkingStyleValue: UInt8!
+        switch style.hashValue {
+        case 0:
+            walkingStyleValue = 30
+        case 1:
+            walkingStyleValue = 60
+        case 2:
+            walkingStyleValue = 80
+        case 3:
+            walkingStyleValue = 100
+        default:
+            walkingStyleValue = 30
+        }
+        currPacket.walkingStyle = walkingStyleValue
     }
 
     internal func connectionLost() {

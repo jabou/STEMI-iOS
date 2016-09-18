@@ -44,6 +44,8 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         //Add notification observers for start and stop connection with stemi
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.stopConnection), name: Constants.Connection.StopConnection, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.startConnection), name: Constants.Connection.StartConnection, object: nil)
+
+        //Demo target dismiss view
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.dismissJoystickView), name: Constants.Demo.DismissView, object: nil)
     }
 
@@ -76,6 +78,8 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         stemi = Hexapod()
         stemi.delegate = self
         stemi.setIP(UserDefaults.IP())
+        stemi.setHeight(UserDefaults.height())
+        stemi.setWalkingStyle(UserDefaults.walkingStyle())
         startConnection()
 
         //Declare accelerometer and start takeing values from accelerometer

@@ -50,7 +50,7 @@ class ConnectionScreenViewController: UIViewController {
             UserDefaults.setStemiName(Localization.localizedString("NO_STEMI"));
             UserDefaults.setHardwareVersion("0.0")
             UserDefaults.setWalkingStyle(.TripodGait)
-            print(UserDefaults.walkingStyle())
+            UserDefaults.setHeight(50)
             NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
             
         #else
@@ -74,6 +74,7 @@ class ConnectionScreenViewController: UIViewController {
                                         UserDefaults.setStemiName(name)
                                         UserDefaults.setHardwareVersion(version)
                                         UserDefaults.setWalkingStyle(.TripodGait)
+                                        UserDefaults.setHeight(50)
                                     }
                                 }
                                 dispatch_async(dispatch_get_main_queue(), { 

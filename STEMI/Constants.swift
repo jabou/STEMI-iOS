@@ -9,20 +9,12 @@
 
 import UIKit
 
-//MARK: - Walking styles
-enum WalkingStyle {
-    case TripodGait
-    case TripodGaitAngled
-    case TripodGaitStar
-    case WaveGait
-    case Error
-}
-
 //MARK: - Constant values
 struct Constants {
 
     static let JoystickSize: CGFloat = 60.0
     static let Rad: CGFloat = 57.2957795
+    static let SetHeight = "setHeight"
 
     struct ViewControllers {
         static let ConnectionID = "connection"
