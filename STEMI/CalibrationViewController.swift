@@ -40,7 +40,7 @@ class CalibrationViewController: UIViewController {
     }
 
     //MARK: - UI Buttons change
-    func setActiveButtonWithId(identifier: Int) {
+    private func _setActiveButtonWithId(identifier: Int) {
         for (index, leg) in legPoints.enumerate() {
             if index == identifier {
                 leg.setImage(UIImage(named: "calibration_dot"), forState: .Normal)
@@ -54,12 +54,13 @@ class CalibrationViewController: UIViewController {
     @IBAction func legsActionHandler(sender: UIButton) {
         upArrow.enabled = true
         downArrow.enabled = true
-        setActiveButtonWithId(sender.tag)
+        _setActiveButtonWithId(sender.tag)
     }
 
     @IBAction func saveButtonActionHandler(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+
     @IBAction func cancelButtonActionHandler(sender: AnyObject) {
         let warningMessage = UIAlertController(title: Localization.localizedString("WARNING"), message: Localization.localizedString("EXIT_CALIBRATION"), preferredStyle: .Alert)
         let yesButton = UIAlertAction(title: Localization.localizedString("YES"), style: .Default, handler: {action in

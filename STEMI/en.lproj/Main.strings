@@ -53,8 +53,8 @@
 /* Class = "UITextField"; text = "192"; ObjectID = "Ugd-74-Gqn"; */
 "Ugd-74-Gqn.text" = "192";
 
-/* Class = "UILabel"; text = "ADJUS HEIGHT"; ObjectID = "YKh-RQ-6oH"; */
-"YKh-RQ-6oH.text" = "ADJUS HEIGHT";
+/* Class = "UILabel"; text = "ADJUST HEIGHT"; ObjectID = "YKh-RQ-6oH"; */
+"YKh-RQ-6oH.text" = "ADJUST HEIGHT";
 
 /* Class = "UILabel"; text = "WALKING STYLE"; ObjectID = "YjG-Fe-nzE"; */
 "YjG-Fe-nzE.text" = "WALKING STYLE";
