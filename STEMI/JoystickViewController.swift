@@ -9,6 +9,12 @@
 import UIKit
 import CoreMotion
 
+enum PlayMode {
+    case Movement
+    case Rotation
+    case Orientation
+}
+
 class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJoystickViewDelegate, MenuViewDelegate, HexapodDelegate {
 
     //MARK: - IBOutlets
@@ -22,6 +28,7 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     //MARK: - Private vatiables
     private let selectedPictures = ["movement_sel", "rotation_sel", "orientation_sel", "height_sel", "settings_sel"]
     private let unselectedPictures = ["movement_non", "rotation_non", "orientation_non", "height_non", "settings_non"]
+    private var selectedMode: PlayMode = .Movement
     private var accelerometer: CMMotionManager!
     private var accelerometerX: UInt8!
     private var accelerometerY: UInt8!
@@ -80,6 +87,14 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         stemi.setIP(UserDefaults.IP())
         stemi.setHeight(UserDefaults.height())
         stemi.setWalkingStyle(UserDefaults.walkingStyle())
+        switch selectedMode {
+        case .Movement:
+            stemi.setMovementMode()
+        case .Rotation:
+            stemi.setRotationMode()
+        case .Orientation:
+            stemi.setOrientationMode()
+        }
         startConnection()
 
         //Declare accelerometer and start takeing values from accelerometer
@@ -118,6 +133,7 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        stemi.setMovementMode()
         stopConnection()
     }
 
@@ -147,14 +163,17 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
             toastNotification = ToastNotification(onView: self.view, isHint: false, headline: Localization.localizedString("MOVEMENT"), text: nil, height: nil)
             toastNotification.showNotificationWithAutohide()
             stemi.setMovementMode()
+            selectedMode = .Movement
         case "rotation":
             toastNotification = ToastNotification(onView: self.view, isHint: false, headline: Localization.localizedString("ROTATION") , text: nil, height: nil)
             toastNotification.showNotificationWithAutohide()
             stemi.setRotationMode()
+            selectedMode = .Rotation
         case "orientation":
             toastNotification = ToastNotification(onView: self.view, isHint: false, headline: Localization.localizedString("ORIENTATION"), text: nil, height: nil)
             toastNotification.showNotificationWithAutohide()
             stemi.setOrientationMode()
+            selectedMode = .Orientation
         default:
             #if DEVELOPMENT
                 print("Mode did not changed!")
