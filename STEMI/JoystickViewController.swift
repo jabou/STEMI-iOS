@@ -147,7 +147,6 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
             toastNotification = ToastNotification(onView: self.view, isHint: false, headline: Localization.localizedString("MOVEMENT"), text: nil, height: nil)
             toastNotification.showNotificationWithAutohide()
             stemi.setMovementMode()
-
         case "rotation":
             toastNotification = ToastNotification(onView: self.view, isHint: false, headline: Localization.localizedString("ROTATION") , text: nil, height: nil)
             toastNotification.showNotificationWithAutohide()
