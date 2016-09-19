@@ -11,8 +11,8 @@
 /* Class = "UILabel"; text = "Detail"; ObjectID = "3Hc-GN-F85"; */
 "3Hc-GN-F85.text" = "Detail";
 
-/* Class = "UILabel"; text = "Tripod gait angled "; ObjectID = "6Wt-B1-KdU"; */
-"6Wt-B1-KdU.text" = "Tripod gait angled ";
+/* Class = "UILabel"; text = "Tripod delayed gait"; ObjectID = "6Wt-B1-KdU"; */
+"6Wt-B1-KdU.text" = "Tripod delayed gait";
 
 /* Class = "UILabel"; text = "Hardware version"; ObjectID = "BS4-77-53I"; */
 "BS4-77-53I.text" = "Hardware version";
@@ -68,8 +68,8 @@
 /* Class = "UITextField"; text = "192"; ObjectID = "d57-d5-qu3"; */
 "d57-d5-qu3.text" = "192";
 
-/* Class = "UILabel"; text = "Tripod gait star"; ObjectID = "fWF-QX-KPp"; */
-"fWF-QX-KPp.text" = "Tripod gait star";
+/* Class = "UILabel"; text = "Tripod delayed gait"; ObjectID = "fWF-QX-KPp"; */
+"fWF-QX-KPp.text" = "Tripod delayed gait";
 
 /* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "gQH-Lb-iyY"; */
 "gQH-Lb-iyY.normalTitle" = "SAVE";

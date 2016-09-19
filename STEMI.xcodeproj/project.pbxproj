@@ -131,7 +131,6 @@
 		06A079741D8D50BE003F565C /* Info-dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-dev.plist"; path = "/Users/Jaco/Desktop/Programming/STEMI/Info-dev.plist"; sourceTree = "<absolute>"; };
 		06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionScreenViewController.swift; sourceTree = "<group>"; };
 		06ABBF0C1D8DE92100631665 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		06ABBF0F1D8DEB1900631665 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		06C4EFFA1D7F711A00EBE933 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
 		06C4EFFC1D7F713200EBE933 /* HeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeightViewController.swift; sourceTree = "<group>"; };
 		06C4EFFE1D7F715800EBE933 /* WalkingStyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingStyleViewController.swift; sourceTree = "<group>"; };
@@ -855,7 +854,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				065A5F531CA2F9E900BED250 /* Base */,
-				06ABBF0F1D8DEB1900631665 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
