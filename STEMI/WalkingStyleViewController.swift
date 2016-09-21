@@ -43,7 +43,6 @@ class WalkingStyleViewController: UIViewController {
 
     //MARK: - Public methods
     func selectedStyleWithId(identifier: Int) {
-        print(identifier)
         _changeHintText(identifier)
     }
 
