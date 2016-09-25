@@ -21,7 +21,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tlA-9A-ngh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JDs-Sj-EfT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verticalBackground" translatesAutoresizingMaskIntoConstraints="NO" id="26n-yE-Far"/>
@@ -102,7 +102,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="xHr-yY-li0"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="aKL-qh-2vA">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="aKL-qh-2vA">
                                 <frame key="frameInset" width="1000" height="1000"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="133" id="Ah5-4H-fgn"/>
@@ -147,7 +147,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joystickBackground" translatesAutoresizingMaskIntoConstraints="NO" id="oVS-11-xDt">
@@ -269,7 +269,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hRG-yy-2jf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Z1P-Y4-FUT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verticalBackground" translatesAutoresizingMaskIntoConstraints="NO" id="5Y2-WV-Gkj"/>
@@ -368,7 +368,7 @@
             <objects>
                 <tableViewController id="ttm-RL-R4O" customClass="SettingsTableViewController" customModule="STEMI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="2IT-HS-c4N">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -379,21 +379,21 @@
                             <tableViewSection headerTitle="CUSTOM IP" footerTitle="After connecting your STEMI on Home network, you can set up custom IP address here" id="1WG-OF-wB1">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="xe1-Vs-Val" detailTextLabel="0BX-I0-PuX" style="IBUITableViewCellStyleValue1" id="0kL-eH-vhJ">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="667" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0kL-eH-vhJ" id="5qT-SP-LeR">
-                                            <frame key="frameInset" width="342" height="44"/>
+                                            <frame key="frameInset" width="634" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="IP Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xe1-Vs-Val">
-                                                    <frame key="frameInset" minX="15" minY="13" width="76" height="20"/>
+                                                    <frame key="frameInset" minX="15" minY="13" width="75.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                     <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="192.168.4.1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0BX-I0-PuX">
-                                                    <frame key="frameInset" minX="259" minY="12" width="81" height="20"/>
+                                                    <frame key="frameInset" minX="551" minY="12" width="81" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -408,21 +408,21 @@
                             <tableViewSection headerTitle="ABOUT" footerTitle="" id="ad0-6L-7Nf">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" tag="2" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="tuo-ei-2NR" detailTextLabel="3Hc-GN-F85" style="IBUITableViewCellStyleValue1" id="h3G-hM-oNz">
-                                        <rect key="frame" x="0.0" y="192" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="175" width="667" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h3G-hM-oNz" id="GfG-N7-LGC">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="667" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="STEMI ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tuo-ei-2NR">
-                                                    <frame key="frameInset" minX="15" minY="13" width="64" height="20"/>
+                                                    <frame key="frameInset" minX="15" minY="13" width="63.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                     <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Hc-GN-F85">
-                                                    <frame key="frameInset" minX="318" minY="12" width="42" height="20"/>
+                                                    <frame key="frameInset" minX="610.5" minY="12" width="41.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -434,21 +434,21 @@
                                         <color key="tintColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" tag="2" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="BS4-77-53I" detailTextLabel="EDb-o7-s4N" style="IBUITableViewCellStyleValue1" id="zxD-Et-EPl">
-                                        <rect key="frame" x="0.0" y="236" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="219" width="667" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zxD-Et-EPl" id="ihy-G0-5jH">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="667" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Hardware version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BS4-77-53I">
-                                                    <frame key="frameInset" minX="15" minY="13" width="125" height="20"/>
+                                                    <frame key="frameInset" minX="15" minY="13" width="124.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                     <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EDb-o7-s4N">
-                                                    <frame key="frameInset" minX="318" minY="12" width="42" height="20"/>
+                                                    <frame key="frameInset" minX="610.5" minY="12" width="41.5" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -464,10 +464,10 @@
                             <tableViewSection headerTitle="FACTORY RESET" footerTitle="Reset STEMI Hexapod legs to their initial values" id="znf-3R-Pju">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" alpha="0.10000000149011612" tag="3" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="7H7-48-ksr">
-                                        <rect key="frame" x="0.0" y="344" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="326.5" width="667" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7H7-48-ksr" id="ucL-1U-2Pc">
-                                            <frame key="frameInset" width="375" height="44"/>
+                                            <frame key="frameInset" width="667" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLK-ay-Tn6">
@@ -517,7 +517,7 @@
                         <viewControllerLayoutGuide type="bottom" id="f6T-Cw-Z5u"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iAv-LY-fXb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verticalBackground" translatesAutoresizingMaskIntoConstraints="NO" id="VwQ-et-ayz"/>
@@ -721,7 +721,7 @@
                         <viewControllerLayoutGuide type="bottom" id="w30-hF-hlC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EYO-BK-haQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verticalBackground" translatesAutoresizingMaskIntoConstraints="NO" id="pps-Yt-k9L"/>
@@ -901,7 +901,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fkQ-rP-gni"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QR5-VQ-bau">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verticalBackground" translatesAutoresizingMaskIntoConstraints="NO" id="y8k-x8-5MZ"/>
@@ -1033,7 +1033,7 @@
             <objects>
                 <tableViewController id="cWd-qr-jB5" customClass="WalkingStylesTableViewController" customModule="STEMI" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="mpC-Ge-ZnY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="228"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="228"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1044,14 +1044,14 @@
                             <tableViewSection headerTitle="CHOOSE A WALKING STYLE" footerTitle="" id="TUr-tr-FLg">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" textLabel="cWZ-yG-Tat" style="IBUITableViewCellStyleDefault" id="CZp-Iu-Zp1">
-                                        <rect key="frame" x="0.0" y="55.5" width="1000" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="667" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CZp-Iu-Zp1" id="3r1-in-zkQ">
-                                            <frame key="frameInset" width="336" height="44"/>
+                                            <frame key="frameInset" width="628" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Tripod gait" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cWZ-yG-Tat">
-                                                    <frame key="frameInset" minX="15" width="321" height="44"/>
+                                                    <frame key="frameInset" minX="15" width="613" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                     <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1062,14 +1062,14 @@
                                         <color key="backgroundColor" red="0.0" green="0.74901960779999999" blue="0.95294117649999999" alpha="0.056788793140000002" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" textLabel="6Wt-B1-KdU" style="IBUITableViewCellStyleDefault" id="IAc-hx-JWq">
-                                        <rect key="frame" x="0.0" y="99.5" width="1000" height="44"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="667" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IAc-hx-JWq" id="cex-pC-V9b">
-                                            <frame key="frameInset" width="336" height="44"/>
+                                            <frame key="frameInset" width="628" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Tripod delayed gait" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Wt-B1-KdU">
-                                                    <frame key="frameInset" minX="15" width="321" height="44"/>
+                                                    <frame key="frameInset" minX="15" width="613" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                     <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1080,14 +1080,14 @@
                                         <color key="backgroundColor" red="0.0" green="0.74901960779999999" blue="0.95294117649999999" alpha="0.056788793140000002" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" textLabel="fWF-QX-KPp" style="IBUITableViewCellStyleDefault" id="t5v-op-s4f">
-                                        <rect key="frame" x="0.0" y="143.5" width="1000" height="44"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="667" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t5v-op-s4f" id="lbE-Wj-KIR">
-                                            <frame key="frameInset" width="336" height="44"/>
+                                            <frame key="frameInset" width="628" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Ripple gait" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fWF-QX-KPp">
-                                                    <frame key="frameInset" minX="15" width="321" height="44"/>
+                                                    <frame key="frameInset" minX="15" width="613" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                     <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1098,14 +1098,14 @@
                                         <color key="backgroundColor" red="0.0" green="0.74901960779999999" blue="0.95294117649999999" alpha="0.056788793140000002" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="3" contentMode="scaleToFill" selectionStyle="none" accessoryType="checkmark" indentationWidth="10" textLabel="GBR-7S-r5B" style="IBUITableViewCellStyleDefault" id="9Dn-qg-6pO">
-                                        <rect key="frame" x="0.0" y="187.5" width="1000" height="44"/>
+                                        <rect key="frame" x="0.0" y="187.5" width="667" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Dn-qg-6pO" id="IhH-Vs-sfZ">
-                                            <frame key="frameInset" width="336" height="44"/>
+                                            <frame key="frameInset" width="628" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Wave gait" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GBR-7S-r5B">
-                                                    <frame key="frameInset" minX="15" width="321" height="44"/>
+                                                    <frame key="frameInset" minX="15" width="613" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                     <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1143,7 +1143,7 @@
                         <viewControllerLayoutGuide type="bottom" id="oCl-Ox-sHZ"/>
                     </layoutGuides>
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Tvd-wV-G7j">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joystickBackground" translatesAutoresizingMaskIntoConstraints="NO" id="JrM-E2-XZU">
@@ -1154,18 +1154,28 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5F-Wv-eLJ" userLabel="Arrow placeholder">
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTK-tU-DEu">
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="122" id="Xlg-wc-8ix"/>
                                                     <constraint firstAttribute="width" constant="125" id="cXa-Qv-dIY"/>
                                                 </constraints>
                                                 <state key="normal" image="up_arrow"/>
+                                                <connections>
+                                                    <action selector="upArrowActionHandler:" destination="8Rn-XF-wVW" eventType="touchUpInside" id="Tkc-Bh-Jce"/>
+                                                    <outletCollection property="gestureRecognizers" destination="pTj-Tz-6ML" appends="YES" id="r8c-Kd-KZd"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPv-3R-Zkf">
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="122" id="RDf-OC-cgh"/>
                                                     <constraint firstAttribute="width" constant="125" id="isE-ug-yVQ"/>
                                                 </constraints>
                                                 <state key="normal" image="down_arrow"/>
+                                                <connections>
+                                                    <action selector="downArrowActionHandler:" destination="8Rn-XF-wVW" eventType="touchUpInside" id="LYq-WM-qaS"/>
+                                                    <outletCollection property="gestureRecognizers" destination="G6c-ql-FIQ" appends="YES" id="jSf-Cj-LBu"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="M9b-2i-ctI">
                                                 <constraints>
@@ -1547,7 +1557,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="circleImageView" destination="M9b-2i-ctI" id="hNs-qC-n2u"/>
                         <outlet property="downArrow" destination="JPv-3R-Zkf" id="SDC-uy-Jxl"/>
+                        <outlet property="numberIndicatorLabel" destination="LkA-cQ-64I" id="a1Y-Xk-hlY"/>
                         <outlet property="upArrow" destination="NTK-tU-DEu" id="Edg-W3-wlD"/>
                         <outletCollection property="legPoints" destination="ErY-Bj-Yxm" collectionClass="NSMutableArray" id="zQg-HL-aQj"/>
                         <outletCollection property="legPoints" destination="uTy-23-BkG" collectionClass="NSMutableArray" id="JaH-Gn-ApX"/>
@@ -1570,6 +1582,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hde-Fl-AL9" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="G6c-ql-FIQ">
+                    <connections>
+                        <action selector="longPressDownButtonActionHandler:" destination="8Rn-XF-wVW" id="Wzr-C9-XQe"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="pTj-Tz-6ML">
+                    <connections>
+                        <action selector="longPressUpButtonActionHandler:" destination="8Rn-XF-wVW" id="ZO7-aw-rFz"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-655.9859154929577" y="928.125"/>
         </scene>

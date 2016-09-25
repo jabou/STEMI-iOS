@@ -75,7 +75,7 @@ class HeightViewController: UIViewController {
         let dataSendQueue: dispatch_queue_t = dispatch_queue_create("Increase Queue", nil)
         dispatch_async(dataSendQueue, {
             while self._shouldIncrease == true {
-                NSThread.sleepForTimeInterval(0.1)
+                NSThread.sleepForTimeInterval(Constants.LongClickSpeed)
                 dispatch_async(dispatch_get_main_queue()) {
                     self._increaseValue()
                 }
@@ -87,7 +87,7 @@ class HeightViewController: UIViewController {
         let dataSendQueue: dispatch_queue_t = dispatch_queue_create("Decrease Queue", nil)
         dispatch_async(dataSendQueue, {
             while self._shouldDecrease == true {
-                NSThread.sleepForTimeInterval(0.1)
+                NSThread.sleepForTimeInterval(Constants.LongClickSpeed)
                 dispatch_async(dispatch_get_main_queue()) {
                     self._decreaseValue()
                 }
