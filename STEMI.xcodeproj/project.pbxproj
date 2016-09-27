@@ -14,6 +14,8 @@
 		060D8A961D97DE4100CE6E4A /* CalibrationPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D8A941D97DE4100CE6E4A /* CalibrationPackage.swift */; };
 		060D8A981D97E9D800CE6E4A /* CalibrationPacketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D8A971D97E9D800CE6E4A /* CalibrationPacketSender.swift */; };
 		060D8A991D97E9D800CE6E4A /* CalibrationPacketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D8A971D97E9D800CE6E4A /* CalibrationPacketSender.swift */; };
+		06219D771D9AB18800C99A59 /* moving_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06219D761D9AB18800C99A59 /* moving_sound.wav */; };
+		06219D781D9AB18800C99A59 /* moving_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06219D761D9AB18800C99A59 /* moving_sound.wav */; };
 		06285BD51D691DFB0002E8D4 /* Hexapod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285BD01D691DFB0002E8D4 /* Hexapod.swift */; };
 		06285BD61D691DFB0002E8D4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06285BD11D691DFB0002E8D4 /* Info.plist */; };
 		06285BD71D691DFB0002E8D4 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285BD21D691DFB0002E8D4 /* Packet.swift */; };
@@ -106,6 +108,7 @@
 		060D8A931D97DC9700CE6E4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		060D8A941D97DE4100CE6E4A /* CalibrationPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationPackage.swift; sourceTree = "<group>"; };
 		060D8A971D97E9D800CE6E4A /* CalibrationPacketSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationPacketSender.swift; sourceTree = "<group>"; };
+		06219D761D9AB18800C99A59 /* moving_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = moving_sound.wav; sourceTree = "<group>"; };
 		06285BD01D691DFB0002E8D4 /* Hexapod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hexapod.swift; sourceTree = "<group>"; };
 		06285BD11D691DFB0002E8D4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06285BD21D691DFB0002E8D4 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
@@ -363,6 +366,7 @@
 		06E668DC1CE13EB700AD4A7B /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				06219D761D9AB18800C99A59 /* moving_sound.wav */,
 				06E668E51CE143F400AD4A7B /* puk.wav */,
 				06E668DE1CE13EC500AD4A7B /* tiu.wav */,
 			);
@@ -546,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				065A5F591CA2F9E900BED250 /* LaunchScreen.storyboard in Resources */,
+				06219D771D9AB18800C99A59 /* moving_sound.wav in Resources */,
 				065A5F7F1CA30D2D00BED250 /* ProximaNova-Regular.otf in Resources */,
 				06ABBF0D1D8DE92100631665 /* Localizable.strings in Resources */,
 				0605030F1CA6D5CB00642FC0 /* RightJoystickView.xib in Resources */,
@@ -578,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A079611D8D50BE003F565C /* LaunchScreen.storyboard in Resources */,
+				06219D781D9AB18800C99A59 /* moving_sound.wav in Resources */,
 				06A079621D8D50BE003F565C /* ProximaNova-Regular.otf in Resources */,
 				06ABBF101D8DEB5800631665 /* Localizable.strings in Resources */,
 				06A079631D8D50BE003F565C /* RightJoystickView.xib in Resources */,

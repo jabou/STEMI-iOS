@@ -25,7 +25,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "121"
             endingLineNumber = "121"
-            landmarkName = "_discardValuesToInitial(_:)"
+            landmarkName = "_discardValuesToInitial(complete:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -73,7 +73,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "119"
             endingLineNumber = "119"
-            landmarkName = "_discardValuesToInitial(_:)"
+            landmarkName = "_discardValuesToInitial(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,7 +89,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
             endingLineNumber = "118"
-            landmarkName = "_discardValuesToInitial(_:)"
+            landmarkName = "_discardValuesToInitial(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,7 +105,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
             endingLineNumber = "102"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkName = "tableView(tableView:didSelectRowAtIndexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,7 +121,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkName = "tableView(tableView:didSelectRowAtIndexPath:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -169,7 +169,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
             endingLineNumber = "98"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkName = "tableView(tableView:didSelectRowAtIndexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,7 +185,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkName = "tableView(tableView:didSelectRowAtIndexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -201,7 +201,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
             endingLineNumber = "104"
-            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkName = "tableView(tableView:didSelectRowAtIndexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -489,7 +489,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
             endingLineNumber = "124"
-            landmarkName = "_discardValuesToInitial(_:)"
+            landmarkName = "_discardValuesToInitial(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -569,7 +569,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "125"
             endingLineNumber = "125"
-            landmarkName = "_discardValuesToInitial(_:)"
+            landmarkName = "_discardValuesToInitial(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -585,7 +585,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "144"
             endingLineNumber = "144"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -601,7 +601,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "177"
             endingLineNumber = "177"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -617,7 +617,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
             endingLineNumber = "178"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -628,7 +628,7 @@
                   moduleName = "STEMI"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jaco/Desktop/Programming/STEMI/STEMI/SettingsTableViewController.swift"
-                  timestampString = "496627158.193526"
+                  timestampString = "496678499.303811"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "178"
@@ -643,7 +643,7 @@
                   moduleName = "STEMI"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Jaco/Desktop/Programming/STEMI/STEMI/SettingsTableViewController.swift"
-                  timestampString = "496627158.194753"
+                  timestampString = "496678499.305051"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "179"
@@ -665,7 +665,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
             endingLineNumber = "181"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -681,7 +681,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
             endingLineNumber = "179"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -697,7 +697,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "181"
             endingLineNumber = "181"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -713,7 +713,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
             endingLineNumber = "146"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -729,7 +729,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "150"
             endingLineNumber = "150"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -745,7 +745,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "169"
             endingLineNumber = "169"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -761,7 +761,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "161"
             endingLineNumber = "161"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -777,7 +777,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "154"
             endingLineNumber = "154"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -793,7 +793,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
             endingLineNumber = "153"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -809,7 +809,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "152"
             endingLineNumber = "152"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -825,7 +825,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "151"
             endingLineNumber = "151"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -841,7 +841,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
             endingLineNumber = "158"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -857,7 +857,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
             endingLineNumber = "159"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -873,7 +873,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "166"
             endingLineNumber = "166"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -889,7 +889,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "168"
             endingLineNumber = "168"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -905,7 +905,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "160"
             endingLineNumber = "160"
-            landmarkName = "discard(_:)"
+            landmarkName = "discard(complete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

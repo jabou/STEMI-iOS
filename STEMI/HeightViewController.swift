@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class HeightViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class HeightViewController: UIViewController {
     private var _currentHeight: Int = 0
     private var _shouldIncrease = false
     private var _shouldDecrease = false
+    private var _movingSound: AVAudioPlayer = AVAudioPlayer()
 
     var counter = 0
 
@@ -31,6 +33,16 @@ class HeightViewController: UIViewController {
 
         _currentHeight = Int(UserDefaults.height())
         heightIndicator.text = String(_currentHeight)
+
+        let path = NSBundle.mainBundle().pathForResource("moving_sound", ofType: "wav")
+        let url = NSURL(fileURLWithPath: path!)
+        do {
+            _movingSound = try AVAudioPlayer(contentsOfURL: url)
+            _movingSound.volume = 0.07
+            _movingSound.prepareToPlay()
+        } catch let error as NSError {
+            print(error.description)
+        }
 
         _stemi = Hexapod()
         _stemi.setIP(UserDefaults.IP())
@@ -59,6 +71,8 @@ class HeightViewController: UIViewController {
             UserDefaults.setHeight(_currentHeight)
             _stemi.setHeight(UserDefaults.height())
             heightIndicator.text = String(_currentHeight)
+        } else {
+            _stopSound()
         }
     }
 
@@ -68,6 +82,8 @@ class HeightViewController: UIViewController {
             UserDefaults.setHeight(_currentHeight)
             _stemi.setHeight(UserDefaults.height())
             heightIndicator.text = String(_currentHeight)
+        } else {
+            _stopSound()
         }
     }
 
@@ -95,20 +111,31 @@ class HeightViewController: UIViewController {
         })
     }
 
+    func _stopSound() {
+        _movingSound.stop()
+        _movingSound.currentTime = 0.0
+    }
+
     //MARK: - Action Handlers
     @IBAction func upArrowActionHandler(sender: AnyObject) {
+        _movingSound.play()
+        NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(_stopSound), userInfo: nil, repeats: false)
         _increaseValue()
     }
 
     @IBAction func downButtonActionHandler(sender: AnyObject) {
+        _movingSound.play()
+        NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(_stopSound), userInfo: nil, repeats: false)
         _decreaseValue()
     }
 
     @IBAction func upArrowLongPressActionHandler(sender: UILongPressGestureRecognizer) {
         if sender.state == .Ended {
             _shouldIncrease = false
+            _stopSound()
         } else if sender.state == .Began {
             _shouldIncrease = true
+            _movingSound.play()
             _increaseValueOnLongClick()
         }
     }
@@ -116,8 +143,10 @@ class HeightViewController: UIViewController {
     @IBAction func downArrowLongPressActionHandler(sender: UILongPressGestureRecognizer) {
         if sender.state == .Ended {
             _shouldDecrease = false
+            _stopSound()
         } else if sender.state == .Began {
             _shouldDecrease = true
+            _movingSound.play()
             _decreaseValueOnLongClick()
         }
     }

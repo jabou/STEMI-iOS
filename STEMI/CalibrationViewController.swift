@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CalibrationViewController: UIViewController {
 
@@ -24,6 +25,7 @@ class CalibrationViewController: UIViewController {
     private var _selectedIndex: Int!
     private var _shouldIncrease = false
     private var _shouldDecrease = false
+    private var _movingSound: AVAudioPlayer = AVAudioPlayer()
 
 
     //MARK: - View Lifecycle
@@ -35,6 +37,18 @@ class CalibrationViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+
+        let path = NSBundle.mainBundle().pathForResource("moving_sound", ofType: "wav")
+        let url = NSURL(fileURLWithPath: path!)
+        do {
+            _movingSound = try AVAudioPlayer(contentsOfURL: url)
+            _movingSound.volume = 0.07
+            _movingSound.numberOfLoops = -1
+            _movingSound.prepareToPlay()
+        } catch let error as NSError {
+            print(error.description)
+        }
+
 
         for leg in legPoints {
             leg.setImage(nil, forState: .Normal)
@@ -105,6 +119,8 @@ class CalibrationViewController: UIViewController {
             _changedCalibrationValues[_selectedIndex] += 1
             _stemi.increaseValueAtIndex(_selectedIndex)
             numberIndicatorLabel.text = String(_changedCalibrationValues[_selectedIndex])
+        } else {
+            _stopSound()
         }
     }
 
@@ -113,6 +129,8 @@ class CalibrationViewController: UIViewController {
             _changedCalibrationValues[_selectedIndex] -= 1
             _stemi.decreaseValueAtIndex(_selectedIndex)
             numberIndicatorLabel.text = String(_changedCalibrationValues[_selectedIndex])
+        } else {
+            _stopSound()
         }
     }
 
@@ -182,6 +200,11 @@ class CalibrationViewController: UIViewController {
         complete(true)
     }
 
+    func _stopSound() {
+        _movingSound.stop()
+        _movingSound.currentTime = 0.0
+    }
+
     //MARK: - Action Handlers
     @IBAction func legsActionHandler(sender: UIButton) {
         upArrow.enabled = true
@@ -197,26 +220,34 @@ class CalibrationViewController: UIViewController {
     }
 
     @IBAction func upArrowActionHandler(sender: UIButton) {
+        _movingSound.play()
+        NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(_stopSound), userInfo: nil, repeats: false)
         _increaseValue()
     }
     
     @IBAction func downArrowActionHandler(sender: UIButton) {
+        _movingSound.play()
+        NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(_stopSound), userInfo: nil, repeats: false)
         _decreaseValue()
     }
 
     @IBAction func longPressUpButtonActionHandler(sender: UILongPressGestureRecognizer) {
         if sender.state == .Ended {
+            _stopSound()
             _shouldIncrease = false
         } else if sender.state == .Began {
             _shouldIncrease = true
+            _movingSound.play()
             _increaseValueOnLongClick()
         }
     }
     @IBAction func longPressDownButtonActionHandler(sender: UILongPressGestureRecognizer) {
         if sender.state == .Ended {
+            _stopSound()
             _shouldDecrease = false
         } else if sender.state == .Began {
             _shouldDecrease = true
+            _movingSound.play()
             _decreaseValueOnLongClick()
         }
     }
