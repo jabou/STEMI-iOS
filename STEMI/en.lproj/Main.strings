@@ -32,6 +32,9 @@
 /* Class = "UILabel"; text = "Default STEMI IP address is:"; ObjectID = "KK8-ol-sWo"; */
 "KK8-ol-sWo.text" = "Default STEMI IP address is:";
 
+/* Class = "UILabel"; text = "57"; ObjectID = "LkA-cQ-64I"; */
+"LkA-cQ-64I.text" = "57";
+
 /* Class = "UIButton"; normalTitle = "DONE"; ObjectID = "OR1-Or-TnE"; */
 "OR1-Or-TnE.normalTitle" = "DONE";
 
@@ -59,6 +62,9 @@
 /* Class = "UILabel"; text = "WALKING STYLE"; ObjectID = "YjG-Fe-nzE"; */
 "YjG-Fe-nzE.text" = "WALKING STYLE";
 
+/* Class = "UILabel"; text = "57"; ObjectID = "aCj-n9-fw9"; */
+"aCj-n9-fw9.text" = "57";
+
 /* Class = "UITableViewSection"; headerTitle = "ABOUT"; ObjectID = "ad0-6L-7Nf"; */
 "ad0-6L-7Nf.headerTitle" = "ABOUT";
 
@@ -68,8 +74,8 @@
 /* Class = "UITextField"; text = "192"; ObjectID = "d57-d5-qu3"; */
 "d57-d5-qu3.text" = "192";
 
-/* Class = "UILabel"; text = "Tripod delayed gait"; ObjectID = "fWF-QX-KPp"; */
-"fWF-QX-KPp.text" = "Tripod delayed gait";
+/* Class = "UILabel"; text = "Ripple gait"; ObjectID = "fWF-QX-KPp"; */
+"fWF-QX-KPp.text" = "Ripple gait";
 
 /* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "gQH-Lb-iyY"; */
 "gQH-Lb-iyY.normalTitle" = "SAVE";

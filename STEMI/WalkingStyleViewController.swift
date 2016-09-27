@@ -20,7 +20,6 @@ class WalkingStyleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        walkingStyle = UserDefaults.walkingStyle()
         hintTextView.editable = true
         hintTextView.font = UIFont(name: "ProximaNova-Regular", size: 13.0)
         hintTextView.textColor = UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 0.6)
@@ -29,6 +28,7 @@ class WalkingStyleViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        walkingStyle = UserDefaults.walkingStyle()
         _changeHintText(walkingStyle.hashValue)
     }
 
