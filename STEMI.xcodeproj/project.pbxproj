@@ -10,6 +10,10 @@
 		060503061CA6217C00642FC0 /* LeftJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060503051CA6217C00642FC0 /* LeftJoystickView.xib */; };
 		060503081CA6229900642FC0 /* LeftJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060503071CA6229900642FC0 /* LeftJoystickView.swift */; };
 		0605030F1CA6D5CB00642FC0 /* RightJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */; };
+		060D8A951D97DE4100CE6E4A /* CalibrationPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D8A941D97DE4100CE6E4A /* CalibrationPackage.swift */; };
+		060D8A961D97DE4100CE6E4A /* CalibrationPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D8A941D97DE4100CE6E4A /* CalibrationPackage.swift */; };
+		060D8A981D97E9D800CE6E4A /* CalibrationPacketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D8A971D97E9D800CE6E4A /* CalibrationPacketSender.swift */; };
+		060D8A991D97E9D800CE6E4A /* CalibrationPacketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D8A971D97E9D800CE6E4A /* CalibrationPacketSender.swift */; };
 		06285BD51D691DFB0002E8D4 /* Hexapod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285BD01D691DFB0002E8D4 /* Hexapod.swift */; };
 		06285BD61D691DFB0002E8D4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06285BD11D691DFB0002E8D4 /* Info.plist */; };
 		06285BD71D691DFB0002E8D4 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285BD21D691DFB0002E8D4 /* Packet.swift */; };
@@ -99,6 +103,9 @@
 		060503051CA6217C00642FC0 /* LeftJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftJoystickView.xib; sourceTree = "<group>"; };
 		060503071CA6229900642FC0 /* LeftJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftJoystickView.swift; sourceTree = "<group>"; };
 		0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightJoystickView.xib; sourceTree = "<group>"; };
+		060D8A931D97DC9700CE6E4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		060D8A941D97DE4100CE6E4A /* CalibrationPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationPackage.swift; sourceTree = "<group>"; };
+		060D8A971D97E9D800CE6E4A /* CalibrationPacketSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationPacketSender.swift; sourceTree = "<group>"; };
 		06285BD01D691DFB0002E8D4 /* Hexapod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hexapod.swift; sourceTree = "<group>"; };
 		06285BD11D691DFB0002E8D4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06285BD21D691DFB0002E8D4 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
@@ -196,7 +203,9 @@
 				06285BD01D691DFB0002E8D4 /* Hexapod.swift */,
 				06285BD11D691DFB0002E8D4 /* Info.plist */,
 				06285BD21D691DFB0002E8D4 /* Packet.swift */,
+				060D8A941D97DE4100CE6E4A /* CalibrationPackage.swift */,
 				06285BD31D691DFB0002E8D4 /* PacketSender.swift */,
+				060D8A971D97E9D800CE6E4A /* CalibrationPacketSender.swift */,
 				06285BD41D691DFB0002E8D4 /* STEMIHexapod.h */,
 			);
 			path = STEMIHexapod;
@@ -773,6 +782,7 @@
 				06A417991CEC847B000B7320 /* ConnectionScreenViewController.swift in Sources */,
 				06F790F91CE5EFFF00CCC2E9 /* RightJoystickView.swift in Sources */,
 				06C4F0011D7F718900EBE933 /* WalkingStylesTableViewController.swift in Sources */,
+				060D8A951D97DE4100CE6E4A /* CalibrationPackage.swift in Sources */,
 				0682DBAD1CE8883D004DDA3B /* ToastNotification.swift in Sources */,
 				06285BD81D691DFB0002E8D4 /* PacketSender.swift in Sources */,
 				06C4EFFF1D7F715800EBE933 /* WalkingStyleViewController.swift in Sources */,
@@ -786,6 +796,7 @@
 				06C4EFFD1D7F713200EBE933 /* HeightViewController.swift in Sources */,
 				0680B4D81D5FCB7300A7525C /* IPTextField.swift in Sources */,
 				06D5AA431D6087FB00635688 /* UserDefaultsHandler.swift in Sources */,
+				060D8A981D97E9D800CE6E4A /* CalibrationPacketSender.swift in Sources */,
 				06285BD71D691DFB0002E8D4 /* Packet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -817,6 +828,7 @@
 				06A0794C1D8D50BE003F565C /* ConnectionScreenViewController.swift in Sources */,
 				06A0794D1D8D50BE003F565C /* RightJoystickView.swift in Sources */,
 				06A0794E1D8D50BE003F565C /* WalkingStylesTableViewController.swift in Sources */,
+				060D8A961D97DE4100CE6E4A /* CalibrationPackage.swift in Sources */,
 				06A0794F1D8D50BE003F565C /* ToastNotification.swift in Sources */,
 				06A079501D8D50BE003F565C /* PacketSender.swift in Sources */,
 				06A079511D8D50BE003F565C /* WalkingStyleViewController.swift in Sources */,
@@ -830,6 +842,7 @@
 				06A079591D8D50BE003F565C /* HeightViewController.swift in Sources */,
 				06A0795A1D8D50BE003F565C /* IPTextField.swift in Sources */,
 				06A0795B1D8D50BE003F565C /* UserDefaultsHandler.swift in Sources */,
+				060D8A991D97E9D800CE6E4A /* CalibrationPacketSender.swift in Sources */,
 				06A0795C1D8D50BE003F565C /* Packet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -854,6 +867,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				065A5F531CA2F9E900BED250 /* Base */,
+				060D8A931D97DC9700CE6E4A /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
