@@ -23,7 +23,6 @@ class Packet{
     
     var bufferOutput: [UInt8] = []
 
-    
     func toByteArray() -> [UInt8] {
         
         self.bufferOutput = []

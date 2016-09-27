@@ -17,6 +17,11 @@ public enum WalkingStyle {
     case Error
 }
 
+//MARK: - Error types
+public enum CalibrationValuesError: ErrorType {
+    case OutOfBounds
+}
+
 @objc protocol HexapodDelegate: class {
     /**
      Check if app is connected to STEMI.
@@ -31,18 +36,38 @@ public class Hexapod: PacketSenderDelegate {
     //Public variables
     var currPacket: Packet!
     var sendPacket: PacketSender!
+    var calibrationPacket: CalibrationPackage!
+    var sendCalibrationPacket: CalibrationPacketSender!
     var ipAddress: String!
     var port: Int!
     let slidersArray: [UInt8] = [50, 25, 0, 0, 0, 50, 0, 0, 0, 0, 0]
+    var initialCalibrationData: [UInt8] = []
     
     //Delegate
     weak var delegate: HexapodDelegate?
+
+    //MARK: - Hexapod init
     
     ///Initializes defoult connection with IP Address: _192.168.4.1_, and port: _80_
+    ///For calibration, use init withCalibrationmode!
     public init(){
         self.ipAddress = "192.168.4.1"
         self.port = 80
-        self.currPacket = Packet()
+
+        currPacket = Packet()
+    }
+
+    /**
+     */
+    public init(withCalibrationMode: Bool) {
+        calibrationModeEnabled = withCalibrationMode
+        self.ipAddress = "192.168.4.1"
+        self.port = 80
+        if calibrationModeEnabled {
+            calibrationPacket = CalibrationPackage()
+        } else {
+            currPacket = Packet()
+        }
     }
     
     /**
@@ -52,9 +77,10 @@ public class Hexapod: PacketSenderDelegate {
     - parameter andPort: Takes port *(def: 80)*
     */
     public init(connectWithIP: String, andPort: Int){
-        self.ipAddress = connectWithIP
-        self.port = andPort
-        self.currPacket = Packet()
+        ipAddress = connectWithIP
+        port = andPort
+
+        currPacket = Packet()
     }
     
     /**
@@ -63,24 +89,60 @@ public class Hexapod: PacketSenderDelegate {
     - parameter newIP: Takes new IP Address
      */
     public func setIP(newIP: String){
-        self.ipAddress = newIP
+        ipAddress = newIP
     }
+
+    //MARK: - Hexapod connection handling
     
     /**
      Establish connection with Hexapod. After connection is established, it sends new packet every 200ms.
      */
     public func connect(){
-        self.sendPacket = PacketSender(hexapod: self)
-        self.sendPacket.delegate = self
-        sendPacket.startSendingData()
+        if calibrationModeEnabled {
+            sendCalibrationPacket = CalibrationPacketSender(hexapod: self)
+            sendCalibrationPacket.enterToCalibrationMode({ entered in
+                if entered {
+                    self.initialCalibrationData = self.calibrationPacket.legsValues
+                }
+            })
+        } else {
+            sendPacket = PacketSender(hexapod: self)
+            sendPacket.delegate = self
+            sendPacket.startSendingData()
+        }
+    }
+
+    /**
+     */
+    public func connectWithCompletion(complete: (Bool) -> Void) {
+        if calibrationModeEnabled {
+            sendCalibrationPacket = CalibrationPacketSender(hexapod: self)
+            sendCalibrationPacket.enterToCalibrationMode({ entered in
+                if entered {
+                    self.initialCalibrationData = self.sendCalibrationPacket.legsValuesArray
+                    complete(true)
+                }
+            })
+        } else {
+            sendPacket = PacketSender(hexapod: self)
+            sendPacket.delegate = self
+            sendPacket.startSendingData()
+            complete(true)
+        }
     }
     
     /**
      Stops sending data to Hexapod, and closes connection.
      */
     public func disconnect(){
-        sendPacket.stopSendingData()
+        if calibrationModeEnabled {
+            sendCalibrationPacket.stopSendingData()
+        } else {
+            sendPacket.stopSendingData()
+        }
     }
+
+    //MARK: - Hexapod movement hanlding
     
     /**
      Moves Hexapod forward with max power.
@@ -279,6 +341,8 @@ public class Hexapod: PacketSenderDelegate {
         currPacket.staticTilt = 0
         currPacket.movingTilt = 1
     }
+
+    //MARK: - Hexapod standby hanling
     
     /**
      Puts Hexapod in standby.
@@ -293,6 +357,8 @@ public class Hexapod: PacketSenderDelegate {
     public func turnOff(){
         currPacket.onOff = 0
     }
+
+    //MARK: - Hexapod settings
 
     /**
      Set hexapod height. This value can be from 0 to 100.
@@ -321,6 +387,57 @@ public class Hexapod: PacketSenderDelegate {
         currPacket.walkingStyle = walkingStyleValue
     }
 
+    //MARK: - Calibration
+
+    /**
+     */
+    public var calibrationModeEnabled = false
+
+    /**
+     */
+    public func setValue(value: UInt8, atIndex index: Int) throws {
+        if value >= 0 && value <= 100 {
+            calibrationPacket.legsValues[index] = value
+        } else {
+            throw CalibrationValuesError.OutOfBounds
+        }
+    }
+
+    /**
+     */
+    public func increaseValueAtIndex(index: Int) {
+        if calibrationPacket.legsValues[index] < 100 {
+            calibrationPacket.legsValues[index] += 1
+        }
+    }
+
+    /**
+     */
+    public func decreaseValueAtIndex(index: Int) {
+        if calibrationPacket.legsValues[index] > 0 {
+            calibrationPacket.legsValues[index] -= 1
+        }
+    }
+
+    /**
+     */
+    public func writeDataToHexapod(complete: (Bool) -> Void) {
+        sendCalibrationPacket.stopSendingData()
+        NSThread.sleepForTimeInterval(0.5)
+        calibrationPacket.writeToHexapod = WriteData.Yes.rawValue
+        sendCalibrationPacket.sendOnePackage()
+        calibrationPacket.writeToHexapod = WriteData.No.rawValue
+        NSThread.sleepForTimeInterval(0.1)
+        complete(true)
+    }
+
+    /**
+     */
+    public func fetchDataFromHexapod() -> [UInt8] {
+        return initialCalibrationData
+    }
+
+    //MARK: - Internal methods for handling connection
     internal func connectionLost() {
         delegate?.connectionStatus!(false)
     }

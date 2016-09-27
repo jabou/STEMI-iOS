@@ -40,3 +40,5 @@
 "WALKING_4" = "Only one leg is swinging lifted in the air while all other stand on the ground supporting the body. This is the slowest gait but consumes less power and can carry more weight.";
 "RESET_WARNIGN" = "Are you sure that you want to reset STEMI Hexapod legs to their initial positions?";
 "IP_ERROR" = "IP fields must be in range 1-255";
+"CANCELING" = "Canceling...";
+"RESETING" = "Reseting...";
