@@ -1192,6 +1192,15 @@
                                                 <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select motor you wish to calibrate" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0M-NZ-ihv">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="88" id="Bre-jC-YlY"/>
+                                                    <constraint firstAttribute="height" constant="51" id="fwQ-xa-jDO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="13"/>
+                                                <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="0.60013469829999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1203,9 +1212,11 @@
                                             <constraint firstAttribute="trailing" secondItem="NTK-tU-DEu" secondAttribute="trailing" id="CXv-P4-eTQ"/>
                                             <constraint firstAttribute="trailing" secondItem="JPv-3R-Zkf" secondAttribute="trailing" id="DiB-ZE-FoD"/>
                                             <constraint firstAttribute="bottom" secondItem="JPv-3R-Zkf" secondAttribute="bottom" id="Qyx-0V-tgO"/>
+                                            <constraint firstItem="W0M-NZ-ihv" firstAttribute="centerY" secondItem="v5F-Wv-eLJ" secondAttribute="centerY" id="RGK-Zx-u3g"/>
                                             <constraint firstItem="NTK-tU-DEu" firstAttribute="leading" secondItem="v5F-Wv-eLJ" secondAttribute="leading" id="W7b-AY-yPr"/>
                                             <constraint firstAttribute="width" constant="125" id="WfP-ih-9D5"/>
                                             <constraint firstItem="LkA-cQ-64I" firstAttribute="centerY" secondItem="v5F-Wv-eLJ" secondAttribute="centerY" id="inv-mk-1ae"/>
+                                            <constraint firstItem="W0M-NZ-ihv" firstAttribute="centerX" secondItem="v5F-Wv-eLJ" secondAttribute="centerX" id="rad-LG-vAK"/>
                                             <constraint firstItem="M9b-2i-ctI" firstAttribute="centerY" secondItem="v5F-Wv-eLJ" secondAttribute="centerY" id="rqY-jb-o6Y"/>
                                         </constraints>
                                     </view>
@@ -1559,6 +1570,7 @@
                     <connections>
                         <outlet property="circleImageView" destination="M9b-2i-ctI" id="hNs-qC-n2u"/>
                         <outlet property="downArrow" destination="JPv-3R-Zkf" id="SDC-uy-Jxl"/>
+                        <outlet property="hintLabel" destination="W0M-NZ-ihv" id="86k-te-g5M"/>
                         <outlet property="numberIndicatorLabel" destination="LkA-cQ-64I" id="a1Y-Xk-hlY"/>
                         <outlet property="upArrow" destination="NTK-tU-DEu" id="Edg-W3-wlD"/>
                         <outletCollection property="legPoints" destination="ErY-Bj-Yxm" collectionClass="NSMutableArray" id="zQg-HL-aQj"/>
@@ -1593,7 +1605,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-655.9859154929577" y="928.125"/>
+            <point key="canvasLocation" x="-656.22188905547227" y="927.20000000000005"/>
         </scene>
     </scenes>
     <resources>

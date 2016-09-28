@@ -17,6 +17,7 @@ class CalibrationViewController: UIViewController {
     @IBOutlet weak var downArrow: UIButton!
     @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var numberIndicatorLabel: UILabel!
+    @IBOutlet weak var hintLabel: UILabel!
 
     //MARK: - Private var
     private var _stemi: Hexapod!
@@ -55,6 +56,7 @@ class CalibrationViewController: UIViewController {
         }
         upArrow.enabled = false
         downArrow.enabled = false
+        hintLabel.hidden = false
         _calibrationValues = []
         _changedCalibrationValues = []
     }
@@ -209,6 +211,7 @@ class CalibrationViewController: UIViewController {
     @IBAction func legsActionHandler(sender: UIButton) {
         upArrow.enabled = true
         downArrow.enabled = true
+        hintLabel.hidden = true
         UIView.animateWithDuration(0.2) {
             self.circleImageView.alpha = 1.0
             UIView.animateWithDuration(0.2, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {

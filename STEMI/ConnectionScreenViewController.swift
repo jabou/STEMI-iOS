@@ -25,7 +25,7 @@ class ConnectionScreenViewController: UIViewController {
 
         loadingIndicator.hidden = true
         button2.hidden = true
-        mainLabel.text = Localization.localizedString("WELCOME")
+        mainLabel.text = ""
         button1.setTitle(Localization.localizedString("CONNECT"), forState: .Normal)
         button1.tag = 1
     }
@@ -57,8 +57,9 @@ class ConnectionScreenViewController: UIViewController {
             // Create and make API call to stemi. If file is present and vaild, start using hexapod.
             let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
             configuration.timeoutIntervalForRequest = 3
+
             let session = NSURLSession(configuration: configuration)
-            let request = NSURLRequest(URL: NSURL(string: "http://\(UserDefaults.IP())/stemiData.json")!)
+            let request = NSURLRequest(URL: NSURL(string: "http://\(UserDefaults.IP())/stemiData.json")!, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 3)
             let task: NSURLSessionTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
 
                 //If there is data, try to read it
@@ -109,7 +110,7 @@ class ConnectionScreenViewController: UIViewController {
     func resetViewState() {
         loadingIndicator.hidden = true
         button2.hidden = true
-        mainLabel.text = Localization.localizedString("WELCOME")
+        mainLabel.text = ""
         button1.setTitle(Localization.localizedString("CONNECT"), forState: .Normal)
         labelAnimation?.invalidate()
         labelAnimation = nil
