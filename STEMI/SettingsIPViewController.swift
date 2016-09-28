@@ -131,4 +131,12 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
         }
     }
 
+    @IBAction func resetButtonActionHandler(sender: UIButton) {
+        ipTextFields[0].text = "192"
+        ipTextFields[1].text = "168"
+        ipTextFields[2].text = "4"
+        ipTextFields[3].text = "1"
+    }
+
+
 }
