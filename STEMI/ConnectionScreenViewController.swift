@@ -14,22 +14,30 @@ class ConnectionScreenViewController: UIViewController {
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var hintMessageLabel: UILabel!
+    @IBOutlet weak var loadingView: UIView!
+    @IBOutlet weak var hexapodLogoImageView: UIImageView!
+    @IBOutlet weak var spinningImageView: UIImageView!
 
     //MARK: - Private variables
     private var labelAnimation: NSTimer?
+    private var _shouldSpin: Bool = false
+
 
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadingIndicator.hidden = true
+        mainLabel.hidden = false
         button2.hidden = true
         hintMessageLabel.hidden = false
+        loadingView.hidden = true
         mainLabel.text = Localization.localizedString("START")
         hintMessageLabel.text = Localization.localizedString("START_TEXT")
+        button1.setBackgroundImage(UIImage(named: "buttonBorder"), forState: .Normal)
         button1.setTitle(Localization.localizedString("CONNECT"), forState: .Normal)
+        button1.titleLabel?.font = UIFont(name: "ProximaNova-Regular", size: 15)
+        button1.setTitleColor(UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0), forState: .Normal)
         button1.tag = 1
     }
 
@@ -111,12 +119,21 @@ class ConnectionScreenViewController: UIViewController {
     }
 
     func resetViewState() {
-        loadingIndicator.hidden = true
+
+        if _shouldSpin {
+            _stopSpin()
+        }
+
         button2.hidden = true
         hintMessageLabel.hidden = false
+        loadingView.hidden = true
+        mainLabel.hidden = false
         mainLabel.text = Localization.localizedString("START")
         hintMessageLabel.text = Localization.localizedString("START_TEXT")
+        button1.setBackgroundImage(UIImage(named: "buttonBorder"), forState: .Normal)
         button1.setTitle(Localization.localizedString("CONNECT"), forState: .Normal)
+        button1.titleLabel?.font = UIFont(name: "ProximaNova-Regular", size: 15)
+        button1.setTitleColor(UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0), forState: .Normal)
         labelAnimation?.invalidate()
         labelAnimation = nil
         button1.userInteractionEnabled = true
@@ -124,22 +141,30 @@ class ConnectionScreenViewController: UIViewController {
 
     func setupTryAgain() {
 
+        if _shouldSpin {
+            _stopSpin()
+        }
+
+        mainLabel.hidden = false
         mainLabel.alpha = 1.0
         labelAnimation?.invalidate()
         labelAnimation = nil
         animateLabelShake()
 
         hintMessageLabel.hidden = false
+        loadingView.hidden = true
         mainLabel.text = Localization.localizedString("CONNECTION_FAILED")
         hintMessageLabel.text = Localization.localizedString("FAILED_TEXT")
+        button1.setBackgroundImage(UIImage(named: "buttonBorder"), forState: .Normal)
         button1.setTitle(Localization.localizedString("TRY_AGAIN"), forState: .Normal)
+        button1.titleLabel?.font = UIFont(name: "ProximaNova-Regular", size: 15)
+        button1.setTitleColor(UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0), forState: .Normal)
         button1.userInteractionEnabled = true
 
         button2.hidden = false
         button2.setTitle(Localization.localizedString("CHANGE_IP"), forState: .Normal)
         button2.tag = 2
 
-        loadingIndicator.hidden = true
     }
 
     func openJoystick() {
@@ -151,15 +176,6 @@ class ConnectionScreenViewController: UIViewController {
     }
 
     //MARK: - Label animations
-    func animateLabelAlpha() {
-        UIView.animateWithDuration(0.7, animations: {
-            self.mainLabel.alpha = 0.5
-            }, completion: { complete in
-                UIView.animateWithDuration(0.7, animations: {
-                    self.mainLabel.alpha = 1.0
-                })
-        })
-    }
 
     func animateLabelShake() {
         let labelFrame = mainLabel.frame
@@ -187,19 +203,56 @@ class ConnectionScreenViewController: UIViewController {
         })
     }
 
+    //MARK: - Loadingspinning private helpers
+    private func _spin() {
+        UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
+            self.spinningImageView.transform = CGAffineTransformRotate(self.spinningImageView.transform, CGFloat(M_PI/2))
+            }, completion: { complete in
+                if self._shouldSpin == true {
+                    self._spin()
+                }
+        })
+    }
+
+    func animateLogoAlpha() {
+        UIView.animateWithDuration(0.7, animations: {
+            self.hexapodLogoImageView.alpha = 0.3
+            }, completion: { complete in
+                UIView.animateWithDuration(0.7, animations: {
+                    self.hexapodLogoImageView.alpha = 1.0
+                })
+        })
+    }
+
+
+    private func _startSpin() {
+        if !_shouldSpin {
+            self._shouldSpin = true
+            self._spin()
+        }
+    }
+
+    private func _stopSpin() {
+        _shouldSpin = false
+    }
+
     //MARK: - Action handlers
     @IBAction func button1Action(sender: AnyObject) {
 
         if button1.tag == 1 {
-            mainLabel.text = Localization.localizedString("PAIRING")
-            button1.setTitle("", forState: .Normal)
+            loadingView.hidden = false
+            mainLabel.hidden = true
+            _startSpin()
+            button1.setTitle(Localization.localizedString("PAIRING"), forState: .Normal)
+            button1.titleLabel?.font = UIFont(name: "ProximaNova-Regular", size: 20)
+            button1.setTitleColor(UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 0.6), forState: .Normal)
+            button1.setBackgroundImage(nil, forState: .Normal)
             button1.userInteractionEnabled = false
-            loadingIndicator.hidden = false
             hintMessageLabel.hidden = true
 
             button2.hidden = true
 
-            labelAnimation = NSTimer.scheduledTimerWithTimeInterval(0.7, target: self, selector: #selector(animateLabelAlpha), userInfo: nil, repeats: true)
+            labelAnimation = NSTimer.scheduledTimerWithTimeInterval(0.7, target: self, selector: #selector(animateLogoAlpha), userInfo: nil, repeats: true)
             labelAnimation?.fire()
             NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(checkConnection), userInfo: nil, repeats: false)
         }
