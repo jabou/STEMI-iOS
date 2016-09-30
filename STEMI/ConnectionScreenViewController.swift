@@ -15,6 +15,7 @@ class ConnectionScreenViewController: UIViewController {
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var hintMessageLabel: UILabel!
 
     //MARK: - Private variables
     private var labelAnimation: NSTimer?
@@ -25,7 +26,9 @@ class ConnectionScreenViewController: UIViewController {
 
         loadingIndicator.hidden = true
         button2.hidden = true
-        mainLabel.text = ""
+        hintMessageLabel.hidden = false
+        mainLabel.text = Localization.localizedString("START")
+        hintMessageLabel.text = Localization.localizedString("START_TEXT")
         button1.setTitle(Localization.localizedString("CONNECT"), forState: .Normal)
         button1.tag = 1
     }
@@ -110,7 +113,9 @@ class ConnectionScreenViewController: UIViewController {
     func resetViewState() {
         loadingIndicator.hidden = true
         button2.hidden = true
-        mainLabel.text = ""
+        hintMessageLabel.hidden = false
+        mainLabel.text = Localization.localizedString("START")
+        hintMessageLabel.text = Localization.localizedString("START_TEXT")
         button1.setTitle(Localization.localizedString("CONNECT"), forState: .Normal)
         labelAnimation?.invalidate()
         labelAnimation = nil
@@ -124,7 +129,9 @@ class ConnectionScreenViewController: UIViewController {
         labelAnimation = nil
         animateLabelShake()
 
+        hintMessageLabel.hidden = false
         mainLabel.text = Localization.localizedString("CONNECTION_FAILED")
+        hintMessageLabel.text = Localization.localizedString("FAILED_TEXT")
         button1.setTitle(Localization.localizedString("TRY_AGAIN"), forState: .Normal)
         button1.userInteractionEnabled = true
 
@@ -184,10 +191,11 @@ class ConnectionScreenViewController: UIViewController {
     @IBAction func button1Action(sender: AnyObject) {
 
         if button1.tag == 1 {
-            mainLabel.text = Localization.localizedString("CONNECTING")
+            mainLabel.text = Localization.localizedString("PAIRING")
             button1.setTitle("", forState: .Normal)
             button1.userInteractionEnabled = false
             loadingIndicator.hidden = false
+            hintMessageLabel.hidden = true
 
             button2.hidden = true
 

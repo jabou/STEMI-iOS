@@ -11,10 +11,10 @@
 "NO" = "NO";
 "WARNING" = "Warning";
 "ERROR" = "ERROR";
-"WELCOME" = "WELCOME";
-"CONNECT" = "CONNECT";
+"START" = "GET STARTED";
+"PAIRING" = "PAIRING...";
 "NO_STEMI" = "STEMI-no_hexapod";
-"CONNECTION_FAILED" = "FAILED TO CONNECT";
+"CONNECTION_FAILED" = "UNABLE TO CONNECT TO YOUR STEMI HEXAPOD";
 "TRY_AGAIN" = "TRY AGAIN";
 "CHANGE_IP" = "CHANGE IP";
 "CONNECTING" = "STEMI IS NOW CONNECTING";
@@ -42,3 +42,5 @@
 "IP_ERROR" = "IP fields must be in range 1-255";
 "CANCELING" = "Canceling...";
 "RESETING" = "Reseting...";
+"START_TEXT" = "If you have a STEMI Hexapod, simply connect it now.";
+"FAILED_TEXT" = "Make sure your STEMI Hexapod is charged, turned on and connected to your phone or home network via wifi.";
