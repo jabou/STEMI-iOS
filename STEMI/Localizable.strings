@@ -34,10 +34,10 @@
 "CONNECTION_TITLE" = "Connection lost";
 "CONNECTION_TEXT" = "Please check connection with your STEMI and try again";
 "EXIT_CALIBRATION" = "Are you sure that you want to exit calibration without saving?";
-"WALKING_1" = "Have three legs standing on the ground supporting the body while the other three swing forward. Fastest gait.";
+"WALKING_1" = "Have three legs standing on the ground supporting the body while the other three swing forward. Fastest Gait.";
 "WALKING_2" = "Have three legs standing on the ground supporting the body while the other three swing forward. Lifting and lowering of each leg is slightly delayed to feel more lifelike.";
-"WALKING_3" = "At every moment there are two legs swinging in the air while other four stand on the ground supporting the body. This is the coolest gait of all but a bit slower than tripod gaits.";
-"WALKING_4" = "Only one leg is swinging lifted in the air while all other stand on the ground supporting the body. This is the slowest gait but consumes less power and can carry more weight.";
+"WALKING_3" = "At every moment there are two legs swinging in the air while other four stand on the ground supporting the body. This is the coolest Gait of all but a bit slower than Tripod Gaits.";
+"WALKING_4" = "Only one leg is swinging lifted in the air while all other stand on the ground supporting the body. This is the slowest Gait but consumes less power and can carry more weight.";
 "RESET_WARNIGN" = "Are you sure that you want to reset STEMI Hexapod legs to their initial positions?";
 "IP_ERROR" = "IP fields must be in range 1-255";
 "CANCELING" = "Canceling...";

@@ -164,15 +164,15 @@ class CalibrationViewController: UIViewController {
 
         var calculatingNumbers: [Int] = []
 
-        for i in 0...20 {
+        for i in 0...10 {
             for (j, _) in _calibrationValues.enumerate() {
 
                 if i == 0 {
-                    let calc = abs(_calibrationValues[j] - _changedCalibrationValues[j])/20
+                    let calc = abs(_calibrationValues[j] - _changedCalibrationValues[j])/10
                     calculatingNumbers.append(calc)
                 }
 
-                if i < 20 {
+                if i < 10 {
                     if _changedCalibrationValues[j] < _calibrationValues[j] {
                         _changedCalibrationValues[j] += calculatingNumbers[j]
                         do {
@@ -197,7 +197,7 @@ class CalibrationViewController: UIViewController {
                     }
                 }
             }
-            NSThread.sleepForTimeInterval(0.2)
+            NSThread.sleepForTimeInterval(0.1)
         }
         complete(true)
     }

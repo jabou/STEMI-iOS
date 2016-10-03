@@ -139,7 +139,7 @@ class SettingsTableViewController: UITableViewController {
 
         var calculatingNumbers: [Int] = []
 
-            for i in 0...20 {
+            for i in 0...10 {
                 for (j, _) in self.currentCalibrationValues.enumerate() {
 
                     if i == 0 {
@@ -147,7 +147,7 @@ class SettingsTableViewController: UITableViewController {
                         calculatingNumbers.append(calc)
                     }
 
-                    if i < 20 {
+                    if i < 10 {
                         if self.currentCalibrationValues[j] < self.calibrationValues[j] {
                             self.currentCalibrationValues[j] += calculatingNumbers[j]
                             do {
@@ -172,7 +172,7 @@ class SettingsTableViewController: UITableViewController {
                         }
                     }
                 }
-                NSThread.sleepForTimeInterval(0.2)
+                NSThread.sleepForTimeInterval(0.1)
             }
             self.stemi.disconnect()
             self.stemi.writeDataToHexapod({ completed in

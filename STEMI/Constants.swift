@@ -15,7 +15,7 @@ struct Constants {
     static let JoystickSize: CGFloat = 60.0
     static let Rad: CGFloat = 57.2957795
     static let SetHeight = "setHeight"
-    static let LongClickSpeed = 0.1
+    static let LongClickSpeed = 0.05
 
     struct ViewControllers {
         static let ConnectionID = "connection"

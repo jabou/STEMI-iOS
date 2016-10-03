@@ -105,9 +105,9 @@
 		060503051CA6217C00642FC0 /* LeftJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftJoystickView.xib; sourceTree = "<group>"; };
 		060503071CA6229900642FC0 /* LeftJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftJoystickView.swift; sourceTree = "<group>"; };
 		0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightJoystickView.xib; sourceTree = "<group>"; };
-		060D8A931D97DC9700CE6E4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		060D8A941D97DE4100CE6E4A /* CalibrationPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationPackage.swift; sourceTree = "<group>"; };
 		060D8A971D97E9D800CE6E4A /* CalibrationPacketSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationPacketSender.swift; sourceTree = "<group>"; };
+		06178A2B1DA1888900B91106 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		06219D761D9AB18800C99A59 /* moving_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = moving_sound.wav; sourceTree = "<group>"; };
 		06285BD01D691DFB0002E8D4 /* Hexapod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hexapod.swift; sourceTree = "<group>"; };
 		06285BD11D691DFB0002E8D4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -508,6 +508,7 @@
 					065A5F4A1CA2F9E900BED250 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 9ZQJ38F5V6;
+						ProvisioningStyle = Automatic;
 					};
 					065A5F5E1CA2F9E900BED250 = {
 						CreatedOnToolsVersion = 7.3;
@@ -873,7 +874,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				065A5F531CA2F9E900BED250 /* Base */,
-				060D8A931D97DC9700CE6E4A /* en */,
+				06178A2B1DA1888900B91106 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -997,7 +998,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aboualdan.STEMI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stemi.STEMIHexapod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
@@ -1020,7 +1021,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aboualdan.STEMI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stemi.STEMIHexapod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
