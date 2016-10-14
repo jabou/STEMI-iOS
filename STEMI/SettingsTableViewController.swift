@@ -153,14 +153,18 @@ class SettingsTableViewController: UITableViewController {
                             do {
                                 try self.stemi.setValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
                             } catch {
-                                print("error")
+                                #if DEVELOPMENT
+                                    print("error")
+                                #endif
                             }
                         } else if self.currentCalibrationValues[j] > self.calibrationValues[j] {
                             self.currentCalibrationValues[j] -= calculatingNumbers[j]
                             do {
                                 try self.stemi.setValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
                             } catch {
-                                print("error")
+                                #if DEVELOPMENT
+                                    print("error")
+                                #endif
                             }
                         }
                     } else {
@@ -168,7 +172,9 @@ class SettingsTableViewController: UITableViewController {
                         do {
                             try self.stemi.setValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
                         } catch {
-                            print("error")
+                            #if DEVELOPMENT
+                                print("error")
+                            #endif
                         }
                     }
                 }
@@ -178,10 +184,21 @@ class SettingsTableViewController: UITableViewController {
             self.stemi.writeDataToHexapod({ completed in
                 if completed {
                     self.currentCalibrationValues = []
+                    self.stemi = nil
+                    UserDefaults.setWalkingStyle(.TripodGait)
+                    UserDefaults.setHeight(50)
+                    NSThread.sleepForTimeInterval(0.5)
+                    self.stemi = Hexapod(withCalibrationMode: false)
+                    self.stemi.setIP(UserDefaults.IP())
+                    self.stemi.setHeight(UserDefaults.height())
+                    self.stemi.setWalkingStyle(UserDefaults.walkingStyle())
+                    self.stemi.connect()
+                    NSThread.sleepForTimeInterval(1.1)
+                    self.stemi.disconnect()
+                    NSThread.sleepForTimeInterval(0.5)
                     complete(true)
                 }
             })
-
     }
 
 }

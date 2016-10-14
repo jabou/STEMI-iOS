@@ -97,7 +97,7 @@ class PacketSender: NSObject, NSStreamDelegate {
 
                 while self.openCommunication == true {
 
-                    NSThread.sleepForTimeInterval(0.2)
+                    NSThread.sleepForTimeInterval(0.1)
 
                     out.write(self.hexapod.currPacket.toByteArray(), maxLength: self.hexapod.currPacket.toByteArray().count)
 

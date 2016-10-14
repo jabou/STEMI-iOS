@@ -26,7 +26,7 @@ class WalkingStylesTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         _parentVC = self.parentViewController as! WalkingStyleViewController
         _preselectedStyle = _parentVC.walkingStyle.hashValue
-
+        tableView.reloadData()
     }
 
     //MARK: - Table view data source

@@ -41,7 +41,9 @@ class HeightViewController: UIViewController {
             _movingSound.volume = 0.07
             _movingSound.prepareToPlay()
         } catch let error as NSError {
-            print(error.description)
+            #if DEVELOPMENT
+                print(error.description)
+            #endif
         }
 
         _stemi = Hexapod()

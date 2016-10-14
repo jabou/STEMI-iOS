@@ -61,7 +61,9 @@ class CalibrationPacketSender: NSObject, NSStreamDelegate {
             do {
                 try hexapod.setValue(value, atIndex: index)
             } catch {
-                print(error)
+                #if DEVELOPMENT
+                    print(error)
+                #endif
             }
         }
 
@@ -81,7 +83,7 @@ class CalibrationPacketSender: NSObject, NSStreamDelegate {
 
                 while self.openCommunication == true {
 
-                    NSThread.sleepForTimeInterval(0.2)
+                    NSThread.sleepForTimeInterval(0.1)
 
                     out.write(self.hexapod.calibrationPacket.toByteArray(), maxLength: self.hexapod.calibrationPacket.toByteArray().count)
 

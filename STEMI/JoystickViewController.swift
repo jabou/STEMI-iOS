@@ -204,7 +204,9 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
                 toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("WALKING_STYLE"), text: Localization.localizedString("WALKING_STYLE_TEXT"), height: 90)
                 toastNotification.showNotification()
             default:
-                print("Long press error")
+                #if DEVELOPMENT
+                    print("Long press error")
+                #endif
             }
         } else if state == .Ended {
             toastNotification.hideNotification()

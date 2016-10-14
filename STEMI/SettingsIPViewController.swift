@@ -52,6 +52,7 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
         return false
     }
 
+
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
 
         doneButton.enabled = true
