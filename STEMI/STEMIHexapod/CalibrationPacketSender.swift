@@ -89,6 +89,7 @@ class CalibrationPacketSender: NSObject, NSStreamDelegate {
                         self.connected = true
                         self.counter = 0
                     } else {
+
                         self.counter += 1
                         if self.counter == 10 {
                             self.dropConnection()

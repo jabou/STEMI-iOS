@@ -18,8 +18,6 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        doneButton.enabled = false
-
         let fullIP = UserDefaults.IP()
         let fullIPArr = fullIP.componentsSeparatedByString(".")
         var counter = 0
@@ -34,6 +32,7 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        doneButton.enabled = false
         ipTextFields[3].becomeFirstResponder()
     }
 
@@ -136,6 +135,8 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
         ipTextFields[1].text = "168"
         ipTextFields[2].text = "4"
         ipTextFields[3].text = "1"
+        ipTextFields[3].becomeFirstResponder()
+        doneButton.enabled = true
     }
 
 

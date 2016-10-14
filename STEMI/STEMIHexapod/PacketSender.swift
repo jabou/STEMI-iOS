@@ -127,7 +127,8 @@ class PacketSender: NSObject, NSStreamDelegate {
         if aStream == out {
             switch eventCode {
             case NSStreamEvent.ErrorOccurred:
-                break
+                self.dropConnection()
+                self.counter = 0
             case NSStreamEvent.OpenCompleted:
                 break
             case NSStreamEvent.HasSpaceAvailable:

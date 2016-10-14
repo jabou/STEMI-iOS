@@ -28,7 +28,7 @@ class IPTextField: UITextField {
         if let text = self.text {
             let stringToInt = Int(text)
             if let int = stringToInt {
-                if 1 ... 255 ~= int {
+                if 0 ... 255 ~= int {
                     isInRange = true
                 }
             }
