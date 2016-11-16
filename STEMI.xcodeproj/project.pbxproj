@@ -507,7 +507,7 @@
 				TargetAttributes = {
 					065A5F4A1CA2F9E900BED250 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 9ZQJ38F5V6;
+						DevelopmentTeam = UYMMXCQB9G;
 						ProvisioningStyle = Automatic;
 					};
 					065A5F5E1CA2F9E900BED250 = {
@@ -992,7 +992,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9ZQJ38F5V6;
+				DEVELOPMENT_TEAM = UYMMXCQB9G;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = STEMI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1015,7 +1015,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9ZQJ38F5V6;
+				DEVELOPMENT_TEAM = UYMMXCQB9G;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = STEMI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
