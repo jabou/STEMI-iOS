@@ -2,7 +2,7 @@ PODS:
   - Crashlytics (3.8.2):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.8)
-  - STEMIHexapod (1.0.4)
+  - STEMIHexapod (1.0.5)
 
 DEPENDENCIES:
   - Crashlytics
@@ -12,8 +12,8 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Crashlytics: 27acca95a01b042a8294291dd6dff27f8f6af6d7
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
-  STEMIHexapod: 60ff77336bb519f47031ad486d7c090b9cb66731
+  STEMIHexapod: a4fbc6f9feeef2e0a6932165bc65996358145d0d
 
 PODFILE CHECKSUM: 4e814cc6310b572116804c164b729c4aed8f51d4
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
