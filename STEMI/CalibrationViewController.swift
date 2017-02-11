@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import STEMIHexapod
 
 class CalibrationViewController: UIViewController {
 
@@ -20,13 +21,13 @@ class CalibrationViewController: UIViewController {
     @IBOutlet weak var hintLabel: UILabel!
 
     //MARK: - Private var
-    private var _stemi: Hexapod!
-    private var _calibrationValues = [Int]()
-    private var _changedCalibrationValues = [Int]()
-    private var _selectedIndex: Int!
-    private var _shouldIncrease = false
-    private var _shouldDecrease = false
-    private var _movingSound: AVAudioPlayer = AVAudioPlayer()
+    fileprivate var _stemi: Hexapod!
+    fileprivate var _calibrationValues = [Int]()
+    fileprivate var _changedCalibrationValues = [Int]()
+    fileprivate var _selectedIndex: Int!
+    fileprivate var _shouldIncrease = false
+    fileprivate var _shouldDecrease = false
+    fileprivate var _movingSound: AVAudioPlayer = AVAudioPlayer()
 
 
     //MARK: - View Lifecycle
@@ -36,13 +37,13 @@ class CalibrationViewController: UIViewController {
         numberIndicatorLabel.alpha = 0.0
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        let path = NSBundle.mainBundle().pathForResource("moving_sound", ofType: "wav")
-        let url = NSURL(fileURLWithPath: path!)
+        let path = Bundle.main.path(forResource: "moving_sound", ofType: "wav")
+        let url = URL(fileURLWithPath: path!)
         do {
-            _movingSound = try AVAudioPlayer(contentsOfURL: url)
+            _movingSound = try AVAudioPlayer(contentsOf: url)
             _movingSound.volume = 0.07
             _movingSound.numberOfLoops = -1
             _movingSound.prepareToPlay()
@@ -52,16 +53,16 @@ class CalibrationViewController: UIViewController {
 
 
         for leg in legPoints {
-            leg.setImage(nil, forState: .Normal)
+            leg.setImage(nil, for: UIControlState())
         }
-        upArrow.enabled = false
-        downArrow.enabled = false
-        hintLabel.hidden = false
+        upArrow.isEnabled = false
+        downArrow.isEnabled = false
+        hintLabel.isHidden = false
         _calibrationValues = []
         _changedCalibrationValues = []
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
 
@@ -84,88 +85,88 @@ class CalibrationViewController: UIViewController {
         })
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         _stemi.disconnect()
     }
 
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         circleImageView.alpha = 0.0
         numberIndicatorLabel.alpha = 0.0
     }
 
     //MARK: - Orientation Handling
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.LandscapeRight
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.landscapeRight
     }
 
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
 
     //MARK: - UI Buttons change
-    private func _setActiveButtonWithId(identifier: Int) {
-        for (index, leg) in legPoints.enumerate() {
+    fileprivate func _setActiveButtonWithId(_ identifier: Int) {
+        for (index, leg) in legPoints.enumerated() {
             numberIndicatorLabel.text = String(_changedCalibrationValues[_selectedIndex])
             if index == identifier {
-                leg.setImage(UIImage(named: "calibration_dot"), forState: .Normal)
+                leg.setImage(UIImage(named: "calibration_dot"), for: UIControlState())
             } else {
-                leg.setImage(nil, forState: .Normal)
+                leg.setImage(nil, for: UIControlState())
             }
         }
     }
 
-    private func _increaseValue() {
+    fileprivate func _increaseValue() {
         if _changedCalibrationValues[_selectedIndex] < 100 {
             _changedCalibrationValues[_selectedIndex] += 1
-            _stemi.increaseValueAtIndex(_selectedIndex)
+            _stemi.increaseCalibrationValueAtIndex(_selectedIndex)
             numberIndicatorLabel.text = String(_changedCalibrationValues[_selectedIndex])
         } else {
             _stopSound()
         }
     }
 
-    private func _decreaseValue() {
+    fileprivate func _decreaseValue() {
         if _changedCalibrationValues[_selectedIndex] > 0 {
             _changedCalibrationValues[_selectedIndex] -= 1
-            _stemi.decreaseValueAtIndex(_selectedIndex)
+            _stemi.decreaseCalibrationValueAtIndex(_selectedIndex)
             numberIndicatorLabel.text = String(_changedCalibrationValues[_selectedIndex])
         } else {
             _stopSound()
         }
     }
 
-    private func _increaseValueOnLongClick() {
-        let dataSendQueue: dispatch_queue_t = dispatch_queue_create("Increase Queue", nil)
-        dispatch_async(dataSendQueue, {
+    fileprivate func _increaseValueOnLongClick() {
+        let dataSendQueue: DispatchQueue = DispatchQueue(label: "Increase Queue", attributes: [])
+        dataSendQueue.async(execute: {
             while self._shouldIncrease == true {
-                NSThread.sleepForTimeInterval(Constants.LongClickSpeed)
-                dispatch_async(dispatch_get_main_queue()) {
+                Thread.sleep(forTimeInterval: Constants.LongClickSpeed)
+                DispatchQueue.main.async {
                     self._increaseValue()
                 }
             }
         })
     }
 
-    private func _decreaseValueOnLongClick() {
-        let dataSendQueue: dispatch_queue_t = dispatch_queue_create("Decrease Queue", nil)
-        dispatch_async(dataSendQueue, {
+    fileprivate func _decreaseValueOnLongClick() {
+        let dataSendQueue: DispatchQueue = DispatchQueue(label: "Decrease Queue", attributes: [])
+        dataSendQueue.async(execute: {
             while self._shouldDecrease == true {
-                NSThread.sleepForTimeInterval(Constants.LongClickSpeed)
-                dispatch_async(dispatch_get_main_queue()) {
+                Thread.sleep(forTimeInterval: Constants.LongClickSpeed)
+                DispatchQueue.main.async {
                     self._decreaseValue()
                 }
             }
         })
     }
 
-    private func _discardValuesToInitial(complete: (Bool) -> Void) {
+    fileprivate func _discardValuesToInitial(_ complete: (Bool) -> Void) {
 
         var calculatingNumbers: [Int] = []
 
         for i in 0...10 {
-            for (j, _) in _calibrationValues.enumerate() {
+            for (j, _) in _calibrationValues.enumerated() {
 
                 if i == 0 {
                     let calc = abs(_calibrationValues[j] - _changedCalibrationValues[j])/10
@@ -176,14 +177,14 @@ class CalibrationViewController: UIViewController {
                     if _changedCalibrationValues[j] < _calibrationValues[j] {
                         _changedCalibrationValues[j] += calculatingNumbers[j]
                         do {
-                            try _stemi.setValue(UInt8(_changedCalibrationValues[j]), atIndex: j)
+                            try _stemi.setCalibrationValue(UInt8(_changedCalibrationValues[j]), atIndex: j)
                         } catch {
                             print("error")
                         }
                     } else if _changedCalibrationValues[j] > _calibrationValues[j] {
                         _changedCalibrationValues[j] -= calculatingNumbers[j]
                         do {
-                            try _stemi.setValue(UInt8(_changedCalibrationValues[j]), atIndex: j)
+                            try _stemi.setCalibrationValue(UInt8(_changedCalibrationValues[j]), atIndex: j)
                         } catch {
                             print("error")
                         }
@@ -191,13 +192,13 @@ class CalibrationViewController: UIViewController {
                 } else {
                     _changedCalibrationValues[j] = _calibrationValues[j]
                     do {
-                        try _stemi.setValue(UInt8(_calibrationValues[j]), atIndex: j)
+                        try _stemi.setCalibrationValue(UInt8(_calibrationValues[j]), atIndex: j)
                     } catch {
                         print("error")
                     }
                 }
             }
-            NSThread.sleepForTimeInterval(0.1)
+            Thread.sleep(forTimeInterval: 0.1)
         }
         complete(true)
     }
@@ -208,84 +209,84 @@ class CalibrationViewController: UIViewController {
     }
 
     //MARK: - Action Handlers
-    @IBAction func legsActionHandler(sender: UIButton) {
-        upArrow.enabled = true
-        downArrow.enabled = true
-        hintLabel.hidden = true
-        UIView.animateWithDuration(0.2) {
+    @IBAction func legsActionHandler(_ sender: UIButton) {
+        upArrow.isEnabled = true
+        downArrow.isEnabled = true
+        hintLabel.isHidden = true
+        UIView.animate(withDuration: 0.2, animations: {
             self.circleImageView.alpha = 1.0
-            UIView.animateWithDuration(0.2, delay: 0.1, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.2, delay: 0.1, options: UIViewAnimationOptions(), animations: {
                 self.numberIndicatorLabel.alpha = 1.0
                 }, completion: nil)
-        }
+        }) 
         _selectedIndex = sender.tag
         _setActiveButtonWithId(_selectedIndex)
     }
 
-    @IBAction func upArrowActionHandler(sender: UIButton) {
+    @IBAction func upArrowActionHandler(_ sender: UIButton) {
         _movingSound.play()
-        NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(_stopSound), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(_stopSound), userInfo: nil, repeats: false)
         _increaseValue()
     }
     
-    @IBAction func downArrowActionHandler(sender: UIButton) {
+    @IBAction func downArrowActionHandler(_ sender: UIButton) {
         _movingSound.play()
-        NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(_stopSound), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(_stopSound), userInfo: nil, repeats: false)
         _decreaseValue()
     }
 
-    @IBAction func longPressUpButtonActionHandler(sender: UILongPressGestureRecognizer) {
-        if sender.state == .Ended {
+    @IBAction func longPressUpButtonActionHandler(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .ended {
             _stopSound()
             _shouldIncrease = false
-        } else if sender.state == .Began {
+        } else if sender.state == .began {
             _shouldIncrease = true
             _movingSound.play()
             _increaseValueOnLongClick()
         }
     }
-    @IBAction func longPressDownButtonActionHandler(sender: UILongPressGestureRecognizer) {
-        if sender.state == .Ended {
+    @IBAction func longPressDownButtonActionHandler(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .ended {
             _stopSound()
             _shouldDecrease = false
-        } else if sender.state == .Began {
+        } else if sender.state == .began {
             _shouldDecrease = true
             _movingSound.play()
             _decreaseValueOnLongClick()
         }
     }
-    @IBAction func saveButtonActionHandler(sender: AnyObject) {
+    @IBAction func saveButtonActionHandler(_ sender: AnyObject) {
         _stemi.writeDataToHexapod { complete in
             if complete {
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
 
-    @IBAction func cancelButtonActionHandler(sender: AnyObject) {
+    @IBAction func cancelButtonActionHandler(_ sender: AnyObject) {
 
         let backgroundView = UIView()
         let loadingLabel = UILabel()
         let activityIndicator = UIActivityIndicatorView()
 
-        backgroundView.frame = CGRectMake(0, 0, 130, 130)
+        backgroundView.frame = CGRect(x: 0, y: 0, width: 130, height: 130)
         backgroundView.center = view.center
         backgroundView.backgroundColor = UIColor(red: 39/255, green: 38/255, blue: 39/255, alpha: 0.9)
         backgroundView.clipsToBounds = true
         backgroundView.layer.cornerRadius = 10
         backgroundView.alpha = 0.0
 
-        loadingLabel.frame = CGRectMake(0, 0, 130, 80)
-        loadingLabel.backgroundColor = UIColor.clearColor()
-        loadingLabel.textColor = UIColor.whiteColor()
+        loadingLabel.frame = CGRect(x: 0, y: 0, width: 130, height: 80)
+        loadingLabel.backgroundColor = UIColor.clear
+        loadingLabel.textColor = UIColor.white
         loadingLabel.adjustsFontSizeToFitWidth = true
-        loadingLabel.textAlignment = NSTextAlignment.Center
-        loadingLabel.center = CGPointMake(backgroundView.bounds.width/2, backgroundView.bounds.height/2 + 30)
+        loadingLabel.textAlignment = NSTextAlignment.center
+        loadingLabel.center = CGPoint(x: backgroundView.bounds.width/2, y: backgroundView.bounds.height/2 + 30)
         loadingLabel.text = Localization.localizedString("CANCELING")
 
-        activityIndicator.frame = CGRectMake(0, 0, activityIndicator.bounds.size.width, activityIndicator.bounds.size.height)
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
-        activityIndicator.center = CGPointMake(backgroundView.bounds.width/2, backgroundView.bounds.height/2 - 10)
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: activityIndicator.bounds.size.width, height: activityIndicator.bounds.size.height)
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        activityIndicator.center = CGPoint(x: backgroundView.bounds.width/2, y: backgroundView.bounds.height/2 - 10)
 
         backgroundView.addSubview(activityIndicator)
         backgroundView.addSubview(loadingLabel)
@@ -293,25 +294,25 @@ class CalibrationViewController: UIViewController {
 
         activityIndicator.startAnimating()
 
-        let warningMessage = UIAlertController(title: Localization.localizedString("WARNING"), message: Localization.localizedString("EXIT_CALIBRATION"), preferredStyle: .Alert)
-        let yesButton = UIAlertAction(title: Localization.localizedString("YES"), style: .Destructive, handler: {action in
+        let warningMessage = UIAlertController(title: Localization.localizedString("WARNING"), message: Localization.localizedString("EXIT_CALIBRATION"), preferredStyle: .alert)
+        let yesButton = UIAlertAction(title: Localization.localizedString("YES"), style: .destructive, handler: {action in
 
             backgroundView.alpha = 1.0
 
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 self._discardValuesToInitial({ complete in
                     if complete {
                         activityIndicator.stopAnimating()
                         backgroundView.removeFromSuperview()
-                        self.dismissViewControllerAnimated(true, completion: nil)
+                        self.dismiss(animated: true, completion: nil)
                     }
                 })
             })
         })
-        let noButton = UIAlertAction(title: Localization.localizedString("NO"), style: .Cancel, handler: nil)
+        let noButton = UIAlertAction(title: Localization.localizedString("NO"), style: .cancel, handler: nil)
         warningMessage.addAction(yesButton)
         warningMessage.addAction(noButton)
-        self.presentViewController(warningMessage, animated: true, completion: nil)
+        self.present(warningMessage, animated: true, completion: nil)
     }
 
 }

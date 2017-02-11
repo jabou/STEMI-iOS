@@ -8,11 +8,12 @@
 
 import UIKit
 import CoreMotion
+import STEMIHexapod
 
 enum PlayMode {
-    case Movement
-    case Rotation
-    case Orientation
+    case movement
+    case rotation
+    case orientation
 }
 
 class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJoystickViewDelegate, MenuViewDelegate, HexapodDelegate {
@@ -26,37 +27,37 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     @IBOutlet weak var menuView: UIView!
 
     //MARK: - Private vatiables
-    private let selectedPictures = ["movement_sel", "rotation_sel", "orientation_sel", "height_sel", "settings_sel"]
-    private let unselectedPictures = ["movement_non", "rotation_non", "orientation_non", "height_non", "settings_non"]
-    private var selectedMode: PlayMode = .Movement
-    private var accelerometer: CMMotionManager!
-    private var accelerometerX: UInt8!
-    private var accelerometerY: UInt8!
-    private var stemi: Hexapod!
-    private var menu: Menu!
-    private var leftJoystick: LeftJoystickView!
-    private var rightJoystick: RightJoystickView!
-    private var toastNotification: ToastNotification!
+    fileprivate let selectedPictures = ["movement_sel", "rotation_sel", "orientation_sel", "height_sel", "settings_sel"]
+    fileprivate let unselectedPictures = ["movement_non", "rotation_non", "orientation_non", "height_non", "settings_non"]
+    fileprivate var selectedMode: PlayMode = .movement
+    fileprivate var accelerometer: CMMotionManager!
+    fileprivate var accelerometerX: UInt8!
+    fileprivate var accelerometerY: UInt8!
+    fileprivate var stemi: Hexapod!
+    fileprivate var menu: Menu!
+    fileprivate var leftJoystick: LeftJoystickView!
+    fileprivate var rightJoystick: RightJoystickView!
+    fileprivate var toastNotification: ToastNotification!
 
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //Setup standby button on screen
-        standbyButton.setImage(UIImage(named: "standby_off"), forState: .Normal)
-        standbyButton.setImage(UIImage(named: "standby_on"), forState: .Selected)
-        standbyButton.setImage(UIImage(named: "standby_on"), forState: .Highlighted)
-        standbyButton.selected = true
+        standbyButton.setImage(UIImage(named: "standby_off"), for: UIControlState())
+        standbyButton.setImage(UIImage(named: "standby_on"), for: .selected)
+        standbyButton.setImage(UIImage(named: "standby_on"), for: .highlighted)
+        standbyButton.isSelected = true
 
         //Add notification observers for start and stop connection with stemi
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.stopConnection), name: Constants.Connection.StopConnection, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.startConnection), name: Constants.Connection.StartConnection, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(JoystickViewController.stopConnection), name: NSNotification.Name(rawValue: Constants.Connection.StopConnection), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(JoystickViewController.startConnection), name: NSNotification.Name(rawValue: Constants.Connection.StartConnection), object: nil)
 
         //Demo target dismiss view
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(JoystickViewController.dismissJoystickView), name: Constants.Demo.DismissView, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(JoystickViewController.dismissJoystickView), name: NSNotification.Name(rawValue: Constants.Demo.DismissView), object: nil)
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         //Put left joystick on main view
@@ -88,19 +89,21 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         stemi.setHeight(UserDefaults.height())
         stemi.setWalkingStyle(UserDefaults.walkingStyle())
         switch selectedMode {
-        case .Movement:
+        case .movement:
             stemi.setMovementMode()
-        case .Rotation:
+        case .rotation:
             stemi.setRotationMode()
-        case .Orientation:
+        case .orientation:
             stemi.setOrientationMode()
         }
         startConnection()
 
         //Declare accelerometer and start takeing values from accelerometer
         accelerometer = CMMotionManager()
-        accelerometer.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) {
-            (data: CMAccelerometerData?, error: NSError?) in
+        accelerometer.startAccelerometerUpdates(to: OperationQueue.main) { [weak self] (data: CMAccelerometerData?, error: Error?) in
+            guard let `self` = self else {
+                return
+            }
 
             if let acceleration = data?.acceleration {
                 if acceleration.x < -0.4 {
@@ -131,49 +134,49 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         }
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         stemi.setMovementMode()
         stopConnection()
     }
 
     // MARK: - Handle orientation
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
 
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.LandscapeRight
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.landscapeRight
     }
 
     //MARK: - MenuViewDelegate
     func menuDidBecomeActive() {
-        self.menuScreenView.hidden = false
-        self.view.bringSubviewToFront(self.menuView)
+        self.menuScreenView.isHidden = false
+        self.view.bringSubview(toFront: self.menuView)
     }
 
     func menuDidBecomeInactive() {
-        self.menuScreenView.hidden = true
+        self.menuScreenView.isHidden = true
         self.view.insertSubview(self.menuView, aboveSubview: self.backgroundView)
     }
 
-    func menuDidChangePlayMode(mode: String) {
+    func menuDidChangePlayMode(_ mode: String) {
         switch mode {
         case "movement":
             toastNotification = ToastNotification(onView: self.view, isHint: false, headline: Localization.localizedString("MOVEMENT"), text: nil, height: nil)
             toastNotification.showNotificationWithAutohide()
             stemi.setMovementMode()
-            selectedMode = .Movement
+            selectedMode = .movement
         case "rotation":
             toastNotification = ToastNotification(onView: self.view, isHint: false, headline: Localization.localizedString("ROTATION") , text: nil, height: nil)
             toastNotification.showNotificationWithAutohide()
             stemi.setRotationMode()
-            selectedMode = .Rotation
+            selectedMode = .rotation
         case "orientation":
             toastNotification = ToastNotification(onView: self.view, isHint: false, headline: Localization.localizedString("ORIENTATION"), text: nil, height: nil)
             toastNotification.showNotificationWithAutohide()
             stemi.setOrientationMode()
-            selectedMode = .Orientation
+            selectedMode = .orientation
         default:
             #if DEVELOPMENT
                 print("Mode did not changed!")
@@ -182,8 +185,8 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
 
     }
 
-    func menuButtonLongPressOnIndex(index: Int, withState state: UIGestureRecognizerState) {
-        if state == .Began {
+    func menuButtonLongPressOnIndex(_ index: Int, withState state: UIGestureRecognizerState) {
+        if state == .began {
             switch index {
             case 0:
                 toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("MOVEMENT"), text: Localization.localizedString("MOVEMENT_TEXT"), height: 110)
@@ -206,33 +209,33 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
             default:
                 print("Long press error")
             }
-        } else if state == .Ended {
+        } else if state == .ended {
             toastNotification.hideNotification()
         }
     }
 
-    func menuButtonDidSelectOnIndex(index: Int) {
+    func menuButtonDidSelectOnIndex(_ index: Int) {
         switch index {
         case 3:
-            self.presentViewController(ViewControllers.HeightViewController, animated: true, completion: nil)
+            self.present(ViewControllers.HeightViewController, animated: true, completion: nil)
         case 4:
-            self.presentViewController(ViewControllers.CalibrationViewController, animated: true, completion: nil)
+            self.present(ViewControllers.CalibrationViewController, animated: true, completion: nil)
         case 5:
-            self.presentViewController(ViewControllers.WalkingStyleViewController, animated: true, completion: nil)
+            self.present(ViewControllers.WalkingStyleViewController, animated: true, completion: nil)
         case 6:
-            self.presentViewController(ViewControllers.AppSettingsViewController, animated: true, completion: nil)
+            self.present(ViewControllers.AppSettingsViewController, animated: true, completion: nil)
         default:
             break
         }
     }
 
     //MARK: - LeftJoystickViewDelegate
-    func leftJoystickDidMove(powerValue: UInt8, angleValue: UInt8) {
+    func leftJoystickDidMove(_ powerValue: UInt8, angleValue: UInt8) {
         stemi.setJoystickParams(powerValue, angle: angleValue)
     }
 
     //MARK: - RightJoystickViewDelegate
-    func rightJoystickDidMove(rotationValue: UInt8) {
+    func rightJoystickDidMove(_ rotationValue: UInt8) {
         stemi.setJoystickParams(rotationValue)
     }
 
@@ -246,17 +249,17 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     }
 
     func connectionLost() {
-        let warningMessage = UIAlertController(title: Localization.localizedString("CONNECTION_TITLE"), message: Localization.localizedString("CONNECTION_TEXT"), preferredStyle: .Alert)
-        let okButton = UIAlertAction(title: Localization.localizedString("OK"), style: .Cancel, handler: {action in
-            ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
-            self.dismissViewControllerAnimated(true, completion: nil)
+        let warningMessage = UIAlertController(title: Localization.localizedString("CONNECTION_TITLE"), message: Localization.localizedString("CONNECTION_TEXT"), preferredStyle: .alert)
+        let okButton = UIAlertAction(title: Localization.localizedString("OK"), style: .cancel, handler: {action in
+            ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+            self.dismiss(animated: true, completion: nil)
         })
         warningMessage.addAction(okButton)
-        self.presentViewController(warningMessage, animated: true, completion: nil)
+        self.present(warningMessage, animated: true, completion: nil)
     }
 
     //MARK: - HexapodDelegate
-    func connectionStatus(isConnected: Bool) {
+    func connectionStatus(_ isConnected: Bool) {
         #if DEVELOPMENT
             print("no_hexapod mode. Connetion: \(isConnected)")
         #else
@@ -268,21 +271,21 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
 
     //MARK: - Demo app background handling
     func dismissJoystickView() {
-        ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
-        self.dismissViewControllerAnimated(true, completion: nil)
+        ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        self.dismiss(animated: true, completion: nil)
     }
 
     //MARK: - Action Handlers
-    @IBAction func menuScreenViewPressed(sender: AnyObject) {
+    @IBAction func menuScreenViewPressed(_ sender: AnyObject) {
         menu.closeMenu()
     }
 
-    @IBAction func standbyButtonPressed(sender: AnyObject) {
-        if standbyButton.selected {
-            standbyButton.selected = false
+    @IBAction func standbyButtonPressed(_ sender: AnyObject) {
+        if standbyButton.isSelected {
+            standbyButton.isSelected = false
             stemi.turnOff()
         } else {
-            standbyButton.selected = true
+            standbyButton.isSelected = true
             stemi.turnOn()
         }
     }

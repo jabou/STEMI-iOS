@@ -20,41 +20,41 @@ class ConnectionScreenViewController: UIViewController {
     @IBOutlet weak var spinningImageView: UIImageView!
 
     //MARK: - Private variables
-    private var labelAnimation: NSTimer?
-    private var _shouldSpin: Bool = false
+    fileprivate var labelAnimation: Timer?
+    fileprivate var _shouldSpin: Bool = false
 
 
     //MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        mainLabel.hidden = false
-        button2.hidden = true
-        hintMessageLabel.hidden = false
-        loadingView.hidden = true
+        mainLabel.isHidden = false
+        button2.isHidden = true
+        hintMessageLabel.isHidden = false
+        loadingView.isHidden = true
         mainLabel.text = Localization.localizedString("START")
         hintMessageLabel.text = Localization.localizedString("START_TEXT")
-        button1.setBackgroundImage(UIImage(named: "buttonBorder"), forState: .Normal)
-        button1.setTitle(Localization.localizedString("CONNECT"), forState: .Normal)
+        button1.setBackgroundImage(UIImage(named: "buttonBorder"), for: UIControlState())
+        button1.setTitle(Localization.localizedString("CONNECT"), for: UIControlState())
         button1.titleLabel?.font = UIFont(name: "ProximaNova-Regular", size: 15)
-        button1.setTitleColor(UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0), forState: .Normal)
+        button1.setTitleColor(UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0), for: UIControlState())
         button1.tag = 1
     }
 
     //MARK: - Rotation handling
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
 
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Portrait
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
     }
 
     //MARK: - Connection view state handlers
     func checkConnection() {
 
         //Clear cache and reset user defaults
-        NSURLCache.sharedURLCache().removeAllCachedResponses()
+        URLCache.shared.removeAllCachedResponses()
 
         #if DEVELOPMENT
 
@@ -66,50 +66,51 @@ class ConnectionScreenViewController: UIViewController {
             
         #else
             // Create and make API call to stemi. If file is present and vaild, start using hexapod.
-            let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+            let configuration = URLSessionConfiguration.default
             configuration.timeoutIntervalForRequest = 3
 
-            let session = NSURLSession(configuration: configuration)
-            let request = NSURLRequest(URL: NSURL(string: "http://\(UserDefaults.IP())/stemiData.json")!, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 3)
-            let task: NSURLSessionTask = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
+            let session = URLSession(configuration: configuration)
+            let request = URLRequest(url: URL(string: "http://\(UserDefaults.IP())/stemiData.json")!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 3)
+            let task: URLSessionTask = session.dataTask(with: request, completionHandler: { (data, response, error) in
 
                 //If there is data, try to read it
                 if let data = data {
                     //Try to read data from json
                     do {
-                        let jsonData = try NSJSONSerialization.JSONObjectWithData(data, options: [])
-                        if let valide = jsonData["isValid"] as? Bool {
-                            //JSON is OK - start sending data
-                            if valide {
-                                if let name = jsonData["stemiID"] as? String, version = jsonData["version"] as? String {
-                                    if (UserDefaults.stemiName() == "") || !(UserDefaults.stemiName() == name) {
-                                        UserDefaults.setStemiName(name)
-                                        UserDefaults.setHardwareVersion(version)
-                                        UserDefaults.setWalkingStyle(.TripodGait)
-                                        UserDefaults.setHeight(50)
+                        if let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
+                            if let valide = jsonData["isValid"] as? Bool {
+                                //JSON is OK - start sending data
+                                if valide {
+                                    if let name = jsonData["stemiID"] as? String, let version = jsonData["version"] as? String {
+                                        if (UserDefaults.stemiName() == "") || !(UserDefaults.stemiName() == name) {
+                                            UserDefaults.setStemiName(name)
+                                            UserDefaults.setHardwareVersion(version)
+                                            UserDefaults.setWalkingStyle(.tripodGait)
+                                            UserDefaults.setHeight(50)
+                                        }
                                     }
+                                    DispatchQueue.main.async(execute: {
+                                        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
+                                    })
+                                } else {
+                                    DispatchQueue.main.async(execute: {
+                                        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
+                                    })
                                 }
-                                dispatch_async(dispatch_get_main_queue(), { 
-                                    NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
-                                })
-                            } else {
-                                dispatch_async(dispatch_get_main_queue(), { 
-                                    NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
-                                })
                             }
                         }
                     }
                         //Error with reading data
                     catch {
-                        dispatch_async(dispatch_get_main_queue(), {
-                            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
+                        DispatchQueue.main.async(execute: {
+                            Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
                         })
                     }
                 }
                     //There is no data on this network -> error
                 else {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
+                    DispatchQueue.main.async(execute: {
+                        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
                     })
                 }
             })
@@ -124,19 +125,19 @@ class ConnectionScreenViewController: UIViewController {
             _stopSpin()
         }
 
-        button2.hidden = true
-        hintMessageLabel.hidden = false
-        loadingView.hidden = true
-        mainLabel.hidden = false
+        button2.isHidden = true
+        hintMessageLabel.isHidden = false
+        loadingView.isHidden = true
+        mainLabel.isHidden = false
         mainLabel.text = Localization.localizedString("START")
         hintMessageLabel.text = Localization.localizedString("START_TEXT")
-        button1.setBackgroundImage(UIImage(named: "buttonBorder"), forState: .Normal)
-        button1.setTitle(Localization.localizedString("CONNECT"), forState: .Normal)
+        button1.setBackgroundImage(UIImage(named: "buttonBorder"), for: UIControlState())
+        button1.setTitle(Localization.localizedString("CONNECT"), for: UIControlState())
         button1.titleLabel?.font = UIFont(name: "ProximaNova-Regular", size: 15)
-        button1.setTitleColor(UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0), forState: .Normal)
+        button1.setTitleColor(UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0), for: UIControlState())
         labelAnimation?.invalidate()
         labelAnimation = nil
-        button1.userInteractionEnabled = true
+        button1.isUserInteractionEnabled = true
     }
 
     func setupTryAgain() {
@@ -145,31 +146,31 @@ class ConnectionScreenViewController: UIViewController {
             _stopSpin()
         }
 
-        mainLabel.hidden = false
+        mainLabel.isHidden = false
         mainLabel.alpha = 1.0
         labelAnimation?.invalidate()
         labelAnimation = nil
         animateLabelShake()
 
-        hintMessageLabel.hidden = false
-        loadingView.hidden = true
+        hintMessageLabel.isHidden = false
+        loadingView.isHidden = true
         mainLabel.text = Localization.localizedString("CONNECTION_FAILED")
         hintMessageLabel.text = Localization.localizedString("FAILED_TEXT")
-        button1.setBackgroundImage(UIImage(named: "buttonBorder"), forState: .Normal)
-        button1.setTitle(Localization.localizedString("TRY_AGAIN"), forState: .Normal)
+        button1.setBackgroundImage(UIImage(named: "buttonBorder"), for: UIControlState())
+        button1.setTitle(Localization.localizedString("TRY_AGAIN"), for: UIControlState())
         button1.titleLabel?.font = UIFont(name: "ProximaNova-Regular", size: 15)
-        button1.setTitleColor(UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0), forState: .Normal)
-        button1.userInteractionEnabled = true
+        button1.setTitleColor(UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 1.0), for: UIControlState())
+        button1.isUserInteractionEnabled = true
 
-        button2.hidden = false
-        button2.setTitle(Localization.localizedString("CHANGE_IP"), forState: .Normal)
+        button2.isHidden = false
+        button2.setTitle(Localization.localizedString("CHANGE_IP"), for: UIControlState())
         button2.tag = 2
 
     }
 
     func openJoystick() {
-        ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
-        self.presentViewController(ViewControllers.MainJoystickViewController, animated: true, completion: {
+        ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(ViewControllers.MainJoystickViewController, animated: true, completion: {
             complete in
             self.resetViewState()
         })
@@ -184,19 +185,19 @@ class ConnectionScreenViewController: UIViewController {
         let labelX = labelFrame.origin.x
         let labelY = labelFrame.origin.y
 
-        UIView.animateWithDuration(0.05, animations: {
-            self.mainLabel.frame = CGRectMake(labelX - 4, labelY, labelWidth, labelHeight)
+        UIView.animate(withDuration: 0.05, animations: {
+            self.mainLabel.frame = CGRect(x: labelX - 4, y: labelY, width: labelWidth, height: labelHeight)
             self.mainLabel.layoutIfNeeded()
             }, completion: { complete in
-                UIView.animateWithDuration(0.05, animations: {
-                    self.mainLabel.frame = CGRectMake(labelX + 4, labelY, labelWidth, labelHeight)
+                UIView.animate(withDuration: 0.05, animations: {
+                    self.mainLabel.frame = CGRect(x: labelX + 4, y: labelY, width: labelWidth, height: labelHeight)
                     self.mainLabel.layoutIfNeeded()
                     }, completion: { complete in
-                        UIView.animateWithDuration(0.05, animations: {
-                            self.mainLabel.frame = CGRectMake(labelX - 4, labelY, labelWidth, labelHeight)
+                        UIView.animate(withDuration: 0.05, animations: {
+                            self.mainLabel.frame = CGRect(x: labelX - 4, y: labelY, width: labelWidth, height: labelHeight)
                             self.mainLabel.layoutIfNeeded()
                             }, completion: { complete in
-                                self.mainLabel.frame = CGRectMake(labelX, labelY, labelWidth, labelHeight)
+                                self.mainLabel.frame = CGRect(x: labelX, y: labelY, width: labelWidth, height: labelHeight)
                                 self.mainLabel.layoutIfNeeded()
                         })
                 })
@@ -204,9 +205,9 @@ class ConnectionScreenViewController: UIViewController {
     }
 
     //MARK: - Loadingspinning private helpers
-    private func _spin() {
-        UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
-            self.spinningImageView.transform = CGAffineTransformRotate(self.spinningImageView.transform, CGFloat(M_PI/2))
+    fileprivate func _spin() {
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
+            self.spinningImageView.transform = self.spinningImageView.transform.rotated(by: CGFloat(M_PI/2))
             }, completion: { complete in
                 if self._shouldSpin == true {
                     self._spin()
@@ -215,51 +216,51 @@ class ConnectionScreenViewController: UIViewController {
     }
 
     func animateLogoAlpha() {
-        UIView.animateWithDuration(0.7, animations: {
+        UIView.animate(withDuration: 0.7, animations: {
             self.hexapodLogoImageView.alpha = 0.3
             }, completion: { complete in
-                UIView.animateWithDuration(0.7, animations: {
+                UIView.animate(withDuration: 0.7, animations: {
                     self.hexapodLogoImageView.alpha = 1.0
                 })
         })
     }
 
 
-    private func _startSpin() {
+    fileprivate func _startSpin() {
         if !_shouldSpin {
             self._shouldSpin = true
             self._spin()
         }
     }
 
-    private func _stopSpin() {
+    fileprivate func _stopSpin() {
         _shouldSpin = false
     }
 
     //MARK: - Action handlers
-    @IBAction func button1Action(sender: AnyObject) {
+    @IBAction func button1Action(_ sender: AnyObject) {
 
         if button1.tag == 1 {
-            loadingView.hidden = false
-            mainLabel.hidden = true
+            loadingView.isHidden = false
+            mainLabel.isHidden = true
             _startSpin()
-            button1.setTitle(Localization.localizedString("PAIRING"), forState: .Normal)
+            button1.setTitle(Localization.localizedString("PAIRING"), for: UIControlState())
             button1.titleLabel?.font = UIFont(name: "ProximaNova-Regular", size: 20)
-            button1.setTitleColor(UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 0.6), forState: .Normal)
-            button1.setBackgroundImage(nil, forState: .Normal)
-            button1.userInteractionEnabled = false
-            hintMessageLabel.hidden = true
+            button1.setTitleColor(UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 0.6), for: UIControlState())
+            button1.setBackgroundImage(nil, for: UIControlState())
+            button1.isUserInteractionEnabled = false
+            hintMessageLabel.isHidden = true
 
-            button2.hidden = true
+            button2.isHidden = true
 
-            labelAnimation = NSTimer.scheduledTimerWithTimeInterval(0.7, target: self, selector: #selector(animateLogoAlpha), userInfo: nil, repeats: true)
+            labelAnimation = Timer.scheduledTimer(timeInterval: 0.7, target: self, selector: #selector(animateLogoAlpha), userInfo: nil, repeats: true)
             labelAnimation?.fire()
-            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(checkConnection), userInfo: nil, repeats: false)
+            Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(checkConnection), userInfo: nil, repeats: false)
         }
     }
 
-    @IBAction func button2Action(sender: AnyObject) {
-        self.presentViewController(ViewControllers.ChangeIPViewController, animated: true, completion: nil)
+    @IBAction func button2Action(_ sender: AnyObject) {
+        self.present(ViewControllers.ChangeIPViewController, animated: true, completion: nil)
     }
     
 }

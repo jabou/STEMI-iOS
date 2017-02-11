@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import STEMIHexapod
 
 class HeightViewController: UIViewController {
 
@@ -15,11 +16,11 @@ class HeightViewController: UIViewController {
     @IBOutlet weak var heightIndicator: UILabel!
 
     //MARK: - Private variables
-    private var _stemi: Hexapod!
-    private var _currentHeight: Int = 0
-    private var _shouldIncrease = false
-    private var _shouldDecrease = false
-    private var _movingSound: AVAudioPlayer = AVAudioPlayer()
+    fileprivate var _stemi: Hexapod!
+    fileprivate var _currentHeight: Int = 0
+    fileprivate var _shouldIncrease = false
+    fileprivate var _shouldDecrease = false
+    fileprivate var _movingSound: AVAudioPlayer = AVAudioPlayer()
 
     var counter = 0
 
@@ -28,16 +29,16 @@ class HeightViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         _currentHeight = Int(UserDefaults.height())
         heightIndicator.text = String(_currentHeight)
 
-        let path = NSBundle.mainBundle().pathForResource("moving_sound", ofType: "wav")
-        let url = NSURL(fileURLWithPath: path!)
+        let path = Bundle.main.path(forResource: "moving_sound", ofType: "wav")
+        let url = URL(fileURLWithPath: path!)
         do {
-            _movingSound = try AVAudioPlayer(contentsOfURL: url)
+            _movingSound = try AVAudioPlayer(contentsOf: url)
             _movingSound.volume = 0.07
             _movingSound.prepareToPlay()
         } catch let error as NSError {
@@ -50,22 +51,22 @@ class HeightViewController: UIViewController {
         _stemi.connect()
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         _stemi.disconnect()
     }
 
     // MARK: - Orientation Handling
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Portrait
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
     }
     
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
 
     //MARK: - Private variables
-    private func _increaseValue() {
+    fileprivate func _increaseValue() {
         if !(_currentHeight >= 100) {
             _currentHeight += 1
             UserDefaults.setHeight(_currentHeight)
@@ -76,7 +77,7 @@ class HeightViewController: UIViewController {
         }
     }
 
-    private func _decreaseValue() {
+    fileprivate func _decreaseValue() {
         if !(_currentHeight <= 0) {
             _currentHeight -= 1
             UserDefaults.setHeight(_currentHeight)
@@ -87,24 +88,24 @@ class HeightViewController: UIViewController {
         }
     }
 
-    private func _increaseValueOnLongClick() {
-        let dataSendQueue: dispatch_queue_t = dispatch_queue_create("Increase Queue", nil)
-        dispatch_async(dataSendQueue, {
+    fileprivate func _increaseValueOnLongClick() {
+        let dataSendQueue: DispatchQueue = DispatchQueue(label: "Increase Queue", attributes: [])
+        dataSendQueue.async(execute: {
             while self._shouldIncrease == true {
-                NSThread.sleepForTimeInterval(Constants.LongClickSpeed)
-                dispatch_async(dispatch_get_main_queue()) {
+                Thread.sleep(forTimeInterval: Constants.LongClickSpeed)
+                DispatchQueue.main.async {
                     self._increaseValue()
                 }
             }
         })
     }
 
-    private func _decreaseValueOnLongClick() {
-        let dataSendQueue: dispatch_queue_t = dispatch_queue_create("Decrease Queue", nil)
-        dispatch_async(dataSendQueue, {
+    fileprivate func _decreaseValueOnLongClick() {
+        let dataSendQueue: DispatchQueue = DispatchQueue(label: "Decrease Queue", attributes: [])
+        dataSendQueue.async(execute: {
             while self._shouldDecrease == true {
-                NSThread.sleepForTimeInterval(Constants.LongClickSpeed)
-                dispatch_async(dispatch_get_main_queue()) {
+                Thread.sleep(forTimeInterval: Constants.LongClickSpeed)
+                DispatchQueue.main.async {
                     self._decreaseValue()
                 }
             }
@@ -117,34 +118,34 @@ class HeightViewController: UIViewController {
     }
 
     //MARK: - Action Handlers
-    @IBAction func upArrowActionHandler(sender: AnyObject) {
+    @IBAction func upArrowActionHandler(_ sender: AnyObject) {
         _movingSound.play()
-        NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(_stopSound), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(_stopSound), userInfo: nil, repeats: false)
         _increaseValue()
     }
 
-    @IBAction func downButtonActionHandler(sender: AnyObject) {
+    @IBAction func downButtonActionHandler(_ sender: AnyObject) {
         _movingSound.play()
-        NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: #selector(_stopSound), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(_stopSound), userInfo: nil, repeats: false)
         _decreaseValue()
     }
 
-    @IBAction func upArrowLongPressActionHandler(sender: UILongPressGestureRecognizer) {
-        if sender.state == .Ended {
+    @IBAction func upArrowLongPressActionHandler(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .ended {
             _shouldIncrease = false
             _stopSound()
-        } else if sender.state == .Began {
+        } else if sender.state == .began {
             _shouldIncrease = true
             _movingSound.play()
             _increaseValueOnLongClick()
         }
     }
 
-    @IBAction func downArrowLongPressActionHandler(sender: UILongPressGestureRecognizer) {
-        if sender.state == .Ended {
+    @IBAction func downArrowLongPressActionHandler(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .ended {
             _shouldDecrease = false
             _stopSound()
-        } else if sender.state == .Began {
+        } else if sender.state == .began {
             _shouldDecrease = true
             _movingSound.play()
             _decreaseValueOnLongClick()
@@ -152,8 +153,8 @@ class HeightViewController: UIViewController {
     }
 
 
-    @IBAction func doneButtonActionHandler(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func doneButtonActionHandler(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

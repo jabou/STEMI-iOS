@@ -39,7 +39,7 @@ struct Constants {
 
 //MARK: - Localization helper
 class Localization {
-    static func localizedString(string: String) -> String {
+    static func localizedString(_ string: String) -> String {
         return NSLocalizedString(string, comment: "Localized String")
     }
 }

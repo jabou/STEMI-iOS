@@ -10,16 +10,8 @@
 		060503061CA6217C00642FC0 /* LeftJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060503051CA6217C00642FC0 /* LeftJoystickView.xib */; };
 		060503081CA6229900642FC0 /* LeftJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060503071CA6229900642FC0 /* LeftJoystickView.swift */; };
 		0605030F1CA6D5CB00642FC0 /* RightJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */; };
-		060D8A951D97DE4100CE6E4A /* CalibrationPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D8A941D97DE4100CE6E4A /* CalibrationPackage.swift */; };
-		060D8A961D97DE4100CE6E4A /* CalibrationPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D8A941D97DE4100CE6E4A /* CalibrationPackage.swift */; };
-		060D8A981D97E9D800CE6E4A /* CalibrationPacketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D8A971D97E9D800CE6E4A /* CalibrationPacketSender.swift */; };
-		060D8A991D97E9D800CE6E4A /* CalibrationPacketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060D8A971D97E9D800CE6E4A /* CalibrationPacketSender.swift */; };
 		06219D771D9AB18800C99A59 /* moving_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06219D761D9AB18800C99A59 /* moving_sound.wav */; };
 		06219D781D9AB18800C99A59 /* moving_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06219D761D9AB18800C99A59 /* moving_sound.wav */; };
-		06285BD51D691DFB0002E8D4 /* Hexapod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285BD01D691DFB0002E8D4 /* Hexapod.swift */; };
-		06285BD61D691DFB0002E8D4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06285BD11D691DFB0002E8D4 /* Info.plist */; };
-		06285BD71D691DFB0002E8D4 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285BD21D691DFB0002E8D4 /* Packet.swift */; };
-		06285BD81D691DFB0002E8D4 /* PacketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285BD31D691DFB0002E8D4 /* PacketSender.swift */; };
 		065A5F4F1CA2F9E900BED250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */; };
 		065A5F541CA2F9E900BED250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F521CA2F9E900BED250 /* Main.storyboard */; };
 		065A5F561CA2F9E900BED250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F551CA2F9E900BED250 /* Assets.xcassets */; };
@@ -40,9 +32,7 @@
 		06A0794D1D8D50BE003F565C /* RightJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F790F81CE5EFFF00CCC2E9 /* RightJoystickView.swift */; };
 		06A0794E1D8D50BE003F565C /* WalkingStylesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4F0001D7F718900EBE933 /* WalkingStylesTableViewController.swift */; };
 		06A0794F1D8D50BE003F565C /* ToastNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682DBAC1CE8883D004DDA3B /* ToastNotification.swift */; };
-		06A079501D8D50BE003F565C /* PacketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285BD31D691DFB0002E8D4 /* PacketSender.swift */; };
 		06A079511D8D50BE003F565C /* WalkingStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFE1D7F715800EBE933 /* WalkingStyleViewController.swift */; };
-		06A079521D8D50BE003F565C /* Hexapod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285BD01D691DFB0002E8D4 /* Hexapod.swift */; };
 		06A079531D8D50BE003F565C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */; };
 		06A079541D8D50BE003F565C /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F364E81CE0D43600BAB70B /* Menu.swift */; };
 		06A079551D8D50BE003F565C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C948AE1D57767E0015F017 /* SettingsViewController.swift */; };
@@ -52,7 +42,6 @@
 		06A079591D8D50BE003F565C /* HeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFC1D7F713200EBE933 /* HeightViewController.swift */; };
 		06A0795A1D8D50BE003F565C /* IPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680B4D71D5FCB7300A7525C /* IPTextField.swift */; };
 		06A0795B1D8D50BE003F565C /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D5AA421D6087FB00635688 /* UserDefaultsHandler.swift */; };
-		06A0795C1D8D50BE003F565C /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06285BD21D691DFB0002E8D4 /* Packet.swift */; };
 		06A079611D8D50BE003F565C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F571CA2F9E900BED250 /* LaunchScreen.storyboard */; };
 		06A079621D8D50BE003F565C /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */; };
 		06A079631D8D50BE003F565C /* RightJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */; };
@@ -61,7 +50,6 @@
 		06A079661D8D50BE003F565C /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F364EA1CE0D45D00BAB70B /* Menu.xib */; };
 		06A079671D8D50BE003F565C /* puk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E668E51CE143F400AD4A7B /* puk.wav */; };
 		06A079681D8D50BE003F565C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F521CA2F9E900BED250 /* Main.storyboard */; };
-		06A079691D8D50BE003F565C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06285BD11D691DFB0002E8D4 /* Info.plist */; };
 		06A0796A1D8D50BE003F565C /* LeftJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060503051CA6217C00642FC0 /* LeftJoystickView.xib */; };
 		06A417991CEC847B000B7320 /* ConnectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */; };
 		06ABBF0D1D8DE92100631665 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06ABBF0C1D8DE92100631665 /* Localizable.strings */; };
@@ -105,15 +93,8 @@
 		060503051CA6217C00642FC0 /* LeftJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftJoystickView.xib; sourceTree = "<group>"; };
 		060503071CA6229900642FC0 /* LeftJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftJoystickView.swift; sourceTree = "<group>"; };
 		0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightJoystickView.xib; sourceTree = "<group>"; };
-		060D8A941D97DE4100CE6E4A /* CalibrationPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationPackage.swift; sourceTree = "<group>"; };
-		060D8A971D97E9D800CE6E4A /* CalibrationPacketSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationPacketSender.swift; sourceTree = "<group>"; };
 		06178A2B1DA1888900B91106 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		06219D761D9AB18800C99A59 /* moving_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = moving_sound.wav; sourceTree = "<group>"; };
-		06285BD01D691DFB0002E8D4 /* Hexapod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hexapod.swift; sourceTree = "<group>"; };
-		06285BD11D691DFB0002E8D4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06285BD21D691DFB0002E8D4 /* Packet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Packet.swift; sourceTree = "<group>"; };
-		06285BD31D691DFB0002E8D4 /* PacketSender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketSender.swift; sourceTree = "<group>"; };
-		06285BD41D691DFB0002E8D4 /* STEMIHexapod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STEMIHexapod.h; sourceTree = "<group>"; };
 		06285BD91D6921550002E8D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Developer/Xcode/DerivedData/STEMI-gsqfddrtuvurvgazhvldvkvkblzg/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		06285BDA1D6921550002E8D4 /* Pods_STEMI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_STEMI.framework; path = "../../../../Developer/Xcode/DerivedData/STEMI-gsqfddrtuvurvgazhvldvkvkblzg/Build/Products/Debug-iphonesimulator/Pods_STEMI.framework"; sourceTree = "<group>"; };
 		063627CF1CB3F26C0039E096 /* STEMI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STEMI-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -200,20 +181,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06285BCF1D691DFB0002E8D4 /* STEMIHexapod */ = {
-			isa = PBXGroup;
-			children = (
-				06285BD01D691DFB0002E8D4 /* Hexapod.swift */,
-				06285BD11D691DFB0002E8D4 /* Info.plist */,
-				06285BD21D691DFB0002E8D4 /* Packet.swift */,
-				060D8A941D97DE4100CE6E4A /* CalibrationPackage.swift */,
-				06285BD31D691DFB0002E8D4 /* PacketSender.swift */,
-				060D8A971D97E9D800CE6E4A /* CalibrationPacketSender.swift */,
-				06285BD41D691DFB0002E8D4 /* STEMIHexapod.h */,
-			);
-			path = STEMIHexapod;
-			sourceTree = "<group>";
-		};
 		065A5F421CA2F9E900BED250 = {
 			isa = PBXGroup;
 			children = (
@@ -355,7 +322,6 @@
 		06D5AA3D1D60878300635688 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				06285BCF1D691DFB0002E8D4 /* STEMIHexapod */,
 				06D5AA401D6087B300635688 /* Constants.swift */,
 				067DD35A1D6226F60085B76A /* ViewControllers.swift */,
 				06D5AA421D6087FB00635688 /* UserDefaultsHandler.swift */,
@@ -508,6 +474,7 @@
 					065A5F4A1CA2F9E900BED250 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = UYMMXCQB9G;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					065A5F5E1CA2F9E900BED250 = {
@@ -560,7 +527,6 @@
 				06F364EB1CE0D45D00BAB70B /* Menu.xib in Resources */,
 				06E668E61CE143F400AD4A7B /* puk.wav in Resources */,
 				065A5F541CA2F9E900BED250 /* Main.storyboard in Resources */,
-				06285BD61D691DFB0002E8D4 /* Info.plist in Resources */,
 				060503061CA6217C00642FC0 /* LeftJoystickView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,7 +559,6 @@
 				06A079661D8D50BE003F565C /* Menu.xib in Resources */,
 				06A079671D8D50BE003F565C /* puk.wav in Resources */,
 				06A079681D8D50BE003F565C /* Main.storyboard in Resources */,
-				06A079691D8D50BE003F565C /* Info.plist in Resources */,
 				06A0796A1D8D50BE003F565C /* LeftJoystickView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,7 +592,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		06A0796B1D8D50BE003F565C /* Fabric */ = {
@@ -757,7 +722,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BDB766FEA2F7AFE74A579D45 /* [CP] Copy Pods Resources */ = {
@@ -789,11 +754,8 @@
 				06A417991CEC847B000B7320 /* ConnectionScreenViewController.swift in Sources */,
 				06F790F91CE5EFFF00CCC2E9 /* RightJoystickView.swift in Sources */,
 				06C4F0011D7F718900EBE933 /* WalkingStylesTableViewController.swift in Sources */,
-				060D8A951D97DE4100CE6E4A /* CalibrationPackage.swift in Sources */,
 				0682DBAD1CE8883D004DDA3B /* ToastNotification.swift in Sources */,
-				06285BD81D691DFB0002E8D4 /* PacketSender.swift in Sources */,
 				06C4EFFF1D7F715800EBE933 /* WalkingStyleViewController.swift in Sources */,
-				06285BD51D691DFB0002E8D4 /* Hexapod.swift in Sources */,
 				065A5F4F1CA2F9E900BED250 /* AppDelegate.swift in Sources */,
 				06F364E91CE0D43600BAB70B /* Menu.swift in Sources */,
 				06C948AF1D57767E0015F017 /* SettingsViewController.swift in Sources */,
@@ -803,8 +765,6 @@
 				06C4EFFD1D7F713200EBE933 /* HeightViewController.swift in Sources */,
 				0680B4D81D5FCB7300A7525C /* IPTextField.swift in Sources */,
 				06D5AA431D6087FB00635688 /* UserDefaultsHandler.swift in Sources */,
-				060D8A981D97E9D800CE6E4A /* CalibrationPacketSender.swift in Sources */,
-				06285BD71D691DFB0002E8D4 /* Packet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -835,11 +795,8 @@
 				06A0794C1D8D50BE003F565C /* ConnectionScreenViewController.swift in Sources */,
 				06A0794D1D8D50BE003F565C /* RightJoystickView.swift in Sources */,
 				06A0794E1D8D50BE003F565C /* WalkingStylesTableViewController.swift in Sources */,
-				060D8A961D97DE4100CE6E4A /* CalibrationPackage.swift in Sources */,
 				06A0794F1D8D50BE003F565C /* ToastNotification.swift in Sources */,
-				06A079501D8D50BE003F565C /* PacketSender.swift in Sources */,
 				06A079511D8D50BE003F565C /* WalkingStyleViewController.swift in Sources */,
-				06A079521D8D50BE003F565C /* Hexapod.swift in Sources */,
 				06A079531D8D50BE003F565C /* AppDelegate.swift in Sources */,
 				06A079541D8D50BE003F565C /* Menu.swift in Sources */,
 				06A079551D8D50BE003F565C /* SettingsViewController.swift in Sources */,
@@ -849,8 +806,6 @@
 				06A079591D8D50BE003F565C /* HeightViewController.swift in Sources */,
 				06A0795A1D8D50BE003F565C /* IPTextField.swift in Sources */,
 				06A0795B1D8D50BE003F565C /* UserDefaultsHandler.swift in Sources */,
-				060D8A991D97E9D800CE6E4A /* CalibrationPacketSender.swift in Sources */,
-				06A0795C1D8D50BE003F565C /* Packet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -921,8 +876,8 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -930,9 +885,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
@@ -968,14 +925,17 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "$(inherited)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
@@ -1002,7 +962,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1025,7 +985,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1117,7 +1077,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1162,7 +1122,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import STEMIHexapod
 
 class SettingsTableViewController: UITableViewController {
 
@@ -28,7 +29,7 @@ class SettingsTableViewController: UITableViewController {
         self.clearsSelectionOnViewWillAppear = true
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         IPAddress.text = UserDefaults.IP()
@@ -38,17 +39,17 @@ class SettingsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 0.9)
     }
 
-    override func tableView(tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
         let footer = view as! UITableViewHeaderFooterView
         footer.textLabel?.textColor = UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 0.6)
     }
 
-    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let backgroundView = UIView()
         backgroundView.backgroundColor = UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 0.6)
         cell.selectedBackgroundView = backgroundView
@@ -57,35 +58,35 @@ class SettingsTableViewController: UITableViewController {
         }
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let clickedCell = tableView.cellForRowAtIndexPath(indexPath)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let clickedCell = tableView.cellForRow(at: indexPath)
         if clickedCell == ipCell {
-            self.presentViewController(ViewControllers.ChangeIPViewController, animated: true, completion: nil)
+            self.present(ViewControllers.ChangeIPViewController, animated: true, completion: nil)
         } else if clickedCell == resetCell {
-            resetCell.selected = false
+            resetCell.isSelected = false
 
             let backgroundView = UIView()
             let loadingLabel = UILabel()
             let activityIndicator = UIActivityIndicatorView()
 
-            backgroundView.frame = CGRectMake(0, 0, 130, 130)
+            backgroundView.frame = CGRect(x: 0, y: 0, width: 130, height: 130)
             backgroundView.center = view.center
             backgroundView.backgroundColor = UIColor(red: 39/255, green: 38/255, blue: 39/255, alpha: 0.9)
             backgroundView.clipsToBounds = true
             backgroundView.layer.cornerRadius = 10
             backgroundView.alpha = 0.0
 
-            loadingLabel.frame = CGRectMake(0, 0, 130, 80)
-            loadingLabel.backgroundColor = UIColor.clearColor()
-            loadingLabel.textColor = UIColor.whiteColor()
+            loadingLabel.frame = CGRect(x: 0, y: 0, width: 130, height: 80)
+            loadingLabel.backgroundColor = UIColor.clear
+            loadingLabel.textColor = UIColor.white
             loadingLabel.adjustsFontSizeToFitWidth = true
-            loadingLabel.textAlignment = NSTextAlignment.Center
-            loadingLabel.center = CGPointMake(backgroundView.bounds.width/2, backgroundView.bounds.height/2 + 30)
+            loadingLabel.textAlignment = NSTextAlignment.center
+            loadingLabel.center = CGPoint(x: backgroundView.bounds.width/2, y: backgroundView.bounds.height/2 + 30)
             loadingLabel.text = Localization.localizedString("RESETING")
 
-            activityIndicator.frame = CGRectMake(0, 0, activityIndicator.bounds.size.width, activityIndicator.bounds.size.height)
-            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
-            activityIndicator.center = CGPointMake(backgroundView.bounds.width/2, backgroundView.bounds.height/2 - 10)
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: activityIndicator.bounds.size.width, height: activityIndicator.bounds.size.height)
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+            activityIndicator.center = CGPoint(x: backgroundView.bounds.width/2, y: backgroundView.bounds.height/2 - 10)
 
             backgroundView.addSubview(activityIndicator)
             backgroundView.addSubview(loadingLabel)
@@ -93,28 +94,28 @@ class SettingsTableViewController: UITableViewController {
             
             activityIndicator.startAnimating()
 
-            let warningMessage = UIAlertController(title: Localization.localizedString("WARNING"), message: Localization.localizedString("RESET_WARNIGN"), preferredStyle: .Alert)
-            let yesButton = UIAlertAction(title: Localization.localizedString("YES"), style: .Destructive, handler: {action in
+            let warningMessage = UIAlertController(title: Localization.localizedString("WARNING"), message: Localization.localizedString("RESET_WARNIGN"), preferredStyle: .alert)
+            let yesButton = UIAlertAction(title: Localization.localizedString("YES"), style: .destructive, handler: {action in
 
                 backgroundView.alpha = 1.0
 
-                dispatch_async(dispatch_get_main_queue(), { 
+                DispatchQueue.main.async(execute: { 
                     self._discardValuesToInitial({ completed in
                         activityIndicator.stopAnimating()
                         backgroundView.removeFromSuperview()
                     })
                 })
             })
-            let noButton = UIAlertAction(title: Localization.localizedString("NO"), style: .Cancel, handler: nil)
+            let noButton = UIAlertAction(title: Localization.localizedString("NO"), style: .cancel, handler: nil)
             warningMessage.addAction(yesButton)
             warningMessage.addAction(noButton)
-            self.presentViewController(warningMessage, animated: true, completion: nil)
+            self.present(warningMessage, animated: true, completion: nil)
         }
     }
 
     //MARK: - Private functions
 
-    private func _discardValuesToInitial(complete: (Bool) -> Void) {
+    fileprivate func _discardValuesToInitial(_ complete: @escaping (Bool) -> Void) {
 
         stemi = Hexapod(withCalibrationMode: true)
         stemi.setIP(UserDefaults.IP())
@@ -124,7 +125,8 @@ class SettingsTableViewController: UITableViewController {
                 for value in values {
                     self.currentCalibrationValues.append(Int(value))
                 }
-                dispatch_async(dispatch_get_main_queue(), { 
+
+                DispatchQueue.main.async(execute: {
                     self.discard({completion in
                         if completion {
                             complete(true)
@@ -135,12 +137,12 @@ class SettingsTableViewController: UITableViewController {
         })
     }
 
-    private func discard(complete: (Bool) -> Void) {
+    fileprivate func discard(_ complete: @escaping (Bool) -> Void) {
 
         var calculatingNumbers: [Int] = []
 
             for i in 0...10 {
-                for (j, _) in self.currentCalibrationValues.enumerate() {
+                for (j, _) in self.currentCalibrationValues.enumerated() {
 
                     if i == 0 {
                         let calc = abs(self.calibrationValues[j] - self.currentCalibrationValues[j])/20
@@ -151,14 +153,14 @@ class SettingsTableViewController: UITableViewController {
                         if self.currentCalibrationValues[j] < self.calibrationValues[j] {
                             self.currentCalibrationValues[j] += calculatingNumbers[j]
                             do {
-                                try self.stemi.setValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
+                                try self.stemi.setCalibrationValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
                             } catch {
                                 print("error")
                             }
                         } else if self.currentCalibrationValues[j] > self.calibrationValues[j] {
                             self.currentCalibrationValues[j] -= calculatingNumbers[j]
                             do {
-                                try self.stemi.setValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
+                                try self.stemi.setCalibrationValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
                             } catch {
                                 print("error")
                             }
@@ -166,13 +168,13 @@ class SettingsTableViewController: UITableViewController {
                     } else {
                         self.currentCalibrationValues[j] = self.calibrationValues[j]
                         do {
-                            try self.stemi.setValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
+                            try self.stemi.setCalibrationValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
                         } catch {
                             print("error")
                         }
                     }
                 }
-                NSThread.sleepForTimeInterval(0.1)
+                Thread.sleep(forTimeInterval: 0.1)
             }
             self.stemi.disconnect()
             self.stemi.writeDataToHexapod({ completed in

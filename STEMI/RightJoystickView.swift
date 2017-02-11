@@ -8,9 +8,33 @@
 
 import UIKit
 import GLKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 protocol RightJoystickViewDelegate: class {
-    func rightJoystickDidMove(rotationValue: UInt8)
+    func rightJoystickDidMove(_ rotationValue: UInt8)
 }
 
 class RightJoystickView: LeftJoystickView {
@@ -19,31 +43,31 @@ class RightJoystickView: LeftJoystickView {
     weak var rightDelegate: RightJoystickViewDelegate?
 
     //MARK: - Private methods
-    private var rotationValue: UInt8!
+    fileprivate var rotationValue: UInt8!
 
     //MARK: - Setup
     override func setup() {
-        NSBundle.mainBundle().loadNibNamed("RightJoystickView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("RightJoystickView", owner: self, options: nil)
         let width = frame.size.width
         let height = frame.size.height
-        self.view.frame = CGRectMake(0, 0, width, height)
+        self.view.frame = CGRect(x: 0, y: 0, width: width, height: height)
         self.addSubview(self.view)
     }
 
     //MARK: - Touches Handlers
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
 
         maxBound = sqrt(pow(xPosition - centerX, 2))
 
-        UIView.animateWithDuration(0.20) {
+        UIView.animate(withDuration: 0.20, animations: {
             if (self.maxBound > self.joystickRadius) {
                 self.xPosition = (self.xPosition - self.centerX) * self.joystickRadius / self.maxBound + self.centerX
-                self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
+                self.joystickView.center = CGPoint(x: self.xPosition, y: self.view.frame.height/2)
             } else {
-                self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
+                self.joystickView.center = CGPoint(x: self.xPosition, y: self.view.frame.height/2)
             }
-        }
+        }) 
 
         powerValue = power()
 
@@ -56,11 +80,11 @@ class RightJoystickView: LeftJoystickView {
         rightDelegate?.rightJoystickDidMove(rotationValue)
     }
 
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
 
         let touch: UITouch = touches.first!
-        let position: CGPoint = touch.locationInView(self.view)
+        let position: CGPoint = touch.location(in: self.view)
 
         xPosition = position.x
         yPosition = position.y
@@ -69,9 +93,9 @@ class RightJoystickView: LeftJoystickView {
 
         if (self.maxBound > self.joystickRadius) {
             self.xPosition = (self.xPosition - self.centerX) * self.joystickRadius / self.maxBound + self.centerX
-            self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
+            self.joystickView.center = CGPoint(x: self.xPosition, y: self.view.frame.height/2)
         } else {
-            self.joystickView.center = CGPointMake(self.xPosition, self.view.frame.height/2)
+            self.joystickView.center = CGPoint(x: self.xPosition, y: self.view.frame.height/2)
         }
 
         if angle() < 0 {
@@ -97,8 +121,8 @@ class RightJoystickView: LeftJoystickView {
         rightDelegate?.rightJoystickDidMove(rotationValue)
     }
 
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
 
         powerValue = power()
         if angleValue >= 0 {

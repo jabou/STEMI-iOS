@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import STEMIHexapod
 
 class WalkingStyleViewController: UIViewController {
 
@@ -20,55 +21,55 @@ class WalkingStyleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        hintTextView.editable = true
+        hintTextView.isEditable = true
         hintTextView.font = UIFont(name: "ProximaNova-Regular", size: 13.0)
         hintTextView.textColor = UIColor(red: 36/255, green: 168/255, blue: 224/255, alpha: 0.6)
-        hintTextView.editable = false
+        hintTextView.isEditable = false
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         walkingStyle = UserDefaults.walkingStyle()
         _changeHintText(walkingStyle.hashValue)
     }
 
     // MARK: - Orientation Handling
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Portrait
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
     }
 
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
 
     //MARK: - Public methods
-    func selectedStyleWithId(identifier: Int) {
+    func selectedStyleWithId(_ identifier: Int) {
         _changeHintText(identifier)
     }
 
     //MARK: - Private methods
-    private func _changeHintText(index: Int) {
+    fileprivate func _changeHintText(_ index: Int) {
         switch index {
         case 0:
             hintTextView.text = Localization.localizedString("WALKING_1")
-            UserDefaults.setWalkingStyle(.TripodGait)
+            UserDefaults.setWalkingStyle(.tripodGait)
         case 1:
             hintTextView.text = Localization.localizedString("WALKING_2")
-            UserDefaults.setWalkingStyle(.TripodGaitAngled)
+            UserDefaults.setWalkingStyle(.tripodGaitAngled)
         case 2:
             hintTextView.text = Localization.localizedString("WALKING_3")
-            UserDefaults.setWalkingStyle(.TripodGaitStar)
+            UserDefaults.setWalkingStyle(.tripodGaitStar)
         case 3:
             hintTextView.text = Localization.localizedString("WALKING_4")
-            UserDefaults.setWalkingStyle(.WaveGait)
+            UserDefaults.setWalkingStyle(.waveGait)
         default:
             break
         }
     }
 
     //MARK: - Action handlers
-    @IBAction func doneButtonActionHandler(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func doneButtonActionHandler(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

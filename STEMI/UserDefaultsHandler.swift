@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import STEMIHexapod
 
 //MARK: - Private variables
 private let FirstRunKey = "firstRun"
@@ -22,24 +23,24 @@ struct UserDefaults {
 
     // MARK: FirstRun UserDefaults
     static func setFirstRunTrue() {
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(true, forKey: FirstRunKey)
+        let defaults: Foundation.UserDefaults = Foundation.UserDefaults.standard
+        defaults.set(true, forKey: FirstRunKey)
         defaults.synchronize()
     }
 
     static func firstRun() -> Bool {
-        return NSUserDefaults.standardUserDefaults().boolForKey(FirstRunKey)
+        return Foundation.UserDefaults.standard.bool(forKey: FirstRunKey)
     }
 
     // MARK: IP UserDefaults
-    static func setIP(address: String) {
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(address, forKey: StemiIPKey)
+    static func setIP(_ address: String) {
+        let defaults: Foundation.UserDefaults = Foundation.UserDefaults.standard
+        defaults.set(address, forKey: StemiIPKey)
         defaults.synchronize()
     }
 
     static func IP() -> String {
-        if let ip = NSUserDefaults.standardUserDefaults().objectForKey(StemiIPKey) as? String {
+        if let ip = Foundation.UserDefaults.standard.object(forKey: StemiIPKey) as? String {
             return ip
         } else {
             return ""
@@ -47,14 +48,14 @@ struct UserDefaults {
     }
 
     //MARK: StemiName UserDefaults
-    static func setStemiName(name: String) {
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(name, forKey: StemiIDKey)
+    static func setStemiName(_ name: String) {
+        let defaults: Foundation.UserDefaults = Foundation.UserDefaults.standard
+        defaults.set(name, forKey: StemiIDKey)
         defaults.synchronize()
     }
 
     static func stemiName() -> String {
-        if let name = NSUserDefaults.standardUserDefaults().objectForKey(StemiIDKey) as? String {
+        if let name = Foundation.UserDefaults.standard.object(forKey: StemiIDKey) as? String {
             return name
         } else {
             return ""
@@ -62,14 +63,14 @@ struct UserDefaults {
     }
 
     //MARK: HardwareVersion UserDefaults
-    static func setHardwareVersion(version: String) {
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(version, forKey: HardwareVersionKey)
+    static func setHardwareVersion(_ version: String) {
+        let defaults: Foundation.UserDefaults = Foundation.UserDefaults.standard
+        defaults.set(version, forKey: HardwareVersionKey)
         defaults.synchronize()
     }
 
     static func hardwareVersion() ->  String {
-        if let version = NSUserDefaults.standardUserDefaults().objectForKey(HardwareVersionKey) as? String {
+        if let version = Foundation.UserDefaults.standard.object(forKey: HardwareVersionKey) as? String {
             return version
         } else {
             return ""
@@ -77,39 +78,39 @@ struct UserDefaults {
     }
 
     //MARK: Walking style UserDefaults
-    static func setWalkingStyle(style: WalkingStyle) {
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(style.hashValue, forKey: WalkingStyleKey)
+    static func setWalkingStyle(_ style: WalkingStyle) {
+        let defaults: Foundation.UserDefaults = Foundation.UserDefaults.standard
+        defaults.set(style.hashValue, forKey: WalkingStyleKey)
         defaults.synchronize()
     }
 
     static func walkingStyle() -> WalkingStyle {
-        if let styleHash = NSUserDefaults.standardUserDefaults().objectForKey(WalkingStyleKey) as? Int {
+        if let styleHash = Foundation.UserDefaults.standard.object(forKey: WalkingStyleKey) as? Int {
             switch styleHash {
             case 0:
-                return .TripodGait
+                return .tripodGait
             case 1:
-                return .TripodGaitAngled
+                return .tripodGaitAngled
             case 2:
-                return .TripodGaitStar
+                return .tripodGaitStar
             case 3:
-                return .WaveGait
+                return .waveGait
             default:
-                return .Error
+                return .tripodGait
             }
         } else {
-            return .Error
+            return .tripodGait
         }
     }
 
     //MARK: Height UserDefaults
-    static func setHeight(height: Int) {
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.setInteger(height, forKey: HeightKey)
+    static func setHeight(_ height: Int) {
+        let defaults: Foundation.UserDefaults = Foundation.UserDefaults.standard
+        defaults.set(height, forKey: HeightKey)
         defaults.synchronize()
     }
 
     static func height() -> UInt8 {
-        return UInt8(NSUserDefaults.standardUserDefaults().integerForKey(HeightKey))
+        return UInt8(Foundation.UserDefaults.standard.integer(forKey: HeightKey))
     }
 }

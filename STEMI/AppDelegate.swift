@@ -15,10 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         Fabric.with([Crashlytics.self])
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .None)
+        UIApplication.shared.setStatusBarHidden(true, with: .none)
         if UserDefaults.firstRun() == false {
             UserDefaults.setIP("192.168.4.1")
             UserDefaults.setFirstRunTrue()
@@ -27,16 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
-        NSNotificationCenter.defaultCenter().postNotificationName(Constants.Connection.StopConnection, object: nil)
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.Connection.StopConnection), object: nil)
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
+    func applicationWillEnterForeground(_ application: UIApplication) {
         #if DEVELOPMENT
             NSNotificationCenter.defaultCenter().postNotificationName(Constants.Demo.DismissView, object: nil)
         #endif
 
-        NSNotificationCenter.defaultCenter().postNotificationName(Constants.Connection.StartConnection, object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.Connection.StartConnection), object: nil)
     }
 
 }

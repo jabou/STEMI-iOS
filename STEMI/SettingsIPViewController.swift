@@ -18,10 +18,10 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        doneButton.enabled = false
+        doneButton.isEnabled = false
 
         let fullIP = UserDefaults.IP()
-        let fullIPArr = fullIP.componentsSeparatedByString(".")
+        let fullIPArr = fullIP.components(separatedBy: ".")
         var counter = 0
         for ipTextField in ipTextFields {
             ipTextField.tag = counter
@@ -32,30 +32,30 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
         }
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         ipTextFields[3].becomeFirstResponder()
     }
 
     // MARK: - Orientation Handling
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
 
     // MARK: - UITextFieldDelegate
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextTag: NSInteger = textField.tag + 1
-        if let nextResponder: UIResponder! = textField.superview?.viewWithTag(nextTag) {
-            nextResponder.becomeFirstResponder()
+        if let nextResponder: UIResponder? = textField.superview?.viewWithTag(nextTag) {
+            nextResponder?.becomeFirstResponder()
         } else {
             textField.resignFirstResponder()
         }
         return false
     }
 
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 
-        doneButton.enabled = true
+        doneButton.isEnabled = true
 
         let newLength = textField.text!.characters.count + string.characters.count - range.length
 
@@ -104,34 +104,34 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
     }
 
     // MARK: - Private methods
-    private func resignFirstResponders() {
+    fileprivate func resignFirstResponders() {
         for ipTextField in ipTextFields {
             ipTextField.resignFirstResponder()
         }
     }
 
     // MARK: Action Handlers
-    @IBAction func cancelButtonActionHandler(sender: AnyObject) {
+    @IBAction func cancelButtonActionHandler(_ sender: AnyObject) {
         resignFirstResponders()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func doneButtonActionHandler(sender: AnyObject) {
+    @IBAction func doneButtonActionHandler(_ sender: AnyObject) {
         if ipTextFields[0].textInRange() && ipTextFields[1].textInRange() && ipTextFields[2].textInRange() && ipTextFields[3].textInRange() {
             let fullIPArr = [ipTextFields[0].text!, ipTextFields[1].text!, ipTextFields[2].text!, ipTextFields[3].text!]
-            let fullIP = fullIPArr.joinWithSeparator(".")
+            let fullIP = fullIPArr.joined(separator: ".")
             UserDefaults.setIP(fullIP)
             resignFirstResponders()
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
         } else {
-            let alert = UIAlertController(title: Localization.localizedString("ERROR"), message: Localization.localizedString("IP_ERROR"), preferredStyle: .Alert)
-            let defaultAction = UIAlertAction(title: Localization.localizedString("OK"), style: .Default, handler: nil)
+            let alert = UIAlertController(title: Localization.localizedString("ERROR"), message: Localization.localizedString("IP_ERROR"), preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: Localization.localizedString("OK"), style: .default, handler: nil)
             alert.addAction(defaultAction)
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         }
     }
 
-    @IBAction func resetButtonActionHandler(sender: UIButton) {
+    @IBAction func resetButtonActionHandler(_ sender: UIButton) {
         ipTextFields[0].text = "192"
         ipTextFields[1].text = "168"
         ipTextFields[2].text = "4"

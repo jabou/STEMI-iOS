@@ -16,17 +16,17 @@ class SettingsViewController: UIViewController {
     }
 
     // MARK: - Handle orientation
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
 
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Portrait
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
     }
 
     // MARK: - Action Handlers
-    @IBAction func backButtonActionHandler(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func backButtonActionHandler(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
