@@ -14,15 +14,25 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>STEMIHexapod.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>268ADF44EB1CCF4857A029906DF43445</key>
+		<key>08D65EE7FA3E177E06F525AA3A325089</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>30AF28B94482E607909B9FF511E68C1C</key>
+		<key>486138C504572F8213FB40218B921A78</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9AD3E7712EA39DF81F04BBF37D9C1A18</key>
 		<dict>
 			<key>primary</key>
 			<true/>
