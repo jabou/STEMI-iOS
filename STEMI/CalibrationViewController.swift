@@ -48,7 +48,9 @@ class CalibrationViewController: UIViewController {
             _movingSound.numberOfLoops = -1
             _movingSound.prepareToPlay()
         } catch let error as NSError {
-            print(error.description)
+            #if DEBUG
+                print(error.description)
+            #endif
         }
 
 
@@ -179,14 +181,18 @@ class CalibrationViewController: UIViewController {
                         do {
                             try _stemi.setCalibrationValue(UInt8(_changedCalibrationValues[j]), atIndex: j)
                         } catch {
-                            print("error")
+                            #if DEBUG
+                                print("error")
+                            #endif
                         }
                     } else if _changedCalibrationValues[j] > _calibrationValues[j] {
                         _changedCalibrationValues[j] -= calculatingNumbers[j]
                         do {
                             try _stemi.setCalibrationValue(UInt8(_changedCalibrationValues[j]), atIndex: j)
                         } catch {
-                            print("error")
+                            #if DEBUG
+                                print("error")
+                            #endif
                         }
                     }
                 } else {
@@ -194,7 +200,9 @@ class CalibrationViewController: UIViewController {
                     do {
                         try _stemi.setCalibrationValue(UInt8(_calibrationValues[j]), atIndex: j)
                     } catch {
-                        print("error")
+                        #if DEBUG
+                            print("error")
+                        #endif
                     }
                 }
             }

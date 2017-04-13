@@ -155,14 +155,18 @@ class SettingsTableViewController: UITableViewController {
                             do {
                                 try self.stemi.setCalibrationValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
                             } catch {
-                                print("error")
+                                #if DEBUG
+                                    print("error")
+                                #endif
                             }
                         } else if self.currentCalibrationValues[j] > self.calibrationValues[j] {
                             self.currentCalibrationValues[j] -= calculatingNumbers[j]
                             do {
                                 try self.stemi.setCalibrationValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
                             } catch {
-                                print("error")
+                                #if DEBUG
+                                    print("error")
+                                #endif
                             }
                         }
                     } else {
@@ -170,7 +174,9 @@ class SettingsTableViewController: UITableViewController {
                         do {
                             try self.stemi.setCalibrationValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
                         } catch {
-                            print("error")
+                            #if DEBUG
+                                print("error")
+                            #endif
                         }
                     }
                 }

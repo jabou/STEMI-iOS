@@ -81,7 +81,9 @@ class Menu: UIView {
             soundIn.prepareToPlay()
             soundIn.play()
         } catch let error as NSError {
-            print(error.description)
+            #if DEBUG
+                print(error.description)
+            #endif
         }
 
         UIView.animate(withDuration: 0.15, animations: {
@@ -129,7 +131,9 @@ class Menu: UIView {
             soundOut.prepareToPlay()
             soundOut.play()
         } catch let error as NSError {
-            print(error.description)
+            #if DEBUG
+                print(error.description)
+            #endif
         }
 
         UIView.animate(withDuration: 0.01, animations: {

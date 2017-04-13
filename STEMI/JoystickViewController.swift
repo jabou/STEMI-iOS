@@ -178,7 +178,7 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
             stemi.setOrientationMode()
             selectedMode = .orientation
         default:
-            #if DEVELOPMENT
+            #if DEBUG
                 print("Mode did not changed!")
             #endif
         }
@@ -207,7 +207,10 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
                 toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("WALKING_STYLE"), text: Localization.localizedString("WALKING_STYLE_TEXT"), height: 90)
                 toastNotification.showNotification()
             default:
-                print("Long press error")
+                #if DEBUG
+                    print("Long press error")
+                #endif
+                
             }
         } else if state == .ended {
             toastNotification.hideNotification()
@@ -260,13 +263,9 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
 
     //MARK: - HexapodDelegate
     func connectionStatus(_ isConnected: Bool) {
-        #if DEVELOPMENT
-            print("no_hexapod mode. Connetion: \(isConnected)")
-        #else
-            if isConnected == false {
-                connectionLost()
-            }
-        #endif
+        if isConnected == false {
+            connectionLost()
+        }
     }
 
     //MARK: - Demo app background handling
