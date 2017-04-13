@@ -10,9 +10,18 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    var isInStandbyMode: Bool?
+    
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let settingsTableView = childViewControllers.first as! SettingsTableViewController
+        settingsTableView.standbyActive = isInStandbyMode
     }
 
     // MARK: - Handle orientation
@@ -28,5 +37,4 @@ class SettingsViewController: UIViewController {
     @IBAction func backButtonActionHandler(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
-
 }

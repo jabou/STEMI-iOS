@@ -42,7 +42,10 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        stemi = Hexapod()
+        stemi.delegate = self
+        
         //Setup standby button on screen
         standbyButton.setImage(UIImage(named: "standby_off"), for: UIControlState())
         standbyButton.setImage(UIImage(named: "standby_on"), for: .selected)
@@ -83,8 +86,6 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         }
 
         //Setup stemi, and start connection
-        stemi = Hexapod()
-        stemi.delegate = self
         stemi.setIP(UserDefaults.IP())
         stemi.setHeight(UserDefaults.height())
         stemi.setWalkingStyle(UserDefaults.walkingStyle())
@@ -220,13 +221,29 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     func menuButtonDidSelectOnIndex(_ index: Int) {
         switch index {
         case 3:
-            self.present(ViewControllers.HeightViewController, animated: true, completion: nil)
+            if stemi.isInStandby() {
+                let warningMessage = UIAlertController(title: Localization.localizedString("STANDBY_TITLE"), message: Localization.localizedString("STANDBY_MESSAGE"), preferredStyle: .alert)
+                let okButton = UIAlertAction(title: Localization.localizedString("OK"), style: .cancel, handler: nil)
+                warningMessage.addAction(okButton)
+                self.present(warningMessage, animated: true, completion: nil)
+            } else {
+                self.present(ViewControllers.HeightViewController, animated: true, completion: nil)
+            }
         case 4:
-            self.present(ViewControllers.CalibrationViewController, animated: true, completion: nil)
+            if stemi.isInStandby() {
+                let warningMessage = UIAlertController(title: Localization.localizedString("STANDBY_TITLE"), message: Localization.localizedString("STANDBY_MESSAGE"), preferredStyle: .alert)
+                let okButton = UIAlertAction(title: Localization.localizedString("OK"), style: .cancel, handler: nil)
+                warningMessage.addAction(okButton)
+                self.present(warningMessage, animated: true, completion: nil)
+            } else {
+                self.present(ViewControllers.CalibrationViewController, animated: true, completion: nil)
+            }
         case 5:
             self.present(ViewControllers.WalkingStyleViewController, animated: true, completion: nil)
         case 6:
-            self.present(ViewControllers.AppSettingsViewController, animated: true, completion: nil)
+            let settingsVC = ViewControllers.AppSettingsViewController as! SettingsViewController
+            settingsVC.isInStandbyMode = stemi.isInStandby()
+            self.present(settingsVC, animated: true, completion: nil)
         default:
             break
         }
