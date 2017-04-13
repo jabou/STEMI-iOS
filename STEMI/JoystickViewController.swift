@@ -55,9 +55,6 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         //Add notification observers for start and stop connection with stemi
         NotificationCenter.default.addObserver(self, selector: #selector(JoystickViewController.stopConnection), name: NSNotification.Name(rawValue: Constants.Connection.StopConnection), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(JoystickViewController.startConnection), name: NSNotification.Name(rawValue: Constants.Connection.StartConnection), object: nil)
-
-        //Demo target dismiss view
-        NotificationCenter.default.addObserver(self, selector: #selector(JoystickViewController.dismissJoystickView), name: NSNotification.Name(rawValue: Constants.Demo.DismissView), object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -283,12 +280,6 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         if isConnected == false {
             connectionLost()
         }
-    }
-
-    //MARK: - Demo app background handling
-    func dismissJoystickView() {
-        ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        self.dismiss(animated: true, completion: nil)
     }
 
     //MARK: - Action Handlers

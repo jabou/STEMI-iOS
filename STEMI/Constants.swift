@@ -31,10 +31,6 @@ struct Constants {
         static let StopConnection = "StopConnection"
         static let StartConnection = "StartConnection"
     }
-
-    struct Demo {
-        static let DismissView = "DismissView"
-    }
 }
 
 //MARK: - Localization helper
