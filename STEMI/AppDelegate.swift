@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        Fabric.with([Crashlytics.self])
         UIApplication.shared.setStatusBarHidden(true, with: .none)
         if UserDefaults.firstRun() == false {
             UserDefaults.setIP("192.168.4.1")
@@ -32,10 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        #if DEVELOPMENT
-            NSNotificationCenter.defaultCenter().postNotificationName(Constants.Demo.DismissView, object: nil)
-        #endif
-
         NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.Connection.StartConnection), object: nil)
     }
 

@@ -55,67 +55,57 @@ class ConnectionScreenViewController: UIViewController {
 
         //Clear cache and reset user defaults
         URLCache.shared.removeAllCachedResponses()
-
-        #if DEVELOPMENT
-
-            UserDefaults.setStemiName("STEMI-06092201");
-            UserDefaults.setHardwareVersion("1.0")
-            UserDefaults.setWalkingStyle(.TripodGait)
-            UserDefaults.setHeight(50)
-            NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
+        
+        // Create and make API call to stemi. If file is present and vaild, start using hexapod.
+        let configuration = URLSessionConfiguration.default
+        configuration.timeoutIntervalForRequest = 3
+        
+        let session = URLSession(configuration: configuration)
+        let request = URLRequest(url: URL(string: "http://\(UserDefaults.IP())/stemiData.json")!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 3)
+        let task: URLSessionTask = session.dataTask(with: request, completionHandler: { (data, response, error) in
             
-        #else
-            // Create and make API call to stemi. If file is present and vaild, start using hexapod.
-            let configuration = URLSessionConfiguration.default
-            configuration.timeoutIntervalForRequest = 3
-
-            let session = URLSession(configuration: configuration)
-            let request = URLRequest(url: URL(string: "http://\(UserDefaults.IP())/stemiData.json")!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 3)
-            let task: URLSessionTask = session.dataTask(with: request, completionHandler: { (data, response, error) in
-
-                //If there is data, try to read it
-                if let data = data {
-                    //Try to read data from json
-                    do {
-                        if let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
-                            if let valide = jsonData["isValid"] as? Bool {
-                                //JSON is OK - start sending data
-                                if valide {
-                                    if let name = jsonData["stemiID"] as? String, let version = jsonData["version"] as? String {
-                                        if (UserDefaults.stemiName() == "") || !(UserDefaults.stemiName() == name) {
-                                            UserDefaults.setStemiName(name)
-                                            UserDefaults.setHardwareVersion(version)
-                                            UserDefaults.setWalkingStyle(.tripodGait)
-                                            UserDefaults.setHeight(50)
-                                        }
+            //If there is data, try to read it
+            if let data = data {
+                //Try to read data from json
+                do {
+                    if let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] {
+                        if let valide = jsonData["isValid"] as? Bool {
+                            //JSON is OK - start sending data
+                            if valide {
+                                if let name = jsonData["stemiID"] as? String, let version = jsonData["version"] as? String {
+                                    if (UserDefaults.stemiName() == "") || !(UserDefaults.stemiName() == name) {
+                                        UserDefaults.setStemiName(name)
+                                        UserDefaults.setHardwareVersion(version)
+                                        UserDefaults.setWalkingStyle(.tripodGait)
+                                        UserDefaults.setHeight(50)
                                     }
-                                    DispatchQueue.main.async(execute: {
-                                        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
-                                    })
-                                } else {
-                                    DispatchQueue.main.async(execute: {
-                                        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
-                                    })
                                 }
+                                DispatchQueue.main.async(execute: {
+                                    Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.openJoystick), userInfo: nil, repeats: false)
+                                })
+                            } else {
+                                DispatchQueue.main.async(execute: {
+                                    Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
+                                })
                             }
                         }
                     }
-                        //Error with reading data
-                    catch {
-                        DispatchQueue.main.async(execute: {
-                            Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
-                        })
-                    }
                 }
-                    //There is no data on this network -> error
-                else {
+                    //Error with reading data
+                catch {
                     DispatchQueue.main.async(execute: {
                         Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
                     })
                 }
-            })
-            task.resume()
-        #endif
+            }
+                //There is no data on this network -> error
+            else {
+                DispatchQueue.main.async(execute: {
+                    Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.setupTryAgain), userInfo: nil, repeats: false)
+                })
+            }
+        })
+        task.resume()
 
     }
 
@@ -207,7 +197,7 @@ class ConnectionScreenViewController: UIViewController {
     //MARK: - Loadingspinning private helpers
     fileprivate func _spin() {
         UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
-            self.spinningImageView.transform = self.spinningImageView.transform.rotated(by: CGFloat(M_PI/2))
+            self.spinningImageView.transform = self.spinningImageView.transform.rotated(by: CGFloat(Double.pi/2))
             }, completion: { complete in
                 if self._shouldSpin == true {
                     self._spin()

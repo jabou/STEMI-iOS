@@ -44,3 +44,5 @@
 "RESETING" = "Reseting...";
 "START_TEXT" = "If you have a STEMI Hexapod, simply connect it now.";
 "FAILED_TEXT" = "Make sure your STEMI Hexapod is charged, turned on and connected to your phone or home network via wifi.";
+"STANDBY_TITLE" = "Standby mode active";
+"STANDBY_MESSAGE" = "STEMI Hexapod is in standby mode. Please activate your STEMI Hexapod if you want to use this feature.";

@@ -11,7 +11,6 @@
 		060503081CA6229900642FC0 /* LeftJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060503071CA6229900642FC0 /* LeftJoystickView.swift */; };
 		0605030F1CA6D5CB00642FC0 /* RightJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */; };
 		06219D771D9AB18800C99A59 /* moving_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06219D761D9AB18800C99A59 /* moving_sound.wav */; };
-		06219D781D9AB18800C99A59 /* moving_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06219D761D9AB18800C99A59 /* moving_sound.wav */; };
 		065A5F4F1CA2F9E900BED250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */; };
 		065A5F541CA2F9E900BED250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F521CA2F9E900BED250 /* Main.storyboard */; };
 		065A5F561CA2F9E900BED250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F551CA2F9E900BED250 /* Assets.xcassets */; };
@@ -20,40 +19,11 @@
 		065A5F6F1CA2F9EA00BED250 /* STEMIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F6E1CA2F9EA00BED250 /* STEMIUITests.swift */; };
 		065A5F7F1CA30D2D00BED250 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */; };
 		065A5F821CA315D900BED250 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F811CA315D900BED250 /* JoystickViewController.swift */; };
-		066DB58D1D6F560E0089CBFB /* Pods_STEMI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06285BDA1D6921550002E8D4 /* Pods_STEMI.framework */; };
 		067DD35B1D6226F60085B76A /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067DD35A1D6226F60085B76A /* ViewControllers.swift */; };
 		0680B4D81D5FCB7300A7525C /* IPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680B4D71D5FCB7300A7525C /* IPTextField.swift */; };
 		0682DBAD1CE8883D004DDA3B /* ToastNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682DBAC1CE8883D004DDA3B /* ToastNotification.swift */; };
-		06A079481D8D50BE003F565C /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067DD35A1D6226F60085B76A /* ViewControllers.swift */; };
-		06A079491D8D50BE003F565C /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFA1D7F711A00EBE933 /* CalibrationViewController.swift */; };
-		06A0794A1D8D50BE003F565C /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F811CA315D900BED250 /* JoystickViewController.swift */; };
-		06A0794B1D8D50BE003F565C /* LeftJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060503071CA6229900642FC0 /* LeftJoystickView.swift */; };
-		06A0794C1D8D50BE003F565C /* ConnectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */; };
-		06A0794D1D8D50BE003F565C /* RightJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F790F81CE5EFFF00CCC2E9 /* RightJoystickView.swift */; };
-		06A0794E1D8D50BE003F565C /* WalkingStylesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4F0001D7F718900EBE933 /* WalkingStylesTableViewController.swift */; };
-		06A0794F1D8D50BE003F565C /* ToastNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682DBAC1CE8883D004DDA3B /* ToastNotification.swift */; };
-		06A079511D8D50BE003F565C /* WalkingStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFE1D7F715800EBE933 /* WalkingStyleViewController.swift */; };
-		06A079531D8D50BE003F565C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */; };
-		06A079541D8D50BE003F565C /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F364E81CE0D43600BAB70B /* Menu.swift */; };
-		06A079551D8D50BE003F565C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C948AE1D57767E0015F017 /* SettingsViewController.swift */; };
-		06A079561D8D50BE003F565C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D5AA401D6087B300635688 /* Constants.swift */; };
-		06A079571D8D50BE003F565C /* SettingsIPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C948B31D578D6C0015F017 /* SettingsIPViewController.swift */; };
-		06A079581D8D50BE003F565C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C948B01D5785870015F017 /* SettingsTableViewController.swift */; };
-		06A079591D8D50BE003F565C /* HeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFC1D7F713200EBE933 /* HeightViewController.swift */; };
-		06A0795A1D8D50BE003F565C /* IPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680B4D71D5FCB7300A7525C /* IPTextField.swift */; };
-		06A0795B1D8D50BE003F565C /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D5AA421D6087FB00635688 /* UserDefaultsHandler.swift */; };
-		06A079611D8D50BE003F565C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F571CA2F9E900BED250 /* LaunchScreen.storyboard */; };
-		06A079621D8D50BE003F565C /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */; };
-		06A079631D8D50BE003F565C /* RightJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */; };
-		06A079641D8D50BE003F565C /* tiu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E668DE1CE13EC500AD4A7B /* tiu.wav */; };
-		06A079651D8D50BE003F565C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F551CA2F9E900BED250 /* Assets.xcassets */; };
-		06A079661D8D50BE003F565C /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F364EA1CE0D45D00BAB70B /* Menu.xib */; };
-		06A079671D8D50BE003F565C /* puk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E668E51CE143F400AD4A7B /* puk.wav */; };
-		06A079681D8D50BE003F565C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F521CA2F9E900BED250 /* Main.storyboard */; };
-		06A0796A1D8D50BE003F565C /* LeftJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060503051CA6217C00642FC0 /* LeftJoystickView.xib */; };
 		06A417991CEC847B000B7320 /* ConnectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */; };
 		06ABBF0D1D8DE92100631665 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06ABBF0C1D8DE92100631665 /* Localizable.strings */; };
-		06ABBF101D8DEB5800631665 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06ABBF0C1D8DE92100631665 /* Localizable.strings */; };
 		06C4EFFB1D7F711A00EBE933 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFA1D7F711A00EBE933 /* CalibrationViewController.swift */; };
 		06C4EFFD1D7F713200EBE933 /* HeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFC1D7F713200EBE933 /* HeightViewController.swift */; };
 		06C4EFFF1D7F715800EBE933 /* WalkingStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFE1D7F715800EBE933 /* WalkingStyleViewController.swift */; };
@@ -68,7 +38,6 @@
 		06F364E91CE0D43600BAB70B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F364E81CE0D43600BAB70B /* Menu.swift */; };
 		06F364EB1CE0D45D00BAB70B /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F364EA1CE0D45D00BAB70B /* Menu.xib */; };
 		06F790F91CE5EFFF00CCC2E9 /* RightJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F790F81CE5EFFF00CCC2E9 /* RightJoystickView.swift */; };
-		CDA9B375D216AAB41908F01C /* Pods_STEMI_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69EEF134704F70D6AA0799D1 /* Pods_STEMI_Demo.framework */; };
 		CE58DE1AC6763E78A0DE8B13 /* Pods_STEMI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868324E7A99FF93879D92E97 /* Pods_STEMI.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,8 +64,6 @@
 		0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightJoystickView.xib; sourceTree = "<group>"; };
 		06178A2B1DA1888900B91106 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		06219D761D9AB18800C99A59 /* moving_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = moving_sound.wav; sourceTree = "<group>"; };
-		06285BD91D6921550002E8D4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Developer/Xcode/DerivedData/STEMI-gsqfddrtuvurvgazhvldvkvkblzg/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
-		06285BDA1D6921550002E8D4 /* Pods_STEMI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_STEMI.framework; path = "../../../../Developer/Xcode/DerivedData/STEMI-gsqfddrtuvurvgazhvldvkvkblzg/Build/Products/Debug-iphonesimulator/Pods_STEMI.framework"; sourceTree = "<group>"; };
 		063627CF1CB3F26C0039E096 /* STEMI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STEMI-Bridging-Header.h"; sourceTree = "<group>"; };
 		065A5F4B1CA2F9E900BED250 /* STEMI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STEMI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,12 +81,7 @@
 		065A5F811CA315D900BED250 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
 		067DD35A1D6226F60085B76A /* ViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
 		0680B4D71D5FCB7300A7525C /* IPTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPTextField.swift; sourceTree = "<group>"; };
-		0682D3B01D69190A003980EC /* STEMIHexapod.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STEMIHexapod.framework; path = "../../../../Developer/Xcode/DerivedData/STEMI-gsqfddrtuvurvgazhvldvkvkblzg/Build/Products/Debug-iphonesimulator/STEMIHexapod/STEMIHexapod.framework"; sourceTree = "<group>"; };
 		0682DBAC1CE8883D004DDA3B /* ToastNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastNotification.swift; sourceTree = "<group>"; };
-		069F01E91CCC136D0034676D /* STEMIHexapod.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STEMIHexapod.framework; path = "../../../../Developer/Xcode/DerivedData/STEMI-gsqfddrtuvurvgazhvldvkvkblzg/Build/Products/Debug-iphonesimulator/STEMIHexapod.framework"; sourceTree = "<group>"; };
-		069F01EC1CCC1B570034676D /* STEMIHexapod.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STEMIHexapod.framework; path = "Pods/../build/Debug-iphoneos/STEMIHexapod.framework"; sourceTree = "<group>"; };
-		06A079731D8D50BE003F565C /* STEMI-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STEMI-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		06A079741D8D50BE003F565C /* Info-dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-dev.plist"; path = "/Users/Jaco/Desktop/Programming/STEMI/Info-dev.plist"; sourceTree = "<absolute>"; };
 		06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionScreenViewController.swift; sourceTree = "<group>"; };
 		06ABBF0C1D8DE92100631665 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		06C4EFFA1D7F711A00EBE933 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
@@ -136,13 +98,8 @@
 		06F364E81CE0D43600BAB70B /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		06F364EA1CE0D45D00BAB70B /* Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Menu.xib; sourceTree = "<group>"; };
 		06F790F81CE5EFFF00CCC2E9 /* RightJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightJoystickView.swift; sourceTree = "<group>"; };
-		06FECB6E1D6D7F8B00E0AEF7 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Developer/Xcode/DerivedData/STEMI-gsqfddrtuvurvgazhvldvkvkblzg/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
-		06FECB6F1D6D7F8B00E0AEF7 /* STEMIHexapod.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = STEMIHexapod.framework; path = "../../../../Developer/Xcode/DerivedData/STEMI-gsqfddrtuvurvgazhvldvkvkblzg/Build/Products/Debug-iphoneos/STEMIHexapod/STEMIHexapod.framework"; sourceTree = "<group>"; };
 		3F86D8C176EAD3B749E9D095 /* Pods-STEMI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.debug.xcconfig"; sourceTree = "<group>"; };
-		4EE2DFF874FABE7A42119051 /* Pods-STEMI-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI-Demo/Pods-STEMI-Demo.release.xcconfig"; sourceTree = "<group>"; };
-		69EEF134704F70D6AA0799D1 /* Pods_STEMI_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMI_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		704B5D3FED445828B6CEE2A9 /* Pods-STEMI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.release.xcconfig"; sourceTree = "<group>"; };
-		7DAB837B53A287E0673C0FD1 /* Pods-STEMI-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI-Demo/Pods-STEMI-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		868324E7A99FF93879D92E97 /* Pods_STEMI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -151,7 +108,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				066DB58D1D6F560E0089CBFB /* Pods_STEMI.framework in Frameworks */,
 				CE58DE1AC6763E78A0DE8B13 /* Pods_STEMI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,14 +123,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		06A0795D1D8D50BE003F565C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDA9B375D216AAB41908F01C /* Pods_STEMI_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +147,6 @@
 				065A5F4B1CA2F9E900BED250 /* STEMI.app */,
 				065A5F5F1CA2F9E900BED250 /* STEMITests.xctest */,
 				065A5F6A1CA2F9E900BED250 /* STEMIUITests.xctest */,
-				06A079731D8D50BE003F565C /* STEMI-Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,7 +202,6 @@
 				06E668DC1CE13EB700AD4A7B /* Sounds */,
 				065A5F7D1CA3075000BED250 /* CustomFont */,
 				065A5F5A1CA2F9E900BED250 /* Info.plist */,
-				06A079741D8D50BE003F565C /* Info-dev.plist */,
 				063627CF1CB3F26C0039E096 /* STEMI-Bridging-Header.h */,
 				06ABBF0C1D8DE92100631665 /* Localizable.strings */,
 			);
@@ -352,15 +298,7 @@
 		608F0A54A32C39406D5EC5A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				06FECB6E1D6D7F8B00E0AEF7 /* Alamofire.framework */,
-				06FECB6F1D6D7F8B00E0AEF7 /* STEMIHexapod.framework */,
-				06285BD91D6921550002E8D4 /* Alamofire.framework */,
-				06285BDA1D6921550002E8D4 /* Pods_STEMI.framework */,
-				0682D3B01D69190A003980EC /* STEMIHexapod.framework */,
-				069F01EC1CCC1B570034676D /* STEMIHexapod.framework */,
-				069F01E91CCC136D0034676D /* STEMIHexapod.framework */,
 				868324E7A99FF93879D92E97 /* Pods_STEMI.framework */,
-				69EEF134704F70D6AA0799D1 /* Pods_STEMI_Demo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -370,8 +308,6 @@
 			children = (
 				3F86D8C176EAD3B749E9D095 /* Pods-STEMI.debug.xcconfig */,
 				704B5D3FED445828B6CEE2A9 /* Pods-STEMI.release.xcconfig */,
-				7DAB837B53A287E0673C0FD1 /* Pods-STEMI-Demo.debug.xcconfig */,
-				4EE2DFF874FABE7A42119051 /* Pods-STEMI-Demo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -387,7 +323,6 @@
 				065A5F471CA2F9E900BED250 /* Sources */,
 				065A5F481CA2F9E900BED250 /* Frameworks */,
 				065A5F491CA2F9E900BED250 /* Resources */,
-				065A5F7C1CA301B900BED250 /* Fabric */,
 				06B4C1531CB6E73700F68BBC /* Run Script */,
 				262701F1851F81B5FFE35B92 /* [CP] Embed Pods Frameworks */,
 				BDB766FEA2F7AFE74A579D45 /* [CP] Copy Pods Resources */,
@@ -438,29 +373,6 @@
 			productReference = 065A5F6A1CA2F9E900BED250 /* STEMIUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		06A079451D8D50BE003F565C /* STEMI-Demo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 06A079701D8D50BE003F565C /* Build configuration list for PBXNativeTarget "STEMI-Demo" */;
-			buildPhases = (
-				06A079461D8D50BE003F565C /* [CP] Check Pods Manifest.lock */,
-				06A079471D8D50BE003F565C /* Sources */,
-				06A0795D1D8D50BE003F565C /* Frameworks */,
-				06A079601D8D50BE003F565C /* Resources */,
-				06A0796B1D8D50BE003F565C /* Fabric */,
-				06A0796C1D8D50BE003F565C /* Run Script */,
-				06A0796D1D8D50BE003F565C /* [CP] Embed Pods Frameworks */,
-				06A0796E1D8D50BE003F565C /* [CP] Copy Pods Resources */,
-				06A0796F1D8D50BE003F565C /* Build number */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "STEMI-Demo";
-			productName = STEMI;
-			productReference = 06A079731D8D50BE003F565C /* STEMI-Demo.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -485,10 +397,6 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = 065A5F4A1CA2F9E900BED250;
 					};
-					06A079451D8D50BE003F565C = {
-						DevelopmentTeam = 9ZQJ38F5V6;
-						ProvisioningStyle = Automatic;
-					};
 				};
 			};
 			buildConfigurationList = 065A5F461CA2F9E900BED250 /* Build configuration list for PBXProject "STEMI" */;
@@ -505,7 +413,6 @@
 			projectRoot = "";
 			targets = (
 				065A5F4A1CA2F9E900BED250 /* STEMI */,
-				06A079451D8D50BE003F565C /* STEMI-Demo */,
 				065A5F5E1CA2F9E900BED250 /* STEMITests */,
 				065A5F691CA2F9E900BED250 /* STEMIUITests */,
 			);
@@ -545,128 +452,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		06A079601D8D50BE003F565C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				06A079611D8D50BE003F565C /* LaunchScreen.storyboard in Resources */,
-				06219D781D9AB18800C99A59 /* moving_sound.wav in Resources */,
-				06A079621D8D50BE003F565C /* ProximaNova-Regular.otf in Resources */,
-				06ABBF101D8DEB5800631665 /* Localizable.strings in Resources */,
-				06A079631D8D50BE003F565C /* RightJoystickView.xib in Resources */,
-				06A079641D8D50BE003F565C /* tiu.wav in Resources */,
-				06A079651D8D50BE003F565C /* Assets.xcassets in Resources */,
-				06A079661D8D50BE003F565C /* Menu.xib in Resources */,
-				06A079671D8D50BE003F565C /* puk.wav in Resources */,
-				06A079681D8D50BE003F565C /* Main.storyboard in Resources */,
-				06A0796A1D8D50BE003F565C /* LeftJoystickView.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		065A5F7C1CA301B900BED250 /* Fabric */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Fabric;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 530f4085ae719e7a9651dc41526d94e7804be9ca c1b816238fd9be85cb3340507dac66bd6d30a11f24051ee4748be0976d04e390";
-		};
-		06A079461D8D50BE003F565C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		06A0796B1D8D50BE003F565C /* Fabric */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Fabric;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 530f4085ae719e7a9651dc41526d94e7804be9ca c1b816238fd9be85cb3340507dac66bd6d30a11f24051ee4748be0976d04e390";
-		};
-		06A0796C1D8D50BE003F565C /* Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Run Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "TAGS=\"WARNING:|FIXME:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\"";
-		};
-		06A0796D1D8D50BE003F565C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STEMI-Demo/Pods-STEMI-Demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		06A0796E1D8D50BE003F565C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STEMI-Demo/Pods-STEMI-Demo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		06A0796F1D8D50BE003F565C /* Build number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Build number";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nif [ \"${CONFIGURATION}\" = \"Release\" ]; then\nbuildPlist=${INFOPLIST_FILE}\nnewVersion=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$buildPlist\" | /usr/bin/perl -pe 's/(\\d+)/($1+1)/eg'`\n/usr/libexec/PListBuddy -c \"Set :CFBundleVersion $newVersion\" \"$buildPlist\"\nfi";
-		};
 		06B4C1531CB6E73700F68BBC /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -722,7 +510,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BDB766FEA2F7AFE74A579D45 /* [CP] Copy Pods Resources */ = {
@@ -781,31 +569,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				065A5F6F1CA2F9EA00BED250 /* STEMIUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		06A079471D8D50BE003F565C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				06A079481D8D50BE003F565C /* ViewControllers.swift in Sources */,
-				06A079491D8D50BE003F565C /* CalibrationViewController.swift in Sources */,
-				06A0794A1D8D50BE003F565C /* JoystickViewController.swift in Sources */,
-				06A0794B1D8D50BE003F565C /* LeftJoystickView.swift in Sources */,
-				06A0794C1D8D50BE003F565C /* ConnectionScreenViewController.swift in Sources */,
-				06A0794D1D8D50BE003F565C /* RightJoystickView.swift in Sources */,
-				06A0794E1D8D50BE003F565C /* WalkingStylesTableViewController.swift in Sources */,
-				06A0794F1D8D50BE003F565C /* ToastNotification.swift in Sources */,
-				06A079511D8D50BE003F565C /* WalkingStyleViewController.swift in Sources */,
-				06A079531D8D50BE003F565C /* AppDelegate.swift in Sources */,
-				06A079541D8D50BE003F565C /* Menu.swift in Sources */,
-				06A079551D8D50BE003F565C /* SettingsViewController.swift in Sources */,
-				06A079561D8D50BE003F565C /* Constants.swift in Sources */,
-				06A079571D8D50BE003F565C /* SettingsIPViewController.swift in Sources */,
-				06A079581D8D50BE003F565C /* SettingsTableViewController.swift in Sources */,
-				06A079591D8D50BE003F565C /* HeightViewController.swift in Sources */,
-				06A0795A1D8D50BE003F565C /* IPTextField.swift in Sources */,
-				06A0795B1D8D50BE003F565C /* UserDefaultsHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -958,6 +721,7 @@
 				INFOPLIST_FILE = STEMI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stemi.STEMIHexapod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -981,6 +745,7 @@
 				INFOPLIST_FILE = STEMI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stemi.STEMIHexapod;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1036,96 +801,6 @@
 			};
 			name = Release;
 		};
-		06A079711D8D50BE003F565C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DAB837B53A287E0673C0FD1 /* Pods-STEMI-Demo.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9ZQJ38F5V6;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
-					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info-dev.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"c++\"",
-					"-l\"z\"",
-					"-framework",
-					"\"Crashlytics\"",
-					"-framework",
-					"\"Fabric\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aboualdan.STEMI-Demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		06A079721D8D50BE003F565C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4EE2DFF874FABE7A42119051 /* Pods-STEMI-Demo.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 9ZQJ38F5V6;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/Crashlytics\"",
-					"\"${PODS_ROOT}/Headers/Public/Fabric\"",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info-dev.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-					"-l\"c++\"",
-					"-l\"z\"",
-					"-framework",
-					"\"Crashlytics\"",
-					"-framework",
-					"\"Fabric\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.aboualdan.STEMI-Demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "STEMI/STEMI-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1161,15 +836,6 @@
 			buildConfigurations = (
 				065A5F7A1CA2F9EA00BED250 /* Debug */,
 				065A5F7B1CA2F9EA00BED250 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		06A079701D8D50BE003F565C /* Build configuration list for PBXNativeTarget "STEMI-Demo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				06A079711D8D50BE003F565C /* Debug */,
-				06A079721D8D50BE003F565C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

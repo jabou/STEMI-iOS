@@ -22,6 +22,7 @@ class SettingsTableViewController: UITableViewController {
     var stemi: Hexapod!
     var calibrationValues = [50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50]
     var currentCalibrationValues = [Int]()
+    var standbyActive: Bool?
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -35,7 +36,6 @@ class SettingsTableViewController: UITableViewController {
         IPAddress.text = UserDefaults.IP()
         stemiName.text = UserDefaults.stemiName()
         hardwareVersion.text = UserDefaults.hardwareVersion()
-
     }
 
     // MARK: - Table view data source
@@ -65,51 +65,58 @@ class SettingsTableViewController: UITableViewController {
         } else if clickedCell == resetCell {
             resetCell.isSelected = false
 
-            let backgroundView = UIView()
-            let loadingLabel = UILabel()
-            let activityIndicator = UIActivityIndicatorView()
-
-            backgroundView.frame = CGRect(x: 0, y: 0, width: 130, height: 130)
-            backgroundView.center = view.center
-            backgroundView.backgroundColor = UIColor(red: 39/255, green: 38/255, blue: 39/255, alpha: 0.9)
-            backgroundView.clipsToBounds = true
-            backgroundView.layer.cornerRadius = 10
-            backgroundView.alpha = 0.0
-
-            loadingLabel.frame = CGRect(x: 0, y: 0, width: 130, height: 80)
-            loadingLabel.backgroundColor = UIColor.clear
-            loadingLabel.textColor = UIColor.white
-            loadingLabel.adjustsFontSizeToFitWidth = true
-            loadingLabel.textAlignment = NSTextAlignment.center
-            loadingLabel.center = CGPoint(x: backgroundView.bounds.width/2, y: backgroundView.bounds.height/2 + 30)
-            loadingLabel.text = Localization.localizedString("RESETING")
-
-            activityIndicator.frame = CGRect(x: 0, y: 0, width: activityIndicator.bounds.size.width, height: activityIndicator.bounds.size.height)
-            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
-            activityIndicator.center = CGPoint(x: backgroundView.bounds.width/2, y: backgroundView.bounds.height/2 - 10)
-
-            backgroundView.addSubview(activityIndicator)
-            backgroundView.addSubview(loadingLabel)
-            view.addSubview(backgroundView)
-            
-            activityIndicator.startAnimating()
-
-            let warningMessage = UIAlertController(title: Localization.localizedString("WARNING"), message: Localization.localizedString("RESET_WARNIGN"), preferredStyle: .alert)
-            let yesButton = UIAlertAction(title: Localization.localizedString("YES"), style: .destructive, handler: {action in
-
-                backgroundView.alpha = 1.0
-
-                DispatchQueue.main.async(execute: { 
-                    self._discardValuesToInitial({ completed in
-                        activityIndicator.stopAnimating()
-                        backgroundView.removeFromSuperview()
+            if standbyActive == true {
+                let warningMessage = UIAlertController(title: Localization.localizedString("STANDBY_TITLE"), message: Localization.localizedString("STANDBY_MESSAGE"), preferredStyle: .alert)
+                let okButton = UIAlertAction(title: Localization.localizedString("OK"), style: .cancel, handler: nil)
+                warningMessage.addAction(okButton)
+                self.present(warningMessage, animated: true, completion: nil)
+            } else {
+                let backgroundView = UIView()
+                let loadingLabel = UILabel()
+                let activityIndicator = UIActivityIndicatorView()
+                
+                backgroundView.frame = CGRect(x: 0, y: 0, width: 130, height: 130)
+                backgroundView.center = view.center
+                backgroundView.backgroundColor = UIColor(red: 39/255, green: 38/255, blue: 39/255, alpha: 0.9)
+                backgroundView.clipsToBounds = true
+                backgroundView.layer.cornerRadius = 10
+                backgroundView.alpha = 0.0
+                
+                loadingLabel.frame = CGRect(x: 0, y: 0, width: 130, height: 80)
+                loadingLabel.backgroundColor = UIColor.clear
+                loadingLabel.textColor = UIColor.white
+                loadingLabel.adjustsFontSizeToFitWidth = true
+                loadingLabel.textAlignment = NSTextAlignment.center
+                loadingLabel.center = CGPoint(x: backgroundView.bounds.width/2, y: backgroundView.bounds.height/2 + 30)
+                loadingLabel.text = Localization.localizedString("RESETING")
+                
+                activityIndicator.frame = CGRect(x: 0, y: 0, width: activityIndicator.bounds.size.width, height: activityIndicator.bounds.size.height)
+                activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+                activityIndicator.center = CGPoint(x: backgroundView.bounds.width/2, y: backgroundView.bounds.height/2 - 10)
+                
+                backgroundView.addSubview(activityIndicator)
+                backgroundView.addSubview(loadingLabel)
+                view.addSubview(backgroundView)
+                
+                activityIndicator.startAnimating()
+                
+                let warningMessage = UIAlertController(title: Localization.localizedString("WARNING"), message: Localization.localizedString("RESET_WARNIGN"), preferredStyle: .alert)
+                let yesButton = UIAlertAction(title: Localization.localizedString("YES"), style: .destructive, handler: {action in
+                    
+                    backgroundView.alpha = 1.0
+                    
+                    DispatchQueue.main.async(execute: {
+                        self._discardValuesToInitial({ completed in
+                            activityIndicator.stopAnimating()
+                            backgroundView.removeFromSuperview()
+                        })
                     })
                 })
-            })
-            let noButton = UIAlertAction(title: Localization.localizedString("NO"), style: .cancel, handler: nil)
-            warningMessage.addAction(yesButton)
-            warningMessage.addAction(noButton)
-            self.present(warningMessage, animated: true, completion: nil)
+                let noButton = UIAlertAction(title: Localization.localizedString("NO"), style: .cancel, handler: nil)
+                warningMessage.addAction(yesButton)
+                warningMessage.addAction(noButton)
+                self.present(warningMessage, animated: true, completion: nil)
+            }
         }
     }
 
@@ -155,14 +162,18 @@ class SettingsTableViewController: UITableViewController {
                             do {
                                 try self.stemi.setCalibrationValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
                             } catch {
-                                print("error")
+                                #if DEBUG
+                                    print("error")
+                                #endif
                             }
                         } else if self.currentCalibrationValues[j] > self.calibrationValues[j] {
                             self.currentCalibrationValues[j] -= calculatingNumbers[j]
                             do {
                                 try self.stemi.setCalibrationValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
                             } catch {
-                                print("error")
+                                #if DEBUG
+                                    print("error")
+                                #endif
                             }
                         }
                     } else {
@@ -170,7 +181,9 @@ class SettingsTableViewController: UITableViewController {
                         do {
                             try self.stemi.setCalibrationValue(UInt8(self.currentCalibrationValues[j]), atIndex: j)
                         } catch {
-                            print("error")
+                            #if DEBUG
+                                print("error")
+                            #endif
                         }
                     }
                 }

@@ -42,7 +42,10 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        stemi = Hexapod()
+        stemi.delegate = self
+        
         //Setup standby button on screen
         standbyButton.setImage(UIImage(named: "standby_off"), for: UIControlState())
         standbyButton.setImage(UIImage(named: "standby_on"), for: .selected)
@@ -52,9 +55,6 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         //Add notification observers for start and stop connection with stemi
         NotificationCenter.default.addObserver(self, selector: #selector(JoystickViewController.stopConnection), name: NSNotification.Name(rawValue: Constants.Connection.StopConnection), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(JoystickViewController.startConnection), name: NSNotification.Name(rawValue: Constants.Connection.StartConnection), object: nil)
-
-        //Demo target dismiss view
-        NotificationCenter.default.addObserver(self, selector: #selector(JoystickViewController.dismissJoystickView), name: NSNotification.Name(rawValue: Constants.Demo.DismissView), object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -83,8 +83,6 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
         }
 
         //Setup stemi, and start connection
-        stemi = Hexapod()
-        stemi.delegate = self
         stemi.setIP(UserDefaults.IP())
         stemi.setHeight(UserDefaults.height())
         stemi.setWalkingStyle(UserDefaults.walkingStyle())
@@ -178,7 +176,7 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
             stemi.setOrientationMode()
             selectedMode = .orientation
         default:
-            #if DEVELOPMENT
+            #if DEBUG
                 print("Mode did not changed!")
             #endif
         }
@@ -207,7 +205,10 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
                 toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("WALKING_STYLE"), text: Localization.localizedString("WALKING_STYLE_TEXT"), height: 90)
                 toastNotification.showNotification()
             default:
-                print("Long press error")
+                #if DEBUG
+                    print("Long press error")
+                #endif
+                
             }
         } else if state == .ended {
             toastNotification.hideNotification()
@@ -217,13 +218,29 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
     func menuButtonDidSelectOnIndex(_ index: Int) {
         switch index {
         case 3:
-            self.present(ViewControllers.HeightViewController, animated: true, completion: nil)
+            if stemi.isInStandby() {
+                let warningMessage = UIAlertController(title: Localization.localizedString("STANDBY_TITLE"), message: Localization.localizedString("STANDBY_MESSAGE"), preferredStyle: .alert)
+                let okButton = UIAlertAction(title: Localization.localizedString("OK"), style: .cancel, handler: nil)
+                warningMessage.addAction(okButton)
+                self.present(warningMessage, animated: true, completion: nil)
+            } else {
+                self.present(ViewControllers.HeightViewController, animated: true, completion: nil)
+            }
         case 4:
-            self.present(ViewControllers.CalibrationViewController, animated: true, completion: nil)
+            if stemi.isInStandby() {
+                let warningMessage = UIAlertController(title: Localization.localizedString("STANDBY_TITLE"), message: Localization.localizedString("STANDBY_MESSAGE"), preferredStyle: .alert)
+                let okButton = UIAlertAction(title: Localization.localizedString("OK"), style: .cancel, handler: nil)
+                warningMessage.addAction(okButton)
+                self.present(warningMessage, animated: true, completion: nil)
+            } else {
+                self.present(ViewControllers.CalibrationViewController, animated: true, completion: nil)
+            }
         case 5:
             self.present(ViewControllers.WalkingStyleViewController, animated: true, completion: nil)
         case 6:
-            self.present(ViewControllers.AppSettingsViewController, animated: true, completion: nil)
+            let settingsVC = ViewControllers.AppSettingsViewController as! SettingsViewController
+            settingsVC.isInStandbyMode = stemi.isInStandby()
+            self.present(settingsVC, animated: true, completion: nil)
         default:
             break
         }
@@ -260,19 +277,9 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
 
     //MARK: - HexapodDelegate
     func connectionStatus(_ isConnected: Bool) {
-        #if DEVELOPMENT
-            print("no_hexapod mode. Connetion: \(isConnected)")
-        #else
-            if isConnected == false {
-                connectionLost()
-            }
-        #endif
-    }
-
-    //MARK: - Demo app background handling
-    func dismissJoystickView() {
-        ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        self.dismiss(animated: true, completion: nil)
+        if isConnected == false {
+            connectionLost()
+        }
     }
 
     //MARK: - Action Handlers
