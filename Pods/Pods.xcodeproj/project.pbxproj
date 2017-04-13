@@ -7,21 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		209CBE333EA6F420B87A1506B9A12D6A /* Pods-STEMI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 072150D0A9BDE195FDE49CA91B2D16F1 /* Pods-STEMI-dummy.m */; };
+		209CBE333EA6F420B87A1506B9A12D6A /* Pods-STEMI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFF371CE9508E421D990E44FF8B533F /* Pods-STEMI-dummy.m */; };
 		2335F53F91C604B8901FBD86C87500AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
-		2801EE2B1B48E22323C40491FCE86D1E /* Pods-STEMI-Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F5804EC917417B87E4646DFF2635294 /* Pods-STEMI-Demo-dummy.m */; };
-		3680101C212A7A7B872EE5FFEE970582 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
-		4B5546E932E527012AAED89C431475A9 /* CalibrationPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8359404C18B20FF7C43C75FD1C41EA3 /* CalibrationPackage.swift */; };
-		687C855FE30A9C94FBD5D7348A5CB88D /* Pods-STEMI-Demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 62BF947FB208CB631A9A86DE11119330 /* Pods-STEMI-Demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7AD16CAD4C58A58A4463253A214644B0 /* CalibrationPacketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530328ABCF672A8F955D38FCF40802B5 /* CalibrationPacketSender.swift */; };
-		824C440780FA2856DBC3BE8581AD7D1B /* PacketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EFE8E468D98E99A6648AFA4FE563D7 /* PacketSender.swift */; };
+		4B5546E932E527012AAED89C431475A9 /* CalibrationPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902512CB4368CCAC53D6DF8F1FCBA19 /* CalibrationPackage.swift */; };
+		7AD16CAD4C58A58A4463253A214644B0 /* CalibrationPacketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708982F8D86A890D6DA20472D2120201 /* CalibrationPacketSender.swift */; };
+		824C440780FA2856DBC3BE8581AD7D1B /* PacketSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747BE4FDD75BAF3203CE0EF723E71936 /* PacketSender.swift */; };
 		8B36A6A84A9538B0EB607921AD60C29D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */; };
-		C0CD4CCF8FEDF728A7EA960C926A01D8 /* STEMIHexapod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 904146638DBB09B5321B11BFE504E1F6 /* STEMIHexapod-dummy.m */; };
-		C65462635C23D9BC56ED8879E48DF717 /* Pods-STEMI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A3A384C0CB67D9ADB2D7594C1724057 /* Pods-STEMI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C87FAFBE92BC78A440F8D7BD1E2B35F8 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968B00573F4F9C86B468E86E68E1DDB4 /* Packet.swift */; };
-		CAEC698181E8251CE2E5A98D529A7A52 /* Hexapod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9F0CF779FEC103201DE393BD77DB4 /* Hexapod.swift */; };
+		C0CD4CCF8FEDF728A7EA960C926A01D8 /* STEMIHexapod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 256504F32FDC84AE0BCECE65B82BE7F1 /* STEMIHexapod-dummy.m */; };
+		C65462635C23D9BC56ED8879E48DF717 /* Pods-STEMI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ABBCF53C4DF9C71AAB4B3FF6199D7C09 /* Pods-STEMI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C87FAFBE92BC78A440F8D7BD1E2B35F8 /* Packet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99CDC0BA3B2D71423A31F75B35E3B16 /* Packet.swift */; };
+		CAEC698181E8251CE2E5A98D529A7A52 /* Hexapod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2CD10251C51B75DE2CE6F5EB30540A /* Hexapod.swift */; };
 		D872A06F430645FA02DAF45B15BF50D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
-		FC418EFB8BDC2B03D9E159547DE36247 /* STEMIHexapod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 31FB453CAD529F1FDA774CCB0FCA8087 /* STEMIHexapod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC418EFB8BDC2B03D9E159547DE36247 /* STEMIHexapod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 844F16B2FB13F8883A8A8434AB89CE6A /* STEMIHexapod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,75 +29,38 @@
 			remoteGlobalIDString = 9AD3E7712EA39DF81F04BBF37D9C1A18;
 			remoteInfo = STEMIHexapod;
 		};
-		36E4932A26B8C41CD743EBC66E8679DA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9AD3E7712EA39DF81F04BBF37D9C1A18;
-			remoteInfo = STEMIHexapod;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		072150D0A9BDE195FDE49CA91B2D16F1 /* Pods-STEMI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-STEMI-dummy.m"; sourceTree = "<group>"; };
-		12242702148B5B24501498A2A0404C72 /* STEMIHexapod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = STEMIHexapod.xcconfig; sourceTree = "<group>"; };
-		144352D7E665E775A30E1E2CAF6F348C /* Pods-STEMI-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STEMI-frameworks.sh"; sourceTree = "<group>"; };
-		1D7F4FC18A4CA7CC4B34E70A74AF4948 /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
-		28EBCCBDC0B14A27A6DB9373AB38E26A /* Pods-STEMI-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STEMI-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2E199A5D7AC56F1106B9F241477EEE9F /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
-		2E8871A77F48F73AE306A2AE501BA9A8 /* Pods-STEMI-Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STEMI-Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		31FB453CAD529F1FDA774CCB0FCA8087 /* STEMIHexapod-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STEMIHexapod-umbrella.h"; sourceTree = "<group>"; };
-		379FF2CD5295394E3D5AF43050B1BDF1 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
-		38BB29D17BF0ACC34946265809B8FF60 /* Pods-STEMI-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STEMI-Demo.release.xcconfig"; sourceTree = "<group>"; };
-		3DDD60688ED7542053133CF986F51580 /* Pods-STEMI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-STEMI.modulemap"; sourceTree = "<group>"; };
-		3EA9F0CF779FEC103201DE393BD77DB4 /* Hexapod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hexapod.swift; path = STEMIHexapod/Hexapod.swift; sourceTree = "<group>"; };
-		48C5152F0566B92C0687810FD110A0DA /* Pods-STEMI-Demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STEMI-Demo-frameworks.sh"; sourceTree = "<group>"; };
-		530328ABCF672A8F955D38FCF40802B5 /* CalibrationPacketSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalibrationPacketSender.swift; path = STEMIHexapod/CalibrationPacketSender.swift; sourceTree = "<group>"; };
-		58DFAD46ECD831D61CA25CAC7FD4BDE0 /* Pods-STEMI-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STEMI-Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		5AB68F453FAFE168D8F5C9F87785E010 /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
-		5F38E7E4D225E9673A5792A567D8F185 /* Pods-STEMI-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-STEMI-acknowledgements.plist"; sourceTree = "<group>"; };
-		5FAC8CE49FA47C724694B60C0CD36865 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00AFBA2D8E8B71C28618B1944A2659C0 /* Pods-STEMI-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-STEMI-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0902512CB4368CCAC53D6DF8F1FCBA19 /* CalibrationPackage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalibrationPackage.swift; path = STEMIHexapod/CalibrationPackage.swift; sourceTree = "<group>"; };
+		256504F32FDC84AE0BCECE65B82BE7F1 /* STEMIHexapod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "STEMIHexapod-dummy.m"; sourceTree = "<group>"; };
+		465FE1E8FCDEEC65DC218087A512C825 /* STEMIHexapod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = STEMIHexapod.framework; path = STEMIHexapod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49B0246B8FA98574FD72E9EBAD371CFF /* Pods-STEMI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-STEMI.modulemap"; sourceTree = "<group>"; };
+		616BB89A274672BA7A848970E57E0EA3 /* Pods_STEMI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_STEMI.framework; path = "Pods-STEMI.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		62BF947FB208CB631A9A86DE11119330 /* Pods-STEMI-Demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-STEMI-Demo-umbrella.h"; sourceTree = "<group>"; };
-		6BE3A4536DFEEF8B473CAD3734A6C90F /* Pods-STEMI-Demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-STEMI-Demo.modulemap"; sourceTree = "<group>"; };
-		6D4954D0712EE34403850B42FEF149A5 /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
-		7012A26F6109B73F68BF8644FE457B6A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
-		7A3A384C0CB67D9ADB2D7594C1724057 /* Pods-STEMI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-STEMI-umbrella.h"; sourceTree = "<group>"; };
-		7B39B110372A2146A56C373703DD79AD /* Pods-STEMI-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STEMI-resources.sh"; sourceTree = "<group>"; };
-		7E66F0ACD35F7F3EA1F079B95118805A /* Pods_STEMI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_STEMI.framework; path = "Pods-STEMI.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		657C335C64243896849DC06D7B04F6BE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		708982F8D86A890D6DA20472D2120201 /* CalibrationPacketSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalibrationPacketSender.swift; path = STEMIHexapod/CalibrationPacketSender.swift; sourceTree = "<group>"; };
+		747BE4FDD75BAF3203CE0EF723E71936 /* PacketSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PacketSender.swift; path = STEMIHexapod/PacketSender.swift; sourceTree = "<group>"; };
+		76EFC50449A5740E33A58B8429071B10 /* Pods-STEMI-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STEMI-resources.sh"; sourceTree = "<group>"; };
+		7B2CD10251C51B75DE2CE6F5EB30540A /* Hexapod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Hexapod.swift; path = STEMIHexapod/Hexapod.swift; sourceTree = "<group>"; };
 		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		7F5804EC917417B87E4646DFF2635294 /* Pods-STEMI-Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-STEMI-Demo-dummy.m"; sourceTree = "<group>"; };
-		83830C4A31418F9F61CDFB3A3FE11F89 /* Pods-STEMI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STEMI.debug.xcconfig"; sourceTree = "<group>"; };
-		904146638DBB09B5321B11BFE504E1F6 /* STEMIHexapod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "STEMIHexapod-dummy.m"; sourceTree = "<group>"; };
-		917FF53C23BF1B3FE9C4B8792DA62EC3 /* Pods_STEMI_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_STEMI_Demo.framework; path = "Pods-STEMI-Demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		844F16B2FB13F8883A8A8434AB89CE6A /* STEMIHexapod-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STEMIHexapod-umbrella.h"; sourceTree = "<group>"; };
+		8C9B4A82D2BC25D756DA8D6F496D3D88 /* Pods-STEMI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STEMI.release.xcconfig"; sourceTree = "<group>"; };
+		8DEDD183171999EFA4458661AE322B92 /* STEMIHexapod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = STEMIHexapod.modulemap; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		968B00573F4F9C86B468E86E68E1DDB4 /* Packet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Packet.swift; path = STEMIHexapod/Packet.swift; sourceTree = "<group>"; };
-		99A305F85C056FE989339CC640AD3014 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
-		9BD98B7816280F1B01C761A3C93984BC /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
-		9BDEFF88F4EA7EB1EDCE32E9813981DC /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
-		A0D487BD893BA9999DBDFFAF3A0E50F9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A3F1F831CC2FFCD3490E7F70C9DE4878 /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
-		BC02EA2649E684EBF65B5816D64B66D0 /* STEMIHexapod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = STEMIHexapod.framework; path = STEMIHexapod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD979F25AB0E0B267E179D496036F3BA /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
-		C8359404C18B20FF7C43C75FD1C41EA3 /* CalibrationPackage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalibrationPackage.swift; path = STEMIHexapod/CalibrationPackage.swift; sourceTree = "<group>"; };
-		C8C43DC3810088EF641EB8A2D9F72DB3 /* STEMIHexapod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = STEMIHexapod.modulemap; sourceTree = "<group>"; };
-		CFD48BD160B4FAFF014386AD1C6757C8 /* Pods-STEMI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STEMI.release.xcconfig"; sourceTree = "<group>"; };
-		D8B62CC92E8777C651CBFFFA592F6261 /* Pods-STEMI-Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-STEMI-Demo-acknowledgements.plist"; sourceTree = "<group>"; };
-		DF74613F0C9D7990FBCBC66C73F76E18 /* STEMIHexapod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STEMIHexapod-prefix.pch"; sourceTree = "<group>"; };
-		E1EFE8E468D98E99A6648AFA4FE563D7 /* PacketSender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PacketSender.swift; path = STEMIHexapod/PacketSender.swift; sourceTree = "<group>"; };
-		F28EAF0DB8C9C607A30DDD86E0AAF02E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F98C3A1E2F5623DA698411425FD3A1BE /* Pods-STEMI-Demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STEMI-Demo-resources.sh"; sourceTree = "<group>"; };
+		A3306A1FC6EB23AD9DCCACD23EFB3F7C /* Pods-STEMI-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-STEMI-frameworks.sh"; sourceTree = "<group>"; };
+		ABBCF53C4DF9C71AAB4B3FF6199D7C09 /* Pods-STEMI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-STEMI-umbrella.h"; sourceTree = "<group>"; };
+		C19DCD3E41D994AAAFCFA0A0F97AD97B /* Pods-STEMI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-STEMI.debug.xcconfig"; sourceTree = "<group>"; };
+		D9D9737A82278EAB2CA2254847FAFA79 /* STEMIHexapod.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = STEMIHexapod.xcconfig; sourceTree = "<group>"; };
+		D9F16BA32C6D94782DF0DEEFEF87ED45 /* STEMIHexapod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "STEMIHexapod-prefix.pch"; sourceTree = "<group>"; };
+		DE892EE2F474CA4DA3E5F91C038CCF07 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEFF371CE9508E421D990E44FF8B533F /* Pods-STEMI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-STEMI-dummy.m"; sourceTree = "<group>"; };
+		F99CDC0BA3B2D71423A31F75B35E3B16 /* Packet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Packet.swift; path = STEMIHexapod/Packet.swift; sourceTree = "<group>"; };
+		FB4FB6231635D7207A7AF442102CBADA /* Pods-STEMI-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-STEMI-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A67C1F7812FC6126205D29F06ADCB409 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3680101C212A7A7B872EE5FFEE970582 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A912ABDB46D1F1F104CC2195F062113E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -121,12 +81,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1698A10AD3B0A4D2E28EE7C1713EE47D /* Frameworks */ = {
+		13894B0F11E19955779D1623BB4BE615 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7012A26F6109B73F68BF8644FE457B6A /* Crashlytics.framework */,
+				2E8096258F31757A040F7ABD0E977D01 /* STEMIHexapod */,
 			);
-			name = Frameworks;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2E8096258F31757A040F7ABD0E977D01 /* STEMIHexapod */ = {
+			isa = PBXGroup;
+			children = (
+				0902512CB4368CCAC53D6DF8F1FCBA19 /* CalibrationPackage.swift */,
+				708982F8D86A890D6DA20472D2120201 /* CalibrationPacketSender.swift */,
+				7B2CD10251C51B75DE2CE6F5EB30540A /* Hexapod.swift */,
+				F99CDC0BA3B2D71423A31F75B35E3B16 /* Packet.swift */,
+				747BE4FDD75BAF3203CE0EF723E71936 /* PacketSender.swift */,
+				BBC3559B1EA4B6AD0FC63AFAC9F614F3 /* Support Files */,
+			);
+			name = STEMIHexapod;
+			path = STEMIHexapod;
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -137,44 +111,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		47A98567873E0AB7854547E8051B5A26 /* Pods-STEMI-Demo */ = {
+		48CDD2951DA5BCA519CA85EB8B269DA8 /* Pods-STEMI */ = {
 			isa = PBXGroup;
 			children = (
-				A0D487BD893BA9999DBDFFAF3A0E50F9 /* Info.plist */,
-				6BE3A4536DFEEF8B473CAD3734A6C90F /* Pods-STEMI-Demo.modulemap */,
-				2E8871A77F48F73AE306A2AE501BA9A8 /* Pods-STEMI-Demo-acknowledgements.markdown */,
-				D8B62CC92E8777C651CBFFFA592F6261 /* Pods-STEMI-Demo-acknowledgements.plist */,
-				7F5804EC917417B87E4646DFF2635294 /* Pods-STEMI-Demo-dummy.m */,
-				48C5152F0566B92C0687810FD110A0DA /* Pods-STEMI-Demo-frameworks.sh */,
-				F98C3A1E2F5623DA698411425FD3A1BE /* Pods-STEMI-Demo-resources.sh */,
-				62BF947FB208CB631A9A86DE11119330 /* Pods-STEMI-Demo-umbrella.h */,
-				58DFAD46ECD831D61CA25CAC7FD4BDE0 /* Pods-STEMI-Demo.debug.xcconfig */,
-				38BB29D17BF0ACC34946265809B8FF60 /* Pods-STEMI-Demo.release.xcconfig */,
+				DE892EE2F474CA4DA3E5F91C038CCF07 /* Info.plist */,
+				49B0246B8FA98574FD72E9EBAD371CFF /* Pods-STEMI.modulemap */,
+				00AFBA2D8E8B71C28618B1944A2659C0 /* Pods-STEMI-acknowledgements.markdown */,
+				FB4FB6231635D7207A7AF442102CBADA /* Pods-STEMI-acknowledgements.plist */,
+				DEFF371CE9508E421D990E44FF8B533F /* Pods-STEMI-dummy.m */,
+				A3306A1FC6EB23AD9DCCACD23EFB3F7C /* Pods-STEMI-frameworks.sh */,
+				76EFC50449A5740E33A58B8429071B10 /* Pods-STEMI-resources.sh */,
+				ABBCF53C4DF9C71AAB4B3FF6199D7C09 /* Pods-STEMI-umbrella.h */,
+				C19DCD3E41D994AAAFCFA0A0F97AD97B /* Pods-STEMI.debug.xcconfig */,
+				8C9B4A82D2BC25D756DA8D6F496D3D88 /* Pods-STEMI.release.xcconfig */,
 			);
-			name = "Pods-STEMI-Demo";
-			path = "Target Support Files/Pods-STEMI-Demo";
-			sourceTree = "<group>";
-		};
-		5979855874550892BDD0937FD7A03955 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				379FF2CD5295394E3D5AF43050B1BDF1 /* Fabric.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6D5B7502C2BB862344E9040E854395D6 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				5FAC8CE49FA47C724694B60C0CD36865 /* Info.plist */,
-				C8C43DC3810088EF641EB8A2D9F72DB3 /* STEMIHexapod.modulemap */,
-				12242702148B5B24501498A2A0404C72 /* STEMIHexapod.xcconfig */,
-				904146638DBB09B5321B11BFE504E1F6 /* STEMIHexapod-dummy.m */,
-				DF74613F0C9D7990FBCBC66C73F76E18 /* STEMIHexapod-prefix.pch */,
-				31FB453CAD529F1FDA774CCB0FCA8087 /* STEMIHexapod-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/STEMIHexapod";
+			name = "Pods-STEMI";
+			path = "Target Support Files/Pods-STEMI";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -182,98 +134,32 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				BE4B962CF02BE96D0D6CD8E0FF288A4D /* Pods */,
-				C7F1C5C1CB7C5A1CD8F1CCD3AB78AE0A /* Products */,
-				CE41F38FBC13873F9FBB825D8303FCF3 /* Targets Support Files */,
+				13894B0F11E19955779D1623BB4BE615 /* Pods */,
+				F8F7A814DC2FC62CC8B692C094AA8F16 /* Products */,
+				8B6555251EF4F383EB0B56DC59224C99 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		86B82D01D8C46B8392553FAC54A4DC95 /* Pods-STEMI */ = {
+		8B6555251EF4F383EB0B56DC59224C99 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F28EAF0DB8C9C607A30DDD86E0AAF02E /* Info.plist */,
-				3DDD60688ED7542053133CF986F51580 /* Pods-STEMI.modulemap */,
-				28EBCCBDC0B14A27A6DB9373AB38E26A /* Pods-STEMI-acknowledgements.markdown */,
-				5F38E7E4D225E9673A5792A567D8F185 /* Pods-STEMI-acknowledgements.plist */,
-				072150D0A9BDE195FDE49CA91B2D16F1 /* Pods-STEMI-dummy.m */,
-				144352D7E665E775A30E1E2CAF6F348C /* Pods-STEMI-frameworks.sh */,
-				7B39B110372A2146A56C373703DD79AD /* Pods-STEMI-resources.sh */,
-				7A3A384C0CB67D9ADB2D7594C1724057 /* Pods-STEMI-umbrella.h */,
-				83830C4A31418F9F61CDFB3A3FE11F89 /* Pods-STEMI.debug.xcconfig */,
-				CFD48BD160B4FAFF014386AD1C6757C8 /* Pods-STEMI.release.xcconfig */,
-			);
-			name = "Pods-STEMI";
-			path = "Target Support Files/Pods-STEMI";
-			sourceTree = "<group>";
-		};
-		A3EA2EE143CFFCE88BC4DB4CCEB88C77 /* STEMIHexapod */ = {
-			isa = PBXGroup;
-			children = (
-				C8359404C18B20FF7C43C75FD1C41EA3 /* CalibrationPackage.swift */,
-				530328ABCF672A8F955D38FCF40802B5 /* CalibrationPacketSender.swift */,
-				3EA9F0CF779FEC103201DE393BD77DB4 /* Hexapod.swift */,
-				968B00573F4F9C86B468E86E68E1DDB4 /* Packet.swift */,
-				E1EFE8E468D98E99A6648AFA4FE563D7 /* PacketSender.swift */,
-				6D5B7502C2BB862344E9040E854395D6 /* Support Files */,
-			);
-			name = STEMIHexapod;
-			path = STEMIHexapod;
-			sourceTree = "<group>";
-		};
-		B4C1F2027B0B2F6C07DD29D1FB1A4EE0 /* Fabric */ = {
-			isa = PBXGroup;
-			children = (
-				2E199A5D7AC56F1106B9F241477EEE9F /* FABAttributes.h */,
-				5AB68F453FAFE168D8F5C9F87785E010 /* Fabric.h */,
-				5979855874550892BDD0937FD7A03955 /* Frameworks */,
-			);
-			name = Fabric;
-			path = Fabric;
-			sourceTree = "<group>";
-		};
-		BE4B962CF02BE96D0D6CD8E0FF288A4D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CE55015BD7A64BFAE30368DA86127F0A /* Crashlytics */,
-				B4C1F2027B0B2F6C07DD29D1FB1A4EE0 /* Fabric */,
-				A3EA2EE143CFFCE88BC4DB4CCEB88C77 /* STEMIHexapod */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C7F1C5C1CB7C5A1CD8F1CCD3AB78AE0A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7E66F0ACD35F7F3EA1F079B95118805A /* Pods_STEMI.framework */,
-				917FF53C23BF1B3FE9C4B8792DA62EC3 /* Pods_STEMI_Demo.framework */,
-				BC02EA2649E684EBF65B5816D64B66D0 /* STEMIHexapod.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CE41F38FBC13873F9FBB825D8303FCF3 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				86B82D01D8C46B8392553FAC54A4DC95 /* Pods-STEMI */,
-				47A98567873E0AB7854547E8051B5A26 /* Pods-STEMI-Demo */,
+				48CDD2951DA5BCA519CA85EB8B269DA8 /* Pods-STEMI */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		CE55015BD7A64BFAE30368DA86127F0A /* Crashlytics */ = {
+		BBC3559B1EA4B6AD0FC63AFAC9F614F3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BD979F25AB0E0B267E179D496036F3BA /* ANSCompatibility.h */,
-				A3F1F831CC2FFCD3490E7F70C9DE4878 /* Answers.h */,
-				9BDEFF88F4EA7EB1EDCE32E9813981DC /* CLSAttributes.h */,
-				99A305F85C056FE989339CC640AD3014 /* CLSLogging.h */,
-				9BD98B7816280F1B01C761A3C93984BC /* CLSReport.h */,
-				1D7F4FC18A4CA7CC4B34E70A74AF4948 /* CLSStackFrame.h */,
-				6D4954D0712EE34403850B42FEF149A5 /* Crashlytics.h */,
-				1698A10AD3B0A4D2E28EE7C1713EE47D /* Frameworks */,
+				657C335C64243896849DC06D7B04F6BE /* Info.plist */,
+				8DEDD183171999EFA4458661AE322B92 /* STEMIHexapod.modulemap */,
+				D9D9737A82278EAB2CA2254847FAFA79 /* STEMIHexapod.xcconfig */,
+				256504F32FDC84AE0BCECE65B82BE7F1 /* STEMIHexapod-dummy.m */,
+				D9F16BA32C6D94782DF0DEEFEF87ED45 /* STEMIHexapod-prefix.pch */,
+				844F16B2FB13F8883A8A8434AB89CE6A /* STEMIHexapod-umbrella.h */,
 			);
-			name = Crashlytics;
-			path = Crashlytics;
+			name = "Support Files";
+			path = "../Target Support Files/STEMIHexapod";
 			sourceTree = "<group>";
 		};
 		E6EE98446B568159EE277B68FD442AF0 /* iOS */ = {
@@ -285,6 +171,15 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		F8F7A814DC2FC62CC8B692C094AA8F16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				616BB89A274672BA7A848970E57E0EA3 /* Pods_STEMI.framework */,
+				465FE1E8FCDEEC65DC218087A512C825 /* STEMIHexapod.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -293,14 +188,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C65462635C23D9BC56ED8879E48DF717 /* Pods-STEMI-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		96B5690471FFECC4D6535FF1126988FE /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				687C855FE30A9C94FBD5D7348A5CB88D /* Pods-STEMI-Demo-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,25 +217,7 @@
 			);
 			name = "Pods-STEMI";
 			productName = "Pods-STEMI";
-			productReference = 7E66F0ACD35F7F3EA1F079B95118805A /* Pods_STEMI.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		486138C504572F8213FB40218B921A78 /* Pods-STEMI-Demo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 779F8CC050B80C66F00810FC40F4C31A /* Build configuration list for PBXNativeTarget "Pods-STEMI-Demo" */;
-			buildPhases = (
-				F805825C61E5FBB1932395C18773D8E5 /* Sources */,
-				A67C1F7812FC6126205D29F06ADCB409 /* Frameworks */,
-				96B5690471FFECC4D6535FF1126988FE /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				74A207C26883F57C02193B724BF3E4AD /* PBXTargetDependency */,
-			);
-			name = "Pods-STEMI-Demo";
-			productName = "Pods-STEMI-Demo";
-			productReference = 917FF53C23BF1B3FE9C4B8792DA62EC3 /* Pods_STEMI_Demo.framework */;
+			productReference = 616BB89A274672BA7A848970E57E0EA3 /* Pods_STEMI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9AD3E7712EA39DF81F04BBF37D9C1A18 /* STEMIHexapod */ = {
@@ -365,7 +234,7 @@
 			);
 			name = STEMIHexapod;
 			productName = STEMIHexapod;
-			productReference = BC02EA2649E684EBF65B5816D64B66D0 /* STEMIHexapod.framework */;
+			productReference = 465FE1E8FCDEEC65DC218087A512C825 /* STEMIHexapod.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -385,12 +254,11 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = C7F1C5C1CB7C5A1CD8F1CCD3AB78AE0A /* Products */;
+			productRefGroup = F8F7A814DC2FC62CC8B692C094AA8F16 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				08D65EE7FA3E177E06F525AA3A325089 /* Pods-STEMI */,
-				486138C504572F8213FB40218B921A78 /* Pods-STEMI-Demo */,
 				9AD3E7712EA39DF81F04BBF37D9C1A18 /* STEMIHexapod */,
 			);
 		};
@@ -418,23 +286,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F805825C61E5FBB1932395C18773D8E5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2801EE2B1B48E22323C40491FCE86D1E /* Pods-STEMI-Demo-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		74A207C26883F57C02193B724BF3E4AD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = STEMIHexapod;
-			target = 9AD3E7712EA39DF81F04BBF37D9C1A18 /* STEMIHexapod */;
-			targetProxy = 36E4932A26B8C41CD743EBC66E8679DA /* PBXContainerItemProxy */;
-		};
 		9DC2869F091F8CD30B15B9C78A4F7669 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = STEMIHexapod;
@@ -488,41 +342,6 @@
 			};
 			name = Debug;
 		};
-		40889773FC33BA944050D944E86963A0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 38BB29D17BF0ACC34946265809B8FF60 /* Pods-STEMI-Demo.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-STEMI-Demo/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-STEMI-Demo/Pods-STEMI-Demo.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_STEMI_Demo;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -565,7 +384,7 @@
 		};
 		7417E175E19378ADCD5C485C088ED58F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12242702148B5B24501498A2A0404C72 /* STEMIHexapod.xcconfig */;
+			baseConfigurationReference = D9D9737A82278EAB2CA2254847FAFA79 /* STEMIHexapod.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -597,7 +416,7 @@
 		};
 		78832977FA8BB96DEE3E69DEC6154503 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFD48BD160B4FAFF014386AD1C6757C8 /* Pods-STEMI.release.xcconfig */;
+			baseConfigurationReference = 8C9B4A82D2BC25D756DA8D6F496D3D88 /* Pods-STEMI.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -632,7 +451,7 @@
 		};
 		ABF136E5675D4CEA8D768668C634FEC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83830C4A31418F9F61CDFB3A3FE11F89 /* Pods-STEMI.debug.xcconfig */;
+			baseConfigurationReference = C19DCD3E41D994AAAFCFA0A0F97AD97B /* Pods-STEMI.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -666,45 +485,9 @@
 			};
 			name = Debug;
 		};
-		C36DC6250C7FB1A8299F3433E6C48BE8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58DFAD46ECD831D61CA25CAC7FD4BDE0 /* Pods-STEMI-Demo.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-STEMI-Demo/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-STEMI-Demo/Pods-STEMI-Demo.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_STEMI_Demo;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		EEED670423854346C87FDDB71D20EA44 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12242702148B5B24501498A2A0404C72 /* STEMIHexapod.xcconfig */;
+			baseConfigurationReference = D9D9737A82278EAB2CA2254847FAFA79 /* STEMIHexapod.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -743,15 +526,6 @@
 			buildConfigurations = (
 				015A368F878AC3E2CEAE21DDE8026304 /* Debug */,
 				44CDBB6D11DE06DB64D6268622BDC47E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		779F8CC050B80C66F00810FC40F4C31A /* Build configuration list for PBXNativeTarget "Pods-STEMI-Demo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C36DC6250C7FB1A8299F3433E6C48BE8 /* Debug */,
-				40889773FC33BA944050D944E86963A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

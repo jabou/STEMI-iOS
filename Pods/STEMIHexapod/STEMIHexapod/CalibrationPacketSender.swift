@@ -58,7 +58,7 @@ class CalibrationPacketSender: NSObject, StreamDelegate {
                 complete(true)
                 self.sendPackage()
             } else {
-                #if DEVELOPMENT
+                #if DEBUG
                     print("Error in reading data. Check if file is present on Hexapod")
                 #endif
             }
@@ -72,7 +72,9 @@ class CalibrationPacketSender: NSObject, StreamDelegate {
             do {
                 try hexapod.setCalibrationValue(value, atIndex: index)
             } catch {
-                print(error)
+                #if DEBUG
+                    print(error)
+                #endif
             }
         }
 
