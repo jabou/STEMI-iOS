@@ -10,7 +10,7 @@ import UIKit
 import AVFoundation
 import STEMIHexapod
 
-class HeightViewController: UIViewController {
+class HeightViewController: UIViewController, HexapodDelegate {
 
     //MARK: - IBOutlets
     @IBOutlet weak var heightIndicator: UILabel!
@@ -48,6 +48,7 @@ class HeightViewController: UIViewController {
         }
 
         _stemi = Hexapod()
+        _stemi.delegate = self
         _stemi.setIP(UserDefaults.IP())
         _stemi.setHeight(UserDefaults.height())
         _stemi.connect()
@@ -157,6 +158,23 @@ class HeightViewController: UIViewController {
 
     @IBAction func doneButtonActionHandler(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func connectionLost() {
+        let warningMessage = UIAlertController(title: Localization.localizedString("CONNECTION_TITLE"), message: Localization.localizedString("CONNECTION_TEXT"), preferredStyle: .alert)
+        let okButton = UIAlertAction(title: Localization.localizedString("OK"), style: .cancel, handler: {action in
+            ViewControllers.MainJoystickViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        })
+        warningMessage.addAction(okButton)
+        self.present(warningMessage, animated: true, completion: nil)
+    }
+    
+    //MARK: - HexapodDelegate
+    func connectionStatus(_ isConnected: Bool) {
+        if isConnected == false {
+            connectionLost()
+        }
     }
 
 }
