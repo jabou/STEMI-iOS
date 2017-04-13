@@ -197,7 +197,7 @@ class ConnectionScreenViewController: UIViewController {
     //MARK: - Loadingspinning private helpers
     fileprivate func _spin() {
         UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
-            self.spinningImageView.transform = self.spinningImageView.transform.rotated(by: CGFloat(M_PI/2))
+            self.spinningImageView.transform = self.spinningImageView.transform.rotated(by: CGFloat(Double.pi/2))
             }, completion: { complete in
                 if self._shouldSpin == true {
                     self._spin()
