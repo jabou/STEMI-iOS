@@ -324,16 +324,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8r8-cn-sDJ" userLabel="Navigation bar">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-5c-Dxm">
-                                                <rect key="frame" x="104" y="11" width="110" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="110" id="Ssf-uW-3oT"/>
-                                                    <constraint firstAttribute="height" constant="22" id="wo6-At-Opq"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
-                                                <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyo-UV-DJX">
                                                 <rect key="frame" x="8" y="4" width="36" height="36"/>
                                                 <constraints>
@@ -345,6 +335,15 @@
                                                     <action selector="backButtonActionHandler:" destination="KEx-sy-4Uu" eventType="touchUpInside" id="QXg-2V-ged"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P7f-5c-Dxm">
+                                                <rect key="frame" x="148.5" y="11" width="77.5" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="wo6-At-Opq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
+                                                <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -589,10 +588,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yug-AZ-2aZ">
-                                                <rect key="frame" x="8" y="4" width="55" height="36"/>
+                                                <rect key="frame" x="8" y="4" width="54" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="cPy-7Y-fe2"/>
-                                                    <constraint firstAttribute="width" constant="55" id="vzY-27-yDI"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                 <state key="normal" title="CANCEL">
@@ -606,10 +604,9 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IP ADDRESS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6k-sq-gN0">
-                                                <rect key="frame" x="132.5" y="11" width="110" height="22"/>
+                                                <rect key="frame" x="141" y="11" width="93.5" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="cLo-qd-dHU"/>
-                                                    <constraint firstAttribute="width" constant="110" id="u75-B3-brH"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
                                                 <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -847,9 +844,8 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADJUST HEIGHT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKh-RQ-6oH">
-                                                <rect key="frame" x="121" y="11" width="133" height="22"/>
+                                                <rect key="frame" x="124.5" y="11" width="126.5" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="133" id="Ydt-N0-P0t"/>
                                                     <constraint firstAttribute="height" constant="22" id="u4L-To-L5d"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
@@ -1015,10 +1011,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WALKING STYLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjG-Fe-nzE">
-                                                <rect key="frame" x="119.5" y="11" width="136" height="22"/>
+                                                <rect key="frame" x="125" y="11" width="125.5" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="MdV-jM-sT3"/>
-                                                    <constraint firstAttribute="width" constant="136" id="sHc-U4-Cua"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
                                                 <color key="textColor" red="0.14117647059999999" green="0.6588235294" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1381,9 +1376,8 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALIBRATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqn-HV-LfU">
-                                                <rect key="frame" x="129" y="11" width="117" height="22"/>
+                                                <rect key="frame" x="135" y="11" width="105.5" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="117" id="G2h-ZJ-w4Y"/>
                                                     <constraint firstAttribute="height" constant="22" id="onl-Ex-Bte"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="17"/>
@@ -1391,10 +1385,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Or0-ii-ivf">
-                                                <rect key="frame" x="306" y="4" width="61" height="36"/>
+                                                <rect key="frame" x="313" y="4" width="54" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="XDj-0l-cyd"/>
-                                                    <constraint firstAttribute="width" constant="61" id="ZJO-iz-iqn"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                 <state key="normal" title="CANCEL">

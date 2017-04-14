@@ -24,11 +24,11 @@ class ToastNotification {
 
         if isHint {
             backgroundView = UIImageView(image: UIImage(named: "modeHintBckg"))
-            backgroundView.frame = CGRect(x: mainView.frame.size.width/2 - 100, y: 20, width: 200, height: height!)
+            backgroundView.frame = CGRect(x: mainView.frame.size.width/2 - 110, y: 20, width: 220, height: height!)
             backgroundView.alpha = 0
             mainView.addSubview(backgroundView)
 
-            header = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
+            header = UILabel(frame: CGRect(x: 0, y: 0, width: 220, height: 40))
             header.textAlignment = NSTextAlignment.center
             header.textColor = UIColor(red: 49/255, green: 48/255, blue: 84/255, alpha: 1.0)
             header.font = UIFont(name: "ProximaNova-Regular", size: 14)
@@ -39,7 +39,7 @@ class ToastNotification {
             line.frame = CGRect(x: backgroundView.bounds.size.width/2 - 20, y: 35, width: 40, height: 1)
             backgroundView.addSubview(line)
 
-            description = UITextView(frame: CGRect(x: 10, y: 40, width: 180, height: 80))
+            description = UITextView(frame: CGRect(x: 5, y: 40, width: 210, height: 80))
             description.textAlignment = NSTextAlignment.center
             description.textColor = UIColor(red: 49/255, green: 48/255, blue: 84/255, alpha: 1.0)
             description.backgroundColor = UIColor.clear

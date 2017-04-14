@@ -196,7 +196,7 @@ class JoystickViewController: UIViewController, LeftJoystickViewDelegate, RightJ
                 toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("ORIENTATION"), text: Localization.localizedString("ORIENTATION_TEXT"), height: 100)
                 toastNotification.showNotification()
             case 3:
-                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("HEIGHT"), text: Localization.localizedString("HEIGHT_TEXT"), height: 90)
+                toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("HEIGHT"), text: Localization.localizedString("HEIGHT_TEXT"), height: 100)
                 toastNotification.showNotification()
             case 4:
                 toastNotification = ToastNotification(onView: self.view, isHint: true, headline: Localization.localizedString("CALIBRATION"), text: Localization.localizedString("CALIBRATION_TEXT"), height: 100)
