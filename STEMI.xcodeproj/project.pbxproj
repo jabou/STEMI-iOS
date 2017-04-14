@@ -7,37 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		060503061CA6217C00642FC0 /* LeftJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 060503051CA6217C00642FC0 /* LeftJoystickView.xib */; };
-		060503081CA6229900642FC0 /* LeftJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060503071CA6229900642FC0 /* LeftJoystickView.swift */; };
-		0605030F1CA6D5CB00642FC0 /* RightJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */; };
-		06219D771D9AB18800C99A59 /* moving_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06219D761D9AB18800C99A59 /* moving_sound.wav */; };
-		065A5F4F1CA2F9E900BED250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */; };
-		065A5F541CA2F9E900BED250 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F521CA2F9E900BED250 /* Main.storyboard */; };
-		065A5F561CA2F9E900BED250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F551CA2F9E900BED250 /* Assets.xcassets */; };
-		065A5F591CA2F9E900BED250 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F571CA2F9E900BED250 /* LaunchScreen.storyboard */; };
 		065A5F641CA2F9E900BED250 /* STEMITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F631CA2F9E900BED250 /* STEMITests.swift */; };
 		065A5F6F1CA2F9EA00BED250 /* STEMIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F6E1CA2F9EA00BED250 /* STEMIUITests.swift */; };
-		065A5F7F1CA30D2D00BED250 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */; };
-		065A5F821CA315D900BED250 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065A5F811CA315D900BED250 /* JoystickViewController.swift */; };
-		067DD35B1D6226F60085B76A /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067DD35A1D6226F60085B76A /* ViewControllers.swift */; };
-		0680B4D81D5FCB7300A7525C /* IPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0680B4D71D5FCB7300A7525C /* IPTextField.swift */; };
-		0682DBAD1CE8883D004DDA3B /* ToastNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682DBAC1CE8883D004DDA3B /* ToastNotification.swift */; };
-		06A417991CEC847B000B7320 /* ConnectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */; };
-		06ABBF0D1D8DE92100631665 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06ABBF0C1D8DE92100631665 /* Localizable.strings */; };
-		06C4EFFB1D7F711A00EBE933 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFA1D7F711A00EBE933 /* CalibrationViewController.swift */; };
-		06C4EFFD1D7F713200EBE933 /* HeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFC1D7F713200EBE933 /* HeightViewController.swift */; };
-		06C4EFFF1D7F715800EBE933 /* WalkingStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4EFFE1D7F715800EBE933 /* WalkingStyleViewController.swift */; };
-		06C4F0011D7F718900EBE933 /* WalkingStylesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C4F0001D7F718900EBE933 /* WalkingStylesTableViewController.swift */; };
-		06C948AF1D57767E0015F017 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C948AE1D57767E0015F017 /* SettingsViewController.swift */; };
-		06C948B11D5785870015F017 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C948B01D5785870015F017 /* SettingsTableViewController.swift */; };
-		06C948B41D578D6C0015F017 /* SettingsIPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C948B31D578D6C0015F017 /* SettingsIPViewController.swift */; };
-		06D5AA411D6087B300635688 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D5AA401D6087B300635688 /* Constants.swift */; };
-		06D5AA431D6087FB00635688 /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D5AA421D6087FB00635688 /* UserDefaultsHandler.swift */; };
-		06E668E01CE13EC500AD4A7B /* tiu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E668DE1CE13EC500AD4A7B /* tiu.wav */; };
-		06E668E61CE143F400AD4A7B /* puk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E668E51CE143F400AD4A7B /* puk.wav */; };
-		06F364E91CE0D43600BAB70B /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F364E81CE0D43600BAB70B /* Menu.swift */; };
-		06F364EB1CE0D45D00BAB70B /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F364EA1CE0D45D00BAB70B /* Menu.xib */; };
-		06F790F91CE5EFFF00CCC2E9 /* RightJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F790F81CE5EFFF00CCC2E9 /* RightJoystickView.swift */; };
+		06F102941EA0D9120007E2F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102921EA0D9120007E2F4 /* AppDelegate.swift */; };
+		06F102951EA0D9120007E2F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102931EA0D9120007E2F4 /* Constants.swift */; };
+		06F102981EA0D9490007E2F4 /* UserDefaultsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102961EA0D9490007E2F4 /* UserDefaultsHandler.swift */; };
+		06F102991EA0D9490007E2F4 /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102971EA0D9490007E2F4 /* ViewControllers.swift */; };
+		06F1029C1EA0D9FF0007E2F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F1029E1EA0D9FF0007E2F4 /* Main.storyboard */; };
+		06F102A01EA0DA9E0007E2F4 /* ConnectionScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F1029F1EA0DA9E0007E2F4 /* ConnectionScreenViewController.swift */; };
+		06F102A21EA0DAA40007E2F4 /* JoystickViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102A11EA0DAA40007E2F4 /* JoystickViewController.swift */; };
+		06F102A71EA0DAAD0007E2F4 /* LeftJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102A31EA0DAAD0007E2F4 /* LeftJoystickView.swift */; };
+		06F102A81EA0DAAD0007E2F4 /* LeftJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F102A41EA0DAAD0007E2F4 /* LeftJoystickView.xib */; };
+		06F102A91EA0DAAD0007E2F4 /* RightJoystickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102A51EA0DAAD0007E2F4 /* RightJoystickView.swift */; };
+		06F102AA1EA0DAAD0007E2F4 /* RightJoystickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F102A61EA0DAAD0007E2F4 /* RightJoystickView.xib */; };
+		06F102AE1EA0DAB70007E2F4 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102AB1EA0DAB70007E2F4 /* Menu.swift */; };
+		06F102AF1EA0DAB70007E2F4 /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F102AC1EA0DAB70007E2F4 /* Menu.xib */; };
+		06F102B01EA0DAB70007E2F4 /* ToastNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102AD1EA0DAB70007E2F4 /* ToastNotification.swift */; };
+		06F102B21EA0DABE0007E2F4 /* CalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102B11EA0DABE0007E2F4 /* CalibrationViewController.swift */; };
+		06F102B41EA0DAC40007E2F4 /* HeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102B31EA0DAC40007E2F4 /* HeightViewController.swift */; };
+		06F102B71EA0DACA0007E2F4 /* WalkingStylesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102B51EA0DACA0007E2F4 /* WalkingStylesTableViewController.swift */; };
+		06F102B81EA0DACA0007E2F4 /* WalkingStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102B61EA0DACA0007E2F4 /* WalkingStyleViewController.swift */; };
+		06F102BD1EA0DAD30007E2F4 /* IPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102B91EA0DAD30007E2F4 /* IPTextField.swift */; };
+		06F102BE1EA0DAD30007E2F4 /* SettingsIPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102BA1EA0DAD30007E2F4 /* SettingsIPViewController.swift */; };
+		06F102BF1EA0DAD30007E2F4 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102BB1EA0DAD30007E2F4 /* SettingsTableViewController.swift */; };
+		06F102C01EA0DAD30007E2F4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F102BC1EA0DAD30007E2F4 /* SettingsViewController.swift */; };
+		06F102C21EA0DB2D0007E2F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F102C11EA0DB2D0007E2F4 /* Assets.xcassets */; };
+		06F102C71EA0DB450007E2F4 /* moving_sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06F102C41EA0DB450007E2F4 /* moving_sound.wav */; };
+		06F102C81EA0DB450007E2F4 /* puk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06F102C51EA0DB450007E2F4 /* puk.wav */; };
+		06F102C91EA0DB450007E2F4 /* tiu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06F102C61EA0DB450007E2F4 /* tiu.wav */; };
+		06F102CC1EA0DB4D0007E2F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F102CA1EA0DB4D0007E2F4 /* LaunchScreen.storyboard */; };
+		06F102D41EA0DB7C0007E2F4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06F102D11EA0DB7C0007E2F4 /* Info.plist */; };
+		06F102D51EA0DB7C0007E2F4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 06F102D21EA0DB7C0007E2F4 /* Localizable.strings */; };
 		CE58DE1AC6763E78A0DE8B13 /* Pods_STEMI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 868324E7A99FF93879D92E97 /* Pods_STEMI.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,45 +59,46 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		060503051CA6217C00642FC0 /* LeftJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftJoystickView.xib; sourceTree = "<group>"; };
-		060503071CA6229900642FC0 /* LeftJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftJoystickView.swift; sourceTree = "<group>"; };
-		0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RightJoystickView.xib; sourceTree = "<group>"; };
-		06178A2B1DA1888900B91106 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		06219D761D9AB18800C99A59 /* moving_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = moving_sound.wav; sourceTree = "<group>"; };
-		063627CF1CB3F26C0039E096 /* STEMI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "STEMI-Bridging-Header.h"; sourceTree = "<group>"; };
 		065A5F4B1CA2F9E900BED250 /* STEMI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STEMI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		065A5F531CA2F9E900BED250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		065A5F551CA2F9E900BED250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		065A5F581CA2F9E900BED250 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		065A5F5A1CA2F9E900BED250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		065A5F5F1CA2F9E900BED250 /* STEMITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STEMITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		065A5F631CA2F9E900BED250 /* STEMITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STEMITests.swift; sourceTree = "<group>"; };
 		065A5F651CA2F9E900BED250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		065A5F6A1CA2F9E900BED250 /* STEMIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STEMIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		065A5F6E1CA2F9EA00BED250 /* STEMIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STEMIUITests.swift; sourceTree = "<group>"; };
 		065A5F701CA2F9EA00BED250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
-		065A5F811CA315D900BED250 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoystickViewController.swift; sourceTree = "<group>"; };
-		067DD35A1D6226F60085B76A /* ViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
-		0680B4D71D5FCB7300A7525C /* IPTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IPTextField.swift; sourceTree = "<group>"; };
-		0682DBAC1CE8883D004DDA3B /* ToastNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastNotification.swift; sourceTree = "<group>"; };
-		06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionScreenViewController.swift; sourceTree = "<group>"; };
-		06ABBF0C1D8DE92100631665 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		06C4EFFA1D7F711A00EBE933 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationViewController.swift; sourceTree = "<group>"; };
-		06C4EFFC1D7F713200EBE933 /* HeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeightViewController.swift; sourceTree = "<group>"; };
-		06C4EFFE1D7F715800EBE933 /* WalkingStyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingStyleViewController.swift; sourceTree = "<group>"; };
-		06C4F0001D7F718900EBE933 /* WalkingStylesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkingStylesTableViewController.swift; sourceTree = "<group>"; };
-		06C948AE1D57767E0015F017 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		06C948B01D5785870015F017 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		06C948B31D578D6C0015F017 /* SettingsIPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsIPViewController.swift; sourceTree = "<group>"; };
-		06D5AA401D6087B300635688 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		06D5AA421D6087FB00635688 /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsHandler.swift; sourceTree = "<group>"; };
-		06E668DE1CE13EC500AD4A7B /* tiu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tiu.wav; sourceTree = "<group>"; };
-		06E668E51CE143F400AD4A7B /* puk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = puk.wav; sourceTree = "<group>"; };
-		06F364E81CE0D43600BAB70B /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		06F364EA1CE0D45D00BAB70B /* Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Menu.xib; sourceTree = "<group>"; };
-		06F790F81CE5EFFF00CCC2E9 /* RightJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightJoystickView.swift; sourceTree = "<group>"; };
+		06F102921EA0D9120007E2F4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Application/AppDelegate.swift; sourceTree = "<group>"; };
+		06F102931EA0D9120007E2F4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Application/Constants.swift; sourceTree = "<group>"; };
+		06F102961EA0D9490007E2F4 /* UserDefaultsHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaultsHandler.swift; path = Common/UserDefaultsHandler.swift; sourceTree = "<group>"; };
+		06F102971EA0D9490007E2F4 /* ViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllers.swift; path = Common/ViewControllers.swift; sourceTree = "<group>"; };
+		06F1029D1EA0D9FF0007E2F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		06F1029F1EA0DA9E0007E2F4 /* ConnectionScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionScreenViewController.swift; path = "Modules/Connection Screen/ConnectionScreenViewController.swift"; sourceTree = "<group>"; };
+		06F102A11EA0DAA40007E2F4 /* JoystickViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JoystickViewController.swift; path = Modules/Joystick/JoystickViewController.swift; sourceTree = "<group>"; };
+		06F102A31EA0DAAD0007E2F4 /* LeftJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftJoystickView.swift; path = Modules/Joystick/Joysticks/LeftJoystickView.swift; sourceTree = "<group>"; };
+		06F102A41EA0DAAD0007E2F4 /* LeftJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LeftJoystickView.xib; path = Modules/Joystick/Joysticks/LeftJoystickView.xib; sourceTree = "<group>"; };
+		06F102A51EA0DAAD0007E2F4 /* RightJoystickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightJoystickView.swift; path = Modules/Joystick/Joysticks/RightJoystickView.swift; sourceTree = "<group>"; };
+		06F102A61EA0DAAD0007E2F4 /* RightJoystickView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RightJoystickView.xib; path = Modules/Joystick/Joysticks/RightJoystickView.xib; sourceTree = "<group>"; };
+		06F102AB1EA0DAB70007E2F4 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Menu.swift; path = Modules/Menu/Menu.swift; sourceTree = "<group>"; };
+		06F102AC1EA0DAB70007E2F4 /* Menu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Menu.xib; path = Modules/Menu/Menu.xib; sourceTree = "<group>"; };
+		06F102AD1EA0DAB70007E2F4 /* ToastNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ToastNotification.swift; path = Modules/Menu/ToastNotification.swift; sourceTree = "<group>"; };
+		06F102B11EA0DABE0007E2F4 /* CalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalibrationViewController.swift; path = Modules/Calibration/CalibrationViewController.swift; sourceTree = "<group>"; };
+		06F102B31EA0DAC40007E2F4 /* HeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeightViewController.swift; path = Modules/Height/HeightViewController.swift; sourceTree = "<group>"; };
+		06F102B51EA0DACA0007E2F4 /* WalkingStylesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalkingStylesTableViewController.swift; path = "Modules/Walking Styles/WalkingStylesTableViewController.swift"; sourceTree = "<group>"; };
+		06F102B61EA0DACA0007E2F4 /* WalkingStyleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalkingStyleViewController.swift; path = "Modules/Walking Styles/WalkingStyleViewController.swift"; sourceTree = "<group>"; };
+		06F102B91EA0DAD30007E2F4 /* IPTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IPTextField.swift; path = Modules/Settings/IPTextField.swift; sourceTree = "<group>"; };
+		06F102BA1EA0DAD30007E2F4 /* SettingsIPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsIPViewController.swift; path = Modules/Settings/SettingsIPViewController.swift; sourceTree = "<group>"; };
+		06F102BB1EA0DAD30007E2F4 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = Modules/Settings/SettingsTableViewController.swift; sourceTree = "<group>"; };
+		06F102BC1EA0DAD30007E2F4 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Modules/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
+		06F102C11EA0DB2D0007E2F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
+		06F102C31EA0DB380007E2F4 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Regular.otf"; path = "Resources/Custom Font/ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		06F102C41EA0DB450007E2F4 /* moving_sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = moving_sound.wav; path = Resources/Sounds/moving_sound.wav; sourceTree = "<group>"; };
+		06F102C51EA0DB450007E2F4 /* puk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = puk.wav; path = Resources/Sounds/puk.wav; sourceTree = "<group>"; };
+		06F102C61EA0DB450007E2F4 /* tiu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = tiu.wav; path = Resources/Sounds/tiu.wav; sourceTree = "<group>"; };
+		06F102CB1EA0DB4D0007E2F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Resources/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		06F102CE1EA0DB530007E2F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		06F102D01EA0DB5B0007E2F4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		06F102D11EA0DB7C0007E2F4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Supporting Files/Info.plist"; sourceTree = "<group>"; };
+		06F102D21EA0DB7C0007E2F4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = "Supporting Files/Localizable.strings"; sourceTree = "<group>"; };
+		06F102D31EA0DB7C0007E2F4 /* STEMI-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "STEMI-Bridging-Header.h"; path = "Supporting Files/STEMI-Bridging-Header.h"; sourceTree = "<group>"; };
 		3F86D8C176EAD3B749E9D095 /* Pods-STEMI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.debug.xcconfig"; sourceTree = "<group>"; };
 		704B5D3FED445828B6CEE2A9 /* Pods-STEMI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STEMI.release.xcconfig"; path = "Pods/Target Support Files/Pods-STEMI/Pods-STEMI.release.xcconfig"; sourceTree = "<group>"; };
 		868324E7A99FF93879D92E97 /* Pods_STEMI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STEMI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +159,7 @@
 				06F1028D1EA0D6BF0007E2F4 /* Common */,
 				06F1028E1EA0D6C80007E2F4 /* Modules */,
 				06F1028F1EA0D6D30007E2F4 /* Resources */,
+				06F102CA1EA0DB4D0007E2F4 /* LaunchScreen.storyboard */,
 				06F102901EA0D6E00007E2F4 /* Supporting Files */,
 			);
 			path = STEMI;
@@ -184,7 +186,7 @@
 		065A5F7D1CA3075000BED250 /* CustomFont */ = {
 			isa = PBXGroup;
 			children = (
-				065A5F7E1CA3076B00BED250 /* ProximaNova-Regular.otf */,
+				06F102C31EA0DB380007E2F4 /* ProximaNova-Regular.otf */,
 			);
 			name = CustomFont;
 			sourceTree = "<group>";
@@ -192,8 +194,8 @@
 		0675D1251CE34A54002687E8 /* Joystick */ = {
 			isa = PBXGroup;
 			children = (
-				065A5F811CA315D900BED250 /* JoystickViewController.swift */,
-				06F102911EA0D7E40007E2F4 /* Jostics */,
+				06F102A11EA0DAA40007E2F4 /* JoystickViewController.swift */,
+				06F102911EA0D7E40007E2F4 /* Josticks */,
 			);
 			name = Joystick;
 			sourceTree = "<group>";
@@ -201,7 +203,7 @@
 		06A417951CEC8373000B7320 /* Connection Screen */ = {
 			isa = PBXGroup;
 			children = (
-				06A417981CEC847B000B7320 /* ConnectionScreenViewController.swift */,
+				06F1029F1EA0DA9E0007E2F4 /* ConnectionScreenViewController.swift */,
 			);
 			name = "Connection Screen";
 			sourceTree = "<group>";
@@ -209,8 +211,8 @@
 		06C4F0021D7F792400EBE933 /* Walking Styles */ = {
 			isa = PBXGroup;
 			children = (
-				06C4EFFE1D7F715800EBE933 /* WalkingStyleViewController.swift */,
-				06C4F0001D7F718900EBE933 /* WalkingStylesTableViewController.swift */,
+				06F102B51EA0DACA0007E2F4 /* WalkingStylesTableViewController.swift */,
+				06F102B61EA0DACA0007E2F4 /* WalkingStyleViewController.swift */,
 			);
 			name = "Walking Styles";
 			sourceTree = "<group>";
@@ -218,7 +220,7 @@
 		06C4F0031D7F793D00EBE933 /* Calibration */ = {
 			isa = PBXGroup;
 			children = (
-				06C4EFFA1D7F711A00EBE933 /* CalibrationViewController.swift */,
+				06F102B11EA0DABE0007E2F4 /* CalibrationViewController.swift */,
 			);
 			name = Calibration;
 			sourceTree = "<group>";
@@ -226,7 +228,7 @@
 		06C4F0041D7F794F00EBE933 /* Height */ = {
 			isa = PBXGroup;
 			children = (
-				06C4EFFC1D7F713200EBE933 /* HeightViewController.swift */,
+				06F102B31EA0DAC40007E2F4 /* HeightViewController.swift */,
 			);
 			name = Height;
 			sourceTree = "<group>";
@@ -234,10 +236,10 @@
 		06C948B21D57858F0015F017 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				06C948AE1D57767E0015F017 /* SettingsViewController.swift */,
-				06C948B01D5785870015F017 /* SettingsTableViewController.swift */,
-				06C948B31D578D6C0015F017 /* SettingsIPViewController.swift */,
-				0680B4D71D5FCB7300A7525C /* IPTextField.swift */,
+				06F102B91EA0DAD30007E2F4 /* IPTextField.swift */,
+				06F102BA1EA0DAD30007E2F4 /* SettingsIPViewController.swift */,
+				06F102BB1EA0DAD30007E2F4 /* SettingsTableViewController.swift */,
+				06F102BC1EA0DAD30007E2F4 /* SettingsViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -245,9 +247,9 @@
 		06E668DC1CE13EB700AD4A7B /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				06219D761D9AB18800C99A59 /* moving_sound.wav */,
-				06E668E51CE143F400AD4A7B /* puk.wav */,
-				06E668DE1CE13EC500AD4A7B /* tiu.wav */,
+				06F102C41EA0DB450007E2F4 /* moving_sound.wav */,
+				06F102C51EA0DB450007E2F4 /* puk.wav */,
+				06F102C61EA0DB450007E2F4 /* tiu.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -255,9 +257,9 @@
 		06E9980A1CE3B0EC00B0676F /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				06F364EA1CE0D45D00BAB70B /* Menu.xib */,
-				06F364E81CE0D43600BAB70B /* Menu.swift */,
-				0682DBAC1CE8883D004DDA3B /* ToastNotification.swift */,
+				06F102AB1EA0DAB70007E2F4 /* Menu.swift */,
+				06F102AC1EA0DAB70007E2F4 /* Menu.xib */,
+				06F102AD1EA0DAB70007E2F4 /* ToastNotification.swift */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -265,8 +267,8 @@
 		06F1028C1EA0D6B30007E2F4 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */,
-				06D5AA401D6087B300635688 /* Constants.swift */,
+				06F102921EA0D9120007E2F4 /* AppDelegate.swift */,
+				06F102931EA0D9120007E2F4 /* Constants.swift */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -274,8 +276,8 @@
 		06F1028D1EA0D6BF0007E2F4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				067DD35A1D6226F60085B76A /* ViewControllers.swift */,
-				06D5AA421D6087FB00635688 /* UserDefaultsHandler.swift */,
+				06F102961EA0D9490007E2F4 /* UserDefaultsHandler.swift */,
+				06F102971EA0D9490007E2F4 /* ViewControllers.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -283,7 +285,7 @@
 		06F1028E1EA0D6C80007E2F4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				065A5F521CA2F9E900BED250 /* Main.storyboard */,
+				06F1029E1EA0D9FF0007E2F4 /* Main.storyboard */,
 				06A417951CEC8373000B7320 /* Connection Screen */,
 				0675D1251CE34A54002687E8 /* Joystick */,
 				06E9980A1CE3B0EC00B0676F /* Menu */,
@@ -298,10 +300,9 @@
 		06F1028F1EA0D6D30007E2F4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				065A5F551CA2F9E900BED250 /* Assets.xcassets */,
+				06F102C11EA0DB2D0007E2F4 /* Assets.xcassets */,
 				065A5F7D1CA3075000BED250 /* CustomFont */,
 				06E668DC1CE13EB700AD4A7B /* Sounds */,
-				065A5F571CA2F9E900BED250 /* LaunchScreen.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -309,22 +310,22 @@
 		06F102901EA0D6E00007E2F4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				065A5F5A1CA2F9E900BED250 /* Info.plist */,
-				063627CF1CB3F26C0039E096 /* STEMI-Bridging-Header.h */,
-				06ABBF0C1D8DE92100631665 /* Localizable.strings */,
+				06F102D11EA0DB7C0007E2F4 /* Info.plist */,
+				06F102D21EA0DB7C0007E2F4 /* Localizable.strings */,
+				06F102D31EA0DB7C0007E2F4 /* STEMI-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		06F102911EA0D7E40007E2F4 /* Jostics */ = {
+		06F102911EA0D7E40007E2F4 /* Josticks */ = {
 			isa = PBXGroup;
 			children = (
-				060503051CA6217C00642FC0 /* LeftJoystickView.xib */,
-				060503071CA6229900642FC0 /* LeftJoystickView.swift */,
-				0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */,
-				06F790F81CE5EFFF00CCC2E9 /* RightJoystickView.swift */,
+				06F102A31EA0DAAD0007E2F4 /* LeftJoystickView.swift */,
+				06F102A41EA0DAAD0007E2F4 /* LeftJoystickView.xib */,
+				06F102A51EA0DAAD0007E2F4 /* RightJoystickView.swift */,
+				06F102A61EA0DAAD0007E2F4 /* RightJoystickView.xib */,
 			);
-			name = Jostics;
+			name = Josticks;
 			sourceTree = "<group>";
 		};
 		608F0A54A32C39406D5EC5A0 /* Frameworks */ = {
@@ -456,17 +457,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				065A5F591CA2F9E900BED250 /* LaunchScreen.storyboard in Resources */,
-				06219D771D9AB18800C99A59 /* moving_sound.wav in Resources */,
-				065A5F7F1CA30D2D00BED250 /* ProximaNova-Regular.otf in Resources */,
-				06ABBF0D1D8DE92100631665 /* Localizable.strings in Resources */,
-				0605030F1CA6D5CB00642FC0 /* RightJoystickView.xib in Resources */,
-				06E668E01CE13EC500AD4A7B /* tiu.wav in Resources */,
-				065A5F561CA2F9E900BED250 /* Assets.xcassets in Resources */,
-				06F364EB1CE0D45D00BAB70B /* Menu.xib in Resources */,
-				06E668E61CE143F400AD4A7B /* puk.wav in Resources */,
-				065A5F541CA2F9E900BED250 /* Main.storyboard in Resources */,
-				060503061CA6217C00642FC0 /* LeftJoystickView.xib in Resources */,
+				06F102C21EA0DB2D0007E2F4 /* Assets.xcassets in Resources */,
+				06F102C91EA0DB450007E2F4 /* tiu.wav in Resources */,
+				06F102D51EA0DB7C0007E2F4 /* Localizable.strings in Resources */,
+				06F102CC1EA0DB4D0007E2F4 /* LaunchScreen.storyboard in Resources */,
+				06F102C81EA0DB450007E2F4 /* puk.wav in Resources */,
+				06F102AF1EA0DAB70007E2F4 /* Menu.xib in Resources */,
+				06F102C71EA0DB450007E2F4 /* moving_sound.wav in Resources */,
+				06F1029C1EA0D9FF0007E2F4 /* Main.storyboard in Resources */,
+				06F102AA1EA0DAAD0007E2F4 /* RightJoystickView.xib in Resources */,
+				06F102D41EA0DB7C0007E2F4 /* Info.plist in Resources */,
+				06F102A81EA0DAAD0007E2F4 /* LeftJoystickView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,24 +568,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				067DD35B1D6226F60085B76A /* ViewControllers.swift in Sources */,
-				06C4EFFB1D7F711A00EBE933 /* CalibrationViewController.swift in Sources */,
-				065A5F821CA315D900BED250 /* JoystickViewController.swift in Sources */,
-				060503081CA6229900642FC0 /* LeftJoystickView.swift in Sources */,
-				06A417991CEC847B000B7320 /* ConnectionScreenViewController.swift in Sources */,
-				06F790F91CE5EFFF00CCC2E9 /* RightJoystickView.swift in Sources */,
-				06C4F0011D7F718900EBE933 /* WalkingStylesTableViewController.swift in Sources */,
-				0682DBAD1CE8883D004DDA3B /* ToastNotification.swift in Sources */,
-				06C4EFFF1D7F715800EBE933 /* WalkingStyleViewController.swift in Sources */,
-				065A5F4F1CA2F9E900BED250 /* AppDelegate.swift in Sources */,
-				06F364E91CE0D43600BAB70B /* Menu.swift in Sources */,
-				06C948AF1D57767E0015F017 /* SettingsViewController.swift in Sources */,
-				06D5AA411D6087B300635688 /* Constants.swift in Sources */,
-				06C948B41D578D6C0015F017 /* SettingsIPViewController.swift in Sources */,
-				06C948B11D5785870015F017 /* SettingsTableViewController.swift in Sources */,
-				06C4EFFD1D7F713200EBE933 /* HeightViewController.swift in Sources */,
-				0680B4D81D5FCB7300A7525C /* IPTextField.swift in Sources */,
-				06D5AA431D6087FB00635688 /* UserDefaultsHandler.swift in Sources */,
+				06F102B81EA0DACA0007E2F4 /* WalkingStyleViewController.swift in Sources */,
+				06F102B71EA0DACA0007E2F4 /* WalkingStylesTableViewController.swift in Sources */,
+				06F102BE1EA0DAD30007E2F4 /* SettingsIPViewController.swift in Sources */,
+				06F102981EA0D9490007E2F4 /* UserDefaultsHandler.swift in Sources */,
+				06F102B21EA0DABE0007E2F4 /* CalibrationViewController.swift in Sources */,
+				06F102A01EA0DA9E0007E2F4 /* ConnectionScreenViewController.swift in Sources */,
+				06F102BF1EA0DAD30007E2F4 /* SettingsTableViewController.swift in Sources */,
+				06F102A91EA0DAAD0007E2F4 /* RightJoystickView.swift in Sources */,
+				06F102BD1EA0DAD30007E2F4 /* IPTextField.swift in Sources */,
+				06F102B01EA0DAB70007E2F4 /* ToastNotification.swift in Sources */,
+				06F102991EA0D9490007E2F4 /* ViewControllers.swift in Sources */,
+				06F102B41EA0DAC40007E2F4 /* HeightViewController.swift in Sources */,
+				06F102A71EA0DAAD0007E2F4 /* LeftJoystickView.swift in Sources */,
+				06F102AE1EA0DAB70007E2F4 /* Menu.swift in Sources */,
+				06F102941EA0D9120007E2F4 /* AppDelegate.swift in Sources */,
+				06F102A21EA0DAA40007E2F4 /* JoystickViewController.swift in Sources */,
+				06F102951EA0D9120007E2F4 /* Constants.swift in Sources */,
+				06F102C01EA0DAD30007E2F4 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,19 +621,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		065A5F521CA2F9E900BED250 /* Main.storyboard */ = {
+		06F1029E1EA0D9FF0007E2F4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				065A5F531CA2F9E900BED250 /* Base */,
-				06178A2B1DA1888900B91106 /* en */,
+				06F1029D1EA0D9FF0007E2F4 /* Base */,
+				06F102D01EA0DB5B0007E2F4 /* en */,
 			);
 			name = Main.storyboard;
+			path = Modules;
 			sourceTree = "<group>";
 		};
-		065A5F571CA2F9E900BED250 /* LaunchScreen.storyboard */ = {
+		06F102CA1EA0DB4D0007E2F4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				065A5F581CA2F9E900BED250 /* Base */,
+				06F102CB1EA0DB4D0007E2F4 /* Base */,
+				06F102CE1EA0DB530007E2F4 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
