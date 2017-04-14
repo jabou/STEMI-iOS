@@ -154,18 +154,11 @@
 		065A5F4D1CA2F9E900BED250 /* STEMI */ = {
 			isa = PBXGroup;
 			children = (
-				065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */,
-				065A5F521CA2F9E900BED250 /* Main.storyboard */,
-				06D5AA3D1D60878300635688 /* Helpers */,
-				06A417951CEC8373000B7320 /* Connection Screen */,
-				0675D1251CE34A54002687E8 /* Joystick */,
-				06C4F0031D7F793D00EBE933 /* Calibration */,
-				06C4F0041D7F794F00EBE933 /* Height */,
-				06C4F0021D7F792400EBE933 /* Walking Styles */,
-				06C948B21D57858F0015F017 /* Settings */,
-				065A5F551CA2F9E900BED250 /* Assets.xcassets */,
-				065A5F571CA2F9E900BED250 /* LaunchScreen.storyboard */,
-				0675D1241CE34A0E002687E8 /* Supporting Files */,
+				06F1028C1EA0D6B30007E2F4 /* Application */,
+				06F1028D1EA0D6BF0007E2F4 /* Common */,
+				06F1028E1EA0D6C80007E2F4 /* Modules */,
+				06F1028F1EA0D6D30007E2F4 /* Resources */,
+				06F102901EA0D6E00007E2F4 /* Supporting Files */,
 			);
 			path = STEMI;
 			sourceTree = "<group>";
@@ -196,27 +189,11 @@
 			name = CustomFont;
 			sourceTree = "<group>";
 		};
-		0675D1241CE34A0E002687E8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				06E668DC1CE13EB700AD4A7B /* Sounds */,
-				065A5F7D1CA3075000BED250 /* CustomFont */,
-				065A5F5A1CA2F9E900BED250 /* Info.plist */,
-				063627CF1CB3F26C0039E096 /* STEMI-Bridging-Header.h */,
-				06ABBF0C1D8DE92100631665 /* Localizable.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		0675D1251CE34A54002687E8 /* Joystick */ = {
 			isa = PBXGroup;
 			children = (
 				065A5F811CA315D900BED250 /* JoystickViewController.swift */,
-				060503051CA6217C00642FC0 /* LeftJoystickView.xib */,
-				060503071CA6229900642FC0 /* LeftJoystickView.swift */,
-				0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */,
-				06F790F81CE5EFFF00CCC2E9 /* RightJoystickView.swift */,
-				06E9980A1CE3B0EC00B0676F /* Menu */,
+				06F102911EA0D7E40007E2F4 /* Jostics */,
 			);
 			name = Joystick;
 			sourceTree = "<group>";
@@ -265,16 +242,6 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
-		06D5AA3D1D60878300635688 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				06D5AA401D6087B300635688 /* Constants.swift */,
-				067DD35A1D6226F60085B76A /* ViewControllers.swift */,
-				06D5AA421D6087FB00635688 /* UserDefaultsHandler.swift */,
-			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
 		06E668DC1CE13EB700AD4A7B /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +260,71 @@
 				0682DBAC1CE8883D004DDA3B /* ToastNotification.swift */,
 			);
 			name = Menu;
+			sourceTree = "<group>";
+		};
+		06F1028C1EA0D6B30007E2F4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				065A5F4E1CA2F9E900BED250 /* AppDelegate.swift */,
+				06D5AA401D6087B300635688 /* Constants.swift */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		06F1028D1EA0D6BF0007E2F4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				067DD35A1D6226F60085B76A /* ViewControllers.swift */,
+				06D5AA421D6087FB00635688 /* UserDefaultsHandler.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		06F1028E1EA0D6C80007E2F4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				065A5F521CA2F9E900BED250 /* Main.storyboard */,
+				06A417951CEC8373000B7320 /* Connection Screen */,
+				0675D1251CE34A54002687E8 /* Joystick */,
+				06E9980A1CE3B0EC00B0676F /* Menu */,
+				06C4F0031D7F793D00EBE933 /* Calibration */,
+				06C4F0041D7F794F00EBE933 /* Height */,
+				06C4F0021D7F792400EBE933 /* Walking Styles */,
+				06C948B21D57858F0015F017 /* Settings */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		06F1028F1EA0D6D30007E2F4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				065A5F551CA2F9E900BED250 /* Assets.xcassets */,
+				065A5F7D1CA3075000BED250 /* CustomFont */,
+				06E668DC1CE13EB700AD4A7B /* Sounds */,
+				065A5F571CA2F9E900BED250 /* LaunchScreen.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		06F102901EA0D6E00007E2F4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				065A5F5A1CA2F9E900BED250 /* Info.plist */,
+				063627CF1CB3F26C0039E096 /* STEMI-Bridging-Header.h */,
+				06ABBF0C1D8DE92100631665 /* Localizable.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06F102911EA0D7E40007E2F4 /* Jostics */ = {
+			isa = PBXGroup;
+			children = (
+				060503051CA6217C00642FC0 /* LeftJoystickView.xib */,
+				060503071CA6229900642FC0 /* LeftJoystickView.swift */,
+				0605030E1CA6D5CB00642FC0 /* RightJoystickView.xib */,
+				06F790F81CE5EFFF00CCC2E9 /* RightJoystickView.swift */,
+			);
+			name = Jostics;
 			sourceTree = "<group>";
 		};
 		608F0A54A32C39406D5EC5A0 /* Frameworks */ = {
