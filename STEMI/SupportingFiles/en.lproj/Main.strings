@@ -1,0 +1,129 @@
+
+/* Class = "UILabel"; text = "192.168.4.1"; ObjectID = "0BX-I0-PuX"; */
+"0BX-I0-PuX.text" = "192.168.4.1";
+
+/* Class = "UITableViewSection"; footerTitle = "After connecting your STEMI on Home network, you can set up custom IP address here"; ObjectID = "1WG-OF-wB1"; */
+"1WG-OF-wB1.footerTitle" = "After connecting your STEMI on Home network, you can set up custom IP address here";
+
+/* Class = "UITableViewSection"; headerTitle = "CUSTOM IP"; ObjectID = "1WG-OF-wB1"; */
+"1WG-OF-wB1.headerTitle" = "CUSTOM IP";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "3Hc-GN-F85"; */
+"3Hc-GN-F85.text" = "Detail";
+
+/* Class = "UILabel"; text = "Tripod Delayed Gait"; ObjectID = "6Wt-B1-KdU"; */
+"6Wt-B1-KdU.text" = "Tripod Delayed Gait";
+
+/* Class = "UILabel"; text = "Hardware version"; ObjectID = "BS4-77-53I"; */
+"BS4-77-53I.text" = "Hardware version";
+
+/* Class = "UIButton"; normalTitle = "BUTTON1"; ObjectID = "Bk8-8k-cdr"; */
+"Bk8-8k-cdr.normalTitle" = "BUTTON1";
+
+/* Class = "UITextField"; text = "192"; ObjectID = "Bx4-hh-QIX"; */
+"Bx4-hh-QIX.text" = "192";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "EDb-o7-s4N"; */
+"EDb-o7-s4N.text" = "Detail";
+
+/* Class = "UILabel"; text = "Wave Gait"; ObjectID = "GBR-7S-r5B"; */
+"GBR-7S-r5B.text" = "Wave Gait";
+
+/* Class = "UILabel"; text = "Default STEMI IP address is:"; ObjectID = "KK8-ol-sWo"; */
+"KK8-ol-sWo.text" = "Default STEMI IP address is:";
+
+/* Class = "UILabel"; text = "57"; ObjectID = "LkA-cQ-64I"; */
+"LkA-cQ-64I.text" = "57";
+
+/* Class = "UIButton"; normalTitle = "DONE"; ObjectID = "OR1-Or-TnE"; */
+"OR1-Or-TnE.normalTitle" = "DONE";
+
+/* Class = "UIButton"; normalTitle = "CANCEL"; ObjectID = "Or0-ii-ivf"; */
+"Or0-ii-ivf.normalTitle" = "CANCEL";
+
+/* Class = "UILabel"; text = "SETTINGS"; ObjectID = "P7f-5c-Dxm"; */
+"P7f-5c-Dxm.text" = "SETTINGS";
+
+/* Class = "UIButton"; normalTitle = "DONE"; ObjectID = "Qzd-1L-ln9"; */
+"Qzd-1L-ln9.normalTitle" = "DONE";
+
+/* Class = "UILabel"; text = "192.168.4.1"; ObjectID = "RgQ-lT-kLS"; */
+"RgQ-lT-kLS.text" = "192.168.4.1";
+
+/* Class = "UILabel"; text = "If you have a STEMI Hexapod, simpy connect it now"; ObjectID = "Sc5-H4-tgg"; */
+"Sc5-H4-tgg.text" = "If you have a STEMI Hexapod, simpy connect it now";
+
+/* Class = "UITableViewSection"; headerTitle = "CHOOSE A WALKING STYLE"; ObjectID = "TUr-tr-FLg"; */
+"TUr-tr-FLg.headerTitle" = "CHOOSE A WALKING STYLE";
+
+/* Class = "UITextField"; text = "192"; ObjectID = "Ugd-74-Gqn"; */
+"Ugd-74-Gqn.text" = "192";
+
+/* Class = "UILabel"; text = "Select motor you wish to calibrate"; ObjectID = "W0M-NZ-ihv"; */
+"W0M-NZ-ihv.text" = "Select motor you wish to calibrate";
+
+/* Class = "UILabel"; text = "ADJUST HEIGHT"; ObjectID = "YKh-RQ-6oH"; */
+"YKh-RQ-6oH.text" = "ADJUST HEIGHT";
+
+/* Class = "UILabel"; text = "WALKING STYLE"; ObjectID = "YjG-Fe-nzE"; */
+"YjG-Fe-nzE.text" = "WALKING STYLE";
+
+/* Class = "UILabel"; text = "57"; ObjectID = "aCj-n9-fw9"; */
+"aCj-n9-fw9.text" = "57";
+
+/* Class = "UITableViewSection"; headerTitle = "ABOUT"; ObjectID = "ad0-6L-7Nf"; */
+"ad0-6L-7Nf.headerTitle" = "ABOUT";
+
+/* Class = "UILabel"; text = "Tripod Gait"; ObjectID = "cWZ-yG-Tat"; */
+"cWZ-yG-Tat.text" = "Tripod Gait";
+
+/* Class = "UITextField"; text = "192"; ObjectID = "d57-d5-qu3"; */
+"d57-d5-qu3.text" = "192";
+
+/* Class = "UILabel"; text = "Ripple Gait"; ObjectID = "fWF-QX-KPp"; */
+"fWF-QX-KPp.text" = "Ripple Gait";
+
+/* Class = "UIButton"; normalTitle = "SAVE"; ObjectID = "gQH-Lb-iyY"; */
+"gQH-Lb-iyY.normalTitle" = "SAVE";
+
+/* Class = "UIButton"; normalTitle = "DONE"; ObjectID = "iCE-NX-2hF"; */
+"iCE-NX-2hF.normalTitle" = "DONE";
+
+/* Class = "UILabel"; text = "CALIBRATION"; ObjectID = "pqn-HV-LfU"; */
+"pqn-HV-LfU.text" = "CALIBRATION";
+
+/* Class = "UIButton"; normalTitle = "RESET TO DEFAULT VALUES"; ObjectID = "q0e-Ga-cwg"; */
+"q0e-Ga-cwg.normalTitle" = "RESET TO DEFAULT VALUES";
+
+/* Class = "UILabel"; text = "GET STARTED"; ObjectID = "qGB-JG-8EC"; */
+"qGB-JG-8EC.text" = "GET STARTED";
+
+/* Class = "UILabel"; text = "RESET"; ObjectID = "rLK-ay-Tn6"; */
+"rLK-ay-Tn6.text" = "RESET";
+
+/* Class = "UITextField"; text = "192"; ObjectID = "rmU-QZ-mez"; */
+"rmU-QZ-mez.text" = "192";
+
+/* Class = "UILabel"; text = "IP ADDRESS"; ObjectID = "t6k-sq-gN0"; */
+"t6k-sq-gN0.text" = "IP ADDRESS";
+
+/* Class = "UILabel"; text = "STEMI ID"; ObjectID = "tuo-ei-2NR"; */
+"tuo-ei-2NR.text" = "STEMI ID";
+
+/* Class = "UIButton"; normalTitle = "BUTTON2"; ObjectID = "x44-C0-yFb"; */
+"x44-C0-yFb.normalTitle" = "BUTTON2";
+
+/* Class = "UILabel"; text = "IP Address"; ObjectID = "xe1-Vs-Val"; */
+"xe1-Vs-Val.text" = "IP Address";
+
+/* Class = "UILabel"; text = "MANUALLY ENTER IP"; ObjectID = "xxq-k7-7Oq"; */
+"xxq-k7-7Oq.text" = "MANUALLY ENTER IP";
+
+/* Class = "UIButton"; normalTitle = "CANCEL"; ObjectID = "yug-AZ-2aZ"; */
+"yug-AZ-2aZ.normalTitle" = "CANCEL";
+
+/* Class = "UITableViewSection"; footerTitle = "Reset STEMI Hexapod legs to their initial values"; ObjectID = "znf-3R-Pju"; */
+"znf-3R-Pju.footerTitle" = "Reset STEMI Hexapod legs to their initial values";
+
+/* Class = "UITableViewSection"; headerTitle = "FACTORY RESET"; ObjectID = "znf-3R-Pju"; */
+"znf-3R-Pju.headerTitle" = "FACTORY RESET";
