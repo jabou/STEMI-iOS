@@ -418,7 +418,7 @@
 					065A5F4A1CA2F9E900BED250 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = UYMMXCQB9G;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					065A5F5E1CA2F9E900BED250 = {

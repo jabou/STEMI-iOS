@@ -34,7 +34,7 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        doneButton.enabled = false
+        doneButton.isEnabled = false
         ipTextFields[3].becomeFirstResponder()
     }
 
@@ -138,7 +138,7 @@ class SettingsIPViewController: UIViewController, UITextFieldDelegate, IPTextFie
         ipTextFields[2].text = "4"
         ipTextFields[3].text = "1"
         ipTextFields[3].becomeFirstResponder()
-        doneButton.enabled = true
+        doneButton.isEnabled = true
     }
 
 
