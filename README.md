@@ -19,17 +19,51 @@ https://github.com/jabou/STEMIHexapod
 
 This app uses STEMI library for communicating with robot and can be used as example app for Library usage. 
 
-## Screenshots
-![intro](https://cloud.githubusercontent.com/assets/11990539/18611673/28082c66-7d41-11e6-9965-f34f38c99ea9.png "Intro view")
-![connection](https://cloud.githubusercontent.com/assets/11990539/25018387/7eeaa902-2087-11e7-9f07-5fec97c3a246.png "Connection view")
-![connecting](https://cloud.githubusercontent.com/assets/11990539/25018556/dcd6e7b0-2087-11e7-8797-b31b912f9bdb.png "Connecting progress")
-![connecting_error](https://cloud.githubusercontent.com/assets/11990539/25018592/ed8eba38-2087-11e7-95e7-442481b17dca.png "Unable to connect")
-![joystick](https://cloud.githubusercontent.com/assets/11990539/18611679/28519e82-7d41-11e6-9d80-f4206d41350e.png "Joystick view")
-![menu](https://cloud.githubusercontent.com/assets/11990539/18611678/28519b76-7d41-11e6-88ee-d7d3e786b24c.png "Menu view")
-![hint](https://cloud.githubusercontent.com/assets/11990539/18611674/282a58f4-7d41-11e6-94be-5e4d973280bd.png "Hint view")
-![status](https://cloud.githubusercontent.com/assets/11990539/18611680/285bffc6-7d41-11e6-8584-95b80e935c7f.png "Status view")
-![height](https://cloud.githubusercontent.com/assets/11990539/25018652/17d015d0-2088-11e7-8218-74996c2f32d7.png "Height view")
-![calibration](https://cloud.githubusercontent.com/assets/11990539/25018774/91f18e70-2088-11e7-8f1c-b0c27df5db27.png "Calibration view")
-![walking](https://cloud.githubusercontent.com/assets/11990539/25018788/a1c2e308-2088-11e7-90b6-e182349d3244.png "Walking style view")
-![settings](https://cloud.githubusercontent.com/assets/11990539/18611684/28803d28-7d41-11e6-9e21-7cc2ddd7ffe9.PNG "Settings view")
-![ip_change](https://cloud.githubusercontent.com/assets/11990539/25018820/b4add66c-2088-11e7-8a85-4e6f08566d79.png "IP Change view")
+# Contributing to STEMI Hexapod Commander
+
+## Git and our Branching model
+
+### Git
+
+We use [Git](http://git-scm.com/) as our [version control
+system](http://en.wikipedia.org/wiki/Revision_control), so the best way to
+contribute is to learn how to use it and put your changes on a Git repository.
+There's a plenty of documentation about Git -- you can start with the [Pro Git
+book](http://git-scm.com/book/).
+
+### Forks + GitHub Pull requests
+
+We use the famous
+[gitflow](http://nvie.com/posts/a-successful-git-branching-model/) to manage our
+branches.
+
+Summary of our git branching model:
+- Fork the desired repository on GitHub to your account;
+- Clone your forked repository locally
+  (`git clone git@github.com:your-username:repository-name.git`);
+- Create a new branch off of `develop` with a descriptive name (for example:
+  `feature/portuguese-sentiment-analysis`, `hotfix/bug-on-downloader`). You can
+  do it switching to `develop` branch (`git checkout develop`) and then
+  creating a new branch (`git checkout -b name-of-the-new-branch`);
+- Do many small commits on that branch locally (`git add files-changed`,
+  `git commit -m "Add some change"`);
+- Push to your fork on GitHub (with the name as your local branch:
+  `git push origin branch-name`);
+- Create a pull request using the GitHub Web interface (asking us to pull the
+  changes from your new branch and add to our `develop` branch);
+- Wait for comments.
+
+
+### Tips
+
+- Write [helpful commit
+  messages](http://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message).
+- Anything in the `develop` branch should be deployable.
+- Never use `git add .`: it can add unwanted files;
+- Avoid using `git commit -a` unless you know what you're doing;
+- Check every change with `git diff` before adding them to the index (stage
+  area) and with `git diff --cached` before commiting;
+- If you have push access to the main repository, please do not commit directly
+  to `develop`: your access should be used only to accept pull requests; if you
+  want to make a new feature, you should use the same process as other
+  developers so you code will be reviewed.
