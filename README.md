@@ -19,6 +19,8 @@ https://github.com/jabou/STEMIHexapod
 
 This app uses STEMI library for communicating with robot and can be used as example app for Library usage. 
 
+
+
 # Contributing to STEMI Hexapod Commander
 
 ## Git and our Branching model
